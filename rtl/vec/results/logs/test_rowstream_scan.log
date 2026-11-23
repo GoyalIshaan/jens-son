@@ -1,0 +1,19 @@
+PASS descriptor 0, V opcode 7, 108 clocks
+PASS descriptor 1, V opcode 8, 149 clocks
+PASS descriptor 2, V opcode 9, 142 clocks
+PASS descriptor 3, V opcode 10, 166 clocks
+PASS descriptor 4, V opcode 11, 67 clocks
+PASS descriptor 5, V opcode 12, 65 clocks
+PASS descriptor 6, V opcode 16, 36 clocks
+PASS descriptor 7, V opcode 18, 24 clocks
+PASS descriptor 8, V opcode 17, 52 clocks
+PASS descriptor 9, V opcode 15, 37 clocks
+PASS descriptor 10, V opcode 23, 6 clocks
+PASS descriptor 11, V opcode 17, 91 clocks
+PASS descriptor 12, V opcode 7, 139 clocks
+PASS descriptor 13, V opcode 9, 251 clocks
+PASS descriptor 14, V opcode 11, 83 clocks
+PASS descriptor 15, V opcode 16, 75 clocks
+PASS descriptor 16, V opcode 18, 75 clocks
+tb_vec_unit.sv:101: $finish called at 6285 (1s)
+python3 test_vec_unit.py --rows-only  739.53s user 17.61s system 98% cpu 12:50.04 total

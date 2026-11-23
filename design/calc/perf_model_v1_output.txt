@@ -1,0 +1,95 @@
+== 1. Check: ideal case vs qwen35_budget.py hand numbers ==
+  weights per token in the op list 7.9364 B vs budget 7.9364 B
+  ctx     4,096: model 101.65 tok/s, hand 101.65 tok/s, error +0.000%
+  ctx    32,768: model  92.03 tok/s, hand  92.03 tok/s, error +0.000%
+  ctx   262,144: model  52.37 tok/s, hand  52.37 tok/s, error +0.000%
+  ctx 1,010,000: model  21.78 tok/s, hand  21.78 tok/s, error +0.000%
+  speculation k=1, accept 0.7: model x1.625, hand x1.625
+  speculation k=3, accept 0.7: model x2.227, hand x2.227
+  prefill 2K, weights only on 1024x4 lanes: 3.97 s (note 19 quotes 3.97 s)
+  worst error 0.000% -> PASS (target < 2%)
+
+== 2. Base card, plain decode (512 GB/s, 92%, 1 GHz, 1024x4 lanes, 256 DeltaNet lanes) ==
+  ctx     4,096:  101.5 tok/s  ( 9.85 ms,  4.63 GB, DRAM busy 100%, compute-bound 2%)
+      time: weights 97%, deltanet 1%, attention 1%, other 0%
+  ctx    32,768:   92.1 tok/s  (10.86 ms,  5.11 GB, DRAM busy 100%, compute-bound 1%)
+      time: weights 88%, attention 11%, deltanet 1%, other 0%
+  ctx   262,144:   52.9 tok/s  (18.90 ms,  8.89 GB, DRAM busy 100%, compute-bound 1%)
+      time: weights 51%, attention 49%, deltanet 1%, other 0%
+  ctx 1,010,000:   22.2 tok/s  (45.11 ms, 21.24 GB, DRAM busy 100%, compute-bound 0%)
+      time: attention 78%, weights 21%, deltanet 0%, other 0%
+
+== 3. Speculative decoding, measured acceptance (0.9, 0.841, 0.782) (chip format, 32K draft vocab) ==
+  ctx     4,096: k=0:  101.5   k=1:  183.8 (x1.81)   k=2:  241.1 (x2.38)   k=3:  277.4 (x2.73)
+  ctx    32,768: k=0:   92.1   k=1:  165.5 (x1.80)   k=2:  207.3 (x2.25)   k=3:  229.5 (x2.49)
+  ctx   262,144: k=0:   52.9   k=1:   91.6 (x1.73)   k=2:   97.6 (x1.84)   k=3:   96.5 (x1.82)
+  ctx 1,010,000: k=0:   22.2   k=1:   37.3 (x1.68)   k=2:   35.8 (x1.62)   k=3:   33.4 (x1.51)
+  k=3 at 4K, where the step time goes: weights 80%, mtp 12%, deltanet 5%, attention 3%, other 0%; compute-bound 8%
+  one draft at ctx     4,096:     221 MB read (of which its own KV      8 MB)
+  one draft at ctx 1,010,000:    2297 MB read (of which its own KV   2085 MB)
+  long context: limiting the draft head's attention to recent positions (acceptance held fixed; its effect on acceptance is not measured yet), and 8 token rows:
+    ctx   262,144 full window, 4 rows : k=1  91.6 (compute-bound 47%)  k=2  97.6 (compute-bound 54%)  k=3  96.5 (compute-bound 58%)
+    ctx   262,144 4K window, 4 rows   : k=1  96.9 (compute-bound 50%)  k=2 106.5 (compute-bound 59%)  k=3 107.3 (compute-bound 64%)
+    ctx   262,144 4K window, 8 rows   : k=1  98.0 (compute-bound 2%)  k=2 128.0 (compute-bound 50%)  k=3 148.3 (compute-bound 51%)
+    ctx 1,010,000 full window, 4 rows : k=1  37.3 (compute-bound 72%)  k=2  35.8 (compute-bound 74%)  k=3  33.4 (compute-bound 75%)
+    ctx 1,010,000 4K window, 4 rows   : k=1  40.8 (compute-bound 79%)  k=2  40.7 (compute-bound 84%)  k=3  38.6 (compute-bound 87%)
+    ctx 1,010,000 4K window, 8 rows   : k=1  41.7 (compute-bound 1%)  k=2  54.0 (compute-bound 79%)  k=3  62.7 (compute-bound 79%)
+  with the draft head windowed to its last 4096 positions (MEASURED acceptance (0.889, 0.829, 0.762)):
+    ctx     4,096: k=0 101.5 | 4 rows: k=1 182.7 k=2 238.2 k=3 272.0 (best k=3) | 8 rows: k=1 182.7 k=2 239.5 k=3 275.1 (best k=3)
+    ctx    32,768: k=0  92.1 | 4 rows: k=1 166.3 k=2 208.9 k=3 231.2 (best k=3) | 8 rows: k=1 166.5 k=2 218.0 k=3 250.3 (best k=3)
+    ctx   262,144: k=0  52.9 | 4 rows: k=1  96.3 k=2 105.2 k=3 105.2 (best k=2) | 8 rows: k=1  97.4 k=2 126.4 k=3 145.4 (best k=3)
+    ctx 1,010,000: k=0  22.2 | 4 rows: k=1  40.6 k=2  40.2 k=3  37.9 (best k=1) | 8 rows: k=1  41.4 k=2  53.4 k=3  61.5 (best k=3)
+
+== 4. Sweeps (tok/s; 'k=3' uses the measured acceptance) ==
+  DeltaNet lanes:
+    128 lanes: 4K k=0  101.3, k=1  178.6, k=3  263.8
+    256 lanes: 4K k=0  101.5, k=1  183.8, k=3  277.4
+    512 lanes: 4K k=0  101.5, k=1  184.1, k=3  284.7
+  token rows per lane (verify width):
+    2 rows: 4K k=1  181.7, k=3  179.9, prefill 2K 8.32 s
+    4 rows: 4K k=1  183.8, k=3  277.4, prefill 2K 4.32 s
+    8 rows: 4K k=1  183.8, k=3  280.5, prefill 2K 2.31 s
+  clock:
+    0.8 GHz: 4K k=0  100.0, k=3  265.5, prefill 2K 5.39 s, weights/cycle delivered  1047
+    1.0 GHz: 4K k=0  101.5, k=3  277.4, prefill 2K 4.32 s, weights/cycle delivered   837
+    1.2 GHz: 4K k=0  101.5, k=3  281.0, prefill 2K 3.60 s, weights/cycle delivered   698
+  memory:
+    LPDDR5X 256-bit 273 GB/s  : 4K   54.1, 32K   49.1, 1M  11.8, 4K k=3  153.3
+    GDDR7 4 x32 512 GB/s      : 4K  101.5, 32K   92.1, 1M  22.2, 4K k=3  277.4
+  prefetch buffer (how far DRAM may run ahead of compute):
+    0.00 MB: 4K k=0  101.5, k=3  275.8
+    0.25 MB: 4K k=0  101.5, k=3  276.2
+    1.00 MB: 4K k=0  101.5, k=3  277.4
+    4.00 MB: 4K k=0  101.5, k=3  282.3
+  write penalty (DRAM read/write switching):
+    x1.00: 4K  101.7, 1M  22.2
+    x1.15: 4K  101.5, 1M  22.2
+    x1.50: 4K  101.1, 1M  22.1
+    x2.00: 4K  100.6, 1M  22.1
+  where the DeltaNet state and conv history live:
+    state DRAM, conv on chip    : 4K  101.5
+    state DRAM, conv DRAM       : 4K  101.4
+    state on chip (50 MB SRAM)  : 4K  102.9
+  draft vocabulary (4K, k=3):
+     16,384:  283.2 tok/s (acceptance held fixed; trimming lowers it, measured in experiment set 4)
+     32,768:  277.4 tok/s (acceptance held fixed; trimming lowers it, measured in experiment set 4)
+     65,536:  266.5 tok/s (acceptance held fixed; trimming lowers it, measured in experiment set 4)
+    248,320:  218.4 tok/s (acceptance held fixed; trimming lowers it, measured in experiment set 4)
+  long-context KV format (int4 g32 opt-in):
+    ctx   262,144: int8  52.9, int4  67.4 tok/s
+    ctx 1,010,000: int8  22.2, int4  33.9 tok/s
+
+== 5. Prefill (chunks of 64 tokens) ==
+    2048 tokens:    4.32 s   weights 3.97 s, deltanet 0.30 s, attention 0.04 s, other 0.01 s
+    8192 tokens:   17.71 s   weights 15.87 s, deltanet 1.21 s, attention 0.61 s, other 0.03 s
+   32768 tokens:   78.10 s   weights 63.48 s, attention 9.68 s, deltanet 4.83 s, other 0.10 s
+  2K with 1.25x lanes (1280x4)        : 3.51 s
+  2K with 8 rows (1024x8)             : 2.31 s
+  2K with 512 DeltaNet lanes          : 4.16 s
+  2K with 8 rows + 512 DeltaNet lanes : 2.16 s
+
+== 6. Capacity (weights incl. embedding + MTP head, KV int8 incl. MTP KV, state) ==
+  ctx     4,096:   5.81 GB with int8 KV ( 5.78 GB int4);   5.81 GB with int8 KV and a 4096-position draft window  fits: 8 GB / 8 GB (with 0.5 GB working space)
+  ctx    32,768:   6.34 GB with int8 KV ( 6.07 GB int4);   6.28 GB with int8 KV and a 4096-position draft window  fits: 8 GB / 8 GB (with 0.5 GB working space)
+  ctx   262,144:  10.60 GB with int8 KV ( 8.45 GB int4);  10.07 GB with int8 KV and a 4096-position draft window  fits: 16 GB / 16 GB (with 0.5 GB working space)
+  ctx 1,010,000:  24.50 GB with int8 KV (16.21 GB int4);  22.42 GB with int8 KV and a 4096-position draft window  fits: none of 8/16/24 GB / 24 GB (with 0.5 GB working space)

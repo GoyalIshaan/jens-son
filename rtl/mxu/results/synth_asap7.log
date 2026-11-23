@@ -1,0 +1,20 @@
+w_mult8        D=100000:      26.6 um2 =     304 NAND2  delay     659 ps
+w_mult8        D=     1:      39.9 um2 =     456 NAND2  delay     531 ps
+w_lookup16     D=100000:     205.8 um2 =    2352 NAND2  delay     121 ps
+w_lookup16     D=     1:     206.4 um2 =    2359 NAND2  delay     152 ps
+adder_tree16   D=100000:     119.5 um2 =    1366 NAND2  delay     912 ps
+adder_tree16   D=     1:     191.4 um2 =    2188 NAND2  delay     750 ps
+w_scale_a      D=100000:     377.1 um2 =    4310 NAND2  delay    4060 ps
+w_scale_a      D=     1:     560.7 um2 =    6409 NAND2  delay    4754 ps
+w_scale_c      D=100000:     320.2 um2 =    3660 NAND2  delay    4176 ps
+w_scale_c      D=     1:     517.4 um2 =    5914 NAND2  delay    5226 ps
+w_scale_b      D=100000:      50.5 um2 =     578 NAND2  delay    1307 ps
+w_scale_b      D=     1:      74.3 um2 =     849 NAND2  delay    1379 ps
+mxu_group R= 4 MODE=0:       4465 um2 =    51040 NAND2, flip-flops 13.2%, worst stage   5095 ps, 50309 cells
+mxu_group R= 4 MODE=1:       4240 um2 =    48465 NAND2, flip-flops 13.9%, worst stage   6070 ps, 47627 cells
+mxu_group R= 4 MODE=2:       3158 um2 =    36101 NAND2, flip-flops 17.8%, worst stage   3240 ps, 35072 cells
+mxu_group R= 8 MODE=1:       8163 um2 =    93313 NAND2, flip-flops 13.9%, worst stage   8774 ps, 91728 cells
+mxu_group R=32 MODE=0:      33467 um2 =   382573 NAND2, flip-flops 13.1%, worst stage   8585 ps, 373592 cells
+mxu_group R=32 MODE=1:      31725 um2 =   362658 NAND2, flip-flops 13.9%, worst stage  27268 ps, 354584 cells
+mxu_group R=32 MODE=2:      23051 um2 =   263498 NAND2, flip-flops 18.2%, worst stage  26728 ps, 253032 cells
+mxu_group R=64 MODE=1:      62871 um2 =   718685 NAND2, flip-flops 13.9%, worst stage  70325 ps, 693291 cells

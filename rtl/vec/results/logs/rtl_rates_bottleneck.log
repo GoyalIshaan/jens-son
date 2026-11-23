@@ -1,0 +1,13 @@
+Chunk elapsed ms: 336.190
+V busy ms: 329.407
+M busy ms: 16.555
+V COPY busy ms: 1.163
+V EXP busy ms: 7.951
+V FMA busy ms: 6.489
+V MUL busy ms: 2.301
+V QKV busy ms: 7.050
+V QUANT busy ms: 16.409
+V RSQRT busy ms: 8.538
+V RSUMSQ busy ms: 21.467
+V SILU busy ms: 55.815
+V SMTILE busy ms: 199.148

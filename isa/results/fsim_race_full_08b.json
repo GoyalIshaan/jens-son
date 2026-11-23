@@ -1,0 +1,111 @@
+{
+  "layers": 24,
+  "tokens": 256,
+  "passed": true,
+  "runs": [
+    {
+      "seed": null,
+      "chip": {
+        "bw": 512000000000.0,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 150.0,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 512,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 8,
+        "mxu_drain": 24,
+        "l_overhead": 16,
+        "queue_depth": 16
+      },
+      "time_ns": 6282497.478263059,
+      "hashes": {
+        "hidden": "784c1e52c05915ea11a97cc42647e4005d75e32c97d58074bde06a3e30aff3ea",
+        "KV": "597bbf164ed43436fdd4cd6987a066b1e9ddc0f4be7952fcf9e3d49d3376e1be",
+        "state": "d94fc803c8ba6d1706104d75a54c6aa32fa982a1a7a6b58575a6160488be7a4d",
+        "conv": "1ce501a0fa5c4cbbf31b05760c00f2f2dae7bbaa153771d82e8d72f43da18cf9"
+      }
+    },
+    {
+      "seed": 23,
+      "chip": {
+        "bw": 241775338415.3418,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 450.5193382623465,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 512,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 14,
+        "mxu_drain": 47,
+        "l_overhead": 31,
+        "queue_depth": 16
+      },
+      "time_ns": 7815675.334135361,
+      "hashes": {
+        "hidden": "784c1e52c05915ea11a97cc42647e4005d75e32c97d58074bde06a3e30aff3ea",
+        "KV": "597bbf164ed43436fdd4cd6987a066b1e9ddc0f4be7952fcf9e3d49d3376e1be",
+        "state": "d94fc803c8ba6d1706104d75a54c6aa32fa982a1a7a6b58575a6160488be7a4d",
+        "conv": "1ce501a0fa5c4cbbf31b05760c00f2f2dae7bbaa153771d82e8d72f43da18cf9"
+      }
+    }
+  ]
+}

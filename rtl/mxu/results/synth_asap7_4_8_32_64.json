@@ -1,0 +1,250 @@
+{
+ "lib": "asap7",
+ "nand2_um2": 0.08748,
+ "results": [
+  {
+   "top": "w_mult8",
+   "params": {},
+   "D": 100000,
+   "area_um2": 26.55018,
+   "nand2_eq": 303.5,
+   "seq_um2": 0.0,
+   "delay_ps": 658.7,
+   "cells": 349,
+   "log": "/tmp/scratch/syn_asap7/w_mult8__D100000.log"
+  },
+  {
+   "top": "w_mult8",
+   "params": {},
+   "D": 1,
+   "area_um2": 39.86172,
+   "nand2_eq": 455.66666666666663,
+   "seq_um2": 0.0,
+   "delay_ps": 531.04,
+   "cells": 511,
+   "log": "/tmp/scratch/syn_asap7/w_mult8__D1.log"
+  },
+  {
+   "top": "w_lookup16",
+   "params": {},
+   "D": 100000,
+   "area_um2": 205.75296,
+   "nand2_eq": 2352.0,
+   "seq_um2": 0.0,
+   "delay_ps": 120.92,
+   "cells": 2594,
+   "log": "/tmp/scratch/syn_asap7/w_lookup16__D100000.log"
+  },
+  {
+   "top": "w_lookup16",
+   "params": {},
+   "D": 1,
+   "area_um2": 206.36532,
+   "nand2_eq": 2359.0,
+   "seq_um2": 0.0,
+   "delay_ps": 151.82,
+   "cells": 2670,
+   "log": "/tmp/scratch/syn_asap7/w_lookup16__D1.log"
+  },
+  {
+   "top": "adder_tree16",
+   "params": {},
+   "D": 100000,
+   "area_um2": 119.54142,
+   "nand2_eq": 1366.5,
+   "seq_um2": 0.0,
+   "delay_ps": 912.36,
+   "cells": 1498,
+   "log": "/tmp/scratch/syn_asap7/adder_tree16__D100000.log"
+  },
+  {
+   "top": "adder_tree16",
+   "params": {},
+   "D": 1,
+   "area_um2": 191.37708,
+   "nand2_eq": 2187.6666666666665,
+   "seq_um2": 0.0,
+   "delay_ps": 750.31,
+   "cells": 2392,
+   "log": "/tmp/scratch/syn_asap7/adder_tree16__D1.log"
+  },
+  {
+   "top": "w_scale_a",
+   "params": {},
+   "D": 100000,
+   "area_um2": 377.08254,
+   "nand2_eq": 4310.5,
+   "seq_um2": 0.0,
+   "delay_ps": 4059.65,
+   "cells": 4670,
+   "log": "/tmp/scratch/syn_asap7/w_scale_a__D100000.log"
+  },
+  {
+   "top": "w_scale_a",
+   "params": {},
+   "D": 1,
+   "area_um2": 560.65932,
+   "nand2_eq": 6409.0,
+   "seq_um2": 0.0,
+   "delay_ps": 4753.74,
+   "cells": 7503,
+   "log": "/tmp/scratch/syn_asap7/w_scale_a__D1.log"
+  },
+  {
+   "top": "w_scale_c",
+   "params": {},
+   "D": 100000,
+   "area_um2": 320.19138,
+   "nand2_eq": 3660.1666666666665,
+   "seq_um2": 0.0,
+   "delay_ps": 4176.31,
+   "cells": 4072,
+   "log": "/tmp/scratch/syn_asap7/w_scale_c__D100000.log"
+  },
+  {
+   "top": "w_scale_c",
+   "params": {},
+   "D": 1,
+   "area_um2": 517.35672,
+   "nand2_eq": 5914.0,
+   "seq_um2": 0.0,
+   "delay_ps": 5225.6,
+   "cells": 6744,
+   "log": "/tmp/scratch/syn_asap7/w_scale_c__D1.log"
+  },
+  {
+   "top": "w_scale_b",
+   "params": {},
+   "D": 100000,
+   "area_um2": 50.5197,
+   "nand2_eq": 577.5,
+   "seq_um2": 0.0,
+   "delay_ps": 1307.44,
+   "cells": 654,
+   "log": "/tmp/scratch/syn_asap7/w_scale_b__D100000.log"
+  },
+  {
+   "top": "w_scale_b",
+   "params": {},
+   "D": 1,
+   "area_um2": 74.29968,
+   "nand2_eq": 849.3333333333333,
+   "seq_um2": 0.0,
+   "delay_ps": 1379.29,
+   "cells": 976,
+   "log": "/tmp/scratch/syn_asap7/w_scale_b__D1.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 4,
+    "MODE": 0
+   },
+   "D": 100000,
+   "area_um2": 4464.99378,
+   "nand2_eq": 51040.166666666664,
+   "seq_um2": 587.574,
+   "delay_ps": 5094.89,
+   "cells": 50309,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R4_MODE0_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 4,
+    "MODE": 1
+   },
+   "D": 100000,
+   "area_um2": 4239.68904,
+   "nand2_eq": 48464.666666666664,
+   "seq_um2": 587.574,
+   "delay_ps": 6069.53,
+   "cells": 47627,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R4_MODE1_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 4,
+    "MODE": 2
+   },
+   "D": 100000,
+   "area_um2": 3158.08632,
+   "nand2_eq": 36100.666666666664,
+   "seq_um2": 561.9132,
+   "delay_ps": 3239.65,
+   "cells": 35072,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R4_MODE2_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 8,
+    "MODE": 1
+   },
+   "D": 100000,
+   "area_um2": 8163.0504,
+   "nand2_eq": 93313.33333333333,
+   "seq_um2": 1132.2828,
+   "delay_ps": 8773.87,
+   "cells": 91728,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R8_MODE1_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 32,
+    "MODE": 0
+   },
+   "D": 100000,
+   "area_um2": 33467.45688,
+   "nand2_eq": 382572.6666666666,
+   "seq_um2": 4400.5356,
+   "delay_ps": 8584.77,
+   "cells": 373592,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R32_MODE0_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 32,
+    "MODE": 1
+   },
+   "D": 100000,
+   "area_um2": 31725.29268,
+   "nand2_eq": 362657.6666666666,
+   "seq_um2": 4400.5356,
+   "delay_ps": 27268.23,
+   "cells": 354584,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R32_MODE1_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 32,
+    "MODE": 2
+   },
+   "D": 100000,
+   "area_um2": 23050.81962,
+   "nand2_eq": 263498.1666666666,
+   "seq_um2": 4195.2492,
+   "delay_ps": 26728.09,
+   "cells": 253032,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R32_MODE2_D100000.log"
+  },
+  {
+   "top": "mxu_group",
+   "params": {
+    "R": 64,
+    "MODE": 1
+   },
+   "D": 100000,
+   "area_um2": 62870.54922,
+   "nand2_eq": 718684.8333333334,
+   "seq_um2": 8758.206,
+   "delay_ps": 70325.36,
+   "cells": 693291,
+   "log": "/tmp/scratch/syn_asap7/mxu_group_R64_MODE1_D100000.log"
+  }
+ ]
+}

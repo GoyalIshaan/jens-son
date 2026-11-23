@@ -1,0 +1,114 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (440ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (7.85 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB 0:00:00
+✓ Files synced (1.8s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp7:attn_int8...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 199149.93 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 423141.15 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 561610.45 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+bf16
+ 
+q int8 + P int8 power-of-two
+ 
+{'wikitext': 0.000386, 'python_code': 6.8e-05}
+ 
+long
+ 
+0.000669
+ 
+237s
+bf16
+ 
+q int8 + P int8 fixed
+ 
+{'wikitext': 0.522023, 'python_code': 0.06856}
+ 
+long
+ 
+1.019967
+ 
+229s
+  layer  0 (linear_attention) gptq done in 21.6s
+  layer  1 (linear_attention) gptq done in 21.3s
+  layer  2 (linear_attention) gptq done in 20.4s
+  layer  3 (full_attention) gptq done in 11.2s
+  layer  4 (linear_attention) gptq done in 20.9s
+  layer  5 (linear_attention) gptq done in 20.8s
+  layer  6 (linear_attention) gptq done in 20.4s
+  layer  7 (full_attention) gptq done in 10.6s
+  layer  8 (linear_attention) gptq done in 20.8s
+  layer  9 (linear_attention) gptq done in 20.2s
+  layer 10 (linear_attention) gptq done in 19.8s
+  layer 11 (full_attention) gptq done in 10.4s
+  layer 12 (linear_attention) gptq done in 20.1s
+  layer 13 (linear_attention) gptq done in 20.6s
+  layer 14 (linear_attention) gptq done in 21.6s
+  layer 15 (full_attention) gptq done in 11.0s
+  layer 16 (linear_attention) gptq done in 21.1s
+  layer 17 (linear_attention) gptq done in 20.5s
+  layer 18 (linear_attention) gptq done in 21.0s
+  layer 19 (full_attention) gptq done in 10.8s
+  layer 20 (linear_attention) gptq done in 21.1s
+  layer 21 (linear_attention) gptq done in 21.3s
+  layer 22 (linear_attention) gptq done in 20.8s
+  layer 23 (full_attention) gptq done in 10.6s
+  layer 24 (linear_attention) gptq done in 20.4s
+  layer 25 (linear_attention) gptq done in 20.3s
+  layer 26 (linear_attention) gptq done in 20.6s
+  layer 27 (full_attention) gptq done in 10.6s
+  layer 28 (linear_attention) gptq done in 20.6s
+  layer 29 (linear_attention) gptq done in 20.5s
+  layer 30 (linear_attention) gptq done in 20.5s
+  layer 31 (full_attention) gptq done in 10.8s
+  gptq total 587s
+chip
+ 
+chip numerics, exact attention
+ 
+{'wikitext': 0.052279, 'python_code': 0.055917}
+ 
+long
+ 
+-
+ 
+93s
+chip
+ 
+chip numerics, q int8 + P int8 power-of-two
+ 
+{'wikitext': 0.052691, 'python_code': 0.056163}
+ 
+long
+ 
+-
+ 
+93s
+chip
+ 
+chip numerics, q int8 + P int8 fixed
+ 
+{'wikitext': 0.472666, 'python_code': 0.130148}
+ 
+long
+ 
+-
+ 
+93s
+✓ Function complete (26m43s)
+bf16 q int8 + P int8 power-of-two {'wikitext': 0.000386, 'python_code': 6.8e-05} long 0.000669
+bf16 q int8 + P int8 fixed {'wikitext': 0.522023, 'python_code': 0.06856} long 1.019967
+chip chip numerics, exact attention {'wikitext': 0.052279, 'python_code': 0.055917} long -
+chip chip numerics, q int8 + P int8 power-of-two {'wikitext': 0.052691, 'python_code': 0.056163} long -
+chip chip numerics, q int8 + P int8 fixed {'wikitext': 0.472666, 'python_code': 0.130148} long -

@@ -1,0 +1,215 @@
+{
+  "layers": 4,
+  "tokens": 256,
+  "passed": true,
+  "runs": [
+    {
+      "seed": null,
+      "chip": {
+        "bw": 512000000000.0,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 150.0,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 512,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 8,
+        "mxu_drain": 24,
+        "l_overhead": 16,
+        "queue_depth": 16
+      },
+      "time_ns": 1049094.815217339,
+      "hashes": {
+        "hidden": "d4d1fbab95716b9a5107bff4bdb0beeff2d1a0f3289ebecb5371920c5b34bb9f",
+        "KV": "d78a4dd3401ca51ab216ae2468228a5bacc1d225d893c0a1337a393d89582df7",
+        "state": "bc564c7294791226e1f14fc9e57aa48c750930d860fe029d67bc64e348833f0b",
+        "conv": "e0a8a59fd89c339af21e2db84cf04185dffa3247dfee4e3824d47c9106585e39"
+      }
+    },
+    {
+      "seed": 7,
+      "chip": {
+        "bw": 397411748211.58673,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 476.0180658801691,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 512,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 28,
+        "mxu_drain": 14,
+        "l_overhead": 8,
+        "queue_depth": 16
+      },
+      "time_ns": 1480787.2842966947,
+      "hashes": {
+        "hidden": "d4d1fbab95716b9a5107bff4bdb0beeff2d1a0f3289ebecb5371920c5b34bb9f",
+        "KV": "d78a4dd3401ca51ab216ae2468228a5bacc1d225d893c0a1337a393d89582df7",
+        "state": "bc564c7294791226e1f14fc9e57aa48c750930d860fe029d67bc64e348833f0b",
+        "conv": "e0a8a59fd89c339af21e2db84cf04185dffa3247dfee4e3824d47c9106585e39"
+      }
+    },
+    {
+      "seed": 23,
+      "chip": {
+        "bw": 241775338415.3418,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 450.5193382623465,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 512,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 14,
+        "mxu_drain": 47,
+        "l_overhead": 31,
+        "queue_depth": 16
+      },
+      "time_ns": 1305832.822229041,
+      "hashes": {
+        "hidden": "d4d1fbab95716b9a5107bff4bdb0beeff2d1a0f3289ebecb5371920c5b34bb9f",
+        "KV": "d78a4dd3401ca51ab216ae2468228a5bacc1d225d893c0a1337a393d89582df7",
+        "state": "bc564c7294791226e1f14fc9e57aa48c750930d860fe029d67bc64e348833f0b",
+        "conv": "e0a8a59fd89c339af21e2db84cf04185dffa3247dfee4e3824d47c9106585e39"
+      }
+    },
+    {
+      "seed": 51,
+      "chip": {
+        "bw": 476144724942.511,
+        "util": 0.92,
+        "clk": 1000000000.0,
+        "write_penalty": 1.15,
+        "latency_ns": 425.70556022983885,
+        "chunk": 16384,
+        "fifo": 196608,
+        "x_force": 65536,
+        "rows": 64,
+        "vec_lanes": 256,
+        "sfu": [
+          [
+            "exp",
+            128
+          ],
+          [
+            "recip",
+            2
+          ],
+          [
+            "rsqrt",
+            2
+          ],
+          [
+            "sigmoid",
+            64
+          ],
+          [
+            "silu",
+            64
+          ],
+          [
+            "softplus",
+            2
+          ]
+        ],
+        "vec_overhead": 28,
+        "mxu_drain": 39,
+        "l_overhead": 18,
+        "queue_depth": 16
+      },
+      "time_ns": 1801492.2598225274,
+      "hashes": {
+        "hidden": "d4d1fbab95716b9a5107bff4bdb0beeff2d1a0f3289ebecb5371920c5b34bb9f",
+        "KV": "d78a4dd3401ca51ab216ae2468228a5bacc1d225d893c0a1337a393d89582df7",
+        "state": "bc564c7294791226e1f14fc9e57aa48c750930d860fe029d67bc64e348833f0b",
+        "conv": "e0a8a59fd89c339af21e2db84cf04185dffa3247dfee4e3824d47c9106585e39"
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+ "model rates": {
+  "decode_tok_s": 90.6,
+  "spec_a3_tok_s": 302.0,
+  "prefill_chunk_ms": 22.41,
+  "prefill_32k_s": 5.7
+ },
+ "RTL as built": {
+  "decode_tok_s": 90.3,
+  "spec_a3_tok_s": 299.8,
+  "prefill_chunk_ms": 25.6,
+  "prefill_32k_s": 6.6
+ },
+ "pre-overlap RTL": {
+  "decode_tok_s": 88.6,
+  "spec_a3_tok_s": 239.8,
+  "prefill_chunk_ms": 335.53,
+  "prefill_32k_s": 85.9
+ },
+ "SMTILE overlap only": {
+  "decode_tok_s": 89.1,
+  "spec_a3_tok_s": 283.9,
+  "prefill_chunk_ms": 146.32,
+  "prefill_32k_s": 37.5
+ },
+ "+ row streaming, serial R1": {
+  "decode_tok_s": 89.1,
+  "spec_a3_tok_s": 285.7,
+  "prefill_chunk_ms": 60.05,
+  "prefill_32k_s": 15.4
+ },
+ "as built, 2 R1 contexts (4 KiB less)": {
+  "decode_tok_s": 89.7,
+  "spec_a3_tok_s": 292.6,
+  "prefill_chunk_ms": 49.66,
+  "prefill_32k_s": 12.7
+ },
+ "as built, 8 R1 contexts (8 KiB more)": {
+  "decode_tok_s": 90.2,
+  "spec_a3_tok_s": 297.8,
+  "prefill_chunk_ms": 41.86,
+  "prefill_32k_s": 10.7
+ },
+ "+ QUANT/DEQ 512 wide": {
+  "decode_tok_s": 90.3,
+  "spec_a3_tok_s": 299.8,
+  "prefill_chunk_ms": 27.88,
+  "prefill_32k_s": 7.1
+ },
+ "+ CONV4 window streamed": {
+  "decode_tok_s": 90.4,
+  "spec_a3_tok_s": 301.0,
+  "prefill_chunk_ms": 25.6,
+  "prefill_32k_s": 6.6
+ },
+ "+ R1 one row per clock": {
+  "decode_tok_s": 90.4,
+  "spec_a3_tok_s": 301.0,
+  "prefill_chunk_ms": 25.6,
+  "prefill_32k_s": 6.6
+ },
+ "+ SMTILE at model rates": {
+  "decode_tok_s": 90.4,
+  "spec_a3_tok_s": 301.2,
+  "prefill_chunk_ms": 23.79,
+  "prefill_32k_s": 6.1
+ },
+ "+ QUANT/DEQ rows packed": {
+  "decode_tok_s": 90.3,
+  "spec_a3_tok_s": 299.8,
+  "prefill_chunk_ms": 27.01,
+  "prefill_32k_s": 6.9
+ },
+ "+ QKV rows packed": {
+  "decode_tok_s": 90.3,
+  "spec_a3_tok_s": 299.8,
+  "prefill_chunk_ms": 25.71,
+  "prefill_32k_s": 6.6
+ },
+ "as built, QUANT/QKV/DEQ at 128 lanes": {
+  "decode_tok_s": 90.3,
+  "spec_a3_tok_s": 299.5,
+  "prefill_chunk_ms": 29.62,
+  "prefill_32k_s": 7.6
+ }
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "top": "w_fp32_add",
+  "params": {},
+  "D": 100000,
+  "area_um2": 113.49072,
+  "nand2_eq": 1297.3333333333333,
+  "seq_um2": 0.0,
+  "delay_ps": 4963.21,
+  "cells": 1669,
+  "log": "/tmp/scratch/syn_asap7/w_fp32_add__D100000.log"
+ },
+ {
+  "top": "w_fp32_add",
+  "params": {},
+  "D": 1,
+  "area_um2": 198.33174,
+  "nand2_eq": 2267.1666666666665,
+  "seq_um2": 0.0,
+  "delay_ps": 1811.07,
+  "cells": 2492,
+  "log": "/tmp/scratch/syn_asap7/w_fp32_add__D1_buf.log"
+ },
+ {
+  "top": "w_reduce_p2",
+  "params": {},
+  "D": 100000,
+  "area_um2": 3539.9511,
+  "nand2_eq": 40465.833333333336,
+  "seq_um2": 0.0,
+  "delay_ps": 25131.06,
+  "cells": 48377,
+  "log": "/tmp/scratch/syn_asap7/w_reduce_p2__D100000.log"
+ },
+ {
+  "top": "w_reduce_p2",
+  "params": {},
+  "D": 1,
+  "area_um2": 6327.66168,
+  "nand2_eq": 72332.66666666667,
+  "seq_um2": 0.0,
+  "delay_ps": 15004.28,
+  "cells": 79634,
+  "log": "/tmp/scratch/syn_asap7/w_reduce_p2__D1_buf.log"
+ },
+ {
+  "top": "w_reduce_fp32",
+  "params": {},
+  "D": 100000,
+  "area_um2": 7034.15016,
+  "nand2_eq": 80408.66666666667,
+  "seq_um2": 0.0,
+  "delay_ps": 31404.21,
+  "cells": 104993,
+  "log": "/tmp/scratch/syn_asap7/w_reduce_fp32__D100000.log"
+ },
+ {
+  "top": "w_reduce_fp32",
+  "params": {},
+  "D": 1,
+  "area_um2": 11735.06292,
+  "nand2_eq": 134145.66666666666,
+  "seq_um2": 0.0,
+  "delay_ps": 13686.82,
+  "cells": 153095,
+  "log": "/tmp/scratch/syn_asap7/w_reduce_fp32__D1_buf.log"
+ }
+]

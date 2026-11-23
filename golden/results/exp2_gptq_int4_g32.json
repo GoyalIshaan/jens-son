@@ -1,0 +1,190 @@
+{
+ "kind": "exp2_gptq",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-11T22:39:42Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": false,
+ "n_tokens": {
+  "wikitext": 2048,
+  "python_code": 2048
+ },
+ "total_secs": 497.52073192596436,
+ "gpu_peak_mem_GB": 20.594202112,
+ "config": {
+  "name": "gptq int4_g32",
+  "numerics": {
+   "weights": {
+    "default": "int4_g32"
+   },
+   "act": "fp32",
+   "kv": "fp32",
+   "state": "fp32"
+  },
+  "n_calib_seq": 64,
+  "calib_seq_len": 512,
+  "gptq_secs": 457.628306388855,
+  "weight_rel_rmse": {
+   "embed": {
+    "format": "int4_g32",
+    "rel_rmse": 0.0973816084900447,
+    "weights": 1017118720
+   },
+   "ffn": {
+    "format": "int4_g32",
+    "rel_rmse": 0.12767397588287957,
+    "weights": 4831838208
+   },
+   "deltanet": {
+    "format": "int4_g32",
+    "rel_rmse": 0.1330963774277794,
+    "weights": 1616904192
+   },
+   "attn": {
+    "format": "int4_g32",
+    "rel_rmse": 0.13790198134240508,
+    "weights": 469762048
+   },
+   "lm_head": {
+    "format": "int4_g32",
+    "rel_rmse": 0.1194425757337532,
+    "weights": 1017118720
+   }
+  },
+  "predicted": {
+   "weight_GB": 4.465378304,
+   "bytes_per_token_GB": 4.700259328,
+   "card_tok_s": 100.2157470746261
+  },
+  "sets": {
+   "wikitext": {
+    "kl_mean": 0.047873370349407196,
+    "kl_stderr": 0.004675799980759621,
+    "kl_median": 0.01495807059109211,
+    "kl_p99": 0.5704287886619568,
+    "kl_max": 5.789510726928711,
+    "top1_agree": 0.91845703125,
+    "top5_overlap": 0.8787109851837158,
+    "ppl": 6.917295932769775,
+    "ppl_ref": 6.91843318939209,
+    "ppl_change_pct": -0.016438961029052734,
+    "nll_diff_mean": -0.00016447434609290212,
+    "nll_diff_stderr": 0.008953864686191082,
+    "kl_by_position": {
+     "0-1024": 0.049911219626665115,
+     "1024-2048": 0.045835524797439575
+    }
+   },
+   "python_code": {
+    "kl_mean": 0.10841172933578491,
+    "kl_stderr": 0.007530364207923412,
+    "kl_median": 0.005152345634996891,
+    "kl_p99": 1.5861058235168457,
+    "kl_max": 5.402995586395264,
+    "top1_agree": 0.92626953125,
+    "top5_overlap": 0.8240234851837158,
+    "ppl": 1.6527817249298096,
+    "ppl_ref": 1.4730322360992432,
+    "ppl_change_pct": 12.202680110931396,
+    "nll_diff_mean": 0.11513681709766388,
+    "nll_diff_stderr": 0.011636573821306229,
+    "kl_by_position": {
+     "0-1024": 0.10677872598171234,
+     "1024-2048": 0.11004474014043808
+    }
+   }
+  },
+  "with_act_int8_kv_int8": {
+   "numerics": {
+    "weights": {
+     "default": "int4_g32"
+    },
+    "act": "int8_g32",
+    "kv": "int8_g64",
+    "state": "fp32"
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.05382811278104782,
+     "kl_stderr": 0.0061459108255803585,
+     "kl_median": 0.015149470418691635,
+     "kl_p99": 0.6299660801887512,
+     "kl_max": 7.253695964813232,
+     "top1_agree": 0.91845703125,
+     "top5_overlap": 0.8758789300918579,
+     "ppl": 6.970773696899414,
+     "ppl_ref": 6.91843318939209,
+     "ppl_change_pct": 0.756537914276123,
+     "nll_diff_mean": 0.007536967750638723,
+     "nll_diff_stderr": 0.009100072085857391,
+     "kl_by_position": {
+      "0-1024": 0.05147779360413551,
+      "1024-2048": 0.05617842450737953
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.1112201064825058,
+     "kl_stderr": 0.0076598962768912315,
+     "kl_median": 0.005095044616609812,
+     "kl_p99": 1.5912965536117554,
+     "kl_max": 5.408299922943115,
+     "top1_agree": 0.923828125,
+     "top5_overlap": 0.8248047828674316,
+     "ppl": 1.6592360734939575,
+     "ppl_ref": 1.4730322360992432,
+     "ppl_change_pct": 12.640857696533203,
+     "nll_diff_mean": 0.11903432011604309,
+     "nll_diff_stderr": 0.011877099983394146,
+     "kl_by_position": {
+      "0-1024": 0.108354352414608,
+      "1024-2048": 0.11408586800098419
+     }
+    }
+   }
+  }
+ },
+ "log": [
+  "  layer  0 (linear_attention) gptq done in 17.6s",
+  "  layer  1 (linear_attention) gptq done in 16.8s",
+  "  layer  2 (linear_attention) gptq done in 16.1s",
+  "  layer  3 (full_attention) gptq done in 7.8s",
+  "  layer  4 (linear_attention) gptq done in 16.1s",
+  "  layer  5 (linear_attention) gptq done in 16.2s",
+  "  layer  6 (linear_attention) gptq done in 16.0s",
+  "  layer  7 (full_attention) gptq done in 7.7s",
+  "  layer  8 (linear_attention) gptq done in 16.4s",
+  "  layer  9 (linear_attention) gptq done in 16.1s",
+  "  layer 10 (linear_attention) gptq done in 16.2s",
+  "  layer 11 (full_attention) gptq done in 7.7s",
+  "  layer 12 (linear_attention) gptq done in 16.3s",
+  "  layer 13 (linear_attention) gptq done in 16.5s",
+  "  layer 14 (linear_attention) gptq done in 16.3s",
+  "  layer 15 (full_attention) gptq done in 7.7s",
+  "  layer 16 (linear_attention) gptq done in 16.3s",
+  "  layer 17 (linear_attention) gptq done in 16.4s",
+  "  layer 18 (linear_attention) gptq done in 16.3s",
+  "  layer 19 (full_attention) gptq done in 7.7s",
+  "  layer 20 (linear_attention) gptq done in 16.1s",
+  "  layer 21 (linear_attention) gptq done in 16.3s",
+  "  layer 22 (linear_attention) gptq done in 16.4s",
+  "  layer 23 (full_attention) gptq done in 7.7s",
+  "  layer 24 (linear_attention) gptq done in 16.3s",
+  "  layer 25 (linear_attention) gptq done in 16.1s",
+  "  layer 26 (linear_attention) gptq done in 16.1s",
+  "  layer 27 (full_attention) gptq done in 7.7s",
+  "  layer 28 (linear_attention) gptq done in 16.5s",
+  "  layer 29 (linear_attention) gptq done in 16.1s",
+  "  layer 30 (linear_attention) gptq done in 16.3s",
+  "  layer 31 (full_attention) gptq done in 7.7s",
+  "  gptq total 458s"
+ ]
+}

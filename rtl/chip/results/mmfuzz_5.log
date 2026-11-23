@@ -1,0 +1,18 @@
+mmfuzz: 21 bundles, 21 descriptors, SRAM 4,194,304 B, DRAM 4,194,304 B
+FSim: 2.8 us simulated, 0 s; commands {'W': 7, 'R': 0, 'X': 0, 'L': 0, 'M': 19, 'V': 0}
+[     61 s] run start
+[     61 s] clock 2000 pc 19 bundles 19
+[     61 s] clock 4000 pc 19 bundles 19
+[     61 s] clock 6000 pc 19 bundles 19
+[     61 s] clock 8000 pc 19 bundles 19
+[     61 s] clock 10000 pc 19 bundles 19
+[     61 s] clock 12000 pc 19 bundles 19
+[     61 s] SRAM banks: 2800 clocks with SRAM traffic, 55977 lines; 64 one-line banks need 3634 clocks for them
+[     61 s] RESULT halted=1 idle=1 fault=0 clocks=13344 bundles=21
+[     61 s] - ./rtl/chip/tb_chip.sv:108: Verilog $finish
+[     61 s] - S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+[     61 s] - Verilator: $finish at 27ns; walltime 60.552 s; speed 441.778 ps/s
+[     61 s] - Verilator: cpu 60.435 s on 1 threads; allocated 65 MB
+compile 0 s, simulate 61 s
+PASS SRAM: all 4,194,304 bytes match
+PASS DRAM: all 4,194,304 bytes match

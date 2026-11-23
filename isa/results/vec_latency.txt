@@ -1,0 +1,4 @@
+9B decode 32K model 11.005 ms
+9B decode 32K with RTL vector latency 11.035 ms
+9B prefill chunk 16K model 22.395 ms
+9B prefill chunk 16K with RTL vector latency 24.212 ms

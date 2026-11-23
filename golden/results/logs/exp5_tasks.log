@@ -1,0 +1,110 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (576ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (18.73 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.2/19.2 kB 0:00:00
+✓ Files synced (1.7s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp5:act_tasks...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 166941.67 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 886725.32 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 785348.49 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2505800 > 262144). Running this sequence through the model will result in indexing errors
+  layer  0 (linear_attention) gptq done in 20.7s
+  layer  1 (linear_attention) gptq done in 20.1s
+  layer  2 (linear_attention) gptq done in 19.8s
+  layer  3 (full_attention) gptq done in 10.6s
+  layer  4 (linear_attention) gptq done in 20.1s
+  layer  5 (linear_attention) gptq done in 20.2s
+  layer  6 (linear_attention) gptq done in 20.0s
+  layer  7 (full_attention) gptq done in 10.8s
+  layer  8 (linear_attention) gptq done in 20.1s
+  layer  9 (linear_attention) gptq done in 19.9s
+  layer 10 (linear_attention) gptq done in 20.0s
+  layer 11 (full_attention) gptq done in 10.7s
+  layer 12 (linear_attention) gptq done in 19.9s
+  layer 13 (linear_attention) gptq done in 19.9s
+  layer 14 (linear_attention) gptq done in 19.9s
+  layer 15 (full_attention) gptq done in 10.6s
+  layer 16 (linear_attention) gptq done in 19.9s
+  layer 17 (linear_attention) gptq done in 19.9s
+  layer 18 (linear_attention) gptq done in 20.1s
+  layer 19 (full_attention) gptq done in 10.5s
+  layer 20 (linear_attention) gptq done in 19.9s
+  layer 21 (linear_attention) gptq done in 19.9s
+  layer 22 (linear_attention) gptq done in 19.9s
+  layer 23 (full_attention) gptq done in 10.5s
+  layer 24 (linear_attention) gptq done in 20.3s
+  layer 25 (linear_attention) gptq done in 20.0s
+  layer 26 (linear_attention) gptq done in 20.1s
+  layer 27 (full_attention) gptq done in 10.5s
+  layer 28 (linear_attention) gptq done in 19.9s
+  layer 29 (linear_attention) gptq done in 20.2s
+  layer 30 (linear_attention) gptq done in 20.0s
+  layer 31 (full_attention) gptq done in 10.6s
+  gptq total 569s
+Loading weights:   0%|          | 0/760 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/760 [00:00<06:41,  1.89it/s]
+Loading weights:   4%|3         | 27/760 [00:00<00:12, 56.75it/s]
+Loading weights:   6%|6         | 46/760 [00:00<00:08, 87.19it/s]
+Loading weights:   9%|8         | 68/760 [00:00<00:05, 116.99it/s]
+Loading weights:  12%|#2        | 94/760 [00:00<00:04, 152.45it/s]
+Loading weights:  15%|#5        | 115/760 [00:01<00:04, 158.81it/s]
+Loading weights:  18%|#7        | 135/760 [00:01<00:03, 167.34it/s]
+Loading weights:  20%|##        | 155/760 [00:01<00:03, 172.27it/s]
+Loading weights:  24%|##4       | 185/760 [00:01<00:02, 197.68it/s]
+Loading weights:  27%|##7       | 207/760 [00:01<00:02, 185.26it/s]
+Loading weights:  31%|###1      | 239/760 [00:01<00:02, 212.62it/s]
+Loading weights:  34%|###4      | 262/760 [00:01<00:02, 200.78it/s]
+Loading weights:  38%|###8      | 292/760 [00:01<00:02, 220.36it/s]
+Loading weights:  41%|####1     | 315/760 [00:02<00:02, 203.32it/s]
+Loading weights:  45%|####5     | 344/760 [00:02<00:01, 219.18it/s]
+Loading weights:  48%|####8     | 367/760 [00:02<00:01, 204.71it/s]
+Loading weights:  52%|#####2    | 398/760 [00:02<00:01, 224.42it/s]
+Loading weights:  55%|#####5    | 421/760 [00:02<00:01, 207.43it/s]
+Loading weights:  60%|#####9    | 455/760 [00:02<00:01, 238.01it/s]
+Loading weights:  68%|######8   | 519/760 [00:02<00:00, 341.20it/s]
+Loading weights:  79%|#######9  | 601/760 [00:02<00:00, 457.28it/s]
+Loading weights:  91%|######### | 691/760 [00:02<00:00, 578.62it/s]
+Loading weights:  99%|#########9| 755/760 [00:03<00:00, 595.84it/s]
+Loading weights: 100%|##########| 760/760 [00:03<00:00, 249.93it/s]
+patched
+ 
+249
+ 
+linears
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 7473/7473 [00:00<00:00, 405370.19 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 1319/1319 [00:00<00:00, 351591.16 examples/s]
+Generating test split:   0%|          | 0/164 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 164/164 [00:00<00:00, 39225.93 examples/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+    batch 1/194 (6 prompts)
+    batch 2/194 (6 prompts)
+    batch 3/194 (6 prompts)
+    batch 4/194 (6 prompts)
+    batch 5/194 (6 prompts)
+    batch 6/194 (6 prompts)
+    batch 7/194 (6 prompts)
+    batch 8/194 (6 prompts)
+    batch 9/194 (6 prompts)
+    batch 10/194 (6 prompts)
+    batch 11/194 (6 prompts)
+    batch 12/194 (6 prompts)
+    batch 13/194 (6 prompts)
+    batch 14/194 (6 prompts)
+    batch 15/194 (6 prompts)
+✗ Running beam_exp5:act_tasks (17m15s)
+✗ Unhandled GRPC error: StatusCode.INTERNAL

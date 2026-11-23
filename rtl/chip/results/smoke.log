@@ -1,0 +1,18 @@
+smoke: 25 bundles, 12 descriptors, SRAM 1,048,576 B, DRAM 1,048,576 B
+FSim: 0.6 us simulated, 0 s; commands {'W': 3, 'R': 1, 'X': 1, 'L': 1, 'M': 6, 'V': 2}
+./rtl/chip/../../rtl/mxu/beat_reducer.v:207: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:207:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:208: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:208:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:209: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:209:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:210: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:210:        : Pruning (signed) 21 high bits of the expression.
+[    380 s] run start
+[    380 s] clock 2000 pc 19 bundles 23
+[    380 s] RESULT halted=1 idle=1 fault=0 clocks=2566 bundles=29
+[    380 s] ./rtl/chip/tb_chip.sv:81: $finish called at 5143 (1s)
+compile 331 s, simulate 380 s
+PASS SRAM: all 1,048,576 bytes match
+PASS DRAM: all 1,048,576 bytes match
+python3 rtl/chip/run_chip.py smoke  702.49s user 8.08s system 99% cpu 11:52.82 total

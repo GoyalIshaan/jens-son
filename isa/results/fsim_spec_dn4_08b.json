@@ -1,0 +1,241 @@
+{
+ "model": "Qwen3.5-0.8B",
+ "prompt_len": 128,
+ "x0": 279,
+ "steps": 10,
+ "k": 3,
+ "spec_tokens": [
+  26257,
+  314,
+  279,
+  17933,
+  5484,
+  303,
+  279,
+  59347,
+  9018,
+  11,
+  321,
+  279,
+  26257,
+  314,
+  279,
+  7143,
+  17933,
+  5484
+ ],
+ "decode_tokens": [
+  26257,
+  314,
+  279,
+  17933,
+  5484,
+  303,
+  279,
+  59347,
+  9018,
+  11,
+  321,
+  279,
+  26257,
+  314,
+  279,
+  7143,
+  17933,
+  5484
+ ],
+ "golden_tokens": [
+  26257,
+  314,
+  279,
+  17933,
+  3379,
+  303,
+  279,
+  62792,
+  9018,
+  11,
+  321,
+  279,
+  26257,
+  314,
+  279,
+  17933,
+  3379,
+  303
+ ],
+ "spec_equals_decode": true,
+ "verify_rows": 18,
+ "verify_rows_bit_identical": 18,
+ "verify_logits_max_abs_diff": 0.0,
+ "accepted_per_step": [
+  0,
+  2,
+  0,
+  0,
+  0,
+  0,
+  3,
+  0,
+  2,
+  1
+ ],
+ "tokens_per_step": 1.8,
+ "golden_agree": 13,
+ "first_golden_diff": 4,
+ "drafts_vs_golden_mtp": {
+  "steps": 9,
+  "agree_by_depth": [
+   8,
+   8,
+   8
+  ]
+ },
+ "draft_vocab_coverage": 0.8333333333333334,
+ "sim_us_spec": 18206.007900809902,
+ "sim_us_decode": 20818.15438574546,
+ "text": " invention of the printing machine in the twentieth century, and the invention of the digital printing machine",
+ "wall_s": 490.25117087364197,
+ "commands": [
+  [
+   "W W",
+   6800
+  ],
+  [
+   "M MM",
+   3580
+  ],
+  [
+   "M TAB",
+   3220
+  ],
+  [
+   "V MUL",
+   2350
+  ],
+  [
+   "V QUANT",
+   2320
+  ],
+  [
+   "R R",
+   1840
+  ],
+  [
+   "X X",
+   1530
+  ],
+  [
+   "V SILU",
+   1440
+  ],
+  [
+   "V DN",
+   1440
+  ],
+  [
+   "M NOP",
+   1170
+  ],
+  [
+   "V RSUMSQ",
+   1150
+  ],
+  [
+   "V RSQRT",
+   1150
+  ],
+  [
+   "V NOP",
+   1100
+  ],
+  [
+   "V COPY",
+   750
+  ],
+  [
+   "V EXP",
+   540
+  ],
+  [
+   "L L",
+   540
+  ],
+  [
+   "V FMA",
+   440
+  ],
+  [
+   "V SUB",
+   360
+  ],
+  [
+   "V SIGMOID",
+   270
+  ],
+  [
+   "V CONV4",
+   180
+  ],
+  [
+   "V ADD",
+   180
+  ],
+  [
+   "V SOFTPLUS",
+   180
+  ],
+  [
+   "V ROPE",
+   180
+  ],
+  [
+   "V QKV",
+   180
+  ],
+  [
+   "V CAUSAL",
+   180
+  ],
+  [
+   "V RMAX",
+   180
+  ],
+  [
+   "V MAX",
+   180
+  ],
+  [
+   "V RSUM",
+   180
+  ],
+  [
+   "V RECIP",
+   180
+  ],
+  [
+   "L NOP",
+   90
+  ],
+  [
+   "W NOP",
+   90
+  ],
+  [
+   "R NOP",
+   90
+  ],
+  [
+   "V DEQ",
+   40
+  ],
+  [
+   "V MATCH",
+   10
+  ],
+  [
+   "L S2H",
+   10
+  ]
+ ]
+}

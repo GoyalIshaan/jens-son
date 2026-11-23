@@ -1,0 +1,16 @@
+# Built from the imports in isa/, golden/, rtl/ and design/calc/.
+# Versions are the ones this repo was last run with; newer usually works.
+
+# Core: functional simulator, golden model, RTL test drivers
+numpy>=2.3
+torch>=2.8
+safetensors>=0.7
+tokenizers>=0.22
+huggingface_hub
+
+# Golden-model GPU experiments on Beam (golden/beam_*.py)
+transformers>=5.22
+datasets
+psutil
+gguf
+beam-client

@@ -1,0 +1,12 @@
+model rates                                   {'decode_tok_s': 90.6, 'spec_a3_tok_s': 302.0, 'prefill_chunk_ms': 22.4, 'prefill_32k_s': 5.7}
+RTL as built                                  {'decode_tok_s': 89.1, 'spec_a3_tok_s': 283.5, 'prefill_chunk_ms': 146.99, 'prefill_32k_s': 37.6}
+pre-overlap RTL                               {'decode_tok_s': 88.6, 'spec_a3_tok_s': 239.5, 'prefill_chunk_ms': 336.19, 'prefill_32k_s': 86.1}
+only SMTILE at architectural rates            {'decode_tok_s': 89.1, 'spec_a3_tok_s': 283.7, 'prefill_chunk_ms': 139.77, 'prefill_32k_s': 35.8}
+only row ops stream across rows               {'decode_tok_s': 89.1, 'spec_a3_tok_s': 285.3, 'prefill_chunk_ms': 60.71, 'prefill_32k_s': 15.5}
++ reductions overlap rows                     {'decode_tok_s': 90.3, 'spec_a3_tok_s': 297.3, 'prefill_chunk_ms': 125.94, 'prefill_32k_s': 32.2}
++ SMTILE at 128 exp/clk, rows overlapped      {'decode_tok_s': 90.3, 'spec_a3_tok_s': 297.4, 'prefill_chunk_ms': 121.93, 'prefill_32k_s': 31.2}
++ QUANT/DEQ 512 wide                          {'decode_tok_s': 90.3, 'spec_a3_tok_s': 297.6, 'prefill_chunk_ms': 121.5, 'prefill_32k_s': 31.1}
++ CONV4 window streamed                       {'decode_tok_s': 90.4, 'spec_a3_tok_s': 298.7, 'prefill_chunk_ms': 121.5, 'prefill_32k_s': 31.1}
++ row ops stream across rows                  {'decode_tok_s': 90.4, 'spec_a3_tok_s': 300.7, 'prefill_chunk_ms': 35.57, 'prefill_32k_s': 9.1}
+all but SMTILE fixed                          {'decode_tok_s': 89.9, 'spec_a3_tok_s': 251.6, 'prefill_chunk_ms': 228.79, 'prefill_32k_s': 58.6}
+SMTILE + row streaming only                   {'decode_tok_s': 89.1, 'spec_a3_tok_s': 285.4, 'prefill_chunk_ms': 56.7, 'prefill_32k_s': 14.5}

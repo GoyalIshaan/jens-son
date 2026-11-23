@@ -1,0 +1,166 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (432ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (181.94 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 182.3/182.3 kB 0:00:00
+✓ Files synced (1.9s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp10:dn_layers...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 179633.41 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 452743.11 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 816536.35 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+  layer  0 (linear_attention) gptq done in 20.1s
+  layer  1 (linear_attention) gptq done in 19.6s
+  layer  2 (linear_attention) gptq done in 19.2s
+  layer  3 (full_attention) gptq done in 10.3s
+  layer  4 (linear_attention) gptq done in 19.3s
+  layer  5 (linear_attention) gptq done in 19.4s
+  layer  6 (linear_attention) gptq done in 19.4s
+  layer  7 (full_attention) gptq done in 10.2s
+  layer  8 (linear_attention) gptq done in 19.4s
+  layer  9 (linear_attention) gptq done in 19.5s
+  layer 10 (linear_attention) gptq done in 19.0s
+  layer 11 (full_attention) gptq done in 9.8s
+  layer 12 (linear_attention) gptq done in 19.5s
+  layer 13 (linear_attention) gptq done in 19.1s
+  layer 14 (linear_attention) gptq done in 19.9s
+  layer 15 (full_attention) gptq done in 10.1s
+  layer 16 (linear_attention) gptq done in 19.3s
+  layer 17 (linear_attention) gptq done in 19.1s
+  layer 18 (linear_attention) gptq done in 19.0s
+  layer 19 (full_attention) gptq done in 9.8s
+  layer 20 (linear_attention) gptq done in 18.8s
+  layer 21 (linear_attention) gptq done in 18.9s
+  layer 22 (linear_attention) gptq done in 18.7s
+  layer 23 (full_attention) gptq done in 9.7s
+  layer 24 (linear_attention) gptq done in 19.0s
+  layer 25 (linear_attention) gptq done in 18.8s
+  layer 26 (linear_attention) gptq done in 18.7s
+  layer 27 (full_attention) gptq done in 9.7s
+  layer 28 (linear_attention) gptq done in 18.8s
+  layer 29 (linear_attention) gptq done in 18.7s
+  layer 30 (linear_attention) gptq done in 18.8s
+  layer 31 (full_attention) gptq done in 9.7s
+  gptq total 543s
+wikitext
+ 
+fp32_onepass
+ 
+residual rel at last layer
+ 
+0.044684
+ 
+ffn_in code change (mean over layers)
+ 
+0.575113
+wikitext
+ 
+chunked_int8
+ 
+residual rel at last layer
+ 
+0.070106
+ 
+ffn_in code change (mean over layers)
+ 
+0.709935
+wikitext
+ 
+chunked_split
+ 
+residual rel at last layer
+ 
+0.039237
+ 
+ffn_in code change (mean over layers)
+ 
+0.610068
+wikitext
+ 
+chunked_lite
+ 
+residual rel at last layer
+ 
+0.048286
+ 
+ffn_in code change (mean over layers)
+ 
+0.610052
+python_code
+ 
+fp32_onepass
+ 
+residual rel at last layer
+ 
+0.048214
+ 
+ffn_in code change (mean over layers)
+ 
+0.630059
+python_code
+ 
+chunked_int8
+ 
+residual rel at last layer
+ 
+0.077244
+ 
+ffn_in code change (mean over layers)
+ 
+0.786852
+python_code
+ 
+chunked_split
+ 
+residual rel at last layer
+ 
+0.050728
+ 
+ffn_in code change (mean over layers)
+ 
+0.67424
+python_code
+ 
+chunked_lite
+ 
+residual rel at last layer
+ 
+0.051606
+ 
+ffn_in code change (mean over layers)
+ 
+0.674696
+chip
+ 
+chip numerics, sequential DeltaNet
+ 
+{'wikitext': 0.055982, 'python_code': 0.056374}
+ 
+long
+ 
+0.044788
+ 
+586s
+chip
+ 
+chip numerics, chunked_lite
+ 
+{'wikitext': 0.057945, 'python_code': 0.056464}
+ 
+long
+ 
+0.046138
+ 
+245s
+✓ Function complete (29m22s)
+chip chip numerics, sequential DeltaNet {'wikitext': 0.055982, 'python_code': 0.056374} long 0.044788
+chip chip numerics, chunked_lite {'wikitext': 0.057945, 'python_code': 0.056464} long 0.046138

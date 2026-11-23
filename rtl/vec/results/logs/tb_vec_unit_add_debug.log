@@ -1,0 +1,25 @@
+c 0 p x owner x ce x r x/1 mask xx addr xxxxxx xxxxxx raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx xxxxxxxx xxxxxxxx fy xxxxxxxx w x/1 oa xxxxxx ow xxxxxxxx
+c 1 p 0 owner 0 ce 1 r 0/0 mask 00 addr xxxxxx xxxxxx raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 2 p 1 owner 0 ce 1 r 0/1 mask 00 addr xxxxxx xxxxxx raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/0 oa xxxxxx ow xxxxxxxx
+c 3 p 2 owner 1 ce 1 r 1/1 mask xx addr 000400 000800 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 4 p 2 owner 1 ce 1 r 1/1 mask xx addr 000500 000900 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 5 p 2 owner 1 ce 1 r 1/1 mask xx addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 6 p 2 owner 1 ce 1 r 1/1 mask xx addr 000700 000b00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 7 p 2 owner 1 ce 1 r 0/1 mask xx addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/0 oa xxxxxx ow xxxxxxxx
+c 8 p 2 owner 1 ce 1 r 0/0 mask xx addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 9 p 2 owner 1 ce 1 r 0/1 mask xx addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 10 p 2 owner 1 ce 1 r 0/1 mask xx addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa xxxxxx ow xxxxxxxx
+c 11 p 2 owner 1 ce 1 r 0/1 mask 11 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 1/1 oa 001000 ow xxxxxxxx
+c 12 p 2 owner 1 ce 0 r 0/1 mask 11 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 1/0 oa 001100 ow xxxxxxxx
+c 13 p 2 owner 1 ce 1 r 0/1 mask 11 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 1/1 oa 001100 ow xxxxxxxx
+c 14 p 2 owner 1 ce 1 r 0/1 mask 11 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 1/1 oa 001200 ow xxxxxxxx
+c 15 p 2 owner 1 ce 1 r 0/0 mask 11 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 1/1 oa 001300 ow xxxxxxxx
+c 16 p 2 owner 1 ce 1 r 0/1 mask 00 addr 000600 000a00 raw xxxxxxxx xxxxxxxx val xxxxxxxx xxxxxxxx args xxxxxxxx 3f800000 xxxxxxxx fy xxxxxxxx w 0/1 oa 001200 ow xxxxxxxx
+FATAL: /var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_add_debug_btdpvhv9/debug.sv:68: case 0 op 1 addr 4096 got xx expected 0d
+       Time: 68  Scope: tb_vec_unit
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['vvp', '/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_add_debug_btdpvhv9/sim', '+bytes=454208', '+cases=1']' returned non-zero exit status 1.

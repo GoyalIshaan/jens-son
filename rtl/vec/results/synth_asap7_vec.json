@@ -1,0 +1,72 @@
+{
+ "fp32_fma D100000": {
+  "area_um2": 569.6406,
+  "nand2_eq": 6512,
+  "delay_ps": 6643.59
+ },
+ "fp32_fma D1": {
+  "area_um2": 803.69334,
+  "nand2_eq": 9187,
+  "delay_ps": 6707.57
+ },
+ "vec_alu D100000": {
+  "area_um2": 585.66402,
+  "nand2_eq": 6695,
+  "delay_ps": 7066.06
+ },
+ "vec_alu D1": {
+  "area_um2": 840.25998,
+  "nand2_eq": 9605,
+  "delay_ps": 7363.94
+ },
+ "sfu_recip D100000": {
+  "area_um2": 852.59466,
+  "nand2_eq": 9746,
+  "delay_ps": 15952.38
+ },
+ "sfu_recip D1": {
+  "area_um2": 1268.54748,
+  "nand2_eq": 14501,
+  "delay_ps": 13248.51
+ },
+ "sfu_rsqrt D100000": {
+  "area_um2": 1242.6534,
+  "nand2_eq": 14205,
+  "delay_ps": 23015.7
+ },
+ "sfu_rsqrt D1": {
+  "area_um2": 1758.17304,
+  "nand2_eq": 20098,
+  "delay_ps": 22529.12
+ },
+ "sfu_exp D100000": {
+  "area_um2": 2167.27326,
+  "nand2_eq": 24774,
+  "delay_ps": 39305.87
+ },
+ "sfu_exp D1": {
+  "area_um2": 2895.20892,
+  "nand2_eq": 33096,
+  "delay_ps": 35261.42
+ },
+ "sfu_sigmoid D100000": {
+  "area_um2": 3745.99566,
+  "nand2_eq": 42821,
+  "delay_ps": 68066.97
+ },
+ "sfu_sigmoid D1": {
+  "area_um2": 5004.46836,
+  "nand2_eq": 57207,
+  "delay_ps": 62605.14
+ },
+ "sfu_softplus D100000": {
+  "area_um2": 6482.07846,
+  "nand2_eq": 74098,
+  "delay_ps": 90398.48
+ },
+ "sfu_softplus D1": {
+  "area_um2": 8324.17398,
+  "nand2_eq": 95155,
+  "delay_ps": 81760.94
+ }
+}

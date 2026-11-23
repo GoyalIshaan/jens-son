@@ -1,0 +1,53 @@
+{
+  "checked_date": "2026-11-03",
+  "exhaustive_x_account_review": false,
+  "x_access": {
+    "requested_profile": "https://x.com/0xBADB01E",
+    "direct_access": "Initial web retrieval returned HTTP 403. Later root-agent in-app browser reading reached the public profile, showed five entries, then an explicit sign-in gate.",
+    "readable_profile_mirror": "https://w.twstalker.com/0xBADB01E",
+    "scope": "Eight relevant author posts: six via indexed public mirrors, plus the high-batch clarification and PHY/process discussion read directly in the public X browser view",
+    "reviewed_relevant_post_count": 8,
+    "profile_reported_post_count": 54,
+    "browser_visible_profile_entries": 5,
+    "browser_access_gate": "See Big Boss’s full profile / Continue to X",
+    "browser_evidence_owner": "Root agent in this task; observation and full-text notes relayed to research subagent",
+    "limitations": [
+      "No authenticated account archive or complete pagination",
+      "Mirror duplicates quoted content in places; do not treat this as independent corroboration",
+      "Deleted, unindexed, newer, or otherwise inaccessible posts may be missing",
+      "Browser scrolling reached a sign-in gate; the reported 54-post account history was not fully accessible"
+    ]
+  },
+  "articles": [
+    {
+      "url": "https://irrationalanalysis.substack.com/p/unfinished-draft-its-the-dataflow",
+      "title": "[unfinished draft] It's the dataflow, stupid.",
+      "published": "2026-02-27",
+      "coverage": "All substantive accessible text; diagrams and embedded videos not independently reviewed",
+      "sections": ["Memory hierarchy", "Memory access/routing", "Compute structure", "Chip-to-chip communication", "CPU/GPU/TPU examples", "Groq", "Clock-forwarded SerDes", "Hybrid bonding", "Thermal discussion", "Theoretical optical global clock", "Unfinished sections and notes"],
+      "evidence_type": "Unfinished independent commentary; speculative future-product claims"
+    },
+    {
+      "url": "https://irrationalanalysis.substack.com/p/very-long-incoherent-writeup",
+      "title": "[V]ery [L]ong [I]ncoherent [W]riteup",
+      "published": "2024-02-24",
+      "coverage": "All substantive accessible text through conclusion; diagrams and embedded videos not independently reviewed",
+      "sections": ["VLIW definition", "Origins", "Selected architectures", "High-level comparisons", "Product cycle", "Groq", "PPA and programming burden", "Conclusion"],
+      "evidence_type": "Historical independent commentary; several explicitly illustrative or inferred claims"
+    }
+  ],
+  "author_posts": [
+    {"id":"2073970411138949533","canonical":"https://x.com/0xBADB01E/status/2073970411138949533","topic":"Interconnect-first thesis","type":"Architecture argument","read_via":"https://w.twstalker.com/0xBADB01E/status/2073990357398982797"},
+    {"id":"2073990357398982797","canonical":"https://x.com/0xBADB01E/status/2073990357398982797","topic":"Pipeline versus tensor parallel decode","type":"Architecture argument and illustrative calculation","read_via":"https://w.twstalker.com/0xBADB01E/status/2073990357398982797"},
+    {"id":"2073998960818360809","canonical":"https://x.com/0xBADB01E/status/2073998960818360809","topic":"LPDDR inference node proposal","type":"Unimplemented proposal with unverified area, power, cost and latency estimates","read_via":"https://w.twstalker.com/0xBADB01E/status/2073990357398982797"},
+    {"id":"2074048465366061483","canonical":"https://x.com/0xBADB01E/status/2074048465366061483","topic":"Eight-chip pod topology and high-batch KV discussion","type":"Author clarification","read_via":"https://ngntipkolamrenang.twstalker.com/0xBADB01E/status/2074048465366061483"},
+    {"id":"2074204240034332853","canonical":"https://x.com/0xBADB01E/status/2074204240034332853","topic":"High-batch workloads can still benefit from HBM and high compute throughput","type":"Author qualification; proposed crossover analysis is not measured","read_via":"Direct canonical X page in root-agent in-app browser"},
+    {"id":"2074163777600462962","canonical":"https://x.com/0xBADB01E/status/2074163777600462962","topic":"Memory PHY availability, die-edge space and process tradeoffs","type":"Design discussion; vendor IP availability not independently verified","read_via":"Full post text visible on public X profile in root-agent in-app browser"},
+    {"id":"2074927205415833718","canonical":"https://x.com/0xBADB01E/status/2074927205415833718","topic":"Intel cross-batch memory patent commentary","type":"Opinion without disclosed implementation derivation","read_via":"https://w.twstalker.com/0xBADB01E/status/2074927205415833718"},
+    {"id":"2074949982646607872","canonical":"https://x.com/0xBADB01E/status/2074949982646607872","topic":"Parameter-count/cost ambition","type":"Goal, not demonstrated specification","read_via":"https://w.twstalker.com/0xBADB01E/status/2074949982646607872"}
+  ],
+  "primary_checks": [
+    {"url":"https://hc34.hotchips.org/assets/program/conference/day2/Machine%20Learning/HotChips34%20-%20Groq%20-%20Abts%20-%20final.pdf","title":"Groq Hot Chips 34 presentation (2022)","scope":"Focused sections: slides 4–6, 14–25, 40–44","supports":["Static/dynamic interface", "Scratchpad memory", "144 instruction dispatch paths", "Cycle scheduling", "Stream hops", "Clock drift and deskew support"]},
+    {"url":"https://www.nvidia.com/en-us/data-center/h100/","title":"NVIDIA H100 product specifications","scope":"H100 SXM memory capacity and peak bandwidth","supports":["80 GB memory", "3.35 TB/s peak memory bandwidth"]}
+  ]
+}

@@ -1,0 +1,159 @@
+{
+ "fma8_ce": {
+  "delay_ps": 477.53,
+  "area_um2": 1175.06052,
+  "seq_um2": 301.806,
+  "params": {}
+ },
+ "act_quant32": {
+  "delay_ps": 1711.37,
+  "area_um2": 1260.61596,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "act_quant32_pipe": {
+  "delay_ps": 1003.15,
+  "area_um2": 1905.22692,
+  "seq_um2": 761.3676,
+  "params": {}
+ },
+ "box_addr": {
+  "delay_ps": 792.69,
+  "area_um2": 603.20376,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "exp_pool_lane": {
+  "delay_ps": 808.06,
+  "area_um2": 5545.47384,
+  "seq_um2": 2245.9032,
+  "params": {
+   "LAT": 8
+  }
+ },
+ "sigmoid_lane": {
+  "delay_ps": 1068.89,
+  "area_um2": 9375.69816,
+  "seq_um2": 3710.0268,
+  "params": {
+   "LAT": 8
+  }
+ },
+ "rsqrt_lane": {
+  "delay_ps": 1011.48,
+  "area_um2": 3419.739,
+  "seq_um2": 1259.1288,
+  "params": {
+   "LAT": 8
+  }
+ },
+ "recip_lane": {
+  "delay_ps": 712.71,
+  "area_um2": 2287.0917,
+  "seq_um2": 684.9684,
+  "params": {
+   "LAT": 8
+  }
+ },
+ "sigmoid9_lane": {
+  "delay_ps": 758.37,
+  "area_um2": 9975.57768,
+  "seq_um2": 3980.34,
+  "params": {
+   "LAT": 9
+  }
+ },
+ "rsqrt9_lane": {
+  "delay_ps": 792.29,
+  "area_um2": 3782.59146,
+  "seq_um2": 1346.3172,
+  "params": {
+   "LAT": 9
+  }
+ },
+ "softplus9_lane": {
+  "delay_ps": 851.41,
+  "area_um2": 17608.7763,
+  "seq_um2": 7599.3876,
+  "params": {
+   "LAT": 9
+  }
+ },
+ "softplus_lane": {
+  "delay_ps": 803.01,
+  "area_um2": 16843.88034,
+  "seq_um2": 7059.0528,
+  "params": {
+   "LAT": 8
+  }
+ },
+ "mxu_row_pipe": {
+  "delay_ps": 982.58,
+  "area_um2": 59719.0239,
+  "seq_um2": 3563.352,
+  "params": {}
+ },
+ "probe_w2f": {
+  "delay_ps": 861.42,
+  "area_um2": 128.1582,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "probe_grp": {
+  "delay_ps": 877.28,
+  "area_um2": 910.60848,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "probe_align": {
+  "delay_ps": 347.54,
+  "area_um2": 43.12764,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "probe_add3": {
+  "delay_ps": 408.91,
+  "area_um2": 290.68146,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "probe_sm": {
+  "delay_ps": 519.95,
+  "area_um2": 84.38904,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "probe_row_nce": {
+  "delay_ps": 1304.06,
+  "area_um2": 51467.77908,
+  "seq_um2": 2905.2108,
+  "params": {}
+ },
+ "probe_max": {
+  "delay_ps": 1198.44,
+  "area_um2": 682.73766,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "kv_scale": {
+  "delay_ps": 9059.86,
+  "area_um2": 946.63566,
+  "seq_um2": 0.0,
+  "params": {}
+ },
+ "kv_scale_pipe": {
+  "delay_ps": 652.33,
+  "area_um2": 462.05478,
+  "seq_um2": 28.8684,
+  "params": {}
+ },
+ "box_command16": {
+  "delay_ps": 1608.45,
+  "area_um2": 33981.32898,
+  "seq_um2": 807.4404,
+  "params": {
+   "LANES": 16,
+   "LOCAL_BANK": 0
+  }
+ }
+}

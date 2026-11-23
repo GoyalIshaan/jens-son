@@ -1,0 +1,101 @@
+  quantized layer 0
+  quantized layer 1
+  quantized layer 2
+  quantized layer 3
+tiny: 396 bundles, 95 descriptors, SRAM 589,824 B, DRAM 20,915,904 B
+FSim: 144.1 us simulated, 1 s; commands {'W': 147, 'R': 57, 'X': 42, 'L': 9, 'M': 159, 'V': 450}
+[    399 s] run start
+[    399 s] clock 2000 pc 67 bundles 70
+[    399 s] clock 4000 pc 67 bundles 70
+[    399 s] clock 6000 pc 98 bundles 100
+[    399 s] clock 8000 pc 100 bundles 102
+[    399 s] clock 10000 pc 111 bundles 113
+[    399 s] clock 12000 pc 115 bundles 117
+[    399 s] clock 14000 pc 118 bundles 120
+[    399 s] clock 16000 pc 127 bundles 132
+[    399 s] clock 18000 pc 127 bundles 132
+[    399 s] clock 20000 pc 134 bundles 139
+[    399 s] clock 22000 pc 160 bundles 164
+[    399 s] clock 24000 pc 171 bundles 175
+[    399 s] clock 26000 pc 175 bundles 179
+[    399 s] clock 28000 pc 178 bundles 182
+[    399 s] clock 30000 pc 187 bundles 194
+[    399 s] clock 32000 pc 187 bundles 194
+[    399 s] clock 34000 pc 189 bundles 196
+[    399 s] clock 36000 pc 220 bundles 226
+[    399 s] clock 38000 pc 232 bundles 238
+[    399 s] clock 40000 pc 236 bundles 242
+[    399 s] clock 42000 pc 237 bundles 243
+[    399 s] clock 44000 pc 334 bundles 310
+[    399 s] clock 46000 pc 334 bundles 310
+[    399 s] clock 48000 pc 357 bundles 333
+[    399 s] clock 50000 pc 393 bundles 368
+[    399 s] clock 52000 pc 393 bundles 368
+[    399 s] clock 54000 pc 393 bundles 368
+[    399 s] clock 56000 pc 393 bundles 368
+[    399 s] clock 58000 pc 57 bundles 406
+[    399 s] clock 60000 pc 67 bundles 419
+[    399 s] clock 62000 pc 67 bundles 419
+[    399 s] clock 64000 pc 100 bundles 451
+[    399 s] clock 66000 pc 101 bundles 452
+[    399 s] clock 68000 pc 115 bundles 466
+[    399 s] clock 70000 pc 115 bundles 466
+[    399 s] clock 72000 pc 118 bundles 469
+[    399 s] clock 74000 pc 127 bundles 481
+[    399 s] clock 76000 pc 127 bundles 481
+[    399 s] clock 78000 pc 160 bundles 513
+[    399 s] clock 80000 pc 161 bundles 514
+[    399 s] clock 82000 pc 171 bundles 524
+[    399 s] clock 84000 pc 175 bundles 528
+[    399 s] clock 86000 pc 178 bundles 531
+[    399 s] clock 88000 pc 187 bundles 543
+[    399 s] clock 90000 pc 187 bundles 543
+[    399 s] clock 92000 pc 205 bundles 561
+[    399 s] clock 94000 pc 220 bundles 575
+[    399 s] clock 96000 pc 232 bundles 587
+[    399 s] clock 98000 pc 236 bundles 591
+[    399 s] clock 100000 pc 239 bundles 594
+[    399 s] clock 102000 pc 334 bundles 659
+[    399 s] clock 104000 pc 334 bundles 659
+[    399 s] clock 106000 pc 358 bundles 683
+[    399 s] clock 108000 pc 393 bundles 717
+[    399 s] clock 110000 pc 393 bundles 717
+[    399 s] clock 112000 pc 393 bundles 717
+[    399 s] clock 114000 pc 393 bundles 717
+[    399 s] clock 116000 pc 67 bundles 768
+[    399 s] clock 118000 pc 67 bundles 768
+[    399 s] clock 120000 pc 68 bundles 769
+[    399 s] clock 122000 pc 100 bundles 800
+[    399 s] clock 124000 pc 111 bundles 811
+[    399 s] clock 126000 pc 115 bundles 815
+[    399 s] clock 128000 pc 115 bundles 815
+[    399 s] clock 130000 pc 127 bundles 830
+[    399 s] clock 132000 pc 127 bundles 830
+[    399 s] clock 134000 pc 127 bundles 830
+[    399 s] clock 136000 pc 160 bundles 862
+[    399 s] clock 138000 pc 166 bundles 868
+[    399 s] clock 140000 pc 175 bundles 877
+[    399 s] clock 142000 pc 175 bundles 877
+[    399 s] clock 144000 pc 182 bundles 884
+[    399 s] clock 146000 pc 187 bundles 892
+[    399 s] clock 148000 pc 187 bundles 892
+[    399 s] clock 150000 pc 220 bundles 924
+[    399 s] clock 152000 pc 221 bundles 925
+[    399 s] clock 154000 pc 236 bundles 940
+[    399 s] clock 156000 pc 236 bundles 940
+[    399 s] clock 158000 pc 239 bundles 943
+[    399 s] clock 160000 pc 334 bundles 1008
+[    399 s] clock 162000 pc 334 bundles 1008
+[    399 s] clock 164000 pc 358 bundles 1032
+[    399 s] clock 166000 pc 393 bundles 1066
+[    399 s] clock 168000 pc 393 bundles 1066
+[    399 s] clock 170000 pc 393 bundles 1066
+[    399 s] clock 172000 pc 393 bundles 1066
+[    399 s] RESULT halted=1 idle=1 fault=0 clocks=172283 bundles=1069
+[    399 s] - ./rtl/chip/tb_chip.sv:96: Verilog $finish
+[    399 s] - S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+[    399 s] - Verilator: $finish at 345ns; walltime 398.853 s; speed 886.448 ps/s
+[    399 s] - Verilator: cpu 388.717 s on 1 threads; allocated 76 MB
+compile 0 s, simulate 399 s
+PASS SRAM: all 589,824 bytes match
+PASS DRAM: all 20,915,904 bytes match

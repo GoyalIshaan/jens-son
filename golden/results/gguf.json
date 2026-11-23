@@ -1,0 +1,8 @@
+{
+ "ok": true,
+ "llama_cpp": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+ "files": {
+  "qwen35-9b-Q4_0.gguf": 5450280480,
+  "qwen35-9b-bf16.gguf": 18407321120
+ }
+}

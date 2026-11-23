@@ -1,0 +1,67 @@
+{
+ "kind": "exp4_onepass32k",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.252724736,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-18T19:33:18Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "n_tokens": 32768,
+ "scored_positions": 4096,
+ "ref_secs": 115.51855969429016,
+ "configs": [
+  {
+   "name": "state fp32, one-pass order (chip)",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32_onepass"
+   },
+   "result": {
+    "kl_mean": 2.937299847793895e-10,
+    "kl_stderr": 1.4383741975265707e-09,
+    "top1_agree": 1.0,
+    "nll_diff_mean": -4.73473733109131e-07,
+    "nll_diff_stderr": 3.412110345379915e-07,
+    "ppl_change_pct": -4.76837158203125e-05,
+    "by_position": {
+     "0-2048": {
+      "kl": -2.008053945345978e-09,
+      "kl_stderr": 5.733070906899229e-09,
+      "nll_diff": 4.956335715178284e-07,
+      "n": 256
+     },
+     "2048-8192": {
+      "kl": -1.2152172601531674e-09,
+      "kl_stderr": 3.690139305234652e-09,
+      "nll_diff": -6.734940143360291e-07,
+      "n": 768
+     },
+     "8192-16384": {
+      "kl": -2.9044082694440476e-09,
+      "kl_stderr": 2.6509530126617165e-09,
+      "nll_diff": -2.996128500853956e-07,
+      "n": 1024
+     },
+     "16384-32768": {
+      "kl": 2.7463771257174585e-09,
+      "kl_stderr": 2.0224584229566744e-09,
+      "nll_diff": -6.065350817152648e-07,
+      "n": 2048
+     }
+    }
+   },
+   "logprob_max_abs_diff": 0.00323486328125,
+   "top1_identical": 1.0,
+   "secs": 167.48439407348633
+  }
+ ]
+}

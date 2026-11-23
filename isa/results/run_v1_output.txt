@@ -1,0 +1,67 @@
+
+== decode: static program ==
+  bundles 2,929 of 8,192 (92 KB), descriptors 156 of 1024, semaphores 34 of 63
+  slot use: 34% overall; S 1,713  D 614  M 458  V 1,234
+  SRAM used 1.44 MB of 6.50 MB
+  DRAM laid out 6.27 GB (lmax 40,000)
+
+== spec: static program ==
+  bundles 3,720 of 8,192 (116 KB), descriptors 298 of 1024, semaphores 38 of 63
+  slot use: 35% overall; S 2,270  D 837  M 533  V 1,503
+  SRAM used 2.64 MB of 6.50 MB
+  DRAM laid out 6.57 GB (lmax 40,000)
+
+== SRAM layout, speculative program (T = 4) ==
+  constants                                                  0.2 KB
+  residual stream (fp32)                                    64.0 KB
+  MTP residual (fp32)                                       16.0 KB
+  MTP input [e ; h] (fp32)                                  32.0 KB
+  embedding rows (int8 + scales)                            17.0 KB
+  normed matrix input (int8)                                32.0 KB
+    its exponents                                            1.0 KB
+  FFN intermediate (int8)                                   48.0 KB
+    its exponents                                            1.5 KB
+  projection outputs (fp32)                                193.0 KB
+  conv output + beta + decay (fp32)                        129.0 KB
+  conv history, one layer                                   96.0 KB
+  conv window out, one layer                               224.0 KB
+  DeltaNet replay log, one layer                           129.0 KB
+  DeltaNet state, 2 heads                                  128.0 KB
+  DeltaNet working copy, 1 head                             64.0 KB
+  DeltaNet output (fp32)                                    64.0 KB
+  FFN gate/up chunk x2 (fp32)                               64.0 KB
+  vector temporary (fp32)                                   64.0 KB
+  per-row scalars                                            4.0 KB
+  layer parameters x2                                      321.5 KB
+  q int8, per KV head                                       16.0 KB
+    its exponents                                            0.5 KB
+  new K int8                                                 4.0 KB
+  new V int8                                                 4.0 KB
+  new K,V scales (fp16)                                      0.1 KB
+  V^T staging ring, 64 positions, all attn layers          576.0 KB
+  K/V scale staging ring                                     9.0 KB
+  rope table rows                                            3.0 KB
+  cos/sin for this pass                                      1.0 KB
+  attention tile slabs x2 (scores, P, P.V, scales)         201.0 KB
+  attention accumulators, 4 KV heads                        64.0 KB
+  softmax m, l, alpha                                        1.5 KB
+  attention output (fp32)                                   64.0 KB
+  sigmoid(gate)                                             64.0 KB
+  argmax ids, drafts, counts                                 0.2 KB
+
+== timing (simulated, 1 GHz, 512 GB/s x 0.92; acceptance mix a=0..3 [0.111, 0.152, 0.175, 0.561]) ==
+  weight FIFO size vs DRAM latency, plain decode at 4K (tok/s):
+     96 KB: 100 ns  100.6 | 150 ns   82.7 | 200 ns   67.4 | 300 ns   49.0
+    128 KB: 100 ns  100.8 | 150 ns  100.6 | 200 ns   93.1 | 300 ns   68.1
+    192 KB: 100 ns  100.8 | 150 ns  100.6 | 200 ns  100.4 | 300 ns   99.9
+    256 KB: 100 ns  100.8 | 150 ns  100.6 | 200 ns  100.4 | 300 ns  100.0
+  256 vector lanes,   4096 context: decode  100.6 tok/s (perf model  101.5), speculative k=3  264.3 tok/s (perf model  275.2)
+  256 vector lanes,  32768 context: decode   91.4 tok/s (perf model   92.1), speculative k=3  244.0 tok/s (perf model  253.2)
+  512 vector lanes,   4096 context: decode  101.0 tok/s (perf model  101.5), speculative k=3  275.0 tok/s (perf model  275.2)
+  512 vector lanes,  32768 context: decode   91.7 tok/s (perf model   92.1), speculative k=3  253.0 tok/s (perf model  253.2)
+
+  speculative step at 32K (a = 3, 512 lanes), two steps simulated:
+    DRAM idle (us per step) by what was running: {'vector DN (DeltaNet head step (replay + T tokens))': 267, 'matrix MM (DeltaNet in-projections)': 11, 'vector MUL': 9, 'vector RSQRT': 6, 'matrix MM (v)': 6, 'waiting on DRAM latency': 4, 'vector EXP': 2, 'vector SIGMOID': 2, 'matrix MM (draft LM head, greedy)': 1, 'nothing queued (issue)': 0, 'matrix MM (LM head, greedy)': 0, 'start': 0}
+    vector busy (us per step) by op: {'DN': 498, 'EXP': 152, 'QUANT': 54, 'SUB': 51, 'MUL': 50, 'SILU': 47, 'CAUSAL': 42, 'RMAX': 42, 'RSUM': 42, 'FMA': 26, 'COPY': 10}
+
+(simulation took 179 s)

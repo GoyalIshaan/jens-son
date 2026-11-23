@@ -1,0 +1,61 @@
+fp32_fma: 20000 vectors, 0 mismatches -> PASS
+act_quant32: 128 groups, 0 mismatches -> PASS
+tb_core.v:41: $finish called at 20128000 (1ps)
+vec_alu (ADD SUB MUL FMA MAX, neg): 4000 vectors, 0 mismatches -> PASS
+silu: 4007 inputs, 0 mismatches -> PASS
+tb_alu.v:24: $finish called at 8007000 (1ps)
+WARNING: tb_sfu.v:33: $readmemh(vec/sfu_exp.hex): Not enough words in the file for the requested range [0:8399].
+exp     : 4108 inputs (0 skipped), 0 mismatches -> PASS
+WARNING: tb_sfu.v:34: $readmemh(vec/sfu_recip.hex): Not enough words in the file for the requested range [0:8399].
+recip   : 4106 inputs (0 skipped), 0 mismatches -> PASS
+WARNING: tb_sfu.v:35: $readmemh(vec/sfu_rsqrt.hex): Not enough words in the file for the requested range [0:8399].
+rsqrt   : 4099 inputs (1 skipped), 0 mismatches -> PASS
+WARNING: tb_sfu.v:36: $readmemh(vec/sfu_sigmoid.hex): Not enough words in the file for the requested range [0:8399].
+sigmoid : 4108 inputs (0 skipped), 0 mismatches -> PASS
+WARNING: tb_sfu.v:37: $readmemh(vec/sfu_softplus.hex): Not enough words in the file for the requested range [0:8399].
+softplus: 4108 inputs (0 skipped), 0 mismatches -> PASS
+tb_sfu.v:38: $finish called at 20529000 (1ps)
+fp32_fma_pipe (4 stages, 1 per cycle): 20000 vectors, 0 mismatches -> PASS
+tb_fma_pipe.v:24: $finish called at 40008000 (1ps)
+fp32_fma_pipe (8 stages, 1 per cycle): 20000 vectors, 0 mismatches -> PASS
+tb_fma_pipe.v:24: $finish called at 40016000 (1ps)
+PASS pipelined SFU 0, 64 clocks
+PASS pipelined SFU 1, 24 clocks
+PASS pipelined SFU 2, 40 clocks
+PASS pipelined SFU 3, 104 clocks
+PASS pipelined SFU 4, 136 clocks
+PASS pipelined SFU 5, 112 clocks
+WARNING: tb_reduce.v:12: $readmemh(vec/reduce.hex): Not enough words in the file for the requested range [0:40000].
+vec_reduce (512 lanes + pairwise tree): 10 cases, 0 mismatches -> PASS
+tb_reduce.v:25: $finish called at 64000 (1ps)
+WARNING: tb_reduce_pipe.sv:12: $readmemh(vec/reduce.hex): Not enough words in the file for the requested range [0:40000].
+PASS shared 512-lane reduction (10 rows)
+  streamed ADD: 1,800 values in 53 clocks with read and write stalls
+  streamed FMA: 1,800 values in 52 clocks
+PASS CONV4 windows, in-place RoPE, causal strides and stalls
+PASS shared execution bank, command switching, replay and two speculative tokens (no tile: 64 lanes)
+R4 replay=0: four serial launches 1988 clocks, four interleaved 617
+R4 replay=1: four serial launches 1984 clocks, four interleaved 502
+PASS R4 interleaving, tail groups, and SRAM backpressure
+tb_dn_interleave.sv:71: $finish called at 28267 (1s)
+PASS 8 R4 single-head vectors (commit, speculative copy and replay), last case 4116 clocks
+PASS R7 softmax tile, 182 clocks for 64 positions without stalls
+PASS R7 softmax tile, 184 clocks for 256 positions without stalls
+PASS R7 softmax tile, 196 clocks for 1024 positions without stalls
+PASS 64 R7 softmax tiles, 199 clocks per 1,024-position row with stalls
+tb_smtile.sv:108: $finish called at 39939 (1s)
+sh: line 1: 12604 Done                    /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivlpp -L -F"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlg2c9fd6d6" -f"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlgc9fd6d6" -p"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlic9fd6d6"
+     12605 Terminated: 15          | /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivl -C"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlhc9fd6d6" -C"/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vvp.conf" -- -
+Traceback (most recent call last):
+  File "./rtl/vec/test_vec_unit.py", line 191, in <module>
+    main()
+    ~~~~^^
+  File "./rtl/vec/test_vec_unit.py", line 186, in main
+    subprocess.run(["iverilog","-g2012","-s","tb_vec_unit","-o",str(folder/"sim"),"tb_vec_unit.sv",*map(str,sources)],
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   cwd=HERE,check=True)
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['iverilog', '-g2012', '-s', 'tb_vec_unit', '-o', '/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_unit_8u5pmfzf/sim', 'tb_vec_unit.sv', './rtl/vec/vec_box.sv', './rtl/vec/vec_smtile.sv', './rtl/vec/vec_formats.sv', './rtl/vec/vec_box_command.sv', './rtl/vec/vec_reduce_pipe.sv', './rtl/vec/vec_row_ops.sv', './rtl/vec/vec_dn_group.sv', './rtl/vec/vec_dn_head.sv', './rtl/vec/vec_unit.sv', './rtl/vec/vector_exec.sv', './rtl/vec/sfu.v', './rtl/vec/act_quant32.v', './rtl/vec/fp32_fma_pipe8_ce.v', './rtl/vec/fp32_fma_pipe.v', './rtl/vec/fp32_fma.v', './rtl/vec/fp32_fma_pipe8.v']' returned non-zero exit status 143.

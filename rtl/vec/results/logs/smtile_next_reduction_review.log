@@ -1,0 +1,4 @@
+serial reduction contexts: 15.54 s, 60.71 ms/chunk, {'V RSUMSQ': 21.47, 'V SMTILE': 9.94}
+2 reduction contexts: 12.71 s, 49.65 ms/chunk, {'V RSUMSQ': 10.4, 'V SMTILE': 9.94}
+4 reduction contexts: 11.38 s, 44.45 ms/chunk, {'V RSUMSQ': 5.21, 'V SMTILE': 9.94}
+8 reduction contexts: 10.72 s, 41.86 ms/chunk, {'V RSUMSQ': 2.62, 'V SMTILE': 9.94}

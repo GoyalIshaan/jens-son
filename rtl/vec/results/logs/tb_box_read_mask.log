@@ -1,0 +1,3 @@
+  streamed ADD: 1,800 values in 53 clocks with read and write stalls
+  streamed FMA: 1,800 values in 52 clocks
+PASS CONV4 windows, in-place RoPE, causal strides and stalls

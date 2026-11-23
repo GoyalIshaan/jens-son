@@ -1,0 +1,1102 @@
+# Chip Design Component Encyclopedia
+What each element is, how it helps, and where it belongs
+
+This reference preserves the 40 categories from the component inventory and expands the named elements. Each entry explains the mechanism and its practical use. Closely related variants are described together where that makes their differences clearer.
+
+The entries span devices, circuits, functional blocks, physical-layout structures, and package parts. They are not interchangeable objects at one level: a matrix engine contains arithmetic units, gates, and transistors. Specialized memories, RF, photonics, MEMS, and power devices require suitable fabrication processes or integration. No single chip needs everything here.
+
+Use the document outline to jump to a category. Repeated components appear in the contexts where they matter. “Helps” describes an intended benefit, not a guaranteed speedup or a free addition: every implementation consumes some combination of area, energy, wires, latency, and design effort.
+
+## 01. Semiconductor devices
+- NMOS transistor — A gate-controlled transistor whose channel carries electrons. It makes efficient pull-down paths in CMOS logic and acts as a switch or amplifying device in analog circuits.
+- PMOS transistor — A gate-controlled transistor whose channel carries holes. It provides the complementary pull-up path in CMOS and is useful for high-side switching and analog loads.
+- Low-threshold transistor — A MOS device that turns on at a lower gate voltage. It can shorten critical paths or support lower-voltage operation, usually at the cost of greater leakage.
+- Standard-threshold transistor — A middle-ground device option balancing switching speed and leakage. It is commonly the baseline choice before selectively using faster or lower-leakage variants.
+- High-threshold transistor — A device requiring more gate voltage to turn on. It reduces leakage on paths with timing slack, helping standby power at a possible speed cost.
+- Thick-oxide I/O transistor — A MOS transistor with an oxide intended for higher operating voltages than core devices. It enables pad interfaces and mixed-voltage circuitry within its rated limits.
+- High-voltage transistor — A device with structures designed to withstand larger electric fields. It enables power management, actuator interfaces, and high-voltage signaling that ordinary core transistors cannot tolerate.
+- Native transistor — A process-specific MOS device with very low or near-zero threshold, often using different channel doping. It supports specialized analog biasing, startup, or low-voltage circuits.
+- Planar MOSFET — A transistor with its channel near a flat silicon surface. It provides a mature implementation option for logic and analog designs in supported processes.
+- FinFET — A transistor whose gate controls a fin-shaped channel from multiple sides. Stronger electrostatic control helps reduce short-channel leakage while enabling dense logic.
+- Gate-all-around / nanosheet FET — A device whose gate surrounds the channel, often using stacked sheets. It improves channel control and offers process-dependent drive-strength options as dimensions shrink.
+- Fully depleted SOI device — A transistor built in a thin silicon layer above an insulator. It can reduce junction capacitance and support useful body-bias control in processes designed for it.
+- NPN bipolar transistor — A bipolar device using an N–P–N structure. It provides transconductance and junction behavior useful in amplifiers, references, and temperature sensing.
+- PNP bipolar transistor — The complementary P–N–P bipolar structure. It supplies useful current paths and junction characteristics for analog biasing and references, subject to the process's device quality.
+- JFET — A field-effect transistor controlled by a reverse-biased junction. Its high input impedance can help low-noise analog input stages in suitable processes.
+- LDMOS — A lateral double-diffused MOS power device with a voltage-supporting drift region. It helps integrate higher-voltage switching or amplification with control circuitry.
+- Specialized power transistor — A device optimized for current, voltage, switching loss, or power handling, such as a supported GaN or other power-process device. It enables efficient power conversion rather than dense core logic.
+- PN-junction diode — A junction that conducts asymmetrically and has voltage-dependent capacitance. It helps with rectification, clamping, sensing, and protection when used within its limits.
+- Schottky diode — A metal–semiconductor diode rather than a conventional PN junction. Its low forward drop and fast switching can help rectification and clamps where the process supports it.
+- Zener / avalanche diode — A diode designed to operate in controlled reverse breakdown. It can provide voltage clamping or references; breakdown voltage, current, and reliability must be specified.
+- Photodiode — A light-sensitive semiconductor junction that generates electrical current from incident photons. It converts optical signals or image brightness into measurable electrical information.
+- Varactor — A voltage-controlled capacitor, often based on a junction or MOS structure. It tunes oscillators, resonators, filters, and phase-control circuits electronically.
+- Floating-gate device — A transistor storing charge on an electrically isolated gate. The retained charge changes its behavior, enabling nonvolatile memory or programmable analog settings.
+- Charge-trap device — A device storing charge in insulating traps rather than a floating conductor. It provides another mechanism for nonvolatile storage in supported memory processes.
+- Fuse — A one-time-programmable link deliberately changed, often electrically, to record a permanent bit. It helps store chip IDs, trimming settings, repair maps, and security configuration.
+- Antifuse — An initially insulating structure made conductive by programming. It stores permanent configuration or connections and can support one-time-programmable logic or memory.
+
+## 02. Passive electrical components
+- Diffusion resistor — A resistive path formed in doped silicon. It provides biasing, sensing, or resistance where its variation and junction parasitics are acceptable.
+- Polysilicon resistor — A resistor formed from a patterned polysilicon film. It is useful for analog bias networks and matched ratios, with properties determined by the process.
+- Well resistor — A resistive path through a semiconductor well. It supplies relatively large resistance but introduces well-related capacitance and voltage dependence that must be considered.
+- Metal resistor — A resistance implemented using metal routing or a dedicated resistive film. It supports low-value sensing or precision functions where a suitable option exists.
+- Precision resistor — A resistor option and layout optimized for accuracy, matching, or temperature stability. It improves gain-setting, references, and converters; trimming may still be required.
+- Resistor ladder — A structured network of resistors producing predictable ratios or thresholds. It implements voltage dividers, DACs, and multiple comparator reference levels.
+- MOS capacitor — A capacitor using a MOS gate structure. It provides compact capacitance for decoupling, filtering, or tuning, with capacitance that can depend on bias.
+- MIM capacitor — A metal–insulator–metal capacitor using a dedicated dielectric between conductors. It provides useful matching and linearity for analog circuits and data converters.
+- MOM capacitor — A metal–oxide–metal capacitor formed through metal geometry, often interdigitated fingers. It uses available wiring layers to implement capacitance without necessarily needing a dedicated MIM option.
+- Junction capacitor — The capacitance of a reverse-biased semiconductor junction. It supports tuning and sensing but varies with voltage and can introduce nonlinear behavior.
+- Capacitor array — A group of capacitors arranged with controlled ratios and switching. It supports charge redistribution, sampling, filtering, and capacitive DACs.
+- Decoupling capacitor — Local stored charge connected between supply and ground. It helps supply brief current demand and reduce local voltage disturbance; placement and power-network impedance matter.
+- Spiral inductor — An on-chip coil made from metal turns. It stores magnetic energy and helps build RF resonators, matching networks, and oscillators, with area and quality-factor costs.
+- Coupled inductors — Inductors arranged so magnetic flux links them. They transfer energy or signals and help differential, resonant, and impedance-transformation circuits.
+- Transformer — Magnetically coupled windings that transform impedance or signal form. On-chip versions help RF matching and differential conversion; they are not automatically safety-isolation barriers.
+- Transmission line — A distributed electrical structure whose propagation behavior matters. It carries high-frequency signals with controlled impedance and predictable phase delay.
+- Termination resistor — A resistance chosen to match a line or load. It suppresses signal reflections, improving high-speed link integrity while potentially consuming static power.
+- Matching network — A combination of reactive and resistive elements that transforms impedances. It improves signal or power transfer between circuits over a chosen frequency range.
+
+## 03. Basic combinational logic
+- Inverter — Produces the opposite logical value of its input. It creates logical negation and is also a basic building block for buffers, oscillators, and timing chains.
+- Buffer — Reproduces a logic value with a chosen drive strength. It drives larger loads, repairs slew, and breaks long interconnect into manageable electrical segments.
+- AND gate — Outputs one only when all required inputs are one. It combines conditions, qualifies enables, and implements masking or permission checks.
+- OR gate — Outputs one when at least one input is one. It combines requests, detects any active event, and merges conditions.
+- NAND gate — The inverted output of an AND operation. It is an efficient CMOS primitive from which arbitrary Boolean logic can be composed.
+- NOR gate — The inverted output of an OR operation. It implements none-active conditions and is another functionally complete logic primitive.
+- XOR gate — Outputs one when two inputs differ, or computes parity across more inputs. It helps arithmetic, comparisons, error detection, and bit manipulation.
+- XNOR gate — Outputs the complement of XOR. It detects equal bits and supports equality comparisons and certain binary arithmetic operations.
+- AND–OR gate — Combines products of input conditions, such as (a AND b) OR c. It can implement a useful function with fewer stages than separate simple gates.
+- OR–AND gate — Combines sums of conditions, such as (a OR b) AND c. It efficiently expresses selection and gating patterns in one composite function.
+- AOI gate — An AND–OR function followed by inversion. A library cell implementing the combined function can reduce delay or area compared with multiple separate gates.
+- OAI gate — An OR–AND function followed by inversion. It provides a compact implementation of common complemented control functions.
+- Multiplexer — Selects one input from several under control of select bits. It shares arithmetic units, chooses operands, routes buses, and selects operating modes.
+- Demultiplexer — Routes one input to one selected output. It distributes writes, enables, or data to a chosen destination.
+- Encoder — Converts a structured input code, such as one-hot selection, into a compact binary code. It reduces the number of bits needed to represent a selected entry.
+- Priority encoder — Chooses the highest-priority asserted input and emits its index. It resolves competing requests and finds a selected bit among many candidates.
+- Decoder — Converts an encoded value into individual selection signals. It selects memory rows, registers, instructions, or address regions.
+- Tri-state buffer — Can drive zero, drive one, or disconnect electrically. It permits shared physical buses, especially at I/O; many internal ASIC fabrics instead use multiplexers.
+- Transmission gate — Complementary NMOS/PMOS switches operating together. It passes a broader signal-voltage range than a single MOS switch and helps muxes, latches, and sampling circuits.
+- Pass-transistor switch — A transistor used directly as a signal-routing switch. It can reduce circuit count, but signal degradation and restoration requirements constrain its use.
+- Schmitt-trigger input — A threshold circuit with different switching points for rising and falling signals. Hysteresis prevents chatter when inputs are slow or noisy.
+- Equality detector — Checks whether two words match. It supports tags, address comparisons, instruction matching, and control-state checks.
+- Magnitude comparator — Determines whether one value is less than, equal to, or greater than another. It supports bounds checks, sorting, scheduling, and threshold decisions.
+- Zero detector — Determines whether every bit of a word is zero. It provides arithmetic flags, completion tests, and sparse-data detection.
+- One-hot detector — Checks whether exactly one bit is set, or a specified one-hot condition holds. It validates control encodings and detects illegal multiple selections.
+- Majority gate — Produces the value supported by most inputs. It enables redundancy voting and some specialized arithmetic or logic constructions.
+- Parity generator/checker — Computes or checks XOR-based parity. It cheaply detects selected classes of bit corruption, but generally does not locate or correct the error.
+
+## 04. State-holding elements
+- D latch — Stores a bit while its enable is inactive and follows data while transparent. It supports storage and time borrowing in carefully timed latch-based pipelines.
+- SR latch — Stores a state controlled by set and reset inputs. It implements simple state retention, interlocks, and control circuits with defined handling of invalid input combinations.
+- D flip-flop — Captures a bit at a clock edge and holds it between edges. It is the standard storage element for synchronous state and pipelines.
+- Toggle flip-flop — Changes state when enabled at a clock event. It is useful for counters, divide-by-two behavior, and event encoding.
+- Positive-edge / negative-edge flip-flops — Capture on rising or falling edges respectively. Edge choice supports timing organization, opposite-edge paths, or interfaces using both clock phases.
+- Flip-flop with enable — Holds its previous value unless enabled. It avoids unnecessary state updates and expresses conditional register writes; physical clock power savings depend on implementation.
+- Synchronous-reset flip-flop — Enters its reset state only on an active clock edge. It provides clock-aligned initialization but requires a functioning clock to take effect.
+- Asynchronous-reset flip-flop — Can enter reset without waiting for a clock edge. It helps immediate initialization, while reset deassertion requires timing discipline.
+- Set / preset flip-flop — Includes a control that forces the stored bit to one. It supports initialized states where an all-zero reset is unsuitable.
+- Scan flip-flop — Adds a test-data selection path so state can be shifted through a scan chain. It makes internal sequential logic controllable and observable during test.
+- Retention flip-flop — Preserves state using a retention supply or storage mechanism while a main power domain sleeps. It enables faster recovery than rebuilding all state.
+- Multibit flip-flop — Several state bits sharing some clock circuitry in one cell. It can reduce clock-tree load and area, with placement and timing tradeoffs.
+- Hardened storage cell — A state element designed to resist specified disturbances, such as radiation-induced upsets. It improves reliability under its characterized fault model.
+- Register — A word-wide collection of storage bits. It holds operands, configuration, addresses, or intermediate results close to the logic using them.
+- Register bank — A structured group of registers with selection and access logic. It organizes frequently accessed state and may provide multiple read or write paths.
+- Pipeline register — Storage inserted between combinational stages. It shortens the logic path per cycle, enabling higher issue frequency while adding latency and state.
+- Shift register — A register chain that moves data one position at a time. It implements serial/parallel conversion, delays, history windows, and scan paths.
+- Delay line — A chain of stages producing a controlled temporal delay. Digital versions align data streams; analog or clock-delay versions tune timing more finely.
+- Binary counter — Increments or decrements a binary value. It tracks loops, addresses, elapsed cycles, occupancy, and events compactly.
+- Gray-code counter — Uses a sequence in which adjacent counts differ by one bit. It helps communicate counters across clock domains when paired with correct synchronization and physical constraints.
+- Ring counter — Circulates a bit pattern through a shift-register loop. A one-hot ring makes phase or state selection simple at the cost of more storage bits.
+- Johnson counter — Feeds an inverted shift-register output back to its input. It produces a regular sequence useful for timing and compact decoded control.
+- Saturating counter — Stops at its minimum or maximum instead of wrapping. It supports confidence tracking, branch predictors, quotas, and bounded statistics.
+- Timestamp counter — Records a continuously advancing notion of time. It supports profiling, deadlines, event ordering, and latency measurement.
+
+## 05. Small datapath components
+- Half adder — Adds two one-bit values and produces sum and carry. It is a small building block in arithmetic and partial-product reduction.
+- Full adder — Adds two bits plus a carry-in. Chaining or organizing these cells constructs larger adders and compression networks.
+- Incrementer — Adds one to a value. Specialization can make counters, sequential addresses, and program-counter updates cheaper than a general adder.
+- Decrementer — Subtracts one from a value. It helps countdown loops, remaining-length tracking, and resource-credit management.
+- Ripple-carry adder — Passes carry sequentially through bit positions. It is simple and compact but becomes slower as word width increases.
+- Carry-lookahead adder — Computes carry using generate/propagate logic rather than waiting for every preceding bit. It reduces addition delay using extra logic and wiring.
+- Carry-select adder — Precomputes results for alternative carry inputs and selects the right one. It trades duplicated computation for a shorter critical path.
+- Carry-save adder — Reduces several operands to sum and carry vectors without immediately propagating carry across the word. It accelerates multioperand addition and multiplication trees.
+- Parallel-prefix adder — Organizes carry computation as a tree, such as Brent–Kung or Kogge–Stone. It provides fast wide addition with topology-dependent wiring and area costs.
+- Subtractor — Computes a difference, commonly using complemented addition. It supports comparisons, address differences, arithmetic, and control decisions.
+- Accumulator — Combines an arithmetic operation with storage of the running result. It avoids repeatedly moving partial sums to distant memory.
+- Add/subtract unit — Shares an adder datapath between addition and subtraction. It saves hardware when those operations need not occur simultaneously.
+- Barrel shifter — Moves a word by a selectable number of positions in one combinational operation. It supports alignment, scaling, and bit manipulation efficiently.
+- Arithmetic shifter — Preserves signed interpretation during right shifts by replicating the sign bit. It supports fixed-point scaling and signed arithmetic.
+- Logical shifter — Shifts bits while filling vacated positions with zeros. It supports unsigned scaling, packing, masks, and address manipulation.
+- Rotator — Wraps shifted-out bits around to the other side. It is useful in cryptography, checksums, and bit-field manipulation.
+- Sign-extension unit — Extends a signed value by copying its sign bit. It preserves numerical meaning when feeding a wider arithmetic unit.
+- Zero-extension unit — Extends a value with leading zeros. It preserves unsigned meaning across different operand widths.
+- Truncator — Drops selected bits from a value. It reduces storage or datapath width, with a numerical error that must be managed.
+- Leading-zero / leading-one counter — Counts consecutive zeros or ones from the most significant end. It supports normalization, magnitude estimation, and variable-length coding.
+- Population counter — Counts the number of set bits in a word. It helps masks, sparse-data processing, binary neural networks, and bitset operations.
+- Bit-reversal network — Reorders bits into reverse order. It supports FFT addressing, protocol formats, and specialized permutations.
+- Bit extract / insert unit — Selects or replaces a bit field within a word. It reduces instruction count and shifting/masking overhead in packed formats.
+- Byte swapper / endian converter — Reorders bytes to match the required byte order. It connects components or protocols that represent multibyte data differently.
+- Minimum / maximum selector — Chooses the smaller or larger value. It supports reductions, clipping, scheduling, and pooling.
+- Absolute-value unit — Produces the magnitude of a signed number. It supports distance calculations and signal processing; the most-negative integer needs explicit overflow handling.
+- Clamp / saturation unit — Limits a result to an allowed range. It prevents wraparound from producing wildly incorrect values in fixed-point and quantized computations.
+
+## 06. Larger arithmetic units
+- Integer multiplier — Produces the product of integer operands. It accelerates arithmetic that would otherwise require repeated shifts and additions.
+- Fixed-point multiplier — Multiplies scaled integers with an agreed binary-point convention. It enables efficient numerical processing while requiring deliberate rescaling, rounding, and overflow handling.
+- Floating-point multiplier — Multiplies significands and combines exponents, then normalizes and rounds. It supports a wider dynamic range than a fixed-point datapath of similar width.
+- Booth recoder — Re-encodes a multiplier operand into signed groups. It reduces the number of partial products and can shorten or shrink multiplication hardware.
+- Partial-product generator — Forms the shifted or signed product terms from operand bits. It supplies the inputs that a multiplier's reduction network combines.
+- Compressor tree — Repeatedly reduces groups of bit columns into fewer rows. It accelerates multioperand sums before one final carry-propagating addition.
+- Wallace tree — A partial-product reduction organization that aggressively compresses available rows. It reduces multiplier depth, often with irregular wiring.
+- Dadda tree — A reduction organization using prescribed row-height limits at successive stages. It balances reduction depth with the number of adders used.
+- Integer divider — Computes an integer quotient. Iterative versions save area; more parallel or pipelined versions increase throughput at greater hardware cost.
+- Floating-point divider — Divides significands and adjusts exponents, with normalization and rounding. It supports numerical algorithms requiring division across a wide dynamic range.
+- Remainder / modulo unit — Computes what remains after division, with signedness and modulo conventions explicitly defined. It supports indexing, hashing, arithmetic, and cyclic operations.
+- Multiply–accumulate unit (MAC) — Multiplies operands and adds the product to a running sum. It directly matches dot products, convolutions, and matrix multiplication.
+- Fused multiply–add unit (FMA) — Computes a multiplication and addition with one final floating-point rounding. It improves numerical behavior and efficiently supports common scientific operations.
+- Floating-point adder — Aligns operands by exponent, adds or subtracts significands, and normalizes the result. It supports wide-range arithmetic with more machinery than integer addition.
+- Exponent comparator — Compares floating-point exponents. It determines alignment shifts and helps order or classify operands.
+- Mantissa/significand aligner — Shifts a significand so operands share a common exponent. It makes floating-point addition possible while preserving needed rounding information.
+- Normalizer — Shifts a result into the chosen normalized representation and adjusts its exponent. It restores a consistent format after arithmetic.
+- Rounding unit — Converts an extended-precision result to a supported precision under a specified rule. It controls numerical error and standards compliance.
+- Floating-point exception logic — Detects and handles conditions such as invalid operations, overflow, underflow, divide-by-zero, and inexact results. It gives software defined numerical behavior.
+- Square-root unit — Computes or approximates a square root. It accelerates norms, geometric operations, and scientific workloads.
+- Reciprocal unit — Computes or approximates 1/x. It can replace repeated divisions by a common denominator with multiplications.
+- Reciprocal-square-root unit — Computes or approximates 1/√x. It is useful for normalization, graphics, and machine-learning normalization layers.
+- CORDIC engine — Uses iterative shifts and additions to perform rotations and related functions. It implements trigonometric and other operations without a general multiplier in the core iteration.
+- Polynomial evaluator — Evaluates a chosen polynomial, often with a multiply–add sequence. It approximates expensive nonlinear functions over a controlled input range.
+- Interpolation unit — Estimates a value between stored or computed samples. It reduces lookup-table size or supports resampling and function approximation.
+- Mathematical lookup table — Stores precomputed function values or coefficients. It trades memory for lower computation cost, with range and approximation accuracy determined by the table design.
+
+## 07. Compute organizations
+- Scalar ALU — Executes an operation on one scalar word at a time. It handles control arithmetic, addresses, comparisons, and irregular work that does not map well to large arrays.
+- Floating-point unit (FPU) — A collection of floating-point arithmetic and conversion functions. It provides numerical flexibility where fixed-point assumptions are too restrictive.
+- SIMD lanes — Multiple lanes performing the same operation on different data elements. They exploit regular parallelism while sharing instruction-control overhead.
+- Vector lanes — Parallel datapaths executing elements of vector operations, often over multiple cycles. They support programmable bulk arithmetic across vector lengths.
+- SIMT execution group — Multiple logical threads sharing instruction issue while retaining per-thread state. It offers a thread-oriented programming model for data-parallel execution.
+- VLIW execution cluster — Several functional units controlled by a wide instruction bundle. It exposes parallel scheduling to software and can simplify dynamic scheduling hardware.
+- Dot-product engine — Multiplies pairs of elements and reduces their products. It directly accelerates a core operation in linear algebra, signal processing, and inference.
+- Outer-product engine — Multiplies elements of two vectors to update a matrix of products. It supports matrix multiplication through repeated rank-one updates and local accumulation.
+- Matrix engine — Hardware specialized for matrix tiles, usually with substantial operand reuse. It delivers high arithmetic throughput when shapes, precision, and data delivery fit its contract.
+- Systolic array — A regular array that passes operands or partial results between neighboring processing elements on a schedule. Local communication amortizes data movement across many operations.
+- Spatial processing-element array — A collection of compute nodes mapped to parts of an algorithm. It supports concurrent work and locality, with flexibility determined by routing and control.
+- Reduction tree — A tree of operators combining many inputs into one or a few outputs. It lowers the latency of sums, extrema, logical reductions, and similar associative operations.
+- Broadcast network — A distribution structure sending one value to many consumers. It supports operand reuse while requiring sufficient fanout and wiring resources.
+- Accumulation tree — A reduction structure specifically combining partial sums. It merges parallel products or tile results without a long serial accumulation chain.
+- Bit-serial arithmetic array — Processes one or a few operand bits per cycle. It can trade longer execution time for smaller arithmetic units and flexible precision.
+- Bit-parallel arithmetic array — Processes many operand bits simultaneously. It provides faster operations or higher throughput at greater circuit width and switching cost.
+- Coarse-grained reconfigurable array (CGRA) — Programmable word-level operators connected by configurable routing. It targets spatial execution with less fine-grained configuration overhead than LUT-based logic.
+- Configurable processing tile — A repeated unit containing compute, local storage, and control with selectable modes. It supports scalable designs and adaptation to different workload shapes.
+- State-machine accelerator — Dedicated control and datapath logic for a bounded task. It efficiently executes recurring sequences without the full overhead of a general processor.
+- Programmable coprocessor — An auxiliary engine with an instruction or command interface. It accelerates a domain while retaining more flexibility than a single fixed-function circuit.
+
+## 08. AI/ML-specific functional blocks
+- Dense GEMM engine — Executes general dense matrix multiplication. It provides a reusable foundation for linear layers and many tensor operations when tiles can keep its arithmetic busy.
+- Sparse matrix engine — Executes supported sparse formats while managing indices and nonzero values. It can reduce wasted arithmetic, provided metadata, imbalance, and irregular access do not dominate.
+- Convolution engine — Reuses input windows and filters to compute convolutions. It reduces repeated data fetching and address-generation work in convolutional models.
+- Depthwise-convolution engine — Applies a separate spatial filter to each channel. It fits low-reduction, channel-independent workloads that may underutilize a large dense matrix array.
+- Pooling unit — Combines values within windows using operations such as max or average. It performs spatial reduction with specialized window handling and little general control overhead.
+- Attention engine — Coordinates score computation, masking, normalization, and value aggregation. It improves locality and scheduling for attention but must match the supported attention algorithm.
+- Attention-score accumulator — Holds partial query–key dot products or their tile accumulations. It avoids spilling unfinished attention scores between reduction steps.
+- Causal-mask generator — Produces validity conditions that prevent attending to future token positions. It enables correct autoregressive attention without storing a full dense mask.
+- Softmax unit — Computes normalized exponentials, typically using a stable maximum-subtraction procedure. It supplies attention probabilities while managing numerical range and reduction dependencies.
+- Exponent approximation unit — Approximates exp(x) over a specified domain. It reduces the cost of softmax and activations, with an accuracy/range tradeoff.
+- Reciprocal normalization unit — Computes a reciprocal denominator and scales values by it. It efficiently converts unnormalized values into normalized outputs.
+- LayerNorm unit — Computes and applies mean/variance normalization over a feature group, usually followed by affine parameters. It handles important non-matrix work in transformers.
+- RMSNorm unit — Normalizes by root-mean-square magnitude without subtracting the mean. A dedicated path can accelerate its reductions and rescaling.
+- Mean/variance reduction unit — Accumulates the statistics needed for normalization. It prevents reduction work from becoming a bottleneck beside a high-throughput matrix engine.
+- ReLU unit — Outputs max(0,x). It implements a common activation using simple compare/select logic.
+- GELU unit — Computes or approximates the Gaussian-error linear activation. It supports transformer feed-forward layers through a chosen numerical approximation.
+- SiLU unit — Computes x multiplied by sigmoid(x). It supports gated feed-forward models when paired with efficient sigmoid approximation and multiplication.
+- Sigmoid unit — Maps an input to a value between zero and one using a logistic function. It supports gates and activations with bounded outputs.
+- Tanh unit — Computes a bounded hyperbolic-tangent activation. It supports recurrent models, signal processing, and certain activation approximations.
+- Residual-add unit — Adds a branch input back to a transformed output. It executes residual connections and can save traffic when fused with nearby operations.
+- Gating/multiplication unit — Multiplies one activation stream by another gate or modulation stream. It supports GLU-family networks and other elementwise gating operations.
+- Embedding lookup engine — Fetches selected rows from a large parameter table. It accelerates indexed access where memory delivery matters more than dense arithmetic.
+- Positional-encoding / RoPE unit — Generates or applies position-dependent transformations; RoPE rotates paired features. It reduces recurring position-processing work and layout overhead.
+- Top-k unit — Selects the k largest or smallest values without necessarily sorting everything. It supports routing, sampling, and candidate pruning.
+- Argmax unit — Returns the index of the largest value. It enables greedy token selection and classification decisions.
+- Sampling unit — Selects an outcome according to a specified distribution using random values and cumulative or equivalent logic. It supports stochastic decoding with a defined numerical contract.
+- Mixture-of-experts router — Computes or interprets expert assignments for tokens. It directs work toward selected experts and may enforce capacity or load-balancing policies.
+- Token dispatch/combine engine — Packs and sends tokens to experts, then returns and combines results. It reduces communication and permutation overhead around expert computation.
+- KV-cache controller — Manages attention keys and values across token steps. It coordinates writes, reads, lifetime, and layout of persistent sequence state.
+- KV address generator — Computes physical locations of required cache entries. It handles strides, heads, tokens, and paged layouts without general-purpose address loops.
+- KV allocation table — Maps logical sequence blocks to available storage blocks. It supports variable sequence lengths and reduces waste from allocating a maximum-sized contiguous cache per request.
+- Speculative-state buffer — Holds provisional state produced before acceptance is known. It enables speculative decoding without prematurely modifying committed state.
+- Commit/rollback controller — Makes accepted provisional changes permanent or discards rejected ones. It preserves correctness when speculation, retries, or transactional execution fail.
+
+## 09. Numerical-format and compression hardware
+- Quantizer — Maps values to a smaller set of representable levels. It reduces storage or arithmetic width at a quality cost that must be measured.
+- Dequantizer — Reconstructs an approximate higher-precision value from a quantized code and metadata. It enables compact storage to feed a wider compute path.
+- Requantizer — Converts an accumulated or differently scaled result into a target quantized format. It connects layers while controlling scale, rounding, and clipping.
+- Scale multiplier — Applies a numerical scale factor. It supports quantization, normalization, and unit conversion using fixed-point or floating-point arithmetic.
+- Zero-point correction unit — Accounts for the offset between a stored integer code and numerical zero. It makes asymmetric quantization arithmetic produce the intended values.
+- Integer/floating-point converter — Converts between integer and floating-point representations. It allows mixed numerical pipelines and interfaces, with rounding and range rules specified.
+- Floating-point format converter — Changes exponent/significand widths between floating-point formats. It reduces storage or connects engines with different supported precisions.
+- Block-floating exponent detector — Finds a shared exponent appropriate for a group of values. It supports block-floating representations with simpler per-element storage.
+- Shared-exponent encoder — Packs mantissas or scaled values together with shared exponent metadata. It lowers metadata and storage cost when values have compatible ranges.
+- Rounding unit — Selects a representable result after precision reduction. The chosen rule affects bias, numerical reproducibility, and quality.
+- Stochastic-rounding unit — Randomly selects neighboring representable values according to the discarded fraction. It can reduce systematic rounding bias, at the cost of randomness and extra logic.
+- Saturation logic — Clamps out-of-range values to representable limits. It avoids integer wraparound during quantization or narrow arithmetic.
+- Bit packer / unpacker — Combines narrow codes into transfer words or extracts them again. It turns low-bit representations into actual capacity and bandwidth savings.
+- Nibble selector — Extracts a chosen four-bit field from a packed word. It feeds INT4-like formats into arithmetic or decoding paths.
+- Format expander — Converts a compact code into a wider internal representation. It separates storage efficiency from the compute engine's preferred format.
+- Sparse-index decoder — Interprets compressed coordinates or offsets of nonzero values. It tells the arithmetic and memory systems where sparse elements belong.
+- Zero-skipping logic — Avoids work associated with known zero operands. It helps only when detecting/skipping zeros costs less than executing the avoided work.
+- Nonzero selector — Routes useful nonzero elements into available arithmetic lanes. It increases lane utilization for supported sparse patterns.
+- Run-length encoder / decoder — Represents repeated symbols or zero stretches as values and lengths. It compresses suitable data while adding variable-length decoding work.
+- Entropy coder / decoder — Assigns compact representations based on symbol statistics, such as Huffman or arithmetic coding. It saves bits when a data distribution is predictable enough.
+- Dictionary compression engine — Replaces repeated strings or patterns with references to stored entries. It reduces traffic for repetitive data, with dictionary and lookup costs.
+- Decompression engine — Restores a compressed representation to the required stream. It makes compressed storage useful only if its output rate keeps up with consumers.
+- Compression metadata buffer — Stores block lengths, offsets, codes, or dictionaries needed to access compressed data. It enables decoding and random access that raw compressed bytes alone cannot provide.
+
+## 10. Memory types and macros
+- SRAM — Static random-access memory that retains bits while powered without periodic refresh. It offers low-latency on-chip storage but uses more area per bit than many dense memories.
+- Single-port SRAM — Provides one access port, with read/write behavior defined by the macro. It is area-efficient when clients can share one access opportunity per cycle.
+- Simple dual-port SRAM — Commonly provides one dedicated read port and one dedicated write port. It permits simultaneous producer writes and consumer reads; exact macro semantics matter.
+- True dual-port SRAM — Provides two ports that can typically each read or write. It supports more flexible concurrent access, with explicit restrictions for conflicting addresses.
+- Multiported SRAM — Supplies more than the usual one or two access paths through custom cells or constructed banking/replication. It serves parallel clients at significant area and wiring cost.
+- Register file — A small, fast addressed storage structure, often with several ports. It supplies operands to execution units and stores frequently accessed results.
+- Distributed register array — Storage built from many registers near the logic using them. It offers flexible access and placement but can cost more area and clock power than SRAM.
+- Latch-based memory — A storage array built from latches with access controls. It offers another tradeoff between dense macros and flip-flop arrays in suitable flows.
+- ROM — A read-only lookup structure whose contents are fixed during normal operation. It stores instructions, constants, tables, or boot code without a normal write path.
+- Mask ROM — A ROM whose contents are set by manufacturing masks. It provides dense permanent data when changing contents after fabrication is unnecessary.
+- Programmable ROM / OTP memory — Memory whose contents can be programmed, often only once. It supports post-fabrication identity, configuration, trimming, and immutable settings.
+- Embedded DRAM — Dynamic memory integrated in a compatible logic process. It can offer dense storage but requires refresh and specialized fabrication/support circuitry.
+- Embedded flash — Electrically programmable nonvolatile memory integrated with logic where supported. It stores firmware and persistent configuration without an external flash chip.
+- EEPROM — Electrically erasable programmable nonvolatile memory, often allowing finer-grained updates than flash. It helps retain small amounts of settings or calibration data.
+- MRAM — Nonvolatile memory using magnetic states. It can support persistent storage with useful write characteristics, depending on the particular magnetic technology.
+- Resistive RAM (ReRAM/RRAM) — Memory storing information through different resistance states. It supports dense nonvolatile storage and some experimental or specialized in-memory computation.
+- Phase-change memory — Memory using resistance differences between material phases. It provides nonvolatile storage, with programming energy, endurance, and variability constraints.
+- Ferroelectric memory — Memory using ferroelectric polarization or related device behavior to retain data. It enables nonvolatile operation in processes designed for the technology.
+- CAM — Content-addressable memory searches stored entries by their contents. It accelerates associative lookup, such as matching tags or keys, rather than reading only by address.
+- Ternary CAM — A CAM supporting zero, one, and don't-care bits. It efficiently matches masked rules and prefixes, especially in packet classification.
+- Scratchpad — An explicitly managed local memory rather than an automatically replaced cache. It gives software or a controller predictable placement and reuse of data.
+- Instruction memory — Storage dedicated to instructions or microcode. It supplies control streams and can isolate instruction traffic from operand traffic.
+- Data memory — Storage used for operands and results. Its organization is chosen around the application's capacity, latency, and access-bandwidth needs.
+- Lookup-table memory — An addressed store of precomputed answers or mappings. It replaces repeated computation or complex decode logic with a memory access.
+- FPGA block RAM — A dedicated memory block built into an FPGA. It stores arrays much more efficiently than implementing the same capacity in general-purpose logic.
+- FPGA distributed RAM — Memory implemented using programmable logic resources, often LUTs. It provides small local memories with flexible placement.
+- Larger embedded RAM blocks — Higher-capacity hard memory resources available in some FPGAs or SoCs. They support larger buffers while avoiding excessive fragmentation across tiny memories.
+
+## 11. Circuits inside a memory macro
+- Bitcell — The smallest circuit storing one bit or a technology-dependent amount of information. Its structure determines much of memory density, stability, and access behavior.
+- Wordline — A row-selection wire enabling a group of memory cells. It connects address decoding to the cells participating in an access.
+- Bitline — A column wire carrying information to or from selected cells. It connects dense storage to sensing and writing circuitry.
+- Complementary bitlines — Paired lines carrying opposite or differential information. They improve sensing and support differential writes in common SRAM organizations.
+- Row decoder — Converts an address into a selected row. It allows a large array to be accessed with a compact binary address.
+- Column decoder — Selects columns or column groups within an activated row. It helps match the physical array width to the external data-word width.
+- Wordline driver — Drives the electrical load of a row-selection line. Adequate drive helps access speed without disturbing unselected cells.
+- Column multiplexer — Connects selected bitline groups to shared sensing or writing circuits. It reduces peripheral circuitry at a possible bandwidth or timing cost.
+- Sense amplifier — Detects and amplifies a small electrical difference from a memory cell. It enables faster reads without requiring a full voltage swing on large bitlines.
+- Write driver — Forces the bitline conditions needed to store a new value. Its strength and timing determine whether writes reliably overcome the cell's previous state.
+- Precharge circuit — Establishes the starting bitline voltage before an access. It makes read behavior predictable and prepares differential sensing.
+- Bitline equalizer — Brings paired bitlines to a common initial voltage. It reduces residual imbalance that could corrupt the next read.
+- Read/write timing generator — Sequences precharge, selection, sensing, and writing. It coordinates the internal events that turn one memory command into a valid operation.
+- Replica path — A representative circuit used to track memory access timing. It helps generate self-timed controls that follow process, voltage, and temperature changes.
+- Read-assist circuit — Temporarily changes voltages or device conditions to improve read stability or speed. It extends operation into conditions where an unassisted cell is marginal.
+- Write-assist circuit — Temporarily makes a bitcell easier to overwrite. It improves write reliability, particularly at low voltage, with additional timing and reliability constraints.
+- Spare row / spare column — Extra storage that can replace defective locations. It improves manufacturing yield and may support later repair if the architecture permits it.
+- Repair multiplexer — Redirects accesses from a defective region to a spare. It makes redundant storage usable without changing the memory's external address space.
+- Redundancy map — Stores which locations must be replaced and which spares serve them. It preserves the repair configuration across accesses or power cycles.
+- ECC generator/checker — Creates and verifies error-correcting-code check bits. It detects or corrects selected error patterns according to the chosen code.
+- Syndrome decoder — Interprets the ECC mismatch pattern. It identifies a correctable error location or signals an uncorrectable condition.
+- Correction logic — Modifies retrieved data according to the decoded error. It returns corrected values and may trigger repair or scrubbing.
+- Memory power switch — Disconnects all or part of a memory's supply. It reduces leakage when contents may be discarded or a separate retention scheme is available.
+- Memory retention control — Selects a low-power state that preserves data. It reduces idle power while maintaining the voltage and conditions required for bit stability.
+- Refresh circuitry — Periodically restores charge or state in memories that need it. It preserves data at the cost of energy and access opportunities.
+
+## 12. Caches and memory-hierarchy machinery
+- Instruction cache — Keeps recently used instructions near the processor. It reduces repeated instruction-fetch latency and external-memory traffic.
+- Data cache — Keeps copies of recently used data with automatic lookup and replacement. It exploits locality without requiring software to explicitly place every item.
+- Unified cache — Stores instructions and data in the same capacity pool. It can adapt capacity to workload mix but introduces competition between traffic types.
+- L1 cache — The closest cache level, usually optimized for access latency and bandwidth. It supplies frequent accesses quickly with relatively limited capacity.
+- L2 cache — A larger intermediate cache behind L1. It catches misses while balancing capacity, latency, and sharing.
+- Last-level cache — The final cache before backing memory, often shared by several clients. It reduces expensive off-chip accesses and can support inter-core data sharing.
+- Cache data array — Stores the cached payload bytes. Its banks, ports, and access width determine data-delivery capacity.
+- Tag array — Stores the addresses identifying cached lines. It determines whether an access can be served by the cache.
+- Valid bit — Records whether an entry contains usable data. It prevents uninitialized or invalidated entries from producing false hits.
+- Dirty bit — Records whether cached data differs from its backing copy. It tells a write-back cache which evictions must be written out.
+- Replacement-policy state — Stores recency, frequency, or other information used to select a victim. It helps preserve useful lines under capacity pressure.
+- Replacement logic — Chooses the entry to evict on a miss. It balances policy effectiveness against lookup complexity and implementation cost.
+- Miss-status holding register (MSHR) — Tracks an outstanding cache miss and requests waiting for it. Multiple MSHRs let a cache overlap misses instead of blocking on each one.
+- Miss queue — Buffers misses awaiting service or tracking resources. It decouples demand from the downstream memory system.
+- Fill buffer — Holds an arriving cache line before or while installing it. It supports line assembly and may serve waiting consumers early.
+- Write buffer — Holds writes awaiting downstream acceptance. It lets computation continue while the memory interface drains pending stores.
+- Writeback queue — Holds dirty evictions until they can be written to memory. It prevents a busy memory interface from immediately blocking replacement.
+- Victim cache — A small store of recently evicted lines. It can recover useful data lost through conflicts in a primary cache.
+- Stream buffer — Holds prefetched data expected to be used in sequence. It hides memory latency for predictable streams without necessarily occupying normal cache ways.
+- Prefetcher — Predicts future accesses and requests data early. It hides latency when predictions are useful, but incorrect predictions waste bandwidth and capacity.
+- Prefetch queue — Tracks or buffers speculative memory requests. It controls how aggressively prefetch traffic competes with demand traffic.
+- Coherence controller — Implements rules for keeping shared cached data consistent. It coordinates ownership, invalidations, and responses between caching agents.
+- Directory — Tracks which agents hold or own shared cache lines. It can direct coherence messages without broadcasting every request to every agent.
+- Snoop filter — Records information that avoids unnecessary coherence probes. It reduces communication and lookup work when potential sharers can be excluded.
+- Atomics unit — Executes read–modify–write operations with defined atomicity. It supports locks, counters, synchronization, and shared data structures safely.
+- Cache-maintenance engine — Performs operations such as clean, invalidate, or flush. It supports software-managed coherency boundaries, device interaction, and system transitions.
+- Memory-ordering logic — Enforces the architecture's allowed ordering of memory operations. It preserves correctness while permitting safe overlap or reordering.
+
+## 13. Queues and buffering
+- Synchronous FIFO — A first-in, first-out queue with one clock domain. It absorbs temporary producer/consumer timing differences while preserving order.
+- Asynchronous FIFO — A queue safely crossing independently clocked domains. It transfers data and occupancy information using a designed clock-domain-crossing scheme.
+- Elastic buffer — A small buffer with flow control that tolerates downstream stalls. It makes adjacent pipeline stages operate without assuming every cycle is accepted.
+- Skid buffer — A small buffer catching data already in flight when a stall propagates backward. It permits registered flow-control paths without losing transfers.
+- Pipeline buffer — Storage inserted into a data path to break timing or add staging. It helps timing closure but adds latency and possibly backpressure handling.
+- Circular / ring buffer — A fixed storage region reused by wrapping read and write pointers. It manages streaming data without shifting stored entries.
+- Ping-pong / double buffer — Two storage regions alternate between producer and consumer roles. It permits loading one tile while computing on another when interfaces and dependencies allow.
+- Multibuffer pool — Several reusable buffers with allocation tracking. It supports deeper overlap and irregular completion times at greater capacity and control cost.
+- Input queue — Holds work or data waiting to enter a block. It absorbs arrival bursts and gives the scheduler a set of candidates.
+- Output queue — Holds completed results waiting for downstream acceptance. It lets a block finish work even when its next consumer temporarily stalls.
+- Request queue — Stores operations awaiting service. It decouples clients from arbitration and resource availability.
+- Response queue — Stores returned results or acknowledgments. It handles bursty completions and downstream backpressure.
+- Command queue — Stores higher-level operations to be executed by an engine. It reduces fine-grained host intervention and supports asynchronous submission.
+- Descriptor queue — Holds transfer or operation descriptors containing addresses, lengths, and options. It feeds autonomous engines with structured work.
+- Completion queue — Records finished operations and their status. It lets software or another engine discover progress without synchronously waiting for each operation.
+- Reorder buffer — Tracks operations whose completion order differs from required visible order. It allows parallel execution while restoring an architectural ordering point.
+- Replay buffer — Retains operations or data that may need to execute again. It supports recovery from conflicts, speculative mistakes, or transient failures.
+- Retry buffer — Holds a transaction until successful acceptance or acknowledgment. It enables reliable delivery when an interface requests retransmission.
+- Packet buffer — Stores complete or partial communication packets. It absorbs traffic bursts and permits scheduling, routing, and inspection.
+- Flit buffer — Stores the smaller flow-control units used by a network-on-chip. It lets routers stage packets across links with limited local storage.
+- Credit buffer / credit tracker — Tracks downstream storage permission, sometimes buffering returned credit messages. It prevents a sender from overrunning the receiver.
+- Free list — Records unused entries or resources. It enables quick allocation without scanning the entire storage structure.
+- Buffer allocator — Assigns available storage to new work and reclaims it after use. It allows multiple clients to share a finite memory pool.
+- Queue occupancy counter — Tracks the number of stored entries. It supports flow control, scheduling, profiling, and threshold decisions.
+- Almost-full / almost-empty detector — Signals proximity to a queue limit. It provides advance warning when stopping or restarting a producer takes several cycles.
+- Overflow / underflow detector — Detects attempts to write a full queue or read an empty one. It catches protocol violations and helps debugging and recovery.
+
+## 14. Data movement and addressing
+- DMA engine — Transfers blocks between locations without requiring a processor instruction for every word. It frees control resources and supports bulk asynchronous movement.
+- Scatter/gather DMA engine — Follows a list of noncontiguous source or destination regions. It moves fragmented buffers efficiently without first copying them into one contiguous region.
+- Descriptor fetcher — Retrieves upcoming work descriptors from memory. It keeps an autonomous engine supplied with commands.
+- Descriptor parser — Extracts addresses, sizes, flags, and dependencies from descriptors. It converts a software-visible command format into internal control signals.
+- Address generator — Computes the sequence of addresses needed for an operation. It avoids repeatedly using a general-purpose ALU for regular access patterns.
+- Multidimensional stride generator — Advances addresses through nested dimensions with configured strides. It directly supports tensor tiles, images, and strided matrices.
+- Burst generator — Groups consecutive transfers into protocol bursts. It amortizes transaction overhead and can improve memory-interface efficiency.
+- Transaction splitter — Breaks a request into legal or smaller transfers, such as at alignment or boundary limits. It connects large logical operations to constrained interfaces.
+- Transaction merger — Combines compatible smaller operations into larger transfers. It improves bandwidth efficiency when grouping is safe and addresses cooperate.
+- Gather unit — Fetches values from multiple indexed locations into a compact stream. It supports embeddings, sparse data, and irregular vector access.
+- Scatter unit — Sends input elements to indexed destinations. It supports sparse updates, routing, and irregular output layouts.
+- Alignment unit — Places data at the correct byte or word positions for a consumer. It handles offsets without forcing every client to implement its own alignment logic.
+- Realignment buffer — Holds data spanning transfer boundaries and assembles properly aligned outputs. It supports unaligned streams and width conversion.
+- Width converter — Converts between narrow and wide interfaces by packing or splitting transfers. It connects blocks with different natural data widths.
+- Byte-enable generator — Identifies which bytes of a transfer are valid or writable. It supports partial writes, edge tiles, and unaligned accesses.
+- Load/store engine — Issues reads and writes and tracks their completion. It connects execution units to the memory subsystem with ordering and flow control.
+- Streaming transfer engine — Moves a continuous sequence of data between endpoints. It supports pipelines where processing can begin before the entire dataset arrives.
+- Prefetch engine — Explicitly fetches future data ahead of demand. It hides transfer latency when the schedule can predict what will be needed.
+- Copy engine — Performs memory-to-memory copies as a dedicated service. It separates bulk movement from compute execution resources.
+- Memory-fill engine — Writes a repeated pattern or initialized value across a region. It accelerates clearing, padding, and buffer initialization.
+- Transfer-completion tracker — Records which pieces of a transfer have finished. It signals safe consumption and prevents premature reuse of buffers.
+- Outstanding-request table — Stores identifiers and state for requests still in flight. It permits many concurrent transactions while correctly matching returning responses.
+
+## 15. Data rearrangement
+- Crossbar — A switch connecting multiple sources to selected destinations. It provides flexible concurrent routing, with wiring and area costs that grow quickly with port count.
+- Permutation network — A structured network rearranging data lanes into supported orders. It handles layout changes with less generality or cost than a fully flexible crossbar.
+- Shuffle network — Moves elements between lanes according to defined patterns. It supports vector algorithms, reductions, and lane-local communication.
+- Lane swizzler — Applies a programmable or fixed lane-index remapping. It aligns data organization with the computation or memory-bank arrangement.
+- Lane selector — Chooses a particular element from several lanes. It supports extraction, routing, and conditional operand selection.
+- Transpose engine — Exchanges matrix row/column organization. It feeds compute engines their preferred layout without requiring a general processor to perform individual moves.
+- Transpose buffer — Storage organized to write in one orientation and read in another. It implements layout conversion while managing bank conflicts.
+- Broadcast / multicast network — Sends a value to all or a selected group of destinations. It reduces repeated source reads when several consumers share an operand.
+- Reduction network — Combines values while they move through a fabric. It can reduce destination traffic and accelerate collective sums or extrema.
+- Merge network — Combines multiple input streams into an ordered or arbitrated output stream. It supports sorted data, packets, and parallel result assembly.
+- Sorting network — A fixed arrangement of compare-exchange elements. It sorts bounded-size groups with predictable parallel execution.
+- Selection network — Finds a subset or ranked element without fully sorting the input. It supports top-k and priority selection with potentially less hardware work.
+- Interleaver — Reorders a sequence according to a pattern spreading neighboring elements apart. It helps communication error resilience or distributes memory accesses.
+- Deinterleaver — Reverses the interleaving pattern. It restores the order required by decoding or computation.
+- Tensor-layout converter — Converts between multidimensional memory layouts. It connects operators that expect different axis orders, tilings, or channel arrangements.
+- Channel reorder unit — Changes the order of channels in a tensor or stream. It supports grouped operations, model layouts, and interface compatibility.
+- Bank-address remapper — Changes how logical addresses map to physical banks. It can reduce systematic conflicts for important access patterns.
+- Padding insertion/removal unit — Adds required boundary values or removes artificial padding. It supports tile alignment, convolution edges, and fixed-width interfaces.
+
+## 16. Control and scheduling
+- Finite-state machine (FSM) — A controller with a finite set of states and transition rules. It implements predictable sequencing without a general instruction processor.
+- Nested / hierarchical state machine — Organizes control into sub-machines or hierarchical states. It keeps complex protocols and operation phases manageable.
+- Microsequencer — Chooses and advances through microinstructions. It provides programmable sequencing for a datapath with less overhead than a full general-purpose core.
+- Microcode ROM — Stores the low-level control program for a microsequencer. It encodes complex operations as reusable sequences of simpler steps.
+- Microinstruction decoder — Converts microcode fields into datapath and control signals. It allows one compact control word to coordinate several units.
+- Command processor — Accepts high-level commands and dispatches the required work. It gives an accelerator an autonomous interface and reduces host micromanagement.
+- Instruction decoder — Interprets an instruction's opcode and fields. It determines operations, operands, destinations, and required control actions.
+- Loop controller — Repeats a body while managing loop boundaries. It efficiently expresses tiled and nested computations.
+- Loop counter — Tracks iterations or remaining work. It provides termination and address-generation information for repeated operations.
+- Dependency table — Records which operations depend on unfinished results. It prevents premature execution and exposes independent work.
+- Scoreboard — Tracks operand availability and functional-unit hazards. It permits execution only when required data and resources are ready.
+- Issue queue — Holds operations waiting for execution. It gives scheduling logic choices when some operations are blocked and others are ready.
+- Reservation station — Holds an operation and tracks its input readiness near an execution resource. It supports out-of-order execution and operand wakeup.
+- Instruction scheduler — Selects ready operations for available execution resources. It increases useful concurrency subject to dependencies and resource limits.
+- Resource allocator — Assigns finite entries, ports, buffers, or units to requests. It prevents conflicting ownership and supports controlled sharing.
+- Arbiter — Selects which requester receives a contested resource. It turns simultaneous demands into a legal access decision.
+- Priority selector — Chooses a request according to a priority ordering. It supports urgency or service classes, though fixed priorities can starve low-ranked work.
+- Round-robin arbiter — Rotates preference among requesters. It provides simple fairness for equally weighted clients.
+- Weighted arbiter — Allocates service according to configured weights. It supports unequal bandwidth shares or service priorities.
+- Age-based arbiter — Prefers work that has waited longer. It reduces starvation and can improve fairness under sustained contention.
+- Barrier controller — Releases participants only when the required group has arrived. It coordinates parallel phases that must begin after all preceding work completes.
+- Event counter — Counts occurrences of a specified event. It supports completion detection, scheduling thresholds, and performance measurement.
+- Semaphore — A shared synchronization state manipulated through defined atomic rules. It coordinates access or signals availability between engines.
+- Completion detector — Determines when all required parts of an operation are finished. It generates a safe handoff to dependent work.
+- Timeout controller — Detects operations taking longer than an allowed interval. It identifies hung interfaces and triggers recovery or error reporting.
+- Watchdog — Requires periodic evidence of progress and reacts if it stops. It can reset or recover a stalled subsystem.
+- Context manager — Tracks the execution state belonging to different jobs or clients. It enables controlled sharing and switching between workloads.
+- Context-save/restore engine — Moves execution state into or out of storage. It supports preemption, power transitions, and task switching with predictable overhead.
+
+## 17. CPU-specific structures
+- Program counter — Holds the address of the next instruction to fetch. It tracks execution flow through sequential code and branches.
+- Instruction-fetch unit — Retrieves instructions from the memory hierarchy. It keeps downstream decode and execution supplied with work.
+- Fetch queue — Buffers fetched instructions before decode. It absorbs variations in fetch latency and decouples pipeline stages.
+- Instruction predecoder — Extracts early properties such as boundaries or branch information. It simplifies later decode and helps steer instruction fetching.
+- Instruction decoder — Translates architectural instructions into execution controls or internal operations. It bridges the software instruction set and the microarchitecture.
+- Micro-op cache — Stores previously decoded internal operations. It reduces repeated decode work for frequently executed code.
+- Branch predictor — Predicts future control flow before the branch result is known. It keeps the pipeline busy, with recovery costs when wrong.
+- Branch-target buffer — Caches likely destination addresses for branches. It allows fetching the next instruction stream without waiting to recompute the target.
+- Return-address stack — Predicts function-return targets using call/return nesting. It improves prediction for returns that share an instruction address but have different callers.
+- Architectural register file — Stores the register state defined by the instruction set in designs that directly maintain it. It provides the programmer-visible working state.
+- Physical register file — Stores a larger set of internal register versions in a renamed processor. It allows multiple in-flight instructions to use distinct versions of the same architectural register.
+- Register-renaming table — Maps architectural names to physical storage locations. It removes false dependencies caused only by reusing register names.
+- Physical-register free list — Tracks unused physical registers. It supplies new destinations during renaming and reclaims entries after safe retirement.
+- Dispatch unit — Routes decoded operations into appropriate queues and resources. It organizes work before execution scheduling.
+- Issue logic — Selects ready operations and sends them to execution units. It helps exploit instruction-level parallelism.
+- Execution port — An issue path to one or more execution resources. Port organization determines which operation mixes can execute simultaneously.
+- Reorder buffer — Tracks in-flight instructions in program order. It supports precise retirement, exception handling, and recovery despite out-of-order execution.
+- Retirement unit — Commits completed instructions in the required architectural order. It makes speculative execution results visible only when safe.
+- Load queue — Tracks in-flight reads and their ordering relationships. It helps detect violations and manage returning memory data.
+- Store queue — Tracks stores before they become safe or ready to commit. It allows speculative execution without prematurely changing visible memory.
+- Store buffer — Holds committed or pending stores waiting to drain to the cache/memory system. It decouples retirement from memory write latency.
+- Store-to-load forwarding — Supplies a younger load from an older matching store still buffered internally. It avoids waiting for that value to reach and return from cache.
+- Memory-dependence predictor — Predicts whether a load must wait for an older store. It enables more overlap when the prediction is correct.
+- Exception controller — Collects faults and arranges precise handling. It ensures software sees a consistent state when an operation fails.
+- Trap logic — Transfers control to the handler for an exception, interrupt, or deliberate trap. It implements the architecture's control-transfer rules.
+- Privilege-control logic — Enforces execution-mode restrictions on instructions and resources. It separates application, operating-system, and trusted execution permissions.
+- CSR bank — Control and status registers exposing machine configuration and state. It lets software manage interrupts, protection, counters, and other architectural functions.
+- Interrupt controller — Prioritizes and delivers asynchronous service requests. It connects external events and devices to processor handlers.
+- Debug module — Provides controlled inspection and execution control, such as halt and register access. It enables bring-up and debugging with appropriate access protection.
+
+## 18. GPU-specific structures
+- Warp / wavefront scheduler — Selects a ready group of threads for issue. It hides latency by switching among groups with available operands and resources.
+- Instruction dispatcher — Sends issued instructions to the appropriate execution paths. It connects scheduling decisions to actual lane activity.
+- SIMT stack — One implementation of tracking divergent paths and their active threads. It helps execute different branch paths while preserving per-thread semantics.
+- Divergence/reconvergence machinery — Manages threads taking different paths and later rejoining. It preserves correctness while exposing the utilization cost of branch divergence.
+- Active-lane mask — Indicates which lanes participate in an operation. It supports tails, predicates, and divergent control flow.
+- Predicate register — Stores conditions that control whether operations take effect. It can avoid small branches and provide per-lane conditional execution.
+- Operand collector — Gathers operands before execution, often from a banked register file. It helps handle port conflicts and coordinate multioperand instructions.
+- Register-bank arbiter — Resolves simultaneous accesses to the same register bank. It prevents illegal access and determines resulting stalls.
+- Memory coalescer — Combines lane accesses into fewer memory transactions where addresses allow. It improves useful bandwidth and reduces transaction overhead.
+- Shared-memory bank — A portion of explicitly managed on-chip storage accessible by a thread group. Banking supports parallel access when addresses avoid conflicts.
+- Texture sampler — Fetches texture data using specialized addressing and sampling rules. It accelerates graphics and compatible interpolation workloads.
+- Texture cache — Caches texture reads with locality-oriented organization. It reduces bandwidth demand from repeated nearby samples.
+- Filtering unit — Combines samples according to a filter, such as bilinear interpolation. It performs common graphics sampling operations efficiently.
+- Rasterizer — Converts geometric primitives into candidate pixel/sample coverage. It connects triangle geometry to fragment processing.
+- Primitive assembler — Groups vertices into primitives according to the draw topology. It constructs the objects consumed by later graphics stages.
+- Tessellation unit — Subdivides coarse geometry into finer primitives. It increases geometric detail under programmable subdivision rules.
+- Depth/stencil unit — Tests and updates depth and stencil information. It rejects hidden or masked samples and enforces rendering rules.
+- Blending unit — Combines new pixel outputs with existing framebuffer values. It supports transparency and other compositing operations.
+- Render-output unit — Handles final pixel operations and framebuffer writes, often incorporating depth or blending functions. It completes the graphics pipeline's output path.
+- Ray-traversal unit — Walks an acceleration structure to identify potential ray intersections. It reduces the irregular control and lookup work of ray tracing.
+- Bounding-box intersection unit — Tests whether a ray intersects a bounding volume. It quickly excludes regions containing no relevant geometry.
+- Triangle-intersection unit — Tests a ray against a triangle and computes hit information. It accelerates a recurring geometric operation in ray tracing.
+- Tensor/matrix unit — Executes supported matrix operations at high throughput. It accelerates neural-network and other linear-algebra workloads with compatible layouts and precision.
+- Asynchronous copy engine — Moves data while compute proceeds, with explicit completion coordination. It supports tiled pipelines that hide memory-transfer latency.
+
+## 19. On-chip communication
+- Shared bus — A communication path shared by several participants. It is simple for modest traffic but requires arbitration and has a shared throughput limit.
+- Point-to-point link — A dedicated connection between two endpoints. It offers predictable ownership and can avoid shared-bus contention.
+- Crossbar switch — Connects several inputs to selected outputs concurrently when requests do not conflict. It gives flexible connectivity at considerable wiring cost.
+- Bus matrix — A structured set of bus paths and arbitration points. It allows several masters and slaves to communicate with controlled sharing.
+- Network-on-chip router — Forwards traffic between local endpoints and neighboring routers. It supports scalable communication beyond a single central interconnect.
+- Network interface — Converts a block's transactions into the network's messages and back. It hides packet-level details from the compute or memory client.
+- Input/output port — A router or switch's link endpoint. Port count and width constrain connectivity, bandwidth, and physical wiring.
+- Virtual channel — A separately tracked logical queue sharing one physical link. It can reduce head-of-line blocking and help implement deadlock-avoidance rules.
+- Routing logic — Chooses the next hop for a message. It determines paths according to topology, destination, and sometimes congestion.
+- Route table — Stores forwarding decisions or routing configuration. It supports configurable topology and destination handling.
+- Switch allocator — Assigns router switch access to eligible inputs. It decides which traffic advances through a contested crossbar this cycle.
+- Virtual-channel allocator — Assigns downstream logical buffers to packet traffic. It tracks ownership and avoids mixing incompatible packet states.
+- Packetizer / depacketizer — Wraps transactions into packets or reconstructs transactions from received packets. It provides the protocol boundary around a network.
+- Flit encoder / decoder — Maps packet information to and from link-sized flow-control units. It adapts transactions to the physical data width and framing.
+- Credit-based flow control — Allows transmission only when downstream buffer space is known to exist. It prevents overflow across links with nonzero feedback latency.
+- Ready/valid flow control — Transfers data when the sender indicates valid data and the receiver indicates readiness. It provides a simple backpressure contract between blocks.
+- Deadlock-avoidance machinery — Restricts resource acquisition, routing, or virtual-channel use to prevent cyclic waits. It preserves forward progress under the supported traffic model.
+- Escape channel — A designated routing/queue resource with a proven progress path. It provides a fallback when more adaptive routing risks dependency cycles.
+- QoS scheduler — Assigns service according to quality-of-service requirements. It protects latency-sensitive or bandwidth-reserved traffic from unrelated load.
+- Traffic shaper — Controls when and how quickly a source emits traffic. It smooths bursts and reduces congestion elsewhere in the system.
+- Bandwidth limiter — Caps a client's transfer rate or allocation. It prevents one source from consuming more than its permitted share.
+- Protocol bridge — Translates between communication protocols. It enables reuse of components with different transaction interfaces.
+- Clock-crossing bridge — Transfers transactions safely across clock domains. It combines buffering, synchronization, and protocol semantics.
+- Width adapter — Converts transaction data widths. It connects narrow control devices and wide memory or compute paths.
+- AXI interface block — Implements AXI address, data, response, and handshake channels for the chosen variant. It connects reusable high-performance SoC components.
+- AHB interface block — Implements an AMBA AHB-style pipelined bus interface. It connects components in systems using that bus architecture.
+- APB interface block — Implements a simple AMBA peripheral bus interface. It is useful for low-bandwidth configuration/status registers with modest implementation cost.
+- TileLink interface block — Implements a selected TileLink protocol level. It connects memory-mapped agents and, for supported variants, coherent transactions.
+- Coherent-fabric interface — Participates in a fabric's shared-cache coherence protocol. It lets processors or accelerators access shared data under the system's coherence rules.
+
+## 20. Address translation and protection
+- Memory-management unit (MMU) — Translates processor virtual addresses and checks access permissions. It enables isolated address spaces and flexible physical-memory placement.
+- I/O memory-management unit (IOMMU) — Translates and restricts device/DMA memory accesses. It protects memory and allows devices to use managed address spaces.
+- Instruction TLB — Caches translations used for instruction fetch. It avoids repeated page-table walks on the instruction path.
+- Data TLB — Caches translations for loads and stores. It reduces the translation cost of ordinary data accesses.
+- Shared TLB — A translation cache shared across access types or clients. It improves translation capacity utilization, with contention and isolation considerations.
+- Page-table walker — Reads the page-table structure to resolve a translation miss. Hardware walking reduces software intervention for supported page formats.
+- Page-walk cache — Caches intermediate or final information used during walks. It reduces memory traffic and latency on later translation misses.
+- Address-space identifier (ASID) — Tags translation entries with their owning address space. It permits entries from several contexts to coexist without flushing all translations on every switch.
+- Translation-context table — Holds the root pointers and controls for different translation domains. It selects the correct mapping and permissions for a requester.
+- Physical-memory protection unit — Checks accesses against permitted physical regions. It provides isolation in systems that may not use full virtual memory.
+- Access-control filter — Allows or rejects transactions based on address, requester, privilege, or operation. It enforces boundaries around sensitive resources.
+- Memory-region decoder — Determines which memory or peripheral owns an address. It routes transactions and detects unmapped regions.
+- Address remapper — Changes an address according to configured mapping rules. It supports relocation, interleaving, windows, and system integration.
+- Virtualization-support logic — Separates guest state and controls privileged resource access. It helps multiple virtual machines safely share a processor or device.
+- Nested translation engine — Combines guest and host address-translation stages. It enables virtualized systems to retain control over physical memory allocation.
+- Capability/tag checker — Validates metadata associated with pointers or objects under a specified protection model. It can enforce permissions, provenance, or memory-safety constraints.
+- Bounds-checking logic — Verifies that an address or index stays within an allowed interval. It catches out-of-range accesses before they corrupt unrelated state.
+- Fault queue — Records translation or permission failures for software handling. It preserves fault information while allowing controlled asynchronous recovery.
+- Translation-invalidation controller — Removes stale cached translations after mappings change. It keeps TLBs and related caches consistent with current page tables and permissions.
+
+## 21. External-memory interfaces
+- DDR controller — Schedules commands and data transfers to DDR DRAM while respecting timing rules. It turns client requests into legal, efficiently ordered memory operations.
+- LPDDR controller — Controls low-power DRAM and its supported power states. It connects mobile or power-constrained systems to external working memory.
+- GDDR controller — Manages graphics-oriented high-bandwidth DRAM interfaces. It feeds bandwidth-intensive processors using the signaling and timing required by the selected generation.
+- HBM controller — Schedules accesses to high-bandwidth stacked memory channels. It makes the wide, package-integrated memory interface available to compute clients.
+- Memory PHY — The electrical and timing interface between controller logic and memory pins. It handles signal launch/capture, calibration, and physical protocol requirements.
+- Command/address driver — Drives memory commands, addresses, and control signals. It ensures the external devices receive usable electrical waveforms at the required time.
+- Data driver — Drives outbound memory data with controlled strength and timing. It helps meet signaling requirements across package and board connections.
+- Read/write scheduler — Orders memory operations to balance latency, throughput, and read/write switching costs. It improves delivered bandwidth without changing the memory's peak pin rate.
+- Bank scheduler — Tracks and schedules commands for individual DRAM banks. It exploits bank parallelism and row locality while respecting timing constraints.
+- Refresh controller — Issues required refresh operations and coordinates their interference with normal traffic. It maintains DRAM data retention.
+- DQS generation/capture — Generates or receives the data strobe used by supported memory interfaces. It aligns data sampling with the signal source rather than relying only on a distant reference clock.
+- Delay tap — A selectable delay element adjusting a signal's timing. It compensates for skew and places sampling points within a valid data window.
+- Deskew circuit — Aligns signals or lanes whose arrival times differ. It lets a wide interface operate correctly despite unequal path delays.
+- Training engine — Runs startup or runtime procedures to find reliable interface timing/settings. It adapts the interface to the actual devices and interconnect.
+- Calibration engine — Adjusts parameters such as drive strength, termination, or delay. It maintains operation across process, voltage, and temperature variation.
+- Write-leveling logic — Aligns write strobes and timing to memory-clock requirements on supported interfaces. It compensates for clock-routing differences.
+- Read-leveling logic — Finds usable read-capture timing for lanes or groups. It compensates for return-path delay and skew.
+- On-die termination — Switchable resistive termination integrated into a device. It reduces reflections without requiring every termination resistor to be external.
+- Impedance-calibration circuit — Adjusts output or termination impedance toward a target. It improves signal integrity despite device variation.
+- Memory ECC engine — Generates, checks, and corrects supported memory error patterns. It improves data integrity with check-bit storage and latency costs.
+- Memory retry machinery — Reissues operations when a supported protocol detects a recoverable failure. It preserves correctness at the cost of occasional extra latency.
+- Memory error counter — Records error frequency and type. It supports diagnosis, maintenance, and retirement of failing resources.
+- NAND flash controller — Coordinates page reads, programs, erases, and device management. It turns raw NAND behavior into a usable storage interface.
+- NAND ECC engine — Corrects the comparatively high raw error rates expected from NAND storage. Stronger codes trade processing and redundancy for reliability.
+- Flash-channel interface — Connects a controller to one or more flash devices on a channel. Multiple channels can increase storage parallelism and throughput.
+
+## 22. General-purpose peripheral interfaces
+- GPIO — A configurable digital input/output pin interface. It connects simple signals, controls, and status lines without a specialized serial protocol.
+- Interrupt input — An event-detection path that requests service. It lets external devices notify the chip without continuous software polling.
+- Pin multiplexer — Selects which internal function connects to a physical pad. It allows a limited pin budget to support multiple product configurations.
+- UART — An asynchronous serial transmitter/receiver with framing and baud-rate control. It supplies a simple console, debug, or peripheral communication link.
+- SPI — A clocked serial interface typically using separate clock, data, and chip-select signals. It connects peripherals with relatively simple hardware and potentially high transfer rates.
+- QSPI — A multi-data-line SPI-family interface, commonly using four data lines. It increases serial-flash bandwidth while retaining a modest pin count.
+- I²C — A shared two-wire serial interface using addressing and open-drain signaling. It connects multiple low-bandwidth peripherals on a small number of pins.
+- I³C — A two-wire peripheral interface with capabilities beyond traditional I²C, such as dynamic addressing and in-band interrupts. It supports richer sensor/control networks with compatible device requirements.
+- PWM generator — Produces pulses with programmable duty cycle and frequency. It controls average delivered power, LED brightness, motors, or simple conversion circuits.
+- Timer/counter block — Counts clock ticks or external events and generates matches or captures. It implements deadlines, periodic interrupts, pulse measurement, and timekeeping.
+- CAN controller — Implements CAN message framing, arbitration, and error handling. It supports robust shared-bus communication, typically with a suitable external or integrated transceiver.
+- LIN controller — Implements the low-cost, scheduled LIN serial protocol. It connects simple automotive control nodes with modest bandwidth requirements.
+- I²S interface — Transfers digital audio samples with clock and channel framing. It connects audio processors and converters without inventing a custom sample format.
+- PDM interface — Transmits or receives pulse-density-modulated streams. It connects devices such as digital microphones, usually with filtering to recover ordinary samples.
+- USB controller — Implements USB transactions, endpoint behavior, and protocol control. It enables standardized host/device communication.
+- USB PHY — Implements the electrical signaling for the supported USB mode. It connects the digital controller to the cable-facing interface.
+- Ethernet MAC — Handles Ethernet frames, addressing, checks, and media-access functions. It provides the digital network link layer above the PHY.
+- Ethernet PHY — Implements the medium-facing coding, signaling, and reception for a supported Ethernet interface. It converts digital data into electrical or optical link behavior.
+- PCIe controller — Implements PCIe transactions and link-management functions for an endpoint, root complex, or switch role. It connects high-performance host and peripheral components.
+- PCIe PHY — Implements the high-speed lanes and electrical behavior used by PCIe. It supplies serialization, reception, and timing support below the digital protocol.
+- CXL controller — Implements supported CXL protocols over an appropriate physical link. It enables defined forms of device I/O, memory access, and coherence depending on device type.
+- SATA interface — Connects storage devices using the SATA command/link architecture. It provides standardized storage communication with the associated controller and PHY.
+- SD/eMMC interface — Controls removable SD storage or embedded MMC devices. It provides a compact storage interface for embedded systems.
+- UFS interface — Implements Universal Flash Storage communication. It connects high-performance managed flash devices using the required controller and physical-layer stack.
+- MIPI camera/display interface — Implements a selected MIPI specification, such as CSI-2 or DSI, with its compatible PHY. It efficiently transports image or display data over limited pins.
+- HDMI interface — Transports digital video, audio, and control according to the supported HDMI version. It connects a chip's display pipeline to compatible displays.
+- DisplayPort interface — Transports display streams and auxiliary control over a DisplayPort link. It supports external or embedded display connectivity.
+- JTAG interface — Implements a serial test-access architecture. It enables boundary scan, chip test, programming, or debug according to the connected logic.
+- SWD interface — A compact serial debug interface used in supported processor ecosystems. It provides debug access with fewer dedicated pins than a typical JTAG connection.
+- Parallel peripheral interface — Transfers multiple data bits simultaneously with strobes/control. It connects legacy or application-specific peripherals where pin cost is acceptable.
+
+## 23. High-speed link circuitry
+- Serializer — Converts parallel words into a faster serial bitstream. It trades many low-speed wires for fewer high-speed lanes.
+- Deserializer — Reconstructs parallel words from a serial stream. It returns link data to a width and rate suitable for digital logic.
+- Gearbox — Converts between different word widths and associated clock rates. It connects protocol blocks and SerDes lanes with incompatible native widths.
+- Elastic buffer — Absorbs small timing or rate differences between link-side and core-side streams. It supports clock tolerance and protocol alignment within defined limits.
+- Clock/data recovery circuit (CDR) — Recovers sampling timing from the received signal. It allows reliable data detection without a perfectly shared bit clock.
+- Phase interpolator — Produces a controlled clock phase between reference phases. It enables fine sampling alignment and tracking.
+- Delay-locked loop (DLL) — Adjusts a delay chain to match a reference timing relationship. It provides aligned phases or calibrated delays without necessarily changing frequency.
+- Transmitter driver — Launches the signal onto a high-speed channel. Its swing, impedance, and equalization determine how well the receiver can recover the data.
+- Receiver front end — Conditions and detects incoming link signals. It supplies amplification, termination, sampling, or equalization before digital decoding.
+- Continuous-time linear equalizer (CTLE) — Shapes analog frequency response to counter channel loss. It improves high-frequency information at the receiver, with noise tradeoffs.
+- Decision-feedback equalizer (DFE) — Uses previous symbol decisions to cancel intersymbol interference. It improves detection on lossy channels but can propagate decision errors.
+- Feed-forward equalizer (FFE) — Applies weighted delayed signal or symbol contributions. It compensates for channel distortion without relying on past decisions in the same way as DFE.
+- Transmitter pre-emphasis — Changes transmitted symbol amplitudes based on transitions or nearby symbols. It compensates for channel frequency loss before the signal reaches the receiver.
+- Lane bonding — Combines multiple physical lanes into one logical link. It increases aggregate bandwidth while requiring coordinated ordering and alignment.
+- Lane alignment — Identifies corresponding data positions across lanes. It reconstructs the correct parallel ordering after independent lane transmission.
+- Deskew buffer — Temporarily stores early-arriving lanes until later lanes catch up. It tolerates lane-to-lane delay differences.
+- Scrambler — Transforms data into a statistically useful bit pattern with a reversible sequence. It helps clock recovery and spectral behavior; it is not necessarily encryption.
+- Descrambler — Reverses the scrambling transformation. It restores payload data after transmission conditioning.
+- Line encoder / decoder — Maps payload bits to/from symbols with required framing or transition properties. It makes a physical link decodable at the cost of encoding overhead.
+- CRC engine — Computes or checks a cyclic redundancy code. It efficiently detects many transmission-error patterns but normally relies on retry rather than correction.
+- FEC encoder / decoder — Adds and interprets redundancy to correct supported link errors. It improves reliable operation on imperfect channels with bandwidth, latency, and power costs.
+- Link-training state machine — Negotiates and calibrates link operation. It establishes working parameters before normal traffic or during recovery.
+- Eye monitor — Samples signal quality across timing and voltage offsets. It helps diagnose margin and tune equalization without directly observing every waveform externally.
+- BER counter — Counts detected bit errors against known data or error indications. It measures link quality under a specified test or operating method.
+- PRBS generator / checker — Produces and verifies pseudorandom binary test sequences. It exercises links with repeatable patterns and exposes errors.
+- Loopback path — Routes transmitted data back toward a receiver within a chip or link. It isolates faults and enables self-test of selected signal-path segments.
+
+## 24. Clock generation and distribution
+- Ring oscillator — An odd-inversion feedback loop whose propagation delay produces oscillation. It supplies a simple local clock or process/timing monitor, with limited absolute accuracy.
+- RC oscillator — Uses resistor/capacitor timing to produce a clock. It provides inexpensive local timing without an external crystal, usually requiring tolerance or calibration.
+- Crystal-oscillator interface — Sustains oscillation using an external resonator and associated circuitry. It provides a stable reference for clocks and communications.
+- Phase-locked loop (PLL) — A feedback system locking oscillator phase/frequency to a reference. It generates usable clocks, including multiplied frequencies, with defined jitter and lock behavior.
+- Delay-locked loop (DLL) — Controls a delay path to align timing with a reference. It supplies phase relationships and deskew for memory and clock interfaces.
+- Digitally controlled oscillator (DCO) — Changes oscillation frequency through a digital control code. It supports digitally managed clock generation and calibration.
+- Voltage-controlled oscillator (VCO) — Changes frequency with an analog control voltage. It is a core component of many PLLs and RF synthesizers.
+- Phase/frequency detector — Measures phase or frequency disagreement between signals. It provides the error information needed by a locking loop.
+- Charge pump — Converts control pulses into charge/current changes. In a PLL it adjusts loop-control voltage; in power circuits a switched-capacitor charge pump changes voltage level.
+- Loop filter — Filters a feedback loop's error/control signal. It sets stability, response speed, and noise/jitter behavior.
+- Clock divider — Produces a lower clock rate by counting or otherwise dividing input cycles. It supports multiple operating rates from one source.
+- Clock multiplier — Produces a higher clock frequency, commonly using a locking loop. It derives fast internal timing from a slower reference.
+- Fractional divider — Achieves a noninteger average division ratio through controlled sequencing. It enables fine frequency selection, with spur/jitter considerations.
+- Clock multiplexer — Selects among clock sources. It enables operating modes, test clocks, or source switching.
+- Glitch-free clock switch — Switches clocks while preventing unintended short pulses under its specified protocol. It protects sequential logic during clock-source changes.
+- Clock buffer — Drives clock-network capacitance while preserving edge quality. It distributes timing to many sequential cells.
+- Clock inverter — Inverts a clock with characterized timing and drive. It supports clock-tree construction and required phase polarity.
+- Clock tree — A branching distribution network tuned for arrival times and loads. It delivers the clock across the chip with controlled skew and transition times.
+- Clock mesh — A grid-like clock distribution structure. It can reduce sensitivity to local skew at a significant wiring and power cost.
+- Integrated clock-gating cell — Safely enables or suppresses clock pulses, typically by holding the enable stable during the sensitive phase. It reduces switching in inactive sequential regions.
+- Duty-cycle correction — Adjusts the balance between a clock's high and low intervals. It improves interfaces or circuits sensitive to clock pulse widths.
+- Phase-alignment circuit — Adjusts relative timing between clock signals. It supports coordinated capture and launch across interfaces.
+- Clock deskew circuit — Compensates for distribution-path delay differences. It helps clocks arrive at intended relative times.
+- Clock monitor — Observes frequency, presence, or other clock properties. It detects faulty clock operation and supports management decisions.
+- Frequency counter — Measures clock cycles against a time reference. It supports calibration, monitoring, and debug.
+- Missing-clock detector — Detects an absent or excessively delayed clock event. It triggers safe fallback or error handling when timing stops.
+- Spread-spectrum clock generator — Deliberately modulates clock frequency within controlled limits. It spreads spectral energy to help meet electromagnetic-emissions requirements.
+
+## 25. Synchronization, reset, and asynchronous logic
+- Two-flop synchronizer — Passes a single-bit asynchronous level through two destination-clocked registers. It reduces the probability that metastability reaches downstream logic; it does not make arbitrary multibit transfers safe.
+- Multistage synchronizer — Adds more settling stages to a crossing. It can improve metastability reliability at the cost of additional latency.
+- Pulse synchronizer — Transfers an event pulse between clock domains using a defined capture scheme. It prevents short events from being missed, subject to event-spacing assumptions.
+- Toggle synchronizer — Encodes an event as a state change, then detects that change after synchronization. It transfers events that would otherwise be shorter than a destination clock period.
+- Request/acknowledge synchronizer — Uses a handshake to confirm receipt across domains. It supports controlled event or data transfer without assuming a fixed clock relationship.
+- Gray-pointer synchronizer — Transfers Gray-coded FIFO pointer state across domains. It supports safe occupancy estimation when coding, synchronization, and routing constraints are respected.
+- Asynchronous FIFO — Stores data while coordinating separate read and write clocks. It crosses both data and flow-control information without synchronizing every payload bit independently.
+- Reset synchronizer — Controls reset release relative to a destination clock. It helps sequential logic leave reset consistently and meet recovery/removal requirements.
+- Reset-domain bridge — Coordinates signals between logic with different reset behavior. It prevents one reset domain from interpreting another domain's transient state as valid traffic.
+- Power-on reset — Holds circuitry in a defined state during supply startup. It prevents operation before voltage and clocks are usable.
+- Brownout reset — Detects an inadequate supply voltage and asserts reset or a safe condition. It prevents unreliable operation during voltage collapse.
+- Reset sequencer — Releases or asserts resets in a required order. It ensures dependencies such as clocks, memory, and interfaces initialize coherently.
+- Reset tree — Distributes reset to many state elements. It controls electrical load and arrival behavior across a large design.
+- Reset isolation — Blocks or clamps signals from resetting logic until it becomes valid. It protects active domains from incomplete or unknown state.
+- Debouncer — Filters repeated transitions from a mechanical switch or similar slow source. It turns one physical action into one clean logical event.
+- Glitch filter — Rejects pulses or transitions failing a specified duration or consistency rule. It protects control inputs from brief disturbances.
+- Pulse stretcher — Extends an event's active duration. It makes events easier to observe or capture, though crossing safety still needs a suitable protocol.
+- Muller C-element — An asynchronous element that changes output when inputs agree and otherwise holds state. It coordinates completion and handshaking without an ordinary global clock.
+- Asynchronous arbiter — Resolves requests that may arrive with no common timing reference. It selects a winner while containing unavoidable metastability-resolution behavior.
+- Handshake controller — Advances communication or computation through request/acknowledge events. It supports asynchronous or latency-insensitive operation.
+
+## 26. Power-management circuitry
+- Header power switch — Disconnects a block from its positive supply rail. It reduces leakage in sleeping logic while requiring controlled wake-up and state handling.
+- Footer power switch — Disconnects a block from ground. It offers another power-gating implementation with its own noise and voltage-drop considerations.
+- Distributed power-gating cells — Multiple switches spread across a region. They deliver power more uniformly and manage current density compared with one centralized switch.
+- Isolation cell — Forces a safe output value when a source domain is powered down or invalid. It prevents unknown or floating signals from disturbing active logic.
+- Level shifter — Converts a signal between voltage domains. It enables reliable communication where a low-voltage output cannot directly meet another domain's input requirements.
+- Retention cell — Preserves selected state while normal power is removed. It reduces wake-up work but requires retention supply and sequencing.
+- Power-domain controller — Manages a region's on, off, retention, or sleep states. It coordinates clocking, isolation, reset, and power switches.
+- Power-state sequencer — Executes the required transition order between power states. It prevents unsafe combinations such as exposing unpowered outputs or releasing reset too early.
+- DVFS controller — Coordinates dynamic voltage and frequency scaling. It trades performance for energy/power according to demand while respecting characterized operating points.
+- Voltage-monitor interface — Collects supply information from sensors or regulators. It supports safe operating-point changes and fault response.
+- LDO regulator — Uses a controlled pass device to regulate a lower output voltage from a higher input. It provides a relatively quiet supply but dissipates voltage-drop times current as heat.
+- Switched-capacitor converter — Transfers charge among capacitors to change voltage. It offers integrated conversion without a conventional inductor, with ratio and efficiency constraints.
+- Integrated regulator block — On-chip or closely integrated voltage-regulation circuitry. It can give finer local supply control, depending on process and passive-component availability.
+- Power charge pump — Uses switched capacitors to raise, invert, or otherwise shift voltage. It supplies voltages unavailable directly from the main rails, such as programming or bias voltages.
+- Voltage reference — Produces a stable reference voltage over specified conditions. It anchors converter, regulator, and measurement accuracy.
+- Bias generator — Establishes operating currents or voltages for analog circuits. It keeps amplifiers and other blocks in the intended operating region.
+- Body-bias generator/controller — Adjusts transistor body potential in a compatible process. It changes threshold-related behavior to trade leakage and speed.
+- Current sensor — Measures current using a sense element and readout circuitry. It supports power accounting, protection, and closed-loop control.
+- Voltage sensor — Measures or compares a supply or signal voltage. It enables regulation, monitoring, and detection of unsafe conditions.
+- Droop detector — Detects a temporary supply-voltage dip. It can trigger throttling or other mitigation before the dip causes timing failure.
+- Thermal sensor — Converts temperature-dependent device behavior into a reading. It supports thermal management and calibration.
+- Thermal trip circuit — Detects crossing a critical temperature threshold. It initiates protection such as shutdown or severe throttling.
+- Throttling controller — Reduces activity, issue rate, or frequency under a power/thermal limit. It keeps operation inside safe or provisioned bounds.
+- Inrush-current control — Limits the surge when charging a powered-up domain or load. It prevents startup from collapsing the supply or stressing connections.
+- Overcurrent protection — Detects excessive current and limits or interrupts it. It protects devices and interconnect from damaging operation.
+- Undervoltage lockout — Prevents operation below a defined supply threshold. It avoids unstable regulation or logic behavior when input power is inadequate.
+
+## 27. Analog signal-conditioning circuits
+- Differential pair — Two coupled input transistors responding to the difference between signals. It is a basic input stage for amplifiers and comparators and can reject common-mode disturbances.
+- Current mirror — Copies a reference current into another branch with a chosen ratio. It provides bias currents and active loads using relatively little circuitry.
+- Active load — A transistor-based load that can present high small-signal resistance. It increases amplifier gain without requiring a very large physical resistor.
+- Cascode — Stacked device arrangement that reduces unwanted voltage variation on a sensitive device. It can improve gain or isolation at the cost of voltage headroom.
+- Operational amplifier — A high-gain differential amplifier normally used with feedback. It implements amplification, filtering, buffering, and many precision analog functions.
+- Operational transconductance amplifier (OTA) — Converts an input voltage difference into output current. It supports integrated filters, integrators, and voltage-controlled analog processing.
+- Instrumentation amplifier — A differential amplifier arrangement emphasizing input impedance and common-mode rejection. It extracts small sensor signals in the presence of larger shared voltages.
+- Transimpedance amplifier (TIA) — Converts input current into output voltage. It reads photodiodes and other current-output sensors.
+- Low-noise amplifier (LNA) — Amplifies weak signals while adding limited noise. It preserves sensitivity at the front of receivers and sensing chains.
+- Variable-gain amplifier — Changes its gain continuously or through selectable settings. It adapts signal amplitude to the usable range of later stages.
+- Programmable-gain amplifier — Selects gain through digital control. It lets software or calibration logic accommodate different signal levels.
+- Comparator — Produces a digital decision about which input voltage is higher. It implements thresholds, zero crossings, and converter decisions.
+- Window comparator — Uses upper and lower thresholds to classify whether a signal lies within a range. It detects valid supplies, limits, or out-of-range sensor values.
+- Sample-and-hold circuit — Captures an analog voltage and holds it temporarily. It gives later circuitry a stable input during conversion or processing.
+- Track-and-hold circuit — Follows an input during a tracking phase and freezes it during hold. It supports sampling systems requiring controlled acquisition and hold behavior.
+- Analog switch — Connects or disconnects an analog signal path. It enables sampling, routing, multiplexing, and programmable analog configurations.
+- Analog multiplexer — Selects one analog input for a shared path. It allows several sensors or channels to share an ADC or amplifier.
+- Analog crosspoint — Provides selectable connections among multiple analog inputs and outputs. It supports more flexible analog routing than one-output multiplexing.
+- Integrator — Produces a signal proportional to the time integral of its input. It supports filters, control loops, and integrating data converters.
+- Differentiator — Produces a signal related to the input's rate of change. It helps edge detection and selected control/filter functions, with noise sensitivity requiring care.
+- Active filter — Uses amplifiers and passive elements to shape frequency response. It suppresses unwanted frequencies or selects a signal band without relying only on inductors.
+- Switched-capacitor filter — Uses clocked charge transfer to realize filtering functions. It can set effective time constants through capacitor ratios and clock frequency.
+- Bandgap reference — Combines device voltages with opposing temperature trends to form a relatively stable reference. It anchors analog accuracy across temperature in a suitable implementation.
+- Current reference — Generates a controlled reference current. It stabilizes biasing, conversion, and sensing functions.
+- Bias network — Distributes the voltages and currents establishing device operating points. It makes analog subcircuits operate consistently rather than drifting into unsuitable regions.
+- Offset-cancellation circuit — Measures or compensates unwanted input/output offsets. It improves small-signal accuracy.
+- Auto-zero circuit — Periodically samples an amplifier's offset and subtracts it. It reduces offset and low-frequency error with sampling-related tradeoffs.
+- Chopping circuit — Modulates and demodulates a signal to move amplifier offset and low-frequency noise away from the desired band. It improves precision but introduces switching artifacts.
+- Calibration circuit — Measures errors and adjusts parameters or correction codes. It compensates manufacturing and operating variation that cannot be eliminated by nominal design alone.
+
+## 28. Data converters and measurement
+- SAR ADC — A successive-approximation converter performing a sequence of binary decisions with a comparator and DAC. It offers useful efficiency for many moderate-to-high-resolution measurement tasks.
+- Flash ADC — Uses many parallel comparators to classify an input in one main decision stage. It achieves very high conversion speed at rapidly growing area and power cost with resolution.
+- Pipeline ADC — Splits conversion across stages that resolve and pass on residual information. It achieves high throughput with multiple-cycle latency and calibration requirements.
+- Delta-sigma ADC — Oversamples and noise-shapes quantization error, then digitally filters the result. It supports high resolution over a limited signal bandwidth.
+- Integrating ADC — Measures an input through integration over time. It can offer excellent noise rejection and precision for slowly varying signals.
+- Time-interleaved ADC — Uses several converters sampling at staggered times. It increases aggregate sample rate but requires matching or correction of channel errors.
+- Resistor-string DAC — Selects a tap from a resistor chain to produce an analog level. It offers straightforward monotonic behavior at a component-count cost.
+- R–2R DAC — Uses a repeating two-resistance ladder to weight digital bits. It implements conversion without requiring a separate exponential resistor value for each bit.
+- Current-steering DAC — Directs weighted current sources to form an output. It supports high-speed conversion, with current-source matching and switching behavior determining accuracy.
+- Capacitive DAC — Produces analog levels through charge redistribution in a capacitor array. It supports efficient converters, including many SAR ADC internal DACs.
+- Delta-sigma DAC — Converts a digitally noise-shaped stream into an analog signal with filtering. It supports high effective resolution within the intended bandwidth.
+- PWM-based converter — Represents a value through pulse duty cycle and usually averages it with a filter. It provides simple low-bandwidth conversion where ripple and settling are acceptable.
+- Time-to-digital converter (TDC) — Converts a time interval or phase difference into a digital code. It supports ranging, time measurement, clock recovery, and digital PLLs.
+- Digital-to-time converter (DTC) — Produces a programmed delay or phase from a digital code. It supports precise timing alignment and synthesis.
+- Voltage-to-frequency converter — Represents an input voltage as an output pulse frequency. It supports measurement or transmission where counting pulses is convenient.
+- Converter reference buffer — Drives the reference load of a data converter without excessive disturbance. It helps preserve conversion accuracy during switching transients.
+- Sample-clock circuitry — Produces the timing used to capture analog inputs. Low uncertainty and appropriate phase behavior preserve signal fidelity, especially at high input frequency.
+- Converter calibration engine — Estimates and corrects converter-specific mismatches. It improves effective accuracy or permits a more economical underlying analog design.
+- Decimation filter — Filters a sampled stream before reducing its sample rate. It prevents unwanted spectral content from folding into the retained band.
+- Interpolation filter — Increases sample rate while filtering spectral images. It prepares signals for DACs or subsequent higher-rate processing.
+- Offset-correction block — Removes a systematic additive error. It improves zero-point accuracy in measurement and conversion.
+- Gain-correction block — Adjusts a systematic multiplicative error. It aligns measured or generated scale with the intended units.
+- Nonlinearity-correction block — Applies a correction curve or table for deviations from a linear response. It improves accuracy beyond simple offset and gain calibration.
+
+## 29. RF and wireless circuitry
+- RF switch — Routes high-frequency signals with controlled loss, isolation, and linearity. It selects bands, paths, or operating modes.
+- Antenna switch — Connects antennas to selected transmit/receive paths. It enables shared antennas and multi-band or diversity configurations.
+- RF low-noise amplifier — Amplifies weak received RF signals near the input. Low added noise preserves receiver sensitivity.
+- Power amplifier — Raises a signal to the power needed to drive a load or antenna. It enables transmission while balancing efficiency, linearity, and heat.
+- Driver amplifier — Provides an intermediate amplification stage able to drive the next circuit's load. It helps a final amplifier or converter receive sufficient signal amplitude.
+- Mixer — Combines a signal with a local oscillator to translate frequency. It moves signals between RF, intermediate frequency, and baseband.
+- I/Q modulator — Uses in-phase and quadrature components to control a carrier's amplitude and phase. It generates complex modulation formats.
+- I/Q demodulator — Separates a received carrier into in-phase and quadrature components. It enables recovery of amplitude/phase information for digital demodulation.
+- RF oscillator — Generates a periodic high-frequency signal. It supplies a local oscillator or carrier reference.
+- Frequency synthesizer — Generates selectable frequencies from a reference. It tunes radios across channels or bands.
+- Phase shifter — Changes a signal's phase with controlled amplitude behavior. It supports beam steering, phase alignment, and cancellation.
+- Variable attenuator — Reduces signal amplitude by a controlled amount. It helps gain management, calibration, and overload prevention.
+- Balun — Converts between balanced differential and unbalanced single-ended signals. It connects antennas, transmission lines, mixers, and amplifiers with different interface forms.
+- Impedance-matching network — Transforms the load seen by an RF source. It improves transfer efficiency, gain, noise behavior, or power delivery over a chosen band.
+- RF filter — Passes desired radio frequencies and attenuates others. It reduces interference and unwanted emissions.
+- Channel-selection filter — Isolates the desired channel after or during frequency conversion. It limits interference entering later amplification or digitization.
+- Envelope detector — Extracts the slowly varying amplitude of a carrier signal. It supports amplitude detection, monitoring, and control.
+- Power detector — Measures RF signal power through a calibrated detection circuit. It supports transmit-power control and protection.
+- RSSI circuit — Produces a received-signal-strength indication. It helps automatic gain control, link decisions, and receiver diagnostics.
+- Automatic-gain-control loop — Adjusts gain in response to observed signal level. It maintains a usable dynamic range without saturating later stages.
+- Beamforming network — Applies controlled phase and/or amplitude relationships across antenna paths. It shapes the spatial transmit or receive response.
+- Phased-array controller — Programs and coordinates antenna-element settings. It enables beam steering and calibration across multiple RF channels.
+- RF data converter — Samples or generates sufficiently high-frequency/bandwidth signals for an RF architecture. It moves more radio processing into digital logic when performance and power permit.
+- Digital predistortion engine — Pre-adjusts transmit samples to counter a power amplifier's nonlinear response. It improves transmitted linearity while allowing efficient amplifier operation.
+
+## 30. Security hardware
+- AES engine — Implements the AES block cipher and supported operating modes. It accelerates symmetric encryption with an implementation whose side-channel properties still require design attention.
+- SHA engine — Computes a supported SHA-family cryptographic hash. It accelerates integrity checks, signatures, and authenticated protocols.
+- HMAC engine — Combines a secret key with a hash according to HMAC. It generates or verifies message authentication efficiently.
+- KMAC engine — Implements the Keccak-based KMAC keyed authentication construction. It supports cryptographic authentication and key-related functions using that algorithm family.
+- Public-key accelerator — Executes expensive asymmetric cryptographic operations. It speeds signature verification, key exchange, and related operations.
+- Modular arithmetic engine — Computes operations modulo large integers or field polynomials. It is a reusable foundation for many public-key algorithms.
+- True-random entropy source — Measures a physical phenomenon with unpredictable variation. It provides entropy for cryptographic systems when properly characterized and health-tested.
+- Entropy conditioner — Processes raw entropy to improve its usable distribution under an assessed entropy model. It does not create missing entropy from nothing.
+- Deterministic random generator — Expands a secret seed into a pseudorandom stream using a specified construction. A cryptographically suitable implementation supplies high-rate random values while preserving security assumptions.
+- Key store — Protected storage for secret keys or key material. It reduces exposure through ordinary software-visible memory paths.
+- Key manager — Controls key derivation, use, lifetime, and access. It prevents arbitrary components from directly handling all root secrets.
+- Key ladder — A sequence of derived keys rooted in a protected secret. It separates purposes and limits which downstream secrets must be exposed.
+- Secure-boot verification engine — Authenticates boot code before execution under a root-of-trust policy. It prevents unauthorized firmware from becoming the initial trusted software.
+- OTP controller — Manages access, programming, and integrity of one-time-programmable storage. It protects permanent identities and security configuration from accidental or unauthorized changes.
+- Lifecycle controller — Enforces states such as manufacturing, development, production, and retirement. It changes allowed debug and secret-access behavior as the device's role changes.
+- Memory-encryption engine — Encrypts data crossing a defined memory boundary. It can protect confidentiality against observation outside that boundary; integrity and replay protection need additional mechanisms.
+- Memory-scrambling block — Applies a reversible transformation to memory contents or addresses. It may deter simple observation or fault patterns, but is not automatically equivalent to strong authenticated encryption.
+- Integrity checker — Verifies tags, hashes, codes, or other evidence that data has not been altered. Its protection depends on the threat model and whether authentication is cryptographic.
+- Secure-wipe engine — Clears or invalidates sensitive state using a defined procedure. It reduces secret retention, while physical memory behavior determines what erasure can guarantee.
+- Debug-access controller — Restricts privileged debug operations. It prevents a debug port from becoming an unrestricted path around normal security checks.
+- Tamper detector — Monitors conditions associated with an attack, such as abnormal voltage, clock, or enclosure activity. It triggers a response under a defined detection policy.
+- Active shield — A monitored conductive structure placed over sensitive regions. It can detect some physical probing or modification attempts.
+- Fault-injection detector — Looks for abnormal events or inconsistent computation associated with induced faults. It supports detection and recovery rather than assuming every fault is prevented.
+- Redundant-computation checker — Compares independent or repeated results. It detects mismatches caused by some faults, subject to common-mode failure limits.
+- Side-channel countermeasure logic — Implements measures such as masking, balancing, or controlled randomization. It reduces specific leakage channels when validated against the intended attack model.
+- Physically unclonable function (PUF) — Uses manufacturing variation to produce device-specific responses. With suitable stabilization and security analysis, it supports identity or key reconstruction without storing the entire secret directly.
+
+## 31. Test, debug, and observability
+
+- Scan chain — Connects selected state elements into a shift register during test. It lets a tester load internal states and read results that ordinary chip pins could not directly reach.
+- Scan-enable network — Distributes the signal that selects normal operation or scan shifting. Correct distribution makes thousands of scan registers enter the intended mode together.
+- Scan compression and decompression — Expands a small number of tester inputs into many internal scan streams and compacts responses. It reduces tester bandwidth and test time while requiring care with unknown values and fault coverage.
+- Test-access port (TAP) — A small interface and controller for selecting and operating test or debug registers, commonly through JTAG. It provides a standardized path into internal test infrastructure.
+- Boundary-scan cell — Adds controllability and observability near an I/O boundary. Chains of these cells help test board connections and pin behavior without physically probing every net.
+- Logic built-in self-test (LBIST) — Generates test patterns and checks logic responses on the chip. It supports manufacturing or in-field checks when external test access is limited.
+- Memory built-in self-test (MBIST) — Runs specialized read/write sequences against memory arrays. It detects faults such as stuck bits and problematic interactions between cells.
+- Memory repair controller — Uses fault information to redirect defective rows or columns to spare resources. It can recover usable capacity and improve manufacturing yield.
+- Test-pattern generator — Produces inputs for testing a circuit, sometimes using a linear-feedback shift register. It creates many test sequences from a compact hardware structure.
+- Signature analyzer — Compresses a sequence of test responses into a compact final value. Comparing that value with an expected signature reduces response storage, with some possibility of error aliasing.
+- Multiple-input signature register (MISR) — A signature analyzer that combines multiple response bits each cycle through feedback logic. It efficiently compacts wide internal test outputs.
+- On-chip clock controller for test — Selects or generates controlled shift and capture pulses. It allows slow scan loading followed by carefully timed tests of normal-speed paths.
+- Test point — Extra test-oriented circuitry that improves access to difficult internal nodes. It can improve fault coverage or reduce the number of required patterns.
+- Observation point — Makes an internal signal visible to a scan register or response compactor. It helps expose faults whose effects would otherwise disappear before reaching an output.
+- Control point — Lets test logic force or influence an internal value. It helps activate faults behind logic that is difficult to control from ordinary inputs.
+- Trace buffer — Stores a recent history of execution or selected signals. It makes intermittent failures easier to diagnose after the triggering event has passed.
+- Trace encoder — Converts execution events into a compact trace representation. It reduces the storage and link bandwidth needed to reconstruct behavior.
+- Trace funnel — Merges trace streams from multiple sources into a shared output. It lets many cores or blocks use limited trace infrastructure, subject to arbitration and bandwidth limits.
+- Performance counter — Counts selected performance events, such as cache misses or completed operations. It shows where the implemented chip spends time and whether expected bottlenecks are real.
+- Event counter — Counts occurrences of a chosen hardware event. It provides inexpensive visibility into activity, errors, transactions, or protocol behavior.
+- Stall counter — Measures cycles in which progress is blocked, ideally separated by cause. It distinguishes lack of data, resource contention, and downstream backpressure.
+- Watchpoint — Detects a selected data access or address condition. It can trigger debug capture or halt execution at a relevant event.
+- Breakpoint — Detects a chosen execution location or condition. It lets a debugger stop a processor before or after a particular operation.
+- Trigger unit — Combines conditions, sequences, and counters to recognize an event of interest. It starts or freezes trace capture around a rare failure.
+- Embedded logic analyzer — Samples selected internal digital signals into on-chip storage under configurable triggers. It supports debugging of actual silicon or FPGA behavior.
+- Debug bus — Carries diagnostic requests or selected internal state to debug infrastructure. It gives engineers access to blocks outside their normal functional interfaces.
+- Diagnostic register — Exposes status, error details, or controlled diagnostic settings. It helps identify the state of a block during bring-up and fault investigation.
+- Manufacturing identification register — Records identifiers such as product version, die identity, or manufacturing information. It helps software and test systems distinguish silicon revisions and trace failures.
+- Fuse-reading logic — Senses programmed fuse or antifuse states and loads their values into usable registers. It makes permanent configuration, calibration, identification, or repair information available at startup.
+
+## 32. Reliability and error handling
+
+- Parity logic — Generates or checks a parity bit for a group of data bits. It cheaply detects odd numbers of bit errors but does not generally identify or correct the bad bit.
+- Error-correcting-code (ECC) logic — Encodes redundancy and checks or corrects data according to a chosen code. It improves memory or link reliability at the cost of extra bits, circuitry, and sometimes latency.
+- Cyclic-redundancy-check (CRC) logic — Calculates a polynomial-based checksum over a data sequence. It detects many transmission and storage errors; it is not a cryptographic integrity check.
+- Memory scrubber — Periodically reads memory, checks ECC, and writes corrected data back. It prevents some correctable errors from accumulating into uncorrectable combinations.
+- Background repair engine — Performs supported repair or remapping operations while the system remains available. It limits disruption when failing memory locations or other resources can be replaced by spares.
+- Error-logging block — Captures error type, location, time, and related state. It preserves evidence needed for diagnosis and recovery policy.
+- Error-aggregation block — Collects error reports from many sources into a common status and reporting path. It makes system-wide fault handling manageable.
+- Error interrupt controller — Converts selected fault conditions into interrupts with appropriate priority and masking. It brings recoverable or urgent errors to software attention.
+- Retry controller — Reissues an operation after a detected transient failure or retry response. It supports recovery when repeating the operation is valid under the protocol.
+- Replay controller — Retains or reconstructs operations so they can be executed again from a known point. It supports recovery from link errors, speculation failures, or selected execution faults.
+- Timeout detector — Flags an operation that has not completed within a configured interval. It prevents the system from waiting indefinitely for a failed or unresponsive resource.
+- Lockstep comparator — Compares corresponding outputs or state from processors or units executing the same work. It detects divergence, although shared faults may affect both copies identically.
+- Redundant execution unit — Provides an additional implementation of a computation for checking or continued service. It trades area and power for fault detection or availability.
+- Triple-modular-redundancy voter — Selects the majority result from three replicated implementations. It can mask one disagreeing replica, subject to voter reliability and independence of faults.
+- Spare functional unit — A reserve compute or control resource that can replace a failed unit. It preserves useful operation when the design includes suitable routing and reconfiguration support.
+- Spare lane — An extra communication lane available to replace a defective lane. It helps preserve link capability after manufacturing defects or some later failures.
+- Spare memory bank — A reserve bank that can replace unavailable storage. It provides coarser repair than spare rows or columns, with corresponding capacity and area overhead.
+- Fault-isolation switch — Disconnects or blocks a faulty region from shared signals or supplies, depending on its implementation. It limits the ability of one failure to disturb otherwise working circuitry.
+- Degraded-mode controller — Reconfigures operation around unavailable resources or reduced safe limits. It trades performance or features for continued service.
+- Aging monitor — Tracks indicators of device degradation or timing-margin loss. It can guide maintenance decisions or adaptive operating limits.
+- Process monitor — Measures properties influenced by manufacturing variation, often using replica circuits or oscillators. It helps characterize silicon and select suitable operating settings.
+- Radiation-event detector — Detects particular radiation effects using technology-specific sensing structures. In supported designs, it can trigger logging or mitigation, but it does not guarantee detection of every radiation-induced fault.
+
+## 33. FPGA and reconfigurable elements
+
+- Lookup table (LUT) — Stores the truth table of a small Boolean function and selects an output using its inputs. It implements many different logic functions without changing the physical wiring inside the table.
+- Configurable logic block (CLB) — Groups programmable logic, registers, and local connections into a reusable FPGA tile. It provides a flexible unit for building larger digital circuits.
+- Adaptive logic module (ALM) — A vendor-specific logic building block that can partition its logic and register resources in different ways. It improves the fit of varied Boolean and arithmetic functions into the fabric.
+- Programmable flip-flop — A state element with configurable choices such as input routing, enable, or reset behavior. It lets the same FPGA resource support many sequential designs.
+- Carry chain — A dedicated fast path between adjacent arithmetic stages. It accelerates addition, subtraction, comparisons, and counters compared with ordinary programmable routing.
+- DSP slice — A hardened arithmetic block containing resources such as multipliers, adders, accumulators, and registers. It performs common numeric operations more efficiently than implementing them entirely in LUTs.
+- Configurable multiplier/accumulator block — A hard arithmetic unit whose widths, modes, and pipeline stages can be selected within supported limits. It adapts efficient multiply-accumulate hardware to different numeric workloads.
+- Block RAM — A dedicated embedded memory array with configurable width, depth, and port modes. It provides dense local storage for buffers, tables, and processor memories.
+- Distributed RAM — Memory implemented using suitable programmable logic resources, often LUT storage. It provides small memories near their consumers when a full block RAM would be wasteful.
+- Programmable switch box — Connects selected routing tracks at a routing intersection. It enables the fabric to build many possible global connection patterns.
+- Connection box — Connects logic-block pins to nearby routing tracks. It determines how a logic function enters or leaves the programmable routing network.
+- Routing multiplexer — Selects one of several possible signal sources for a destination wire. It realizes programmable connectivity, with area and delay costs for flexibility.
+- Programmable I/O block — Configures supported pin direction, electrical standard, registers, and related interface features. It lets an FPGA connect to different external devices within its electrical limits.
+- Configurable delay element — Adds a selectable amount of signal delay. It aligns data and strobe timing or compensates for interface skew.
+- Configuration SRAM — Volatile bits that control LUT contents, routing, and other FPGA settings. It enables repeated reconfiguration but requires a configuration source after power loss.
+- Configuration flash — Nonvolatile storage used by some programmable devices to retain configuration. It can reduce dependence on an external boot configuration memory.
+- Configuration antifuse — A one-time programmable connection used in some programmable fabrics. It retains the programmed connectivity without volatile configuration bits, but cannot be freely rewritten.
+- Configuration controller — Loads, checks, and manages the device configuration. It makes the bitstream become an operating hardware design and may support recovery or authentication.
+- Configuration port — An interface through which configuration data reaches the device. Its width, speed, and protocol affect configuration time and board integration.
+- Partial-reconfiguration controller — Replaces the configuration of a supported region while other regions continue operating. It allows time-sharing hardware capacity or updating selected functions.
+- Reconfiguration isolation/decoupling interface — Holds a changing region's interfaces in safe states during reconfiguration. It prevents incomplete configuration from corrupting active neighboring logic.
+- Embedded processor — A hard processor integrated alongside programmable logic. It handles software control while the fabric implements workload-specific datapaths.
+- Hard protocol block — A fixed implementation of a complex interface or protocol function. It saves programmable resources and can meet speeds that would be difficult in general fabric.
+- Embedded FPGA fabric — A programmable logic region integrated inside an otherwise custom ASIC. It adds post-fabrication flexibility where the chip designer chooses to spend the area and power overhead.
+
+## 34. Application-specific engines
+
+- FFT/IFFT engine — Computes fast Fourier transforms or their inverse using structured arithmetic and data movement. It converts between time and frequency representations for communications, signal processing, and related algorithms.
+- Finite-impulse-response (FIR) filter — Forms a weighted sum of recent input samples without output feedback. It implements programmable filtering with predictable finite response length.
+- Infinite-impulse-response (IIR) filter — Uses feedback as well as input samples to implement a recursive filter. It can achieve useful responses with fewer arithmetic operations, while requiring attention to stability and finite precision.
+- Digital upconverter — Interpolates and frequency-shifts a digital signal toward a higher sample rate or carrier position. It prepares baseband data for transmission stages.
+- Digital downconverter — Frequency-shifts, filters, and decimates a sampled signal. It extracts a desired channel while reducing the rate handled by later processing.
+- Channelizer — Splits a wideband stream into multiple frequency channels. It lets subsequent processing operate selectively on narrower bands.
+- Modulator/demodulator — Maps data to a signaling representation or recovers data from that representation. It implements the signal-processing portion of a communication scheme.
+- Channel estimator — Estimates how a communication channel changes a transmitted signal. It supplies parameters used for equalization and detection.
+- Equalizer — Compensates for selected channel distortions using filtering or related processing. It improves symbol recovery when the received waveform is spread or distorted.
+- Viterbi decoder — Searches for the most likely path through a trellis representation of a code or state model. It efficiently decodes convolutional codes and other suitable sequence problems.
+- LDPC decoder — Iteratively decodes a low-density parity-check code using a sparse constraint graph. It provides strong error correction, with memory traffic and iteration count affecting cost and latency.
+- Polar-code decoder — Decodes data protected by a polar code using supported algorithms such as successive cancellation or list decoding. It implements the error-correction method required by the selected communication system.
+- Reed–Solomon decoder — Corrects symbol errors using algebra over a finite field. It is useful for systems that encounter burst errors or missing symbols.
+- Image signal processor (ISP) — A pipeline of specialized blocks that converts sensor output into usable images. It performs sensor correction, reconstruction, and image adjustment efficiently at pixel-stream rates.
+- Demosaicer — Reconstructs full color information from a sensor's color-filter samples. It turns a mosaic of measured colors into an image with multiple color channels at each pixel.
+- Denoiser — Reduces unwanted variation using spatial, temporal, or model-based processing. It improves image or signal quality while trading off detail preservation and processing cost.
+- Scaler — Resamples an image to a different size. It supports display adaptation, video pipelines, and image pyramids using filters suited to the quality and throughput target.
+- Color-space converter — Transforms pixel values between color representations. It connects sensors, codecs, displays, and algorithms that use different channel conventions.
+- Tone-mapping engine — Maps a source brightness range into the range supported by the output. It makes high-dynamic-range content displayable while controlling contrast and highlight detail.
+- Video encoder/decoder — Compresses video into, or reconstructs it from, a supported bitstream format. Dedicated hardware reduces the energy and compute needed for real-time video.
+- Motion-estimation engine — Searches for correspondence between image regions across frames. It supplies motion information used by video compression and some temporal processing algorithms.
+- Audio codec — In a hardware context, commonly combines audio ADCs, DACs, and related analog interfaces; the term can also refer to compression logic. The physical codec connects digital processing to microphones, line inputs, and speakers through suitable analog stages.
+- Audio DSP — A processor or specialized datapath for audio operations such as filtering, mixing, and effects. It delivers predictable low-latency processing at audio stream rates.
+- Compression/decompression engine — Converts data to or from a supported compact representation. It can save storage and transfer bandwidth when the reduction outweighs processing and metadata costs.
+- Packet classifier — Assigns packets to classes or actions based on header fields and rules. It supports forwarding policy, quality of service, and access control.
+- Packet parser — Extracts protocol fields and metadata from incoming packet bytes. It supplies structured information to downstream classification and forwarding logic.
+- Regular-expression engine — Matches streams or records against supported pattern expressions. It accelerates selected inspection workloads, with cost depending strongly on the pattern model.
+- Lookup engine — Searches a table using a key, often through hashing, trees, or associative memories. It accelerates operations such as forwarding, classification, and key-based retrieval.
+- Database join engine — Matches records from different inputs according to a join condition. It accelerates suitable database operations when memory access and data layout support the chosen algorithm.
+- Database filter engine — Evaluates predicates and selects matching records. It reduces the amount of data sent to later processing stages.
+- Database aggregation engine — Accumulates grouped results such as sums, counts, or extrema. It offloads repetitive reduction work while managing group-state storage.
+- Storage checksum engine — Calculates or verifies integrity checks on stored blocks. It detects corruption without consuming as much general-purpose processor time.
+- Erasure-coding engine — Generates or reconstructs redundant data fragments using a selected code. It allows storage or communication systems to recover from supported combinations of missing fragments.
+
+## 35. Specialized compute structures
+
+- Analog multiply-accumulate array — Uses analog quantities such as current, charge, or voltage to perform weighted summation. It can reduce digital arithmetic or movement costs, but precision, noise, conversion, and calibration determine its practical value.
+- SRAM compute-in-memory array — Adds computation within or closely coupled to an SRAM array. It reduces some transfers between storage and arithmetic, with supported operations and accuracy determined by the circuit design.
+- Resistive-memory crossbar array — Stores conductance values at wire intersections and can combine them through electrical summation. It supports certain analog matrix operations, subject to device variation, programming cost, and peripheral circuitry.
+- Near-memory processing block — Places processing close to a memory bank, stack, or controller. It reduces movement over longer interfaces for workloads that can execute effectively near their data.
+- Spiking-neuron circuit — Maintains neuron-like state and emits an event when a defined condition is met. It supports event-driven neural models using analog, digital, or mixed-signal implementations.
+- Synapse circuit — Stores or applies the weight and possibly dynamics of a connection between neuron-like elements. It implements how incoming events influence a destination neuron.
+- Event-routing network — Delivers sparse events to their intended consumers. It can avoid continuously transmitting inactive channels, although bursts and routing overhead still matter.
+- Address-event interface — Encodes an event using the address or identity of its source, often with timing information. It multiplexes many event sources onto a shared communication path.
+- Stochastic-computing unit — Represents values through properties of bitstreams, such as the fraction of one bits. It can implement some operations with simple logic, trading that simplicity against stream length, correlation, and accuracy.
+- Associative-computing array — Searches or operates on many stored entries by content rather than only by address. It accelerates supported matching and parallel data-selection operations.
+- Optical compute block — Uses optical propagation, interference, or modulation to implement selected computations. It may offer useful parallelism, but lasers, conversion, precision, tuning, and data movement must be included in the system cost.
+
+## 36. Sensors and MEMS
+
+- Temperature sensor — Converts a temperature-dependent physical property into an electrical measurement. It supports thermal protection, fan or cooling control, and compensation of temperature-sensitive circuits.
+- Voltage sensor — Measures a supply or signal voltage through an appropriate sensing path. It supports regulation, droop detection, operating-limit checks, and diagnostics.
+- Current sensor — Measures current using a supported method such as a sense resistor, replica device, or magnetic coupling. It supports power monitoring, current limiting, and load control.
+- Hall-effect sensor — Uses the Hall effect to sense a magnetic field. It enables contactless position or current measurement when the geometry and process support it.
+- Magnetic sensor — Detects a magnetic field using a supported physical mechanism, including Hall or magnetoresistive effects. It supports orientation, position, and other field-sensing applications.
+- Photodiode array — Groups light-sensitive diodes into multiple sensing locations or channels. It enables spatial or spectral light detection depending on optics and device structure.
+- Image-sensor pixel — A repeating sensing cell that collects light-generated charge and includes associated control circuitry. Pixel design determines important tradeoffs among sensitivity, noise, dynamic range, and spatial sampling.
+- Pixel readout circuit — Selects pixels and converts their stored or generated signals into downstream measurements. It determines how quickly and accurately an image array can be read.
+- Capacitive sensing electrode — A conductor whose capacitance changes with touch, position, or nearby material. It turns a physical interaction into an electrical quantity that a sensing circuit can measure.
+- Capacitive sensing front end — Excites and measures small capacitance changes. It enables touch interfaces and suitable displacement or proximity sensors.
+- MEMS accelerometer — Uses a microscopic mechanical structure whose displacement or stress changes under acceleration. Readout electronics convert that response into a motion measurement.
+- MEMS gyroscope — Uses a microscopic moving structure and rotation-dependent effects to sense angular velocity. It supports motion tracking and stabilization with suitable calibration.
+- MEMS pressure sensor — Uses a pressure-sensitive mechanical structure and an electrical readout method. It measures pressure for environmental, industrial, or other supported applications.
+- MEMS resonator — A microfabricated mechanical structure with a characteristic resonance. It can provide a frequency reference or selective response in a compatible process or package.
+- MEMS microphone — Uses a microscopic diaphragm and readout circuitry to sense acoustic pressure. It provides a compact sound input for digital systems.
+- Microactuator — A microfabricated structure that produces physical motion or force from an electrical input. It enables functions such as small-scale positioning or switching when the fabrication technology supports them.
+- Sensor excitation/bias circuit — Supplies the electrical stimulus or operating point required by a sensor. Stable excitation helps turn the sensor response into a repeatable measurement.
+- Sensor calibration/compensation block — Applies corrections for offset, gain, temperature, or other characterized effects. It improves useful accuracy beyond the raw sensor output.
+
+## 37. Photonic components
+
+- Optical waveguide — A structure that confines and guides light along a designed path. It provides the photonic counterpart of a signal route within a compatible process.
+- Waveguide bend — Changes the direction of a guided optical path. Its geometry trades routing compactness against loss and other optical constraints.
+- Waveguide crossing — Allows optical routes to intersect using a designed crossing structure. It enables denser routing while controlling insertion loss and crosstalk.
+- Optical splitter — Divides optical power among multiple output paths. It distributes a source or signal to several consumers, reducing the power available to each branch.
+- Optical combiner — Brings light from multiple paths into a shared output structure. It supports interferometric circuits and other optical networks, with behavior depending on phase, wavelength, and implementation.
+- Directional coupler — Transfers optical power between nearby waveguides through coupling. It forms useful building blocks for splitting, combining, filtering, and interference-based circuits.
+- Grating coupler — Uses a patterned structure to couple light between a waveguide and an external optical path. It supports fiber or free-space attachment with geometry-dependent bandwidth and efficiency.
+- Edge coupler — Couples light through the edge of a photonic die, usually using a mode-conversion structure. It provides another route for connecting waveguides to external fibers or devices.
+- Ring resonator — A closed optical path that resonates at selected wavelengths. It can implement compact filters, modulators, or sensors, while requiring attention to temperature and fabrication variation.
+- Mach–Zehnder interferometer — Splits light into paths and recombines it so relative phase changes affect the output. It supports modulation, switching, sensing, and other interferometric functions.
+- Optical modulator — Changes an optical signal according to an electrical or other control input. It encodes data onto light or controls light for computation and sensing.
+- Phase shifter — Changes the phase accumulated by light along a path. It controls interference and enables tuning of many photonic circuits.
+- Photodetector — Converts incident light into an electrical signal. It connects optical transmission or sensing to electronic processing.
+- Optical receiver amplifier — Amplifies the small electrical output from a photodetector, commonly using a transimpedance stage. It makes the received signal usable by later detection circuitry.
+- Wavelength multiplexer/demultiplexer — Combines or separates channels carried at different optical wavelengths. It increases the information carried by a shared optical path.
+- Optical switch — Selects the path taken by an optical signal. It enables reconfigurable photonic connections without requiring every intermediate stage to convert the data to electronics.
+- Thermal tuner — Uses controlled heating to adjust an optical element's response. It compensates for variation or sets an operating point, with power and response-time costs.
+- Monitor photodiode — Measures a sampled portion of optical power. It supplies feedback for calibration, power control, and fault detection.
+- Laser interface — Provides the optical and, where needed, electrical connection to a laser source. It makes a usable light supply available to the photonic circuit.
+- Bonded or integrated laser device — A laser fabricated or attached using a technology that supports optical gain. It supplies light close to the photonic circuit; such integration is not available in every silicon process.
+
+## 38. Physical layout and support structures
+
+- Well tap — Connects a transistor well to its intended bias using a suitable contact structure. It controls well potential and helps meet latch-up and process requirements.
+- Substrate tap — Connects the substrate to its intended potential. It supports bias control and reduces unwanted substrate voltage movement.
+- Body contact — Provides an electrical connection to a transistor's body where the device structure permits it. It sets or controls body potential and associated device behavior.
+- Tie-high cell — Supplies an approved constant logic-one connection. It provides a library-qualified way to drive constant inputs instead of making an unsuitable direct rail connection.
+- Tie-low cell — Supplies an approved constant logic-zero connection. It serves the corresponding constant-low function while satisfying library and implementation rules.
+- Filler cell — Fills gaps between placed cells with required layout structures and rail continuity where applicable. It helps produce a legal, physically complete standard-cell row without adding functional logic.
+- Endcap cell — Terminates a standard-cell row or relevant boundary with process-appropriate geometry. It protects edge conditions and helps satisfy layout rules.
+- Boundary cell — A library- or methodology-specific cell used at a physical boundary. It supplies required edge structures; it should not be confused with a boundary-scan test cell.
+- Decoupling-capacitor cell — Adds local capacitance between supply and ground. It supplies short bursts of charge and helps reduce local supply disturbances within the power-delivery design.
+- Spare cell — An intentionally unused logic resource placed for possible later changes. It can enable limited fixes using available routing or metal-layer edits.
+- Engineering-change-order (ECO) cell — A resource arranged to support late implementation changes. It helps repair or modify logic without redesigning the entire placed circuit.
+- Antenna protection diode — Provides a discharge path associated with fabrication-induced charge on connected conductors. It helps prevent gate damage under the process's antenna rules.
+- Guard ring — A surrounding contacted structure used to collect carriers or isolate sensitive regions according to process rules. It helps manage substrate noise, leakage interactions, or latch-up risk.
+- Isolation well — A well arrangement used to electrically separate selected devices or regions. It enables bias separation and reduces some unwanted interactions.
+- Deep-well structure — A deeper doped region available in certain processes. It can provide additional isolation and support independently biased regions where permitted.
+- Dummy device — A nonfunctional or specially connected device placed to make local fabrication surroundings more uniform. It helps reduce edge effects in matched analog structures.
+- Matching structure — A deliberate arrangement, such as an interdigitated or common-centroid layout, for devices that should track each other. It reduces selected systematic mismatch sources rather than eliminating all variation.
+- Metal-density fill — Added metal shapes used to satisfy fabrication density and uniformity requirements. It improves manufacturability but can alter parasitic capacitance and must be included appropriately in analysis.
+- Dummy fill — Nonfunctional geometry added under process-specific density or patterning rules. It helps manufacturing uniformity and is broader than only metal fill.
+- Seal ring — A protective structure around a die's active region. It helps protect the circuitry from edge-related damage and environmental ingress according to the process and package design.
+- Crack-stop structure — A perimeter feature intended to impede mechanical crack propagation. It helps keep dicing or edge damage from reaching active circuitry.
+- Standard-cell row — A placement organization with defined sites, orientation, and compatible power connections. It makes large collections of library cells placeable and routable in a regular way.
+- Macro boundary — The physical outline and interface limits of a memory or other large block. It guides placement, pin access, spacing, and routing around that block.
+- Routing channel — Space deliberately available for wires between placed regions. It helps signals reach their destinations without excessive congestion.
+- Keepout region — A specified area where selected objects are prohibited or restricted. It reserves necessary space around sensitive blocks, pins, or physical structures; it is a design constraint rather than a circuit.
+- Placement blockage — A constraint that prevents or limits cell placement in a region. It reserves space for routing, macro access, or other physical needs.
+- Routing blockage — A constraint that prohibits or restricts routing in selected layers or regions. It protects reserved structures and prevents routes that would violate implementation requirements.
+
+## 39. Wires and power delivery
+
+- Local interconnect — Short-range conducting structures that connect nearby device terminals and local circuit elements. It forms connections beneath or alongside the broader metal-routing hierarchy, depending on the process.
+- Metal wire — A patterned conductor that carries signals or supply current. Its dimensions, layer, length, and surroundings determine resistance, capacitance, delay, and current limits.
+- Contact — A conducting connection between a device region or electrode and the interconnect stack. It makes the transistor or passive device electrically accessible to routing.
+- Via — A vertical connection between routing layers. It enables three-dimensional wiring but adds resistance, capacitance, and manufacturing constraints.
+- Via array — Multiple vias used together between conducting regions. It supports greater current capacity and lower connection resistance where geometry permits.
+- Redundant via — An additional permitted via that provides another connection path. It improves robustness against some defects and can reduce resistance.
+- Global bus — A group of signals routed across a substantial chip distance. It connects distant blocks, with substantial timing, routing, and power implications as width and distance grow.
+- Long-wire repeater — A buffer inserted along a long interconnect. It can reduce delay and restore edge quality, at the cost of area and switching power.
+- Shielding wire — A suitably connected conductor placed to reduce coupling to or from a sensitive signal. It helps control interference while consuming routing space and changing capacitance.
+- Differential pair — Two related conductors that carry information through their voltage or current difference. With appropriate symmetry and receiver design, it supports noise rejection and high-speed signaling.
+- Controlled-impedance route — An interconnect whose geometry and environment are designed for a target impedance. It reduces unwanted reflections in interfaces where transmission-line behavior matters.
+- Power rail — A conductor that distributes a supply locally, often along a cell row. It delivers current to nearby cells and connects into larger distribution structures.
+- Power strap — A wider distribution conductor connecting regions of the power network. It helps carry current with acceptable voltage drop.
+- Power ring — A supply-distribution structure arranged around a block or die region. It provides connection points and distributes current around that region.
+- Power mesh — A grid of interconnected supply conductors. It offers multiple current paths and helps control supply resistance and spatial voltage variation.
+- Ground network — The return and reference distribution network for the circuit. Its impedance and current paths matter just as much as the positive supply network.
+- Separate analog and digital supplies — Distinct supply domains or distribution paths for analog and digital circuitry. They can reduce coupling and support different voltages when grounding, interfaces, and package connections are designed consistently.
+- Backside power-delivery network — A process-supported supply network accessed from the back side of the die. It can reduce competition between power and signal routing, with technology-specific integration requirements.
+- Signal pad — A die-level connection structure for an external signal. It connects internal circuitry to bonding, probing, or package interconnect through a suitable I/O design.
+- Power pad — A connection structure used to bring supply current onto the die. Its count, location, and attachment affect current capacity and voltage drop.
+- Ground pad — A connection structure used for return current and reference connections. It helps establish low-impedance return paths and supports signal integrity.
+- Electrostatic-discharge (ESD) clamp — A protection device or circuit that conducts during specified electrostatic transients. It helps keep damaging voltages away from sensitive internal circuitry.
+- Pad protection network — A coordinated set of protection devices and connections around an interface. It manages specified electrical stress while respecting leakage, capacitance, and signal limits.
+- On-die termination — A resistor or controlled equivalent placed on the chip to terminate a transmission line. It reduces reflections and can simplify external board components.
+- I/O impedance structure — Driver, resistor, calibration, or related circuitry that establishes interface impedance. It helps match the interface to its electrical channel across operating conditions.
+
+## 40. Die-to-die and package elements
+
+- Die-to-die controller — Manages transactions, flow control, and other protocol functions between dies. It allows separate pieces of silicon to operate as a coordinated system.
+- Die-to-die PHY — Implements the physical electrical signaling between dies. It determines much of the link's rate, energy, reach, and timing behavior.
+- Chiplet interface — The complete agreed connection between chiplets, including relevant logical, physical, and package requirements. It enables integration of separately designed or manufactured dies when both sides are compatible.
+- Interposer routing — Wiring on an intermediate structure connecting dies or linking them to a package. It enables dense connections that may be difficult on an ordinary package substrate alone.
+- Silicon bridge — A localized silicon interconnect structure connecting nearby dies. It provides dense die-to-die routing without necessarily requiring a full-size silicon interposer.
+- Redistribution layer (RDL) — Metal routing that moves connection locations to more useful positions or pitches. It adapts fine die connections to package assembly and fan-out requirements.
+- Through-silicon via (TSV) — A conducting connection passing through silicon. It enables vertical connectivity in supported stacks, interposers, and other three-dimensional assemblies.
+- Through-glass via (TGV) — A conducting connection passing through a glass structure. It supports vertical routing in compatible glass-based packaging technologies.
+- Microbump — A small interconnect bump used to connect dies or a die and interposer at fine pitch. It enables dense vertical connections while imposing assembly and reliability constraints.
+- Solder bump — A solder-based connection between a die and another assembly surface. It provides both electrical connection and part of the mechanical attachment.
+- Copper pillar — A copper-based vertical interconnect structure, often combined with a solder interface. It supports controlled stand-off and fine-pitch attachment in compatible packages.
+- Hybrid-bonding pad — A metal contact used with a bonding process that joins surrounding dielectric surfaces and metal connections. It enables very dense die connections when alignment, surface preparation, and process requirements are met.
+- Wire-bond pad — A die pad designed to accept a bonded wire. It provides an interface suited to wire-bond assembly and its mechanical stresses.
+- Bond wire — A thin wire connecting a die pad to a package connection or another die. It is a practical assembly method, with inductance, current, and pitch limits to consider.
+- Package substrate — The supporting interconnect structure that connects die-level interfaces to board-level connections. It distributes signals and power and provides mechanical support.
+- Package trace — A conducting route within or on the package substrate. Its electrical properties affect interface timing, loss, crosstalk, and power delivery.
+- Package via — A vertical connection through package routing layers or a core. It allows package traces and power structures on different layers to connect.
+- Package capacitor — A capacitor placed in or on the package. It helps supply transient current and shape power-delivery impedance close to the die.
+- Embedded passive — A resistor, capacitor, inductor, or related passive structure integrated within a package or substrate. It can save board space and shorten selected connections.
+- Heat spreader — A thermally conductive structure that distributes heat over a larger area. It helps transfer heat from the die toward the cooling system.
+- Thermal-interface material — Material placed between thermal surfaces to reduce contact resistance. It improves heat transfer across otherwise imperfect mechanical contact.
+- Heat-removal structure — A heat sink, cold plate, microchannel, or other supported cooling structure that moves heat toward the environment. Its capacity constrains sustained operating power and temperature.
+- Test pad — A connection point intentionally provided for testing. It gives equipment access to selected signals or supplies during manufacturing or development.
+- Probe pad — A pad designed for temporary contact by test probes. It enables wafer-level or other pre-assembly electrical measurements.
+- Package-level test access — Pins, routes, and interface logic that expose testing functions after assembly. It allows checking the packaged device and diagnosing connections that did not exist at bare-die test time.
+
+## Reference notes
+
+This is a broad catalog of component families, not a claim that there is a finite list of every possible circuit. Some entries are alternative implementations; others are assemblies of smaller entries. Physical constraints, layout regions, and package structures are included because they are part of chip design even when they are not active circuits. MEMS, RF, nonvolatile memories, and photonics require suitable fabrication or assembly support and are not universally available in a standard CMOS process.
+
+For a proposed component, ask: What work does it perform? What supplies its data? What limits its throughput? How much state and routing does it require? Does the target process or IP library support it? Area, power, and achievable clock frequency need implementation-specific models and ultimately physical implementation; the component name alone does not determine those numbers.
+
+The explanations above are a synthesized engineering reference. These primary sources provide concrete examples of real devices, libraries, IP blocks, and implementation structures:
+
+- SkyWater device catalog — Transistors, diodes, resistors, capacitors, and other process-supported devices: https://github.com/google/skywater-pdk/blob/main/docs/rules/device-details.py
+- SkyWater process layers — Physical layers and their manufacturing roles: https://skywater-pdk.readthedocs.io/en/main/rules/layers.html
+- OpenTitan hardware IP index — Examples of security, peripheral, memory, and control blocks in a documented SoC: https://opentitan.org/book/hw/ip/index.html
+- Intel FPGA architecture overview — Programmable logic, memory, DSP, and routing resources: https://www.intel.com/content/www/us/en/docs/oneapi-fpga-add-on/developer-guide/2024-0/fpga-architecture-overview.html
+- OpenROAD tapcell documentation — Physical insertion of tap and endcap structures: https://openroad.readthedocs.io/en/latest/main/src/tap/README.html
+- Sandia silicon photonics — Examples of photonic devices and integration capabilities: https://www.sandia.gov/mesa/silicon-photonics/
+- Analog Devices accelerometer and gyroscope explanation — Mechanical sensing elements and electronic readout: https://www.analog.com/en/resources/technical-articles/accelerometer-and-gyroscopes-sensors-operation-sensing-and-applications.html

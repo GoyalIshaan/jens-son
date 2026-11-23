@@ -1,0 +1,92 @@
+  quantized layer 0
+  quantized layer 1
+  quantized layer 2
+  quantized layer 3
+tiny: 396 bundles, 95 descriptors, SRAM 589,824 B, DRAM 20,915,904 B
+FSim: 144.1 us simulated, 1 s; commands {'W': 147, 'R': 57, 'X': 42, 'L': 9, 'M': 159, 'V': 450}
+[    697 s] run start
+[    697 s] clock 2000 pc 67 bundles 70
+[    697 s] clock 4000 pc 67 bundles 70
+[    697 s] clock 6000 pc 100 bundles 102
+[    697 s] clock 8000 pc 101 bundles 103
+[    697 s] clock 10000 pc 113 bundles 115
+[    697 s] clock 12000 pc 115 bundles 117
+[    697 s] clock 14000 pc 127 bundles 132
+[    697 s] clock 16000 pc 127 bundles 132
+[    697 s] clock 18000 pc 133 bundles 138
+[    697 s] clock 20000 pc 160 bundles 164
+[    697 s] clock 22000 pc 171 bundles 175
+[    697 s] clock 24000 pc 175 bundles 179
+[    697 s] clock 26000 pc 178 bundles 182
+[    697 s] clock 28000 pc 187 bundles 194
+[    697 s] clock 30000 pc 187 bundles 194
+[    697 s] clock 32000 pc 220 bundles 226
+[    697 s] clock 34000 pc 230 bundles 236
+[    697 s] clock 36000 pc 236 bundles 242
+[    697 s] clock 38000 pc 239 bundles 245
+[    697 s] clock 40000 pc 334 bundles 310
+[    697 s] clock 42000 pc 334 bundles 310
+[    697 s] clock 44000 pc 385 bundles 360
+[    697 s] clock 46000 pc 393 bundles 368
+[    697 s] clock 48000 pc 393 bundles 368
+[    697 s] clock 50000 pc 393 bundles 368
+[    697 s] clock 52000 pc 67 bundles 419
+[    697 s] clock 54000 pc 67 bundles 419
+[    697 s] clock 56000 pc 73 bundles 425
+[    697 s] clock 58000 pc 100 bundles 451
+[    697 s] clock 60000 pc 111 bundles 462
+[    697 s] clock 62000 pc 115 bundles 466
+[    697 s] clock 64000 pc 118 bundles 469
+[    697 s] clock 66000 pc 127 bundles 481
+[    697 s] clock 68000 pc 127 bundles 481
+[    697 s] clock 70000 pc 160 bundles 513
+[    697 s] clock 72000 pc 169 bundles 522
+[    697 s] clock 74000 pc 175 bundles 528
+[    697 s] clock 76000 pc 178 bundles 531
+[    697 s] clock 78000 pc 187 bundles 543
+[    697 s] clock 80000 pc 187 bundles 543
+[    697 s] clock 82000 pc 220 bundles 575
+[    697 s] clock 84000 pc 221 bundles 576
+[    697 s] clock 86000 pc 233 bundles 588
+[    697 s] clock 88000 pc 236 bundles 591
+[    697 s] clock 90000 pc 334 bundles 659
+[    697 s] clock 92000 pc 334 bundles 659
+[    697 s] clock 94000 pc 358 bundles 683
+[    697 s] clock 96000 pc 393 bundles 717
+[    697 s] clock 98000 pc 393 bundles 717
+[    697 s] clock 100000 pc 393 bundles 717
+[    697 s] clock 102000 pc 67 bundles 768
+[    697 s] clock 104000 pc 67 bundles 768
+[    697 s] clock 106000 pc 67 bundles 768
+[    697 s] clock 108000 pc 100 bundles 800
+[    697 s] clock 110000 pc 109 bundles 809
+[    697 s] clock 112000 pc 115 bundles 815
+[    697 s] clock 114000 pc 118 bundles 818
+[    697 s] clock 116000 pc 127 bundles 830
+[    697 s] clock 118000 pc 127 bundles 830
+[    697 s] clock 120000 pc 160 bundles 862
+[    697 s] clock 122000 pc 161 bundles 863
+[    697 s] clock 124000 pc 173 bundles 875
+[    697 s] clock 126000 pc 175 bundles 877
+[    697 s] clock 128000 pc 187 bundles 892
+[    697 s] clock 130000 pc 187 bundles 892
+[    697 s] clock 132000 pc 192 bundles 897
+[    697 s] clock 134000 pc 220 bundles 924
+[    697 s] clock 136000 pc 232 bundles 936
+[    697 s] clock 138000 pc 236 bundles 940
+[    697 s] clock 140000 pc 239 bundles 943
+[    697 s] clock 142000 pc 334 bundles 1008
+[    697 s] clock 144000 pc 358 bundles 1032
+[    697 s] clock 146000 pc 393 bundles 1066
+[    697 s] clock 148000 pc 393 bundles 1066
+[    697 s] clock 150000 pc 393 bundles 1066
+[    697 s] clock 152000 pc 393 bundles 1066
+[    697 s] SRAM banks: 110799 clocks with SRAM traffic, 1209312 lines; 64 one-line banks need 115273 clocks for them
+[    697 s] RESULT halted=1 idle=1 fault=0 clocks=152069 bundles=1069
+[    697 s] - ./rtl/chip/tb_chip.sv:108: Verilog $finish
+[    697 s] - S i m u l a t i o n   R e p o r t: Verilator 5.048 2026-04-26
+[    697 s] - Verilator: $finish at 304ns; walltime 696.864 s; speed 500.476 ps/s
+[    697 s] - Verilator: cpu 607.720 s on 1 threads; allocated 68 MB
+compile 0 s, simulate 697 s
+PASS SRAM: all 589,824 bytes match
+PASS DRAM: all 20,915,904 bytes match

@@ -1,0 +1,629 @@
+{
+  "source_title": "Designing AI Chip Software and Hardware",
+  "author": "Bjarke Hammersholt Roune",
+  "source_url": "https://docs.google.com/document/d/1dZ3vF8GE8_gx6tl52sOaUVEPq0ybmai1xvu3uk89_is",
+  "review_date": "2026-11-03",
+  "local_text": "google-doc.md",
+  "word_count": 82691,
+  "source_classification": "Practitioner essay and proposed architecture; not measured implementation",
+  "coverage": "All substantive text sections examined; introduction and conclusion also examined. Parallel review of lines 857\u20132102 covered networking, parallelization, co-design, GPU critique, software pipelining and management.",
+  "limitations": [
+    "Text export only: embedded figures not visually reviewed.",
+    "Inline hyperlink targets omitted by connector text response.",
+    "No benchmarks reproduced.",
+    "Current company/product/acquisition assertions not treated as established facts.",
+    "Some source arguments are universalized beyond their stated mapping/workload assumptions."
+  ],
+  "sections": [
+    {
+      "heading": "Designing AI Chip Software and Hardware",
+      "level": 1,
+      "line_start": 1,
+      "line_end": 186,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Proposal for a hardware design (summary)",
+      "level": 2,
+      "line_start": 187,
+      "line_end": 220,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Systolic arrays - the foundation of AI hardware",
+      "level": 2,
+      "line_start": 221,
+      "line_end": 248,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Larger systolic arrays are more efficient",
+      "level": 3,
+      "line_start": 249,
+      "line_end": 288,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Forces limiting the size of systolic arrays",
+      "level": 3,
+      "line_start": 289,
+      "line_end": 324,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Numerics or how to make a cheap systolic array",
+      "level": 3,
+      "line_start": 325,
+      "line_end": 364,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Structured sparsity for systolic arrays",
+      "level": 3,
+      "line_start": 365,
+      "line_end": 396,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Mono-sized systolic arrays are unbalanced",
+      "level": 3,
+      "line_start": 397,
+      "line_end": 436,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Chips with larger systolic arrays are easier to make",
+      "level": 3,
+      "line_start": 437,
+      "line_end": 460,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Advanced section: Non-square systolic arrays",
+      "level": 3,
+      "line_start": 461,
+      "line_end": 540,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "The tyranny of the cycles and systolic array DMAs",
+      "level": 3,
+      "line_start": 541,
+      "line_end": 568,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Anecdote: Systolic arrays are hot",
+      "level": 3,
+      "line_start": 569,
+      "line_end": 596,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Compression for activations and weights",
+      "level": 2,
+      "line_start": 597,
+      "line_end": 624,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Kinds of AI workload - training, decode, prefill",
+      "level": 2,
+      "line_start": 625,
+      "line_end": 644,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Training",
+      "level": 3,
+      "line_start": 645,
+      "line_end": 678,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Decode",
+      "level": 3,
+      "line_start": 679,
+      "line_end": 728,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Prefill",
+      "level": 3,
+      "line_start": 729,
+      "line_end": 738,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Decode-prefill (managed) aggregation vs disaggregation",
+      "level": 3,
+      "line_start": 739,
+      "line_end": 758,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Expensive HBM storage capacity",
+      "level": 2,
+      "line_start": 759,
+      "line_end": 762,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Weights and KV caches as reasons for large expensive HBM memories",
+      "level": 3,
+      "line_start": 763,
+      "line_end": 814,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Reducing the need for large memories on AI chips",
+      "level": 3,
+      "line_start": 815,
+      "line_end": 856,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Parallelization of an AI assistant",
+      "level": 2,
+      "line_start": 857,
+      "line_end": 880,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Parallelization concepts",
+      "level": 3,
+      "line_start": 881,
+      "line_end": 916,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Parallelization using duplication",
+      "level": 3,
+      "line_start": 917,
+      "line_end": 940,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Between layers parallelization of decode using pipelining",
+      "level": 3,
+      "line_start": 941,
+      "line_end": 1018,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Between layers parallelization of prefill using pipelining",
+      "level": 3,
+      "line_start": 1019,
+      "line_end": 1056,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Within layers parallelization",
+      "level": 3,
+      "line_start": 1057,
+      "line_end": 1098,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Mixture of Experts (MoE)",
+      "level": 3,
+      "line_start": 1099,
+      "line_end": 1130,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Network topologies for AI in a MoE world",
+      "level": 2,
+      "line_start": 1131,
+      "line_end": 1144,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Networking concepts",
+      "level": 3,
+      "line_start": 1145,
+      "line_end": 1246,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Link types",
+      "level": 3,
+      "line_start": 1247,
+      "line_end": 1314,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "The specter of multi-hop waste",
+      "level": 3,
+      "line_start": 1315,
+      "line_end": 1360,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "The big 3: Reduce-scatter, all-gather and all-reduce",
+      "level": 3,
+      "line_start": 1361,
+      "line_end": 1426,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Mixture of experts versus network topology",
+      "level": 3,
+      "line_start": 1427,
+      "line_end": 1458,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "A proposal for a networking approach",
+      "level": 3,
+      "line_start": 1459,
+      "line_end": 1524,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Co-design",
+      "level": 2,
+      "line_start": 1525,
+      "line_end": 1532,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "My experience with co-design",
+      "level": 3,
+      "line_start": 1533,
+      "line_end": 1552,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Intellectual quality and good judgement",
+      "level": 3,
+      "line_start": 1553,
+      "line_end": 1614,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Also learn from the world outside your company",
+      "level": 3,
+      "line_start": 1615,
+      "line_end": 1626,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Co-design needs to be grounded in the product",
+      "level": 3,
+      "line_start": 1627,
+      "line_end": 1644,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Combinatorial search",
+      "level": 3,
+      "line_start": 1645,
+      "line_end": 1666,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "A critical look at GPU features for AI",
+      "level": 2,
+      "line_start": 1667,
+      "line_end": 1672,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Kernels and warp specialization",
+      "level": 3,
+      "line_start": 1673,
+      "line_end": 1694,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Path divergence (vector subsets)",
+      "level": 3,
+      "line_start": 1695,
+      "line_end": 1698,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Software managed cache",
+      "level": 3,
+      "line_start": 1699,
+      "line_end": 1702,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Warp scheduling (memory access pipelining)",
+      "level": 3,
+      "line_start": 1703,
+      "line_end": 1716,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Needing a host computer",
+      "level": 3,
+      "line_start": 1717,
+      "line_end": 1726,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "The need for many threads and kernel switching overhead",
+      "level": 3,
+      "line_start": 1727,
+      "line_end": 1750,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Software pipelining for AI kernels",
+      "level": 2,
+      "line_start": 1751,
+      "line_end": 1756,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "What is (software) pipelining",
+      "level": 3,
+      "line_start": 1757,
+      "line_end": 1828,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Software pipelining is difficult by hand",
+      "level": 3,
+      "line_start": 1829,
+      "line_end": 1926,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Write a tiled software pipelining library with op fusion",
+      "level": 3,
+      "line_start": 1927,
+      "line_end": 1966,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Why not X, Y or Z?",
+      "level": 3,
+      "line_start": 1967,
+      "line_end": 2000,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Software pipelining on Nvidia GPUs aka Warp Scheduling",
+      "level": 3,
+      "line_start": 2001,
+      "line_end": 2030,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Hiring for your AI chip project",
+      "level": 2,
+      "line_start": 2031,
+      "line_end": 2034,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Sourcing candidates over email",
+      "level": 3,
+      "line_start": 2035,
+      "line_end": 2066,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Interviewing engineers",
+      "level": 3,
+      "line_start": 2067,
+      "line_end": 2076,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Talking to engineers",
+      "level": 2,
+      "line_start": 2077,
+      "line_end": 2102,
+      "status": "text reviewed",
+      "reviewer": "network_software"
+    },
+    {
+      "heading": "Objections and answers",
+      "level": 2,
+      "line_start": 2103,
+      "line_end": 2106,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "OS interruption of the systolic arrays",
+      "level": 3,
+      "line_start": 2107,
+      "line_end": 2114,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Few have access to the kind of CPU required for this",
+      "level": 3,
+      "line_start": 2115,
+      "line_end": 2132,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "The science is missing",
+      "level": 3,
+      "line_start": 2133,
+      "line_end": 2140,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "This design may not be so generally applicable",
+      "level": 3,
+      "line_start": 2141,
+      "line_end": 2150,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Tokens per dollar isn\u2019t everything",
+      "level": 3,
+      "line_start": 2151,
+      "line_end": 2178,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "What about analog compute?",
+      "level": 3,
+      "line_start": 2179,
+      "line_end": 2186,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Why more FLOPs?",
+      "level": 3,
+      "line_start": 2187,
+      "line_end": 2204,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Structured sparsity sucks",
+      "level": 3,
+      "line_start": 2205,
+      "line_end": 2262,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Systolic arrays are bad for depthwise convolution",
+      "level": 3,
+      "line_start": 2263,
+      "line_end": 2278,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Are routers superior to tori?",
+      "level": 3,
+      "line_start": 2279,
+      "line_end": 2286,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "What about existing AI CPUs?",
+      "level": 3,
+      "line_start": 2287,
+      "line_end": 2308,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    },
+    {
+      "heading": "Fixed function hardware like from Etched and Taalas",
+      "level": 3,
+      "line_start": 2309,
+      "line_end": 2331,
+      "status": "text reviewed",
+      "reviewer": "source_doc"
+    }
+  ],
+  "high_priority_corrections": [
+    {
+      "topic": "Pipeline arithmetic",
+      "source_claim": "N - 2(S - 1) steady-state steps",
+      "correction": "For N jobs and S equal-duration stages: total N+S-1 steps; fully occupied max(0,N-S+1)."
+    },
+    {
+      "topic": "Array mapping",
+      "source_claim": "Array K/M/N formulas expressed generally",
+      "correction": "Formulas mostly assume weight-stationary geometry and symmetric operand supply; do not transplant into output-stationary models."
+    },
+    {
+      "topic": "Numeric precision",
+      "source_claim": "8 or 7 bits always enough",
+      "correction": "Conditional on model, quantization, scaling, accumulation, supported operators and quality thresholds."
+    },
+    {
+      "topic": "Structured sparsity",
+      "source_claim": "Always beneficial",
+      "correction": "Eligible kernel peak is not end-to-end speedup; quality/retraining and metadata matter."
+    },
+    {
+      "topic": "Fixed function",
+      "source_claim": "Etched and Taalas support only one burned-in model",
+      "correction": "Distinguish architecture specialization from fixed-weight silicon; do not repeat company claims without primary verification."
+    },
+    {
+      "topic": "Topology",
+      "source_claim": "Router 50% ceiling vs torus 100%",
+      "correction": "A link-budget accounting model, not universal delivered endpoint throughput."
+    },
+    {
+      "topic": "Pipeline KV",
+      "source_claim": "No per-chip KV saving from pipeline parallelism",
+      "correction": "Depends on holding per-stage batch fixed and increasing concurrency; fixed global concurrency can shard per-request KV by layer."
+    },
+    {
+      "topic": "CUDA concurrency",
+      "source_claim": "Different kernels cannot multiplex on one SM",
+      "correction": "Concurrent kernels are supported subject to architecture, context and resources; do not assume universal prohibition."
+    }
+  ]
+}

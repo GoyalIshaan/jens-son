@@ -1,0 +1,1409 @@
+{
+ "model": "Qwen3.5-0.8B",
+ "layers": 24,
+ "chunks": 2,
+ "prompt": [
+  760,
+  3712,
+  314,
+  279,
+  17933,
+  3379,
+  11690,
+  303,
+  279,
+  10805,
+  43872,
+  9018,
+  11,
+  948,
+  52290,
+  49847,
+  10539,
+  79733,
+  9041,
+  913,
+  11,
+  5415,
+  5792,
+  25570,
+  321,
+  264,
+  21664,
+  21289,
+  3379,
+  1083,
+  264,
+  1785,
+  421,
+  1362,
+  7936,
+  6265,
+  2944,
+  10281,
+  1056,
+  274,
+  53283,
+  13,
+  23475,
+  31347,
+  1578,
+  11,
+  51185,
+  998,
+  4162,
+  303,
+  777,
+  1056,
+  1330,
+  7493,
+  7277,
+  9432,
+  11,
+  321,
+  11391,
+  314,
+  25442,
+  995,
+  978,
+  16218,
+  13,
+  561,
+  6043,
+  998,
+  21701,
+  13,
+  22185,
+  43759,
+  4473,
+  321,
+  10281,
+  26,
+  29735,
+  1362,
+  9150,
+  18922,
+  10672,
+  314,
+  264,
+  1414,
+  26,
+  69162,
+  22289,
+  15005,
+  17622,
+  5129,
+  12477,
+  793,
+  26,
+  321,
+  279,
+  997,
+  1570,
+  8597,
+  1472,
+  72284,
+  9648,
+  421,
+  998,
+  11533,
+  3213,
+  364,
+  18541,
+  1208,
+  310,
+  3569,
+  13,
+  24095,
+  17602,
+  7854,
+  799,
+  2361,
+  25,
+  279,
+  33419,
+  3379,
+  303,
+  279,
+  62792,
+  9018,
+  11,
+  19695,
+  2279,
+  11,
+  279,
+  59733,
+  3379,
+  21620,
+  494,
+  18677,
+  26486,
+  314,
+  5392,
+  11,
+  321,
+  5326,
+  279,
+  8302,
+  4020,
+  5484,
+  11,
+  864,
+  6113,
+  4220,
+  4965,
+  314,
+  913,
+  506,
+  2957,
+  13,
+  8618,
+  2923,
+  37536,
+  279,
+  2695,
+  314,
+  264,
+  16218,
+  2081,
+  321,
+  82923,
+  279,
+  10335,
+  364,
+  3543,
+  11,
+  7785,
+  321,
+  16698,
+  13,
+  10875,
+  279,
+  1788,
+  3255,
+  369,
+  3428,
+  3125,
+  883,
+  279,
+  7361,
+  11,
+  864,
+  37536,
+  279,
+  2695,
+  314,
+  22200,
+  310,
+  4409,
+  4161,
+  13,
+  21016,
+  5212,
+  26926,
+  11,
+  4611,
+  11,
+  421,
+  279,
+  11960,
+  55671,
+  2894,
+  11461,
+  13,
+  357,
+  16218,
+  2236,
+  557,
+  8097,
+  2957,
+  424,
+  2047,
+  279,
+  3379,
+  11,
+  1345,
+  264,
+  3370,
+  2081,
+  628,
+  2222,
+  506,
+  866,
+  4299,
+  13,
+  357,
+  2236,
+  995,
+  264,
+  20609,
+  852,
+  1362,
+  381,
+  5467,
+  8220,
+  11,
+  1345,
+  2767,
+  3049,
+  5102,
+  369,
+  3428,
+  21464,
+  13,
+  1541,
+  279,
+  17933,
+  3379,
+  4221,
+  22892,
+  310,
+  5372
+ ],
+ "bundles": 4666,
+ "sim_us": 6282.485478263059,
+ "embedding_rel": [
+  0.0,
+  0.0
+ ],
+ "rows": [
+  {
+   "chunk": 0,
+   "layer": 0,
+   "kind": "linear_attention",
+   "residual_rel": 0.0029952906544085628
+  },
+  {
+   "chunk": 0,
+   "layer": 1,
+   "kind": "linear_attention",
+   "residual_rel": 0.010322081938221742
+  },
+  {
+   "chunk": 0,
+   "layer": 2,
+   "kind": "linear_attention",
+   "residual_rel": 0.016076601512266014
+  },
+  {
+   "chunk": 0,
+   "layer": 3,
+   "kind": "full_attention",
+   "residual_rel": 0.021536476539236963
+  },
+  {
+   "chunk": 0,
+   "layer": 4,
+   "kind": "linear_attention",
+   "residual_rel": 0.0224277987009548
+  },
+  {
+   "chunk": 0,
+   "layer": 5,
+   "kind": "linear_attention",
+   "residual_rel": 0.022686699937242906
+  },
+  {
+   "chunk": 0,
+   "layer": 6,
+   "kind": "linear_attention",
+   "residual_rel": 0.020920725509160062
+  },
+  {
+   "chunk": 0,
+   "layer": 7,
+   "kind": "full_attention",
+   "residual_rel": 0.02754612611528896
+  },
+  {
+   "chunk": 0,
+   "layer": 8,
+   "kind": "linear_attention",
+   "residual_rel": 0.027654453780083726
+  },
+  {
+   "chunk": 0,
+   "layer": 9,
+   "kind": "linear_attention",
+   "residual_rel": 0.027667048163279844
+  },
+  {
+   "chunk": 0,
+   "layer": 10,
+   "kind": "linear_attention",
+   "residual_rel": 0.025203121650800797
+  },
+  {
+   "chunk": 0,
+   "layer": 11,
+   "kind": "full_attention",
+   "residual_rel": 0.031078867034371547
+  },
+  {
+   "chunk": 0,
+   "layer": 12,
+   "kind": "linear_attention",
+   "residual_rel": 0.030107475952902592
+  },
+  {
+   "chunk": 0,
+   "layer": 13,
+   "kind": "linear_attention",
+   "residual_rel": 0.029133043101825337
+  },
+  {
+   "chunk": 0,
+   "layer": 14,
+   "kind": "linear_attention",
+   "residual_rel": 0.023960244659088067
+  },
+  {
+   "chunk": 0,
+   "layer": 15,
+   "kind": "full_attention",
+   "residual_rel": 0.02917973726804667
+  },
+  {
+   "chunk": 0,
+   "layer": 16,
+   "kind": "linear_attention",
+   "residual_rel": 0.028006197836733644
+  },
+  {
+   "chunk": 0,
+   "layer": 17,
+   "kind": "linear_attention",
+   "residual_rel": 0.02725689359267388
+  },
+  {
+   "chunk": 0,
+   "layer": 18,
+   "kind": "linear_attention",
+   "residual_rel": 0.025907685752589685
+  },
+  {
+   "chunk": 0,
+   "layer": 19,
+   "kind": "full_attention",
+   "residual_rel": 0.02810814477322203
+  },
+  {
+   "chunk": 0,
+   "layer": 20,
+   "kind": "linear_attention",
+   "residual_rel": 0.027092631713760473
+  },
+  {
+   "chunk": 0,
+   "layer": 21,
+   "kind": "linear_attention",
+   "residual_rel": 0.02705310130364143
+  },
+  {
+   "chunk": 0,
+   "layer": 22,
+   "kind": "linear_attention",
+   "residual_rel": 0.028667597691940157
+  },
+  {
+   "chunk": 0,
+   "layer": 23,
+   "kind": "full_attention",
+   "residual_rel": 0.033617552902372325
+  },
+  {
+   "chunk": 1,
+   "layer": 0,
+   "kind": "linear_attention",
+   "residual_rel": 0.00291808223509847
+  },
+  {
+   "chunk": 1,
+   "layer": 1,
+   "kind": "linear_attention",
+   "residual_rel": 0.010232103631344967
+  },
+  {
+   "chunk": 1,
+   "layer": 2,
+   "kind": "linear_attention",
+   "residual_rel": 0.016276016506285938
+  },
+  {
+   "chunk": 1,
+   "layer": 3,
+   "kind": "full_attention",
+   "residual_rel": 0.02172899378372739
+  },
+  {
+   "chunk": 1,
+   "layer": 4,
+   "kind": "linear_attention",
+   "residual_rel": 0.022418465901200682
+  },
+  {
+   "chunk": 1,
+   "layer": 5,
+   "kind": "linear_attention",
+   "residual_rel": 0.022543342290636918
+  },
+  {
+   "chunk": 1,
+   "layer": 6,
+   "kind": "linear_attention",
+   "residual_rel": 0.02352797485129749
+  },
+  {
+   "chunk": 1,
+   "layer": 7,
+   "kind": "full_attention",
+   "residual_rel": 0.02744927850830301
+  },
+  {
+   "chunk": 1,
+   "layer": 8,
+   "kind": "linear_attention",
+   "residual_rel": 0.02785815033572002
+  },
+  {
+   "chunk": 1,
+   "layer": 9,
+   "kind": "linear_attention",
+   "residual_rel": 0.028061604234122944
+  },
+  {
+   "chunk": 1,
+   "layer": 10,
+   "kind": "linear_attention",
+   "residual_rel": 0.026094321965284984
+  },
+  {
+   "chunk": 1,
+   "layer": 11,
+   "kind": "full_attention",
+   "residual_rel": 0.02992338817235251
+  },
+  {
+   "chunk": 1,
+   "layer": 12,
+   "kind": "linear_attention",
+   "residual_rel": 0.02899400205624679
+  },
+  {
+   "chunk": 1,
+   "layer": 13,
+   "kind": "linear_attention",
+   "residual_rel": 0.028222813645533175
+  },
+  {
+   "chunk": 1,
+   "layer": 14,
+   "kind": "linear_attention",
+   "residual_rel": 0.025960368077374178
+  },
+  {
+   "chunk": 1,
+   "layer": 15,
+   "kind": "full_attention",
+   "residual_rel": 0.027857615764103966
+  },
+  {
+   "chunk": 1,
+   "layer": 16,
+   "kind": "linear_attention",
+   "residual_rel": 0.027305346769652915
+  },
+  {
+   "chunk": 1,
+   "layer": 17,
+   "kind": "linear_attention",
+   "residual_rel": 0.02671361055503373
+  },
+  {
+   "chunk": 1,
+   "layer": 18,
+   "kind": "linear_attention",
+   "residual_rel": 0.025880113243252057
+  },
+  {
+   "chunk": 1,
+   "layer": 19,
+   "kind": "full_attention",
+   "residual_rel": 0.02780315002116093
+  },
+  {
+   "chunk": 1,
+   "layer": 20,
+   "kind": "linear_attention",
+   "residual_rel": 0.02680285741634772
+  },
+  {
+   "chunk": 1,
+   "layer": 21,
+   "kind": "linear_attention",
+   "residual_rel": 0.026458654326700515
+  },
+  {
+   "chunk": 1,
+   "layer": 22,
+   "kind": "linear_attention",
+   "residual_rel": 0.028263409124614294
+  },
+  {
+   "chunk": 1,
+   "layer": 23,
+   "kind": "full_attention",
+   "residual_rel": 0.032469477809331564
+  }
+ ],
+ "alone": [
+  {
+   "chunk": 0,
+   "layer": 0,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.00046551711771773555,
+   "ffn_out_rel": 0.00010652417840554346,
+   "mixer_resid_rel": 0.0004773460064207586,
+   "ffn_resid_rel": 5.75024370821081e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 1,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0005914039111915168,
+   "ffn_out_rel": 0.0001550162565906888,
+   "mixer_resid_rel": 0.0002769025411687278,
+   "ffn_resid_rel": 7.773485339486785e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 2,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0007266736657551471,
+   "ffn_out_rel": 0.00025351321801267353,
+   "mixer_resid_rel": 0.00032225925343724377,
+   "ffn_resid_rel": 0.0001599904733002727
+  },
+  {
+   "chunk": 0,
+   "layer": 3,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0022891113708112002,
+   "ffn_out_rel": 8.522405528133308e-05,
+   "mixer_resid_rel": 0.0008890191486244985,
+   "ffn_resid_rel": 4.512149469048038e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 4,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0009028976694556558,
+   "ffn_out_rel": 0.00022901976424776843,
+   "mixer_resid_rel": 0.00031608536031533905,
+   "ffn_resid_rel": 0.00011820679718252872
+  },
+  {
+   "chunk": 0,
+   "layer": 5,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010549349733120356,
+   "ffn_out_rel": 0.0001310236189768792,
+   "mixer_resid_rel": 0.0003659391938157552,
+   "ffn_resid_rel": 5.778646499778978e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 6,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0007170655610647069,
+   "ffn_out_rel": 0.00016642445184213874,
+   "mixer_resid_rel": 0.0003533548333129952,
+   "ffn_resid_rel": 6.419916592438044e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 7,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.001450696264714893,
+   "ffn_out_rel": 0.00010941306396409605,
+   "mixer_resid_rel": 0.0005766399801815853,
+   "ffn_resid_rel": 4.300135882484298e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 8,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0012256096338589177,
+   "ffn_out_rel": 0.00013724137818815294,
+   "mixer_resid_rel": 0.00033674367875756613,
+   "ffn_resid_rel": 4.5720035575218745e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 9,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0008552914014327441,
+   "ffn_out_rel": 0.00016668663031230252,
+   "mixer_resid_rel": 0.000218756355869888,
+   "ffn_resid_rel": 5.2068277062949064e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 10,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0009128418260468879,
+   "ffn_out_rel": 0.0004296344259795055,
+   "mixer_resid_rel": 0.00025766305439151846,
+   "ffn_resid_rel": 0.00012666794657985753
+  },
+  {
+   "chunk": 0,
+   "layer": 11,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0010635294872180343,
+   "ffn_out_rel": 0.00014866450477847527,
+   "mixer_resid_rel": 0.0002860972568908818,
+   "ffn_resid_rel": 4.996609918597892e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 12,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010821987440822237,
+   "ffn_out_rel": 0.0002119908685742678,
+   "mixer_resid_rel": 0.00026795867978111177,
+   "ffn_resid_rel": 6.93910256700664e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 13,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0006643751067579889,
+   "ffn_out_rel": 9.761063565099418e-05,
+   "mixer_resid_rel": 0.00018333667462541736,
+   "ffn_resid_rel": 3.336118508506272e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 14,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0011974985420607235,
+   "ffn_out_rel": 7.837108470248626e-05,
+   "mixer_resid_rel": 0.00036481657627254467,
+   "ffn_resid_rel": 3.9616799278394475e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 15,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0014585875302955663,
+   "ffn_out_rel": 0.0003660993456062214,
+   "mixer_resid_rel": 0.0006801676556729625,
+   "ffn_resid_rel": 0.00015684910599321757
+  },
+  {
+   "chunk": 0,
+   "layer": 16,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0007403454465620854,
+   "ffn_out_rel": 0.00013048594049103063,
+   "mixer_resid_rel": 0.00020577650897379854,
+   "ffn_resid_rel": 4.7512543613719e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 17,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.000790168547324914,
+   "ffn_out_rel": 0.0003918888762726918,
+   "mixer_resid_rel": 0.00019874653185789095,
+   "ffn_resid_rel": 0.0001270094867500984
+  },
+  {
+   "chunk": 0,
+   "layer": 18,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010370244936052013,
+   "ffn_out_rel": 0.00023393785164996727,
+   "mixer_resid_rel": 0.00023294410182148924,
+   "ffn_resid_rel": 7.69880497118234e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 19,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0018143477069866893,
+   "ffn_out_rel": 0.00011881379345338718,
+   "mixer_resid_rel": 0.0004380460206387018,
+   "ffn_resid_rel": 4.031137787768453e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 20,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0005679567328858654,
+   "ffn_out_rel": 0.0001205183559316961,
+   "mixer_resid_rel": 0.00016287389027109972,
+   "ffn_resid_rel": 3.2671745406483634e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 21,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010098918730487487,
+   "ffn_out_rel": 0.00028180756939362017,
+   "mixer_resid_rel": 0.00017882378344551231,
+   "ffn_resid_rel": 7.056320229886529e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 22,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010995122700340936,
+   "ffn_out_rel": 0.0001342140078548671,
+   "mixer_resid_rel": 0.0001946004784932662,
+   "ffn_resid_rel": 4.239991899548174e-05
+  },
+  {
+   "chunk": 0,
+   "layer": 23,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0005144461661851487,
+   "ffn_out_rel": 9.714491821241274e-05,
+   "mixer_resid_rel": 0.00019574989357960771,
+   "ffn_resid_rel": 6.094373678782569e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 0,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0004384596767466712,
+   "ffn_out_rel": 0.00010432283151435922,
+   "mixer_resid_rel": 0.00045226667262870495,
+   "ffn_resid_rel": 5.639393910180899e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 1,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.00038887785501234097,
+   "ffn_out_rel": 0.000143453762837309,
+   "mixer_resid_rel": 0.0001791142053896512,
+   "ffn_resid_rel": 7.025686297046314e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 2,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0005349946890448406,
+   "ffn_out_rel": 8.84384591657066e-05,
+   "mixer_resid_rel": 0.00024116243884722256,
+   "ffn_resid_rel": 5.7010393395899445e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 3,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0015506885043988427,
+   "ffn_out_rel": 0.00010178140909357466,
+   "mixer_resid_rel": 0.000626361556646428,
+   "ffn_resid_rel": 5.2491601677450344e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 4,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.000883553377414848,
+   "ffn_out_rel": 0.00011721731920272309,
+   "mixer_resid_rel": 0.00031185625251216206,
+   "ffn_resid_rel": 6.08286834363467e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 5,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010247836760014306,
+   "ffn_out_rel": 0.0001741038277205457,
+   "mixer_resid_rel": 0.0003698884453809929,
+   "ffn_resid_rel": 7.612174762627796e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 6,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0008709343248035452,
+   "ffn_out_rel": 0.00015822877307784507,
+   "mixer_resid_rel": 0.0003341389451407615,
+   "ffn_resid_rel": 6.653916925174429e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 7,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0012695087506802546,
+   "ffn_out_rel": 0.00022913790337382293,
+   "mixer_resid_rel": 0.0004432314898029503,
+   "ffn_resid_rel": 9.477283809290837e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 8,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0009599258670255891,
+   "ffn_out_rel": 0.00013397963808066166,
+   "mixer_resid_rel": 0.0002948048367778128,
+   "ffn_resid_rel": 4.9597509937446754e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 9,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0008588431560985966,
+   "ffn_out_rel": 0.0001363141990068155,
+   "mixer_resid_rel": 0.0002582232944053354,
+   "ffn_resid_rel": 4.760288849624272e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 10,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0011681413835930156,
+   "ffn_out_rel": 0.00018852414310535593,
+   "mixer_resid_rel": 0.00038601789764253225,
+   "ffn_resid_rel": 6.192046385194346e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 11,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.003992410869449323,
+   "ffn_out_rel": 0.00013071329231636284,
+   "mixer_resid_rel": 0.0010982199279539891,
+   "ffn_resid_rel": 4.6025187256588085e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 12,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0010263238811575052,
+   "ffn_out_rel": 0.00014243567618980855,
+   "mixer_resid_rel": 0.0002827433228035087,
+   "ffn_resid_rel": 4.9638263553349536e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 13,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0009681702064781804,
+   "ffn_out_rel": 0.0002610109489297287,
+   "mixer_resid_rel": 0.0002961960896567443,
+   "ffn_resid_rel": 9.253021922677361e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 14,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0009240020981642924,
+   "ffn_out_rel": 0.00012763821549664138,
+   "mixer_resid_rel": 0.00029130523703377504,
+   "ffn_resid_rel": 5.0260165844109784e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 15,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0024037363369651186,
+   "ffn_out_rel": 0.00012053426716392811,
+   "mixer_resid_rel": 0.0006876985500657247,
+   "ffn_resid_rel": 5.1769192144931644e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 16,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0007909208633460981,
+   "ffn_out_rel": 0.0002848565806089684,
+   "mixer_resid_rel": 0.00021923575260083863,
+   "ffn_resid_rel": 9.952930267660195e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 17,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0005537392427851177,
+   "ffn_out_rel": 0.00016086836116335063,
+   "mixer_resid_rel": 0.00014102161241232578,
+   "ffn_resid_rel": 4.99816184662156e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 18,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0007862686139394708,
+   "ffn_out_rel": 0.00021552872857895567,
+   "mixer_resid_rel": 0.00017603178192977554,
+   "ffn_resid_rel": 6.80908124503967e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 19,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.001329631477772629,
+   "ffn_out_rel": 0.00018222593330732495,
+   "mixer_resid_rel": 0.0003320759032574317,
+   "ffn_resid_rel": 5.959035939002216e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 20,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0006567067412188827,
+   "ffn_out_rel": 0.00017929352834144746,
+   "mixer_resid_rel": 0.00016984651524892144,
+   "ffn_resid_rel": 4.4558967517868335e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 21,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.000669092975661533,
+   "ffn_out_rel": 0.0001504424477011669,
+   "mixer_resid_rel": 0.00011438587591015365,
+   "ffn_resid_rel": 3.558176455360188e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 22,
+   "kind": "linear_attention",
+   "mixer_out_rel": 0.0008138163124356365,
+   "ffn_out_rel": 9.718369522489012e-05,
+   "mixer_resid_rel": 0.00014124547713496085,
+   "ffn_resid_rel": 2.941488519807766e-05
+  },
+  {
+   "chunk": 1,
+   "layer": 23,
+   "kind": "full_attention",
+   "mixer_out_rel": 0.0010885292848816647,
+   "ffn_out_rel": 0.0001712140038165932,
+   "mixer_resid_rel": 0.00039623286495616566,
+   "ffn_resid_rel": 0.00010996795477938947
+  }
+ ],
+ "argmax": {
+  "chip": 1141,
+  "golden": 1141,
+  "golden_margin": 0.230560302734375,
+  "chip_tok": " its",
+  "golden_tok": " its",
+  "logits_rel": 0.02581980735900948
+ },
+ "commands": [
+  [
+   "V FMA",
+   83044
+  ],
+  [
+   "V MUL",
+   15976
+  ],
+  [
+   "M MMS",
+   14016
+  ],
+  [
+   "V QUANT",
+   9216
+  ],
+  [
+   "W W",
+   5796
+  ],
+  [
+   "V COPY",
+   4140
+  ],
+  [
+   "V RECIP",
+   3552
+  ],
+  [
+   "V QKV",
+   3504
+  ],
+  [
+   "M TAB",
+   2916
+  ],
+  [
+   "M MM",
+   2916
+  ],
+  [
+   "V NOP",
+   2641
+  ],
+  [
+   "V SILU",
+   2496
+  ],
+  [
+   "V RSUMSQ",
+   1968
+  ],
+  [
+   "V RSQRT",
+   1968
+  ],
+  [
+   "V CAUSAL",
+   1248
+  ],
+  [
+   "V EXP",
+   1224
+  ],
+  [
+   "V SUB",
+   1188
+  ],
+  [
+   "L L",
+   1176
+  ],
+  [
+   "V CONV4",
+   1152
+  ],
+  [
+   "R R",
+   968
+  ],
+  [
+   "M NOP",
+   804
+  ],
+  [
+   "X X",
+   684
+  ],
+  [
+   "V ADD",
+   252
+  ],
+  [
+   "V SMTILE",
+   96
+  ],
+  [
+   "V SIGMOID",
+   60
+  ],
+  [
+   "V ROPE",
+   48
+  ],
+  [
+   "V SOFTPLUS",
+   36
+  ],
+  [
+   "L NOP",
+   36
+  ],
+  [
+   "R NOP",
+   26
+  ],
+  [
+   "V DEQ",
+   2
+  ]
+ ],
+ "floor": [
+  {
+   "chunk": 0,
+   "layer": 0,
+   "residual_rel": 0.0
+  },
+  {
+   "chunk": 0,
+   "layer": 1,
+   "residual_rel": 0.0011842898952907686
+  },
+  {
+   "chunk": 0,
+   "layer": 2,
+   "residual_rel": 0.0064846126224882075
+  },
+  {
+   "chunk": 0,
+   "layer": 3,
+   "residual_rel": 0.013942159924673188
+  },
+  {
+   "chunk": 0,
+   "layer": 4,
+   "residual_rel": 0.016321484544823715
+  },
+  {
+   "chunk": 0,
+   "layer": 5,
+   "residual_rel": 0.018130820938390184
+  },
+  {
+   "chunk": 0,
+   "layer": 6,
+   "residual_rel": 0.017459846202867998
+  },
+  {
+   "chunk": 0,
+   "layer": 7,
+   "residual_rel": 0.02425987960028231
+  },
+  {
+   "chunk": 0,
+   "layer": 8,
+   "residual_rel": 0.024360669343855737
+  },
+  {
+   "chunk": 0,
+   "layer": 9,
+   "residual_rel": 0.02474504431559995
+  },
+  {
+   "chunk": 0,
+   "layer": 10,
+   "residual_rel": 0.022704458330895416
+  },
+  {
+   "chunk": 0,
+   "layer": 11,
+   "residual_rel": 0.028566063208606527
+  },
+  {
+   "chunk": 0,
+   "layer": 12,
+   "residual_rel": 0.027777765777480253
+  },
+  {
+   "chunk": 0,
+   "layer": 13,
+   "residual_rel": 0.026890937234636147
+  },
+  {
+   "chunk": 0,
+   "layer": 14,
+   "residual_rel": 0.022101310815060313
+  },
+  {
+   "chunk": 0,
+   "layer": 15,
+   "residual_rel": 0.027291552225026782
+  },
+  {
+   "chunk": 0,
+   "layer": 16,
+   "residual_rel": 0.026313233159124406
+  },
+  {
+   "chunk": 0,
+   "layer": 17,
+   "residual_rel": 0.025536974964026037
+  },
+  {
+   "chunk": 0,
+   "layer": 18,
+   "residual_rel": 0.024448227908508452
+  },
+  {
+   "chunk": 0,
+   "layer": 19,
+   "residual_rel": 0.026785174499145276
+  },
+  {
+   "chunk": 0,
+   "layer": 20,
+   "residual_rel": 0.025769751889750902
+  },
+  {
+   "chunk": 0,
+   "layer": 21,
+   "residual_rel": 0.02573458710964215
+  },
+  {
+   "chunk": 0,
+   "layer": 22,
+   "residual_rel": 0.02723095992039601
+  },
+  {
+   "chunk": 0,
+   "layer": 23,
+   "residual_rel": 0.032462920531767976
+  },
+  {
+   "chunk": 1,
+   "layer": 0,
+   "residual_rel": 0.000439027863729882
+  },
+  {
+   "chunk": 1,
+   "layer": 1,
+   "residual_rel": 0.004659643789912226
+  },
+  {
+   "chunk": 1,
+   "layer": 2,
+   "residual_rel": 0.01167509005712986
+  },
+  {
+   "chunk": 1,
+   "layer": 3,
+   "residual_rel": 0.018811927156507643
+  },
+  {
+   "chunk": 1,
+   "layer": 4,
+   "residual_rel": 0.02052632280332596
+  },
+  {
+   "chunk": 1,
+   "layer": 5,
+   "residual_rel": 0.02136349051848694
+  },
+  {
+   "chunk": 1,
+   "layer": 6,
+   "residual_rel": 0.02239512463711899
+  },
+  {
+   "chunk": 1,
+   "layer": 7,
+   "residual_rel": 0.026431000325344543
+  },
+  {
+   "chunk": 1,
+   "layer": 8,
+   "residual_rel": 0.02692831868433313
+  },
+  {
+   "chunk": 1,
+   "layer": 9,
+   "residual_rel": 0.02722928765029428
+  },
+  {
+   "chunk": 1,
+   "layer": 10,
+   "residual_rel": 0.025400933338337525
+  },
+  {
+   "chunk": 1,
+   "layer": 11,
+   "residual_rel": 0.029283512162415058
+  },
+  {
+   "chunk": 1,
+   "layer": 12,
+   "residual_rel": 0.028514481507234908
+  },
+  {
+   "chunk": 1,
+   "layer": 13,
+   "residual_rel": 0.02776751308805282
+  },
+  {
+   "chunk": 1,
+   "layer": 14,
+   "residual_rel": 0.025459331997228444
+  },
+  {
+   "chunk": 1,
+   "layer": 15,
+   "residual_rel": 0.027284625560333994
+  },
+  {
+   "chunk": 1,
+   "layer": 16,
+   "residual_rel": 0.02664246642598896
+  },
+  {
+   "chunk": 1,
+   "layer": 17,
+   "residual_rel": 0.02598239293484269
+  },
+  {
+   "chunk": 1,
+   "layer": 18,
+   "residual_rel": 0.025072724125979193
+  },
+  {
+   "chunk": 1,
+   "layer": 19,
+   "residual_rel": 0.026885578127570014
+  },
+  {
+   "chunk": 1,
+   "layer": 20,
+   "residual_rel": 0.025820539184422533
+  },
+  {
+   "chunk": 1,
+   "layer": 21,
+   "residual_rel": 0.025577962390783495
+  },
+  {
+   "chunk": 1,
+   "layer": 22,
+   "residual_rel": 0.027331984931138156
+  },
+  {
+   "chunk": 1,
+   "layer": 23,
+   "residual_rel": 0.03180047925347685
+  }
+ ],
+ "floor_argmax": {
+  "golden2": 1141,
+  "logits_rel": 0.03170344418206448
+ },
+ "decode": {
+  "start": 256,
+  "steps": 6,
+  "feed": [
+   1379,
+   314,
+   279,
+   1814,
+   579,
+   6823
+  ],
+  "chip": [
+   314,
+   279,
+   1814,
+   11,
+   9432,
+   11
+  ],
+  "golden": [
+   314,
+   279,
+   1814,
+   11,
+   9432,
+   11
+  ],
+  "golden_margin": [
+   1.712118148803711,
+   1.1463565826416016,
+   3.7554149627685547,
+   1.3322029113769531,
+   0.6934528350830078,
+   0.8775844573974609
+  ],
+  "agree": 6,
+  "sim_us": 6367.342469189639,
+  "text": "The history of the printing press begins in the fifteenth century, when Johannes Gutenberg combined movable metal type, oil-based ink and a wooden screw press into a system that could produce books far faster than scribes. Within fifty years, presses were running in more than two hundred European cities, and millions of volumes had been printed. The effects were enormous. Ideas travelled further and faster; scholars could compare identical copies of a text; vernacular languages gained standard spellings; and the Reformation spread through pamphlets that were cheap enough for ordinary people to buy. Later improvements followed one another: the cylinder press in the nineteenth century, steam power, the rotary press fed from continuous rolls of paper, and finally the Linotype machine, which cast whole lines of type at once. Each step lowered the cost of a printed page and widened the audience for news, science and literature. Today the same story is often told about the internet, which lowered the cost of publishing to almost nothing. Historians caution, however, that the comparison hides important differences. A printed book was fixed once it left the press, while a web page can change at any moment. A book had a publisher who could be held responsible, while online authorship is often anonymous. And the printing press needed centuries to reach most of the world's population, while the internet reached billions of people within a few decades. Still, both technologies show the same pattern: when copying becomes cheap, the amount of text explodes, old gatekeepers lose power, and societies have to invent new ways of deciding what to trust. The capital of France is Paris, and the capital of Japan is"
+ },
+ "wall_s": 233.6756682395935
+}

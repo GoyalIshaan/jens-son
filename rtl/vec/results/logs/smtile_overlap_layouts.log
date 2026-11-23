@@ -1,0 +1,2 @@
+Layout-checked tile-only projection: {'decode_tok_s': 89.1, 'spec_a3_tok_s': 283.5, 'prefill_chunk_ms': 146.96, 'prefill_32k_s': 37.6}
+Width, rows, planes -> command count over simulator runs: {(256, 4, 1): 96, (256, 16, 1): 96, (256, 128, 1): 24960, (1024, 4, 1): 3216, (1024, 16, 1): 3072}

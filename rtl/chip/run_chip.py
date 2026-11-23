@@ -1,0 +1,398 @@
+"""Run a program on the whole-chip RTL (Icarus) and on the functional simulator, and compare every byte of
+SRAM and DRAM at the end.
+
+  python3 rtl/chip/run_chip.py smoke          hand-written program touching every unit and command kind
+  python3 rtl/chip/run_chip.py mmfuzz [seed]  14 matrix-unit commands of random shapes (D-029)
+  python3 rtl/chip/run_chip.py tiny [tokens]  the real decode program on a 4-layer Qwen3.5-shaped model
+                                              (hid 1,024, 3 DeltaNet + 1 attention layer, random weights)
+
+Images, the program and the RTL's dumps go to rtl/chip/results/<test>/.
+"""
+import os
+import subprocess
+import sys
+import time
+
+import numpy as np
+import torch
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.join(HERE, "..", "..")
+sys.path.insert(0, os.path.join(ROOT, "isa"))
+sys.path.insert(0, os.path.join(ROOT, "golden"))
+import desc_v1 as DV  # noqa: E402
+import formats  # noqa: E402
+import isa_v1 as I  # noqa: E402
+import pack_v1 as P  # noqa: E402
+from fsim_v1 import FSim  # noqa: E402
+from isa_v1 import Dma, Mm, Opnd, Prog, Vec  # noqa: E402
+from sim_v1 import SimChip  # noqa: E402
+
+VEC = os.path.join(ROOT, "rtl", "vec")
+MXU = os.path.join(ROOT, "rtl", "mxu")
+
+
+def sources():
+    vec = [os.path.join(VEC, f) for f in sorted(os.listdir(VEC))
+           if (f.startswith("vec_") and f.endswith(".sv")) or f in ("vector_exec.sv", "sfu.v", "act_quant32.v", "act_quant32_pipe.v")
+           or f.startswith("fp32_fma")]
+    return ([os.path.join(HERE, f) for f in ("chip_top.sv", "chip_ctrl.sv", "chip_perf.sv", "chip_core.sv", "chip_dma.sv", "chip_wfifo.sv",
+                                             "chip_mxu.sv", "mxu_row_pipe.sv", "chip_vunit.sv", "chip_sram.sv", "tb_chip.sv")]
+            + vec + [os.path.join(MXU, "mxu_group.v"), os.path.join(MXU, "beat_reducer.v")])
+
+
+def write_case(folder, prog, bundles, sram, dram, regs):
+    os.makedirs(folder, exist_ok=True)
+    open(os.path.join(folder, "imem.hex"), "w").write("\n".join(DV.imem(bundles)) + "\n")
+    open(os.path.join(folder, "dmem.hex"), "w").write("\n".join(DV.image(prog) or ["0"]) + "\n")
+    for name, arr in (("sram.hex", sram), ("dram.hex", dram)):
+        np.savetxt(os.path.join(folder, name), arr, fmt="%02x")
+    open(os.path.join(folder, "regs.txt"), "w").write("".join(f"{k} {v}\n" for k, v in regs.items()))
+
+
+def run_rtl(folder, sram_bytes, dram_bytes, rows=int(os.environ.get("RP", 1)), maxr=128, lat=150, limit=30_000_000,
+            accw=8192, er=int(os.environ.get("ER", 16)), banks=int(os.environ.get("BANKS", 64)),
+            arb=int(os.environ.get("ARB", 1)), skew=int(os.environ.get("SKEW", 1)), wbuf=int(os.environ.get("WBUF", 0))):
+    key = f"s{sram_bytes}_d{dram_bytes}_r{rows}_m{maxr}_a{accw}_e{er}_l{lat}"
+    newest = max(os.path.getmtime(f) for f in sources() + [os.path.join(HERE, "desc_fields.vh")])
+    t0 = time.time()
+    if os.environ.get("SIM") == "verilator":
+        # BANKS: SRAM bank count; ARB=0 turns the arbiter off (every request served in its clock)
+        out_dir = os.path.expanduser(f"~/.cache/chip_vl/s{sram_bytes}_d{dram_bytes}_r{rows}_m{maxr}_a{accw}_e{er}"
+                                     f"_b{banks}_arb{arb}_k{skew}_w{wbuf}")
+        binary = os.path.join(out_dir, "obj", "chip_sim")
+        if not os.path.exists(binary) or os.path.getmtime(binary) < newest:
+            subprocess.run(["sh", os.path.join(HERE, "build_verilator.sh"), str(sram_bytes), str(dram_bytes), str(rows),
+                            out_dir, str(maxr), str(accw), str(er), str(banks), str(arb), str(skew), str(wbuf)], check=True,
+                           stdout=subprocess.DEVNULL)
+        cmd = [binary, f"+dir={folder}", f"+limit={limit}"] + (["+boot"] if os.environ.get("BOOT") else [])   # BOOT=1: load over the bus
+    else:
+        sim = os.path.join(HERE, "results", f"chip_{key}.vvp")
+        cmd = ["vvp", sim, f"+dir={folder}", f"+limit={limit}"]
+    if os.environ.get("SIM") != "verilator" and (not os.path.exists(sim) or os.path.getmtime(sim) < newest):
+      subprocess.run(["iverilog", "-g2012", "-I", HERE, "-I", VEC, "-s", "tb_chip", f"-Ptb_chip.SRAM_BYTES={sram_bytes}",
+                    f"-Ptb_chip.DRAM_BYTES={dram_bytes}", f"-Ptb_chip.LAT={lat}", f"-Ptb_chip.RP={rows}",
+                    f"-Ptb_chip.MAXR={maxr}", f"-Ptb_chip.ACCW={accw}", f"-Ptb_chip.ER={er}", "-o", sim, *sources()], check=True)
+    t1 = time.time()
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                            stderr=subprocess.STDOUT, text=True)
+    lines = []
+    for line in proc.stdout:                       # timestamp the simulator's progress lines
+        lines.append(line)
+        if not line.startswith("WARNING"):
+            print(f"[{time.time() - t1:7.0f} s] {line}", end="", flush=True)
+    proc.wait()
+    t2 = time.time()
+
+    class out:
+        stdout = "".join(lines)
+    print(f"compile {t1 - t0:.0f} s, simulate {t2 - t1:.0f} s", flush=True)
+    return out.stdout
+
+
+def load_dump(path, n):
+    vals = np.zeros(n, np.int16)
+    with open(path) as f:
+        i = 0
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            vals[i] = -1 if "x" in line or "z" in line else int(line, 16)
+            i += 1
+    return vals
+
+
+def compare(name, got, want, describe=None):
+    bad = np.where(got.astype(np.int16) != want.astype(np.int16))[0]
+    if len(bad) == 0:
+        print(f"PASS {name}: all {len(want):,} bytes match", flush=True)
+        return True
+    print(f"FAIL {name}: {len(bad):,} bytes differ; first at {bad[0]}", flush=True)
+    runs, start = [], bad[0]
+    for a, b in zip(bad, bad[1:]):
+        if b != a + 1:
+            runs.append((start, a)); start = b
+    runs.append((start, bad[-1]))
+    for lo, hi in runs[:12]:
+        where = describe(lo) if describe else ""
+        print(f"  {lo}..{hi} ({hi - lo + 1} bytes) {where}: got {got[lo:lo + 8].tolist()} want {want[lo:lo + 8].tolist()}")
+    return False
+
+
+# ---------------------------------------------------------------- tests
+def smoke():
+    rng = np.random.default_rng(5)
+    SR, DR = 1 << 20, 1 << 20
+    sram = np.zeros(SR, np.uint8)
+    dram = np.zeros(DR, np.uint8)
+    # DRAM: 2 KB of f32 for R; a lut4 matrix (header + data) twice; an int8 seg-1 matrix
+    vals = rng.normal(size=512).astype(np.float32)
+    dram[0:2048] = vals.view(np.uint8)
+    w = torch.from_numpy(rng.normal(0, 0.02, (128, 1024)).astype(np.float32))
+    qt = formats.quantize_weight(w, P.FMT)
+    lut = P.lut4_bytes(qt)
+    WL = 4096
+    dram[WL:WL + lut.size] = lut
+    dram[WL + lut.size:WL + 2 * lut.size] = lut
+    W8 = WL + 2 * lut.size
+    w8 = rng.integers(-127, 128, 4 * 1024).astype(np.int8)
+    dram[W8:W8 + w8.size] = w8.view(np.uint8)
+    # SRAM: activations (3 rows x 1,024 int8 + exponents), an int8 seg-4 weight block for MMS
+    ACT, EXP, S1, S2, S3, OUT, OUT2, OUT3, OUT4, YB, MW = (0x1000, 0x2000, 0x3000, 0x4000, 0x5000, 0x6000, 0x8000,
+                                                           0x9000, 0xA000, 0xB000, 0xC000)
+    q = rng.integers(-127, 128, (3, 1024)).astype(np.int8)
+    for r in range(3):
+        sram[ACT + r * 1024:ACT + (r + 1) * 1024] = q[r].view(np.uint8)
+        sram[EXP + r * 64:EXP + r * 64 + 32] = rng.integers(-12, -2, 32).astype(np.int8).view(np.uint8)
+    mw = rng.integers(-127, 128, 2 * 8 * 256).astype(np.int8)          # 2 segments x 8 outputs x 256
+    sram[MW:MW + mw.size] = mw.view(np.uint8)
+    sram[OUT2:OUT2 + 3 * 512] = rng.normal(size=3 * 128).astype(np.float32).view(np.uint8)
+    TS, TD = 0x10000, 0x20000                         # a 70 x 100 byte transpose (the L engine's tile path)
+    sram[TS:TS + 7000] = rng.integers(0, 256, 7000).astype(np.uint8)
+
+    p = Prog()
+    p.S("LI", rd=1, imm=3)
+    p.S("LI", rd=2, imm=0)
+    with p.loop(1):
+        p.S("ADDI", rd=2, rs1=2, imm=5)
+        p.S("SLLI", rd=3, rs1=2, imm=2)
+    p.S("LI", rd=4, imm=YB)
+    p.S("SW", rs1=4, rs2=3, imm=4)
+    p.S("LI", rd=5, imm=-7)
+    p.S("SW", rs1=4, rs2=5, imm=8)
+    p.D("R", Dma(0, S1, 2048), sig=(1,))
+    p.V("ADD", Vec(512, dst=Opnd(S2), a=Opnd(S1), b=Opnd(S1)), wait=(1,), sig=(2, 4))
+    p.D("X", Dma(S2, 0xC0000, 2048), wait=(2,), sig=(3,))         # clear of the weight stream W reads
+    p.D("L", Dma(S2, S3, 16, 8, 64, 32, 2, 1024, 512), wait=(4,), sig=(5,))
+    p.D("W", Dma(WL, 0, lut.size))
+    p.M("TAB")
+    p.M("MM", Mm(1024, 128, 3, ACT, 1024, EXP, 64, OUT, 512))
+    p.D("W", Dma(WL + lut.size, 0, lut.size))
+    p.M("TAB")
+    p.M("MM", Mm(1024, 128, 3, ACT, 1024, EXP, 64, YB + 16, 4, epi="argmax", id_base=1000))
+    p.M("MMS", Mm(512, 8, 3, ACT, 1024, EXP, 64, OUT3, 32, wfmt="int8", seg=4, wsrc=MW, tscale=0.5))
+    p.D("W", Dma(W8, 0, w8.size))
+    p.M("MM", Mm(1024, 4, 2, ACT, 1024, EXP, 64, OUT4, 16, wfmt="int8", tscale=2.0), sig=(6,))
+    p.S("WAITS", imm=3)
+    p.S("WAITS", imm=5)
+    p.S("WAITS", imm=6)
+    p.V("RSUMSQ", Vec(512, dst=Opnd(OUT + 2048), a=Opnd(S2)), sig=(7,))
+    p.D("L", Dma(TS, TD, 1, 100, 1, 80, 70, 100, 1), sig=(8,))     # dst[i1 * 80 + i2] = src[i2 * 100 + i1]
+    p.S("WAITS", imm=7)
+    p.S("WAITS", imm=8)
+    p.S("LW", rd=6, rs1=4, imm=4)
+    p.S("SW", rs1=4, rs2=6, imm=12)
+    p.S("HALT")
+    return p, sram, dram, {}, None
+
+
+def mmfuzz(seed=1, count=14):
+    """Matrix-unit shapes at random (D-029's tiles, buffers, drain and packed loads): lut4 MM with every epilogue,
+    int8 MM from the FIFO (seg 1), MMS seg 4 and seg 1, 1-128 rows, packed seg-4 loads."""
+    rng = np.random.default_rng(seed)
+    SR, DR = 4 << 20, 4 << 20
+    sram = np.zeros(SR, np.uint8)
+    dram = np.zeros(DR, np.uint8)
+    ACT, EXP = 0x10000, 0x80000                       # 128 rows x 3,072 int8 at stride 3,072; exponents at 96
+    q = rng.integers(-127, 128, (128, 3072)).astype(np.int8)
+    sram[ACT:ACT + q.size] = q.view(np.uint8).ravel()
+    sram[EXP:EXP + 128 * 96] = rng.integers(-12, -2, 128 * 96).astype(np.int8).view(np.uint8)
+    PACT, PEXP = 0x90000, 0x98000                     # packed seg 4: 128 rows of 256 at stride 256, exps stride 8
+    sram[PACT:PACT + 128 * 256] = rng.integers(-127, 128, 128 * 256).astype(np.int8).view(np.uint8)
+    sram[PEXP:PEXP + 128 * 8] = rng.integers(-12, -2, 128 * 8).astype(np.int8).view(np.uint8)
+    MWB = 0xA0000                                     # MMS weights: 64 KB of int8
+    sram[MWB:MWB + 65536] = rng.integers(-127, 128, 65536).astype(np.int8).view(np.uint8)
+    out = 0x100000                                    # outputs, pre-filled with floats for the acc epilogue
+    sram[out:SR] = rng.normal(size=(SR - out) // 4).astype(np.float32).view(np.uint8)
+    p = Prog()
+    wpos = 0
+    kinds = ["lut4", "lut4", "int8", "mms4", "mms4p", "mms1"]
+    for i in range(count):
+        kind = kinds[i % len(kinds)] if i < len(kinds) else kinds[rng.integers(len(kinds))]
+        rows = int(rng.choice([1, 3, 17, 64, 65, 100, 128]))
+        if kind == "lut4":
+            n_in, n_out = 1024 * int(rng.integers(1, 4)), 64 * int(rng.integers(1, 4))
+            epi = ["f32", "acc", "argmax"][int(rng.integers(3))]
+            w = torch.from_numpy(rng.normal(0, 0.02, (n_out, n_in)).astype(np.float32))
+            lut = P.lut4_bytes(formats.quantize_weight(w, P.FMT))
+            dram[wpos:wpos + lut.size] = lut
+            p.D("W", Dma(wpos, 0, lut.size)); wpos += lut.size
+            p.M("TAB")
+            m = Mm(n_in, n_out, rows, ACT, 3072, EXP, 96, out, n_out * 4 if epi != "argmax" else 4, epi=epi,
+                   id_base=int(rng.integers(0, 5000)))
+            p.M("MM", m)
+            size = rows * (n_out * 4 if epi != "argmax" else 4)
+        elif kind == "int8":
+            n_in, n_out = 1024 * int(rng.integers(1, 3)), int(rng.integers(1, 40))
+            w8 = rng.integers(-127, 128, n_in * n_out).astype(np.int8)
+            dram[wpos:wpos + w8.size] = w8.view(np.uint8)
+            p.D("W", Dma(wpos, 0, w8.size)); wpos += w8.size
+            p.M("MM", Mm(n_in, n_out, rows, ACT, 3072, EXP, 96, out, n_out * 4, wfmt="int8", tscale=0.75))
+            size = rows * n_out * 4
+        elif kind in ("mms4", "mms4p"):
+            packed = kind == "mms4p"
+            n_in = 256 if packed else 256 * int(rng.integers(1, 4))
+            n_out = 4 * int(rng.integers(1, 17)) if packed else 4 * int(rng.integers(1, 64 // max(1, rows // 64 + 1)))
+            if not packed and n_in > 256:
+                n_out = min(n_out, 8192 // rows // 4 * 4)
+            epi = ["f32", "acc"][int(rng.integers(2))]
+            m = (Mm(n_in, n_out, rows, PACT, 256, PEXP, 8, out, n_out * 4, wfmt="int8", seg=4, wsrc=MWB, epi=epi,
+                    tscale=0.5) if packed else
+                 Mm(n_in, n_out, rows, ACT, 3072, EXP, 96, out, n_out * 4, wfmt="int8", seg=4, wsrc=MWB, epi=epi,
+                    tscale=1.5))
+            p.M("MMS", m)
+            size = rows * n_out * 4
+        else:
+            n_in, n_out = 1024, int(rng.integers(1, 30))
+            p.M("MMS", Mm(n_in, n_out, rows, ACT, 3072, EXP, 96, out, n_out * 4, wfmt="int8", wsrc=MWB, tscale=0.25))
+            size = rows * n_out * 4
+        out += -(-size // 64) * 64 + 64
+        assert out < SR and wpos < DR
+    p.M("NOP", sig=(1,))
+    p.S("WAITS", imm=1)
+    p.S("HALT")
+    return p, sram, dram, {}, None
+
+
+def tiny(tokens=1):
+    import qwen_v1 as Q
+    cfg = Q.Model(hid=1024, ffn=1024, vocab=1024, qh=4, kvh=1, hd=256, rot=64, lqk=4, lv=8, layers=4)
+    prog, info = Q.build("decode", steps=tokens, lmax=256, cfg=cfg)
+    raw = random_raw(cfg)
+    qw = P.quantize_all(raw, cfg)
+    dram, sram = P.build_images(raw, qw, info)
+    used = -(-info["sram"].total() // 65536) * 65536
+    sram = sram[:used].copy()
+    YB = info["bufs"]["YB"]
+    sram[YB:YB + 4].view(np.uint32)[0] = 7
+    return prog, sram, dram, {Q.X_L: 0}, info
+
+
+def tinyprefill(chunks=1):
+    import qwen_prefill_v1 as QP
+    import qwen_v1 as Q
+    # TINY_LAYERS: fewer layers, to find where a mismatch starts (layers 0-2 DeltaNet, 3 attention)
+    cfg = Q.Model(hid=1024, ffn=1024, vocab=1024, qh=4, kvh=1, hd=256, rot=64, lqk=4, lv=8,
+                  layers=int(os.environ.get("TINY_LAYERS", 4)))
+    prog, info = QP.build_prefill(chunks=chunks, lmax=max(256, chunks * 128), fused=True, dn="lite", cfg=cfg)
+    raw = random_raw(cfg)
+    qw = P.quantize_all(raw, cfg)
+    tokens = np.random.default_rng(11).integers(0, cfg.vocab, chunks * 128).tolist()
+    dram, sram = P.build_images_prefill(raw, qw, info, tokens)
+    used = -(-info["sram"].total() // 65536) * 65536
+    return prog, sram[:used].copy(), dram, {Q.X_L: 0}, info
+
+
+def slice9b(mode="prefill"):
+    """The profiling slice at Qwen3.5-9B's real sizes: hidden 4096, FFN 12288, 16 query heads of 256, DeltaNet heads
+    of 128, the real head counts, but 4 layers (3 DeltaNet + 1 attention, the smallest repeat of 9B's pattern) and a
+    small vocabulary (the LM head is a matrix like any other; its cost scales separately). One 128-token prefill
+    chunk, or one decode token. The quantized weights are cached, since quantizing at these sizes is slow."""
+    import qwen_v1 as Q
+    import qwen_prefill_v1 as QP
+    cfg = Q.Model(layers=4, vocab=int(os.environ.get("SLICE_VOCAB", 4096)))
+    cache = os.path.join(HERE, "results", f"slice9b_q_v{cfg.vocab}.pt")
+    raw = random_raw(cfg)
+    qw = P.quantize_all(raw, cfg, cache_path=cache)
+    if not os.path.exists(cache):
+        torch.save(qw, cache)
+    if mode == "prefill":
+        prog, info = QP.build_prefill(chunks=1, lmax=int(os.environ.get("SLICE_LMAX", 256)), fused=True, dn="lite", cfg=cfg)
+        tokens = np.random.default_rng(11).integers(0, cfg.vocab, 128).tolist()
+        dram, sram = P.build_images_prefill(raw, qw, info, tokens)
+    else:
+        prog, info = Q.build("decode", steps=1, lmax=int(os.environ.get("SLICE_LMAX", 256)), cfg=cfg)
+        dram, sram = P.build_images(raw, qw, info)
+        sram[info["bufs"]["YB"]:info["bufs"]["YB"] + 4].view(np.uint32)[0] = 7
+    used = -(-info["sram"].total() // 65536) * 65536
+    return prog, sram[:used].copy(), dram, {Q.X_L: 0}, info
+
+
+def random_raw(cfg):
+    g = torch.Generator().manual_seed(3)
+    H, QKV_CH, VD, LV = cfg.hid, 2 * cfg.lqk * cfg.ld + cfg.lv * cfg.ld, cfg.lv * cfg.ld, cfg.lv
+
+    def n(*s, sd=0.02):
+        return torch.randn(*s, generator=g) * sd
+    raw = {"embed_tokens.weight": n(cfg.vocab, H, sd=0.05), "norm.weight": n(H, sd=0.1)}
+    for l in range(cfg.layers):
+        p = f"layers.{l}."
+        raw[p + "input_layernorm.weight"] = n(H, sd=0.1)
+        raw[p + "post_attention_layernorm.weight"] = n(H, sd=0.1)
+        if (l + 1) % 4:
+            a = p + "linear_attn."
+            raw[a + "in_proj_qkv.weight"] = n(QKV_CH, H)
+            raw[a + "in_proj_z.weight"] = n(VD, H)
+            raw[a + "in_proj_b.weight"] = n(LV, H)
+            raw[a + "in_proj_a.weight"] = n(LV, H)
+            raw[a + "out_proj.weight"] = n(H, VD)
+            raw[a + "conv1d.weight"] = n(QKV_CH, 1, 4, sd=0.3)
+            raw[a + "dt_bias"] = n(LV, sd=0.5)
+            raw[a + "A_log"] = n(LV, sd=0.5)
+            raw[a + "norm.weight"] = 1 + n(cfg.ld, sd=0.1)
+        else:
+            a = p + "self_attn."
+            raw[a + "q_proj.weight"] = n(2 * cfg.qh * cfg.hd, H)
+            raw[a + "k_proj.weight"] = n(cfg.kvh * cfg.hd, H)
+            raw[a + "v_proj.weight"] = n(cfg.kvh * cfg.hd, H)
+            raw[a + "o_proj.weight"] = n(H, cfg.qh * cfg.hd)
+            raw[a + "q_norm.weight"] = n(cfg.hd, sd=0.1)
+            raw[a + "k_norm.weight"] = n(cfg.hd, sd=0.1)
+        raw[p + "mlp.gate_proj.weight"] = n(cfg.ffn, H)
+        raw[p + "mlp.up_proj.weight"] = n(cfg.ffn, H)
+        raw[p + "mlp.down_proj.weight"] = n(H, cfg.ffn)
+    return raw
+
+
+def main():
+    test = sys.argv[1] if len(sys.argv) > 1 else "smoke"
+    torch.set_num_threads(4)
+    if test == "smoke":
+        prog, sram, dram, regs, info = smoke()
+    elif test == "mmfuzz":
+        prog, sram, dram, regs, info = mmfuzz(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
+    elif test == "slice9b":
+        prog, sram, dram, regs, info = slice9b(sys.argv[2] if len(sys.argv) > 2 else "prefill")
+    elif test == "tinyprefill":
+        prog, sram, dram, regs, info = tinyprefill(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
+    else:
+        prog, sram, dram, regs, info = tiny(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
+    # PAD_SRAM / PAD_DRAM: zero-pad the images to a fixed size, so tests of different sizes share one build
+    for name in ("PAD_SRAM", "PAD_DRAM"):
+        size = int(os.environ.get(name, 0))
+        img = sram if name == "PAD_SRAM" else dram
+        if size > img.size:
+            img = np.concatenate([img, np.zeros(size - img.size, np.uint8)])
+            if name == "PAD_SRAM": sram = img
+            else: dram = img
+    bundles = prog.assemble()
+    folder = os.path.join(HERE, "results", test + os.environ.get("TAG", ""))   # TAG keeps parallel runs apart
+    write_case(folder, prog, bundles, sram, dram, regs)
+    print(f"{test}: {len(bundles)} bundles, {len(prog.descs)} descriptors, SRAM {sram.size:,} B, DRAM {dram.size:,} B",
+          flush=True)
+    t0 = time.time()
+    fs = FSim(prog, bundles, sram.copy(), dram.copy(), chip=SimChip(vec_lanes=512), regs=regs)
+    st = fs.run()
+    print(f"FSim: {st['time_ns'] / 1e3:.1f} us simulated, {time.time() - t0:.0f} s; commands {dict(st['cmds'])}",
+          flush=True)
+    out = run_rtl(folder, sram.size, dram.size)
+    if "RESULT" not in out:
+        print("RTL did not finish"); sys.exit(1)
+    describe = None
+    if info is not None:
+        spans = sorted((v, k) for k, v in info["bufs"].items() if isinstance(v, int))
+
+        def describe(a):
+            name = None
+            for base, k in spans:
+                if base <= a:
+                    name = (k, a - base)
+            return f"[{name[0]} + {name[1]}]" if name else ""
+    ok = compare("SRAM", load_dump(os.path.join(folder, "sram_out.hex"), sram.size), fs.sram, describe)
+    ok &= compare("DRAM", load_dump(os.path.join(folder, "dram_out.hex"), dram.size), fs.dram)
+    sys.exit(0 if ok else 1)
+
+
+if __name__ == "__main__":
+    main()

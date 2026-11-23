@@ -1,0 +1,242 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (127ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 2 changed file(s) (22.02 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 22.3/22.3 kB 0:00:00
+✓ Files synced (1.8s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp4:mtp_window...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 333816.26 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 742894.34 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 644855.37 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 7473/7473 [00:00<00:00, 495354.22 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 1319/1319 [00:00<00:00, 326369.36 examples/s]
+Generating train split:   0%|          | 0/374 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 374/374 [00:00<00:00, 57856.74 examples/s]
+Generating test split:   0%|          | 0/500 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 500/500 [00:00<00:00, 110609.28 examples/s]
+Generating validation split:   0%|          | 0/90 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 90/90 [00:00<00:00, 37923.18 examples/s]
+Generating prompt split:   0%|          | 0/10 [00:00<?, ? examples/s]
+Generating prompt split: 100%|##########| 10/10 [00:00<00:00, 4808.33 examples/s]
+Generating train split:   0%|          | 0/52002 [00:00<?, ? examples/s]
+Generating train split:  87%|########6 | 45000/52002 [00:00<00:00, 446473.82 examples/s]
+Generating train split: 100%|##########| 52002/52002 [00:00<00:00, 464109.98 examples/s]
+check
+ 
+1.0
+ 
+1.0
+prose_a
+ 
+{'full': 2.823, '16384': 2.823, '4096': 2.823, '1024': 2.738, '256': 2.481}
+prose_b
+ 
+{'full': 3.054, '16384': 3.054, '4096': 3.054, '1024': 2.995, '256': 2.895}
+code
+ 
+{'full': 3.279, '16384': 3.279, '4096': 3.279, '1024': 3.25, '256': 3.184}
+✓ Function complete (1m33s)
+{
+ "kind": "exp4_mtp_window",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-18T22:08:51Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": true,
+ "n_tokens": 4096,
+ "start": 1024,
+ "stride": 2,
+ "windows": [
+  "full",
+  "16384",
+  "4096",
+  "1024",
+  "256"
+ ],
+ "vocab": "top32k",
+ "numerics": {
+  "weights": "bf16",
+  "act": "fp32",
+  "kv": "fp32",
+  "state": "fp32"
+ },
+ "seq_tokens": {
+  "prose_a": 4096,
+  "prose_b": 4096,
+  "code": 4096
+ },
+ "sets": {
+  "prose_a": {
+   "n_region": 3068,
+   "n_valid": 519,
+   "n_scored": 260,
+   "main_top1_match": 0.5315755605697632,
+   "secs": 14.6949143409729,
+   "full": {
+    "n_positions": 260,
+    "p_cond": [
+     0.8346153846153846,
+     0.7695852534562212,
+     0.5389221556886228
+    ],
+    "tokens_per_step": {
+     "1": 1.8346153846153848,
+     "2": 2.476923076923077,
+     "3": 2.823076923076923
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "16384": {
+    "n_positions": 260,
+    "p_cond": [
+     0.8346153846153846,
+     0.7695852534562212,
+     0.5389221556886228
+    ],
+    "tokens_per_step": {
+     "1": 1.8346153846153848,
+     "2": 2.476923076923077,
+     "3": 2.823076923076923
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "4096": {
+    "n_positions": 260,
+    "p_cond": [
+     0.8346153846153846,
+     0.7695852534562212,
+     0.5389221556886228
+    ],
+    "tokens_per_step": {
+     "1": 1.8346153846153848,
+     "2": 2.476923076923077,
+     "3": 2.823076923076923
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "1024": {
+    "n_positions": 260,
+    "p_cond": [
+     0.8,
+     0.7548076923076923,
+     0.554140127388535
+    ],
+    "tokens_per_step": {
+     "1": 1.8,
+     "2": 2.4038461538461537,
+     "3": 2.7384615384615385
+    },
+    "delta_k3_vs_full": -0.08461538461538462,
+    "delta_k3_stderr": 0.04721819970524646,
+    "identical_to_full": 0.823076923076923
+   },
+   "256": {
+    "n_positions": 260,
+    "p_cond": [
+     0.7423076923076923,
+     0.6528497409326425,
+     0.5238095238095238
+    ],
+    "tokens_per_step": {
+     "1": 1.7423076923076923,
+     "2": 2.226923076923077,
+     "3": 2.480769230769231
+    },
+    "delta_k3_vs_full": -0.3423076923076923,
+    "delta_k3_stderr": 0.05926670693571647,
+    "identical_to_full": 0.7
+   }
+  },
+  "prose_b": {
+   "n_region": 3068,
+   "n_valid": 820,
+   "n_scored": 410,
+   "main_top1_match": 0.6015625,
+   "secs": 14.477784156799316,
+   "full": {
+    "n_positions": 410,
+    "p_cond": [
+     0.8926829268292683,
+     0.8060109289617486,
+     0.6135593220338983
+    ],
+    "tokens_per_step": {
+     "1": 1.8926829268292682,
+     "2": 2.6121951219512196,
+     "3": 3.053658536585366
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "16384": {
+    "n_positions": 410,
+    "p_cond": [
+     0.8926829268292683,
+     0.8060109289617486,
+     0.6135593220338983
+    ],
+    "tokens_per_step": {
+     "1": 1.8926829268292682,
+     "2": 2.6121951219512196,
+     "3": 3.053658536585366
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "4096": {
+    "n_positions": 410,
+    "p_cond": [
+     0.8926829268292683,
+     0.8060109289617486,
+     0.6135593220338983
+    ],
+    "tokens_per_step": {
+     "1": 1.8926829268292682,
+     "2": 2.6121951219512196,
+     "3": 3.053658536585366
+    },
+    "delta_k3_vs_full": 0.0,
+    "delta_k3_stderr": 0.0,
+    "identical_to_full": 1.0
+   },
+   "1024": {
+    "n_positions": 410,
+    "p_cond": [
+     0.9,
+     0.7642276422764228,
+     0.5921985815602837
+    ],
+    "tokens_per_step": {
+     "1": 1.9,
+     "2": 2.5878048780487806,
+     "3": 2.995121951219512
+ 

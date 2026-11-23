@@ -1,0 +1,13 @@
+FATAL: tb_vec_unit.sv:67: case 0 op 1 addr 4096 got xx expected 0d
+       Time: 68  Scope: tb_vec_unit
+Traceback (most recent call last):
+  File "./rtl/vec/test_vec_unit.py", line 191, in <module>
+    main()
+    ~~~~^^
+  File "./rtl/vec/test_vec_unit.py", line 188, in main
+    subprocess.run(["vvp",str(folder/"sim"),f"+bytes={size}",f"+cases={count}"],cwd=folder,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['vvp', '/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_unit_poc23ht_/sim', '+bytes=454208', '+cases=33']' returned non-zero exit status 1.

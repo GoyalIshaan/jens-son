@@ -1,0 +1,83 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (226ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (2.75 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 kB 0:00:00
+✓ Files synced (2.3s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp3:tasks...
+Loading weights:   0%|          | 0/760 [00:00<?, ?it/s]
+Loading weights:   0%|          | 2/760 [00:00<01:30,  8.34it/s]
+Loading weights:   4%|3         | 29/760 [00:00<00:07, 102.57it/s]
+Loading weights:   7%|6         | 53/760 [00:00<00:04, 149.29it/s]
+Loading weights:  11%|#         | 82/760 [00:00<00:03, 191.79it/s]
+Loading weights:  14%|#4        | 107/760 [00:00<00:03, 209.32it/s]
+Loading weights:  18%|#7        | 135/760 [00:00<00:02, 224.33it/s]
+Loading weights:  21%|##1       | 160/760 [00:00<00:02, 229.39it/s]
+Loading weights:  25%|##4       | 188/760 [00:00<00:02, 240.40it/s]
+Loading weights:  28%|##8       | 213/760 [00:01<00:02, 234.33it/s]
+Loading weights:  33%|###2      | 249/760 [00:01<00:01, 265.34it/s]
+Loading weights:  36%|###6      | 276/760 [00:01<00:01, 258.13it/s]
+Loading weights:  40%|###9      | 303/760 [00:01<00:01, 260.88it/s]
+Loading weights:  43%|####3     | 330/760 [00:01<00:01, 257.48it/s]
+Loading weights:  47%|####6     | 356/760 [00:01<00:01, 255.26it/s]
+Loading weights:  50%|#####     | 382/760 [00:01<00:01, 251.24it/s]
+Loading weights:  54%|#####3    | 409/760 [00:01<00:01, 254.84it/s]
+Loading weights:  57%|#####7    | 435/760 [00:01<00:01, 249.68it/s]
+Loading weights:  61%|######    | 461/760 [00:02<00:01, 227.81it/s]
+Loading weights:  66%|######6   | 503/760 [00:02<00:00, 262.13it/s]
+Loading weights:  74%|#######3  | 562/760 [00:02<00:00, 336.36it/s]
+Loading weights:  82%|########1 | 623/760 [00:02<00:00, 405.91it/s]
+Loading weights:  93%|#########3| 709/760 [00:02<00:00, 527.37it/s]
+Loading weights: 100%|##########| 760/760 [00:02<00:00, 289.01it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 7473/7473 [00:00<00:00, 410832.23 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 1319/1319 [00:00<00:00, 331334.19 examples/s]
+gsm8k: 8 problems
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+    batch 1/1
+gsm8k: 7/8 = 0.875  (15s, 597 tokens)
+    batch 1/4
+    batch 2/4
+    batch 3/4
+    batch 4/4
+Generating test split:   0%|          | 0/164 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 164/164 [00:00<00:00, 29557.66 examples/s]
+humaneval: 8 problems
+    batch 1/1
+humaneval: 7/8 = 0.875  (11s, 302 tokens)
+    batch 1/4
+    batch 2/4
+    batch 3/4
+    batch 4/4
+Generating train split:   0%|          | 0/374 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 374/374 [00:00<00:00, 98646.06 examples/s]
+Generating test split:   0%|          | 0/500 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 500/500 [00:00<00:00, 154771.37 examples/s]
+Generating validation split:   0%|          | 0/90 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 90/90 [00:00<00:00, 40769.78 examples/s]
+Generating prompt split:   0%|          | 0/10 [00:00<?, ? examples/s]
+Generating prompt split: 100%|##########| 10/10 [00:00<00:00, 4566.97 examples/s]
+mbpp: 8 problems
+    batch 1/1
+mbpp: 5/8 = 0.625  (9s, 266 tokens)
+    batch 1/4
+    batch 2/4
+    batch 3/4
+    batch 4/4
+✓ Function complete (1m57s)
+gsm8k 7 / 8 batched==single: [True, True, True, True] 15s
+  sample: " Janet's ducks lay 16 eggs per day.\nShe eats 3 for breakfast and 4 for muffins, so she uses 3+4=7 eggs.\nThe remaining eggs are 16-7=9 eggs.\nShe sells these 9 eggs at $2 each, so she makes 9*2=$18.\nThe answer is 18.\n\n"
+humaneval 7 / 8 batched==single: [True, True, True, True] 11s
+  sample: '    for i in range(len(numbers)):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False\n\n'
+mbpp 5 / 8 batched==single: [True, True, True, True] 9s
+  sample: 'def remove_Occ(s, c):\n  return s.replace(c, "", 1).replace(c, "", -1)\n'

@@ -1,0 +1,15 @@
+sh: line 1:  9516 Done                    /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivlpp -L -F"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlg2987e866" -f"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlg987e866" -p"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrli987e866"
+      9517 Terminated: 15          | /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivl -C"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlh987e866" -C"/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vvp.conf" -- -
+Traceback (most recent call last):
+  File "./rtl/vec/test_vec_unit.py", line 189, in <module>
+    main()
+    ~~~~^^
+  File "./rtl/vec/test_vec_unit.py", line 184, in main
+    subprocess.run(["iverilog","-g2012","-s","tb_vec_unit","-o",str(folder/"sim"),"tb_vec_unit.sv",*map(str,sources)],
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   cwd=HERE,check=True)
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['iverilog', '-g2012', '-s', 'tb_vec_unit', '-o', '/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_unit_kh5hbpvy/sim', 'tb_vec_unit.sv', './rtl/vec/vec_box.sv', './rtl/vec/vec_smtile.sv', './rtl/vec/vec_formats.sv', './rtl/vec/vec_box_command.sv', './rtl/vec/vec_reduce_pipe.sv', './rtl/vec/vec_row_ops.sv', './rtl/vec/vec_dn_group.sv', './rtl/vec/vec_dn_head.sv', './rtl/vec/vec_unit.sv', './rtl/vec/vector_exec.sv', './rtl/vec/sfu.v', './rtl/vec/act_quant32.v', './rtl/vec/fp32_fma_pipe8_ce.v', './rtl/vec/fp32_fma_pipe.v', './rtl/vec/fp32_fma.v', './rtl/vec/fp32_fma_pipe8.v']' returned non-zero exit status 143.

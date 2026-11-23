@@ -1,0 +1,25 @@
+{
+  "context": 32768,
+  "spec_accepted": 3,
+  "fused": true,
+  "chip_clock_hz": 1000000000.0,
+  "vec_lanes": 512,
+  "sram_bytes": {
+    "decode": 1645760,
+    "spec": 2912832
+  },
+  "by_group_width": {
+    "1": {
+      "normal_token_ready_sram": 501,
+      "replay_token_ready_sram": 499,
+      "decode_tok_s": 87.7775730598706,
+      "spec_tok_s": 257.4200382361173
+    },
+    "4": {
+      "normal_token_ready_sram": 627,
+      "replay_token_ready_sram": 508,
+      "decode_tok_s": 90.6422883371764,
+      "spec_tok_s": 302.04933225755093
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Checking decoded descriptors 12 through 32 with earlier writes in SRAM
+PASS descriptor 0, V opcode 13, 205 clocks
+PASS descriptor 1, V opcode 14, 205 clocks
+PASS descriptor 2, V opcode 15, 19 clocks
+PASS descriptor 3, V opcode 16, 46 clocks
+PASS descriptor 4, V opcode 3, 16 clocks
+PASS descriptor 5, V opcode 17, 54 clocks
+PASS descriptor 6, V opcode 18, 47 clocks
+PASS descriptor 7, V opcode 23, 5 clocks
+PASS descriptor 8, V opcode 20, 12 clocks
+PASS descriptor 9, V opcode 19, 23 clocks
+PASS descriptor 10, V opcode 21, 168 clocks
+PASS descriptor 11, V opcode 24, 376 clocks
+PASS descriptor 12, V opcode 6, 5 clocks
+PASS descriptor 13, V opcode 6, 6 clocks
+PASS descriptor 14, V opcode 6, 5 clocks
+PASS descriptor 15, V opcode 6, 5 clocks
+PASS descriptor 16, V opcode 13, 206 clocks
+PASS descriptor 17, V opcode 15, 19 clocks
+PASS descriptor 18, V opcode 22, 1556 clocks
+PASS descriptor 19, V opcode 22, 533 clocks
+PASS descriptor 20, V opcode 22, 1330 clocks
+tb_vec_unit.sv:71: $finish called at 19368 (1s)

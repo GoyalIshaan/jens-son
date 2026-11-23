@@ -1,0 +1,6 @@
+PASS descriptor 0, V opcode 24, 455 clocks
+PASS descriptor 1, V opcode 24, 432 clocks
+PASS descriptor 2, V opcode 24, 267 clocks
+PASS descriptor 3, V opcode 24, 522 clocks
+PASS descriptor 4, V opcode 24, 1139 clocks
+tb_vec_unit.sv:101: $finish called at 11277 (1s)

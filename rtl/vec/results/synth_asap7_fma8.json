@@ -1,0 +1,12 @@
+{
+ "fp32_fma_pipe8 D100000": {
+  "area_um2": 795.09114,
+  "nand2_eq": 9089,
+  "delay_ps": 1736.55
+ },
+ "fp32_fma_pipe8 D1": {
+  "area_um2": 953.15292,
+  "nand2_eq": 10896,
+  "delay_ps": 2272.29
+ }
+}

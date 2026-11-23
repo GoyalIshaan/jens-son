@@ -1,0 +1,50 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (142ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (15.34 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.8/15.8 kB 0:00:00
+✓ Files synced (1.4s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp4:mtp_window...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 54580.46 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 832278.37 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 656259.96 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 7473/7473 [00:00<00:00, 431237.05 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 1319/1319 [00:00<00:00, 421571.82 examples/s]
+Generating train split:   0%|          | 0/374 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 374/374 [00:00<00:00, 54079.00 examples/s]
+Generating test split:   0%|          | 0/500 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 500/500 [00:00<00:00, 143896.80 examples/s]
+Generating validation split:   0%|          | 0/90 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 90/90 [00:00<00:00, 36465.16 examples/s]
+Generating prompt split:   0%|          | 0/10 [00:00<?, ? examples/s]
+Generating prompt split: 100%|##########| 10/10 [00:00<00:00, 4886.19 examples/s]
+Generating train split:   0%|          | 0/52002 [00:00<?, ? examples/s]
+Generating train split:  88%|########8 | 46000/52002 [00:00<00:00, 449997.98 examples/s]
+Generating train split: 100%|##########| 52002/52002 [00:00<00:00, 467007.67 examples/s]
+check
+ 
+1.0
+ 
+1.0
+prose_a
+ 
+{'full': 3.102, '16384': 3.067, '4096': 3.013, '1024': 2.905, '256': 2.698}
+prose_b
+ 
+{'full': 2.984, '16384': 2.963, '4096': 2.935, '1024': 2.82, '256': 2.622}
+code
+ 
+{'full': 3.059, '16384': 3.048, '4096': 3.017, '1024': 2.979, '256': 2.905}
+✓ Function complete (6m48s)

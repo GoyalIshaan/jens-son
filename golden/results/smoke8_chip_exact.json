@@ -1,0 +1,514 @@
+{
+ "kind": "exp8_chip_exact",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-21T07:37:54Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": true,
+ "n_tokens": {
+  "wikitext": 512,
+  "python_code": 512
+ },
+ "long": {
+  "n_tokens": 2048,
+  "every": 16,
+  "ref_secs": 6.78836989402771
+ },
+ "rows": [
+  {
+   "cond": "bf16",
+   "label": "exact (sanity: 0)",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "fp32",
+    "attn_p": "fp32"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": false,
+    "softmax": false,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0,
+     "kl_stderr": 0.0,
+     "kl_p99": 0.0,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.0,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.0,
+     "kl_stderr": 0.0,
+     "kl_p99": 0.0,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.0,
+     "n": 512
+    }
+   },
+   "secs": 4.314633131027222
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 (D-021, untiled)",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": false,
+    "softmax": false,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0001728661300148815,
+     "kl_stderr": 0.00010276527609676123,
+     "kl_p99": 0.0004772188840433955,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": 0.04907846450805664,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 4.1962826799135655e-05,
+     "kl_stderr": 4.935972810926614e-06,
+     "kl_p99": 0.00046682616812177,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.07559657096862793,
+     "n": 512
+    }
+   },
+   "secs": 4.591098070144653
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 + chip sfu",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": true,
+    "rope": false,
+    "softmax": false,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.00013210184988565743,
+     "kl_stderr": 6.179621414048597e-05,
+     "kl_p99": 0.000526845920830965,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": 0.03234148025512695,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -4.076430559507571e-05,
+      "stderr": 4.4003347284160554e-05
+     },
+     "nll_vs_base": {
+      "mean": -0.00016745786706451327,
+      "stderr": 0.00021995732095092535
+     }
+    },
+    "python_code": {
+     "kl_mean": 4.2693667637649924e-05,
+     "kl_stderr": 4.600347438099561e-06,
+     "kl_p99": 0.00048384134424850345,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.046628713607788086,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 7.308401563932421e-07,
+      "stderr": 2.253057346024434e-06
+     },
+     "nll_vs_base": {
+      "mean": 0.0002898315142374486,
+      "stderr": 0.00017319923790637404
+     }
+    }
+   },
+   "secs": 11.927656888961792
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 + chip rope",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": true,
+    "softmax": false,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.000168682134244591,
+     "kl_stderr": 9.539212624076754e-05,
+     "kl_p99": 0.0004180158139206469,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": 0.07425546646118164,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -4.1840139601845294e-06,
+      "stderr": 1.0967696653096937e-05
+     },
+     "nll_vs_base": {
+      "mean": 0.0002513662329874933,
+      "stderr": 0.0001665471208980307
+     }
+    },
+    "python_code": {
+     "kl_mean": 4.3356554670026526e-05,
+     "kl_stderr": 5.240705377218546e-06,
+     "kl_p99": 0.0005571827059611678,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": -0.06591677665710449,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 1.3937294625065988e-06,
+      "stderr": 1.261722559320333e-06
+     },
+     "nll_vs_base": {
+      "mean": 9.678793867351487e-05,
+      "stderr": 0.00010052927245851606
+     }
+    }
+   },
+   "secs": 4.612260341644287
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 + chip softmax",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": false,
+    "softmax": true,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0003820627462118864,
+     "kl_stderr": 0.00014856400957796723,
+     "kl_p99": 0.002106746891513467,
+     "top1_agree": 0.994140625,
+     "ppl_change_pct": 0.313723087310791,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.00020919658709317446,
+      "stderr": 4.808358789887279e-05
+     },
+     "nll_vs_base": {
+      "mean": 0.002641379600390792,
+      "stderr": 0.000995225622318685
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.00014714723511133343,
+     "kl_stderr": 1.7833544916356914e-05,
+     "kl_p99": 0.0017088468885049224,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": -0.17918944358825684,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.00010518440831219777,
+      "stderr": 1.5799143511685543e-05
+     },
+     "nll_vs_base": {
+      "mean": -0.0010372684337198734,
+      "stderr": 0.0007136937347240746
+     }
+    }
+   },
+   "secs": 4.365080118179321
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 + chip dnq",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": false,
+    "softmax": false,
+    "dnq": true
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0001728661300148815,
+     "kl_stderr": 0.00010276527609676123,
+     "kl_p99": 0.0004772188840433955,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": 0.04907846450805664,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.0,
+      "stderr": 0.0
+     },
+     "nll_vs_base": {
+      "mean": 0.0,
+      "stderr": 0.0
+     }
+    },
+    "python_code": {
+     "kl_mean": 4.1962826799135655e-05,
+     "kl_stderr": 4.935972810926614e-06,
+     "kl_p99": 0.00046682616812177,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.07559657096862793,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.0,
+      "stderr": 0.0
+     },
+     "nll_vs_base": {
+      "mean": 0.0,
+      "stderr": 0.0
+     }
+    }
+   },
+   "secs": 4.557068347930908
+  },
+  {
+   "cond": "bf16",
+   "label": "q, P int8 + all chip-exact pieces",
+   "numerics": {
+    "weights": "bf16",
+    "act": "fp32",
+    "kv": "fp32",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": true,
+    "rope": true,
+    "softmax": true,
+    "dnq": true
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.00036929332418367267,
+     "kl_stderr": 0.00013372015382628888,
+     "kl_p99": 0.002102395985275507,
+     "top1_agree": 0.9921875,
+     "ppl_change_pct": 0.29969215393066406,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.00019642716506496072,
+      "stderr": 4.0019840525928885e-05
+     },
+     "nll_vs_base": {
+      "mean": 0.002501700073480606,
+      "stderr": 0.0010045692324638367
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.0001449663395760581,
+     "kl_stderr": 1.7670046872808598e-05,
+     "kl_p99": 0.0018001061398535967,
+     "top1_agree": 0.99609375,
+     "ppl_change_pct": -0.13440847396850586,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.0001030034982250072,
+      "stderr": 1.568576044519432e-05
+     },
+     "nll_vs_base": {
+      "mean": -0.0005887555307708681,
+      "stderr": 0.0007367129437625408
+     }
+    }
+   },
+   "long": {
+    "kl_mean": 0.00019740323477890342,
+    "kl_stderr": 4.742760575027205e-05,
+    "top1_agree": 0.984375,
+    "nll_diff_mean": 0.005178120918571949,
+    "nll_diff_stderr": 0.007273718249052763,
+    "ppl_change_pct": 0.5191326141357422,
+    "by_position": {
+     "0-4096": {
+      "kl": 0.00019740323477890342,
+      "kl_stderr": 4.742760575027205e-05,
+      "nll_diff": 0.005178120918571949,
+      "n": 128
+     }
+    }
+   },
+   "secs": 34.1235134601593
+  },
+  {
+   "cond": "chip",
+   "label": "chip numerics (D-021 attention, untiled)",
+   "numerics": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "act": "int8_g32_p2",
+    "kv": "int8_head",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": false,
+    "rope": false,
+    "softmax": false,
+    "dnq": false
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.05064062029123306,
+     "kl_stderr": 0.006238567177206278,
+     "kl_p99": 0.6374807953834534,
+     "top1_agree": 0.916015625,
+     "ppl_change_pct": 8.016180992126465,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.08343891054391861,
+     "kl_stderr": 0.011662231758236885,
+     "kl_p99": 1.1244480609893799,
+     "top1_agree": 0.935546875,
+     "ppl_change_pct": 6.369757652282715,
+     "n": 512
+    }
+   },
+   "long": {
+    "kl_mean": 0.21220716834068298,
+    "kl_stderr": 0.18567875027656555,
+    "top1_agree": 0.9296875,
+    "nll_diff_mean": -0.13688687980175018,
+    "nll_diff_stderr": 0.16784855723381042,
+    "ppl_change_pct": -12.793129682540894,
+    "by_position": {
+     "0-4096": {
+      "kl": 0.21220716834068298,
+      "kl_stderr": 0.18567875027656555,
+      "nll_diff": -0.13688687980175018,
+      "n": 128
+     }
+    }
+   },
+   "secs": 11.813393831253052
+  },
+  {
+   "cond": "chip",
+   "label": "chip numerics + all chip-exact pieces",
+   "numerics": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "act": "int8_g32_p2",
+    "kv": "int8_head",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": true,
+    "rope": true,
+    "softmax": true,
+    "dnq": true
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.05077608674764633,
+     "kl_stderr": 0.006013823207467794,
+     "kl_p99": 0.6477727890014648,
+     "top1_agree": 0.916015625,
+     "ppl_change_pct": 8.215689659118652,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.0001354734122287482,
+      "stderr": 0.000843330635689199
+     },
+     "nll_vs_base": {
+      "mean": 0.0018454230157658458,
+      "stderr": 0.002721270779147744
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.08272798359394073,
+     "kl_stderr": 0.011721565388143063,
+     "kl_p99": 1.076125979423523,
+     "top1_agree": 0.939453125,
+     "ppl_change_pct": 6.419503688812256,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.0007109132129698992,
+      "stderr": 0.0015418316470459104
+     },
+     "nll_vs_base": {
+      "mean": 0.00046757320524193347,
+      "stderr": 0.002642360981553793
+     }
+    }
+   },
+   "long": {
+    "kl_mean": 0.16941693425178528,
+    "kl_stderr": 0.14102505147457123,
+    "top1_agree": 0.9375,
+    "nll_diff_mean": -0.14512889087200165,
+    "nll_diff_stderr": 0.16848735511302948,
+    "ppl_change_pct": -13.50894570350647,
+    "by_position": {
+     "0-4096": {
+      "kl": 0.16941693425178528,
+      "kl_stderr": 0.14102505147457123,
+      "nll_diff": -0.14512889087200165,
+      "n": 128
+     }
+    }
+   },
+   "secs": 34.79637360572815
+  }
+ ],
+ "gptq_secs": 286.80927062034607,
+ "total_secs": 440.8690619468689,
+ "gpu_peak_mem_GB": 22.59697408
+}

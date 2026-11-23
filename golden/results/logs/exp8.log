@@ -1,0 +1,161 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (432ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.4/13.4 MB 0:00:00
+✓ Files synced (1.1s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp8:chip_exact...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 343057.26 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 639630.75 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 671060.08 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+bf16
+ 
+exact (sanity: 0)
+ 
+{'wikitext': 0.0, 'python_code': 0.0}
+ 
+long
+ 
+-
+ 
+80s
+bf16
+ 
+q, P int8 (D-021, untiled)
+ 
+{'wikitext': 0.000386, 'python_code': 6.8e-05}
+ 
+long
+ 
+0.000669
+ 
+211s
+bf16
+ 
+q, P int8 + chip sfu
+ 
+{'wikitext': 0.000315, 'python_code': 7e-05}
+ 
+long
+ 
+-
+ 
+198s
+bf16
+ 
+q, P int8 + chip rope
+ 
+{'wikitext': 0.000301, 'python_code': 6.8e-05}
+ 
+long
+ 
+-
+ 
+81s
+bf16
+ 
+q, P int8 + chip softmax
+ 
+{'wikitext': 0.000674, 'python_code': 0.00012}
+ 
+long
+ 
+-
+ 
+81s
+bf16
+ 
+q, P int8 + chip dnq
+ 
+{'wikitext': 0.000386, 'python_code': 6.8e-05}
+ 
+long
+ 
+-
+ 
+82s
+bf16
+ 
+q, P int8 + all chip-exact pieces
+ 
+{'wikitext': 0.00177, 'python_code': 0.000123}
+ 
+long
+ 
+0.001112
+ 
+565s
+  layer  0 (linear_attention) gptq done in 18.7s
+  layer  1 (linear_attention) gptq done in 18.6s
+  layer  2 (linear_attention) gptq done in 18.5s
+  layer  3 (full_attention) gptq done in 9.8s
+  layer  4 (linear_attention) gptq done in 18.8s
+  layer  5 (linear_attention) gptq done in 18.5s
+  layer  6 (linear_attention) gptq done in 18.5s
+  layer  7 (full_attention) gptq done in 9.8s
+  layer  8 (linear_attention) gptq done in 18.6s
+  layer  9 (linear_attention) gptq done in 18.4s
+  layer 10 (linear_attention) gptq done in 18.7s
+  layer 11 (full_attention) gptq done in 9.9s
+  layer 12 (linear_attention) gptq done in 18.6s
+  layer 13 (linear_attention) gptq done in 18.5s
+  layer 14 (linear_attention) gptq done in 18.6s
+  layer 15 (full_attention) gptq done in 9.7s
+  layer 16 (linear_attention) gptq done in 18.6s
+  layer 17 (linear_attention) gptq done in 18.5s
+  layer 18 (linear_attention) gptq done in 18.6s
+  layer 19 (full_attention) gptq done in 10.2s
+  layer 20 (linear_attention) gptq done in 18.8s
+  layer 21 (linear_attention) gptq done in 18.6s
+  layer 22 (linear_attention) gptq done in 18.4s
+  layer 23 (full_attention) gptq done in 9.8s
+  layer 24 (linear_attention) gptq done in 19.2s
+  layer 25 (linear_attention) gptq done in 18.5s
+  layer 26 (linear_attention) gptq done in 18.5s
+  layer 27 (full_attention) gptq done in 9.7s
+  layer 28 (linear_attention) gptq done in 18.6s
+  layer 29 (linear_attention) gptq done in 18.5s
+  layer 30 (linear_attention) gptq done in 18.5s
+  layer 31 (full_attention) gptq done in 9.8s
+  gptq total 529s
+chip
+ 
+chip numerics (D-021 attention, untiled)
+ 
+{'wikitext': 0.052691, 'python_code': 0.056163}
+ 
+long
+ 
+0.047867
+ 
+219s
+chip
+ 
+chip numerics + all chip-exact pieces
+ 
+{'wikitext': 0.055982, 'python_code': 0.056374}
+ 
+long
+ 
+0.044788
+ 
+572s
+✓ Function complete (47m28s)
+bf16 exact (sanity: 0) {'wikitext': 0.0, 'python_code': 0.0} long -
+bf16 q, P int8 (D-021, untiled) {'wikitext': 0.000386, 'python_code': 6.8e-05} long 0.000669
+bf16 q, P int8 + chip sfu {'wikitext': 0.000315, 'python_code': 7e-05} long -
+bf16 q, P int8 + chip rope {'wikitext': 0.000301, 'python_code': 6.8e-05} long -
+bf16 q, P int8 + chip softmax {'wikitext': 0.000674, 'python_code': 0.00012} long -
+bf16 q, P int8 + chip dnq {'wikitext': 0.000386, 'python_code': 6.8e-05} long -
+bf16 q, P int8 + all chip-exact pieces {'wikitext': 0.00177, 'python_code': 0.000123} long 0.001112
+chip chip numerics (D-021 attention, untiled) {'wikitext': 0.052691, 'python_code': 0.056163} long 0.047867
+chip chip numerics + all chip-exact pieces {'wikitext': 0.055982, 'python_code': 0.056374} long 0.044788

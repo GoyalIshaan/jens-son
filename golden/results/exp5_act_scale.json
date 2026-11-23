@@ -1,0 +1,461 @@
+{
+ "kind": "exp5_act_scale",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-20T21:40:00Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": false,
+ "n_tokens": {
+  "wikitext": 8192,
+  "python_code": 8192
+ },
+ "formats": [
+  [
+   "fp32 scale (today)",
+   "int8_g32"
+  ],
+  [
+   "bf16 scale, nearest",
+   "int8_g32_bf16s"
+  ],
+  [
+   "bf16 scale, rounded up",
+   "int8_g32_bf16up"
+  ],
+  [
+   "power-of-two scale, rounded up",
+   "int8_g32_p2"
+  ],
+  [
+   "power-of-two scale, OCP MX",
+   "int8_g32_mx"
+  ]
+ ],
+ "conditions": {
+  "bf16 weights": {
+   "numerics_extra": {},
+   "rows": {
+    "int8_g32": {
+     "name": "fp32 scale (today)",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.009165789932012558,
+       "kl_stderr": 0.002897074678912759,
+       "kl_p99": 0.008613879792392254,
+       "top1_agree": 0.9825439453125,
+       "ppl_change_pct": 0.12488365173339844,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0010183289414271712,
+       "kl_stderr": 4.6870110963936895e-05,
+       "kl_p99": 0.017539411783218384,
+       "top1_agree": 0.993896484375,
+       "ppl_change_pct": 0.13366937637329102,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      }
+     }
+    },
+    "int8_g32_bf16s": {
+     "name": "bf16 scale, nearest",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.007127623073756695,
+       "kl_stderr": 0.0025100819766521454,
+       "kl_p99": 0.007798646576702595,
+       "top1_agree": 0.9853515625,
+       "ppl_change_pct": 0.5066037178039551,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0020381673239171505,
+        "stderr": 0.0010912015568464994
+       },
+       "nll_vs_today": {
+        "mean": 0.003805221989750862,
+        "stderr": 0.002301975153386593
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0010549513390287757,
+       "kl_stderr": 5.711620542570017e-05,
+       "kl_p99": 0.017825063318014145,
+       "top1_agree": 0.992919921875,
+       "ppl_change_pct": 0.10789632797241211,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 3.662243398139253e-05,
+        "stderr": 4.809891834156588e-05
+       },
+       "nll_vs_today": {
+        "mean": -0.00025748065672814846,
+        "stderr": 0.000516318017616868
+       }
+      }
+     }
+    },
+    "int8_g32_bf16up": {
+     "name": "bf16 scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.006963031832128763,
+       "kl_stderr": 0.002667902735993266,
+       "kl_p99": 0.008430085144937038,
+       "top1_agree": 0.984375,
+       "ppl_change_pct": 0.46089887619018555,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.002202758099883795,
+        "stderr": 0.0013071883004158735
+       },
+       "nll_vs_today": {
+        "mean": 0.003350235288962722,
+        "stderr": 0.0021798477973788977
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0010795466369017959,
+       "kl_stderr": 5.4072072089184076e-05,
+       "kl_p99": 0.01734825223684311,
+       "top1_agree": 0.993408203125,
+       "ppl_change_pct": 0.15898942947387695,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 6.12176809227094e-05,
+        "stderr": 4.392664413899183e-05
+       },
+       "nll_vs_today": {
+        "mean": 0.0002528695622459054,
+        "stderr": 0.0005534595111384988
+       }
+      }
+     }
+    },
+    "int8_g32_p2": {
+     "name": "power-of-two scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.010883716866374016,
+       "kl_stderr": 0.0030688289552927017,
+       "kl_p99": 0.021437257528305054,
+       "top1_agree": 0.980712890625,
+       "ppl_change_pct": 0.27250051498413086,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0017179267015308142,
+        "stderr": 0.002549659926444292
+       },
+       "nll_vs_today": {
+        "mean": 0.0014735102886334062,
+        "stderr": 0.003168886061757803
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0021620946936309338,
+       "kl_stderr": 0.00010794369882205501,
+       "kl_p99": 0.038037244230508804,
+       "top1_agree": 0.9910888671875,
+       "ppl_change_pct": 0.25600194931030273,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0011437656357884407,
+        "stderr": 9.778174717212096e-05
+       },
+       "nll_vs_today": {
+        "mean": 0.0012209598207846284,
+        "stderr": 0.0009139704634435475
+       }
+      }
+     }
+    },
+    "int8_g32_mx": {
+     "name": "power-of-two scale, OCP MX",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.006912159267812967,
+       "kl_stderr": 0.0020910855382680893,
+       "kl_p99": 0.019865909591317177,
+       "top1_agree": 0.9794921875,
+       "ppl_change_pct": -0.3851890563964844,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0022536320611834526,
+        "stderr": 0.002282281406223774
+       },
+       "nll_vs_today": {
+        "mean": -0.005107216536998749,
+        "stderr": 0.0023043875116854906
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0021687152329832315,
+       "kl_stderr": 0.00011602742597460747,
+       "kl_p99": 0.035906821489334106,
+       "top1_agree": 0.9908447265625,
+       "ppl_change_pct": 0.21986961364746094,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0011503862915560603,
+        "stderr": 0.0001032887157634832
+       },
+       "nll_vs_today": {
+        "mean": 0.0008605223847553134,
+        "stderr": 0.000844903290271759
+       }
+      }
+     }
+    }
+   }
+  },
+  "chip weights + int8 KV": {
+   "numerics_extra": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "kv": "int8_head"
+   },
+   "rows": {
+    "int8_g32": {
+     "name": "fp32 scale (today)",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.056669872254133224,
+       "kl_stderr": 0.007243264466524124,
+       "kl_p99": 0.3246914744377136,
+       "top1_agree": 0.927001953125,
+       "ppl_change_pct": 0.47763586044311523,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0557209849357605,
+       "kl_stderr": 0.00234708352945745,
+       "kl_p99": 1.0170954465866089,
+       "top1_agree": 0.955810546875,
+       "ppl_change_pct": 5.902719497680664,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      }
+     }
+    },
+    "int8_g32_bf16s": {
+     "name": "bf16 scale, nearest",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05353577435016632,
+       "kl_stderr": 0.006789426784962416,
+       "kl_p99": 0.3315521478652954,
+       "top1_agree": 0.9266357421875,
+       "ppl_change_pct": 0.22574663162231445,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0031341006979346275,
+        "stderr": 0.0015845915768295527
+       },
+       "nll_vs_today": {
+        "mean": -0.0025102230720221996,
+        "stderr": 0.0019525890238583088
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.05490347743034363,
+       "kl_stderr": 0.0022887270897626877,
+       "kl_p99": 0.9931879639625549,
+       "top1_agree": 0.95556640625,
+       "ppl_change_pct": 5.872845649719238,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0008175161201506853,
+        "stderr": 0.00033776508644223213
+       },
+       "nll_vs_today": {
+        "mean": -0.00028208355070091784,
+        "stderr": 0.0005913376226089895
+       }
+      }
+     }
+    },
+    "int8_g32_bf16up": {
+     "name": "bf16 scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.052412766963243484,
+       "kl_stderr": 0.006241555325686932,
+       "kl_p99": 0.3464910089969635,
+       "top1_agree": 0.92578125,
+       "ppl_change_pct": 0.8583188056945801,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.004257111810147762,
+        "stderr": 0.003581406781449914
+       },
+       "nll_vs_today": {
+        "mean": 0.0037814772222191095,
+        "stderr": 0.0022957813926041126
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.055202145129442215,
+       "kl_stderr": 0.002299835439771414,
+       "kl_p99": 1.0023363828659058,
+       "top1_agree": 0.955322265625,
+       "ppl_change_pct": 5.868315696716309,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0005188447539694607,
+        "stderr": 0.00038769227103330195
+       },
+       "nll_vs_today": {
+        "mean": -0.00032495337654836476,
+        "stderr": 0.0006174502777867019
+       }
+      }
+     }
+    },
+    "int8_g32_p2": {
+     "name": "power-of-two scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05227886140346527,
+       "kl_stderr": 0.0060437810607254505,
+       "kl_p99": 0.3645298182964325,
+       "top1_agree": 0.9239501953125,
+       "ppl_change_pct": 0.7399082183837891,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.004391015041619539,
+        "stderr": 0.003763960674405098
+       },
+       "nll_vs_today": {
+        "mean": 0.0026068869046866894,
+        "stderr": 0.0024485306348651648
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.05591742694377899,
+       "kl_stderr": 0.0022934230510145426,
+       "kl_p99": 0.9365163445472717,
+       "top1_agree": 0.9559326171875,
+       "ppl_change_pct": 5.874025821685791,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.00019643569248728454,
+        "stderr": 0.0005885103601031005
+       },
+       "nll_vs_today": {
+        "mean": -0.0002709272666834295,
+        "stderr": 0.00096687744371593
+       }
+      }
+     }
+    },
+    "int8_g32_mx": {
+     "name": "power-of-two scale, OCP MX",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05391908809542656,
+       "kl_stderr": 0.006257751025259495,
+       "kl_p99": 0.35825520753860474,
+       "top1_agree": 0.9239501953125,
+       "ppl_change_pct": 0.37975311279296875,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": -0.0027507871855050325,
+        "stderr": 0.003616564441472292
+       },
+       "nll_vs_today": {
+        "mean": -0.000974843162111938,
+        "stderr": 0.002388779306784272
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.05630698800086975,
+       "kl_stderr": 0.0023441449739038944,
+       "kl_p99": 0.9988201856613159,
+       "top1_agree": 0.9576416015625,
+       "ppl_change_pct": 5.872702598571777,
+       "n": 8192,
+       "kl_vs_today": {
+        "mean": 0.0005859968368895352,
+        "stderr": 0.0005476436926983297
+       },
+       "nll_vs_today": {
+        "mean": -0.00028354264213703573,
+        "stderr": 0.0009386924211867154
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "gptq_secs": 529.5433313846588,
+ "main_weight_rel_rmse": {
+  "embed": {
+   "format": "int8_g32",
+   "rel_rmse": 0.005372135360738954,
+   "weights": 1017118720
+  },
+  "ffn": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.09679127425307806,
+   "weights": 4831838208
+  },
+  "deltanet": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.1003980552152059,
+   "weights": 1616904192
+  },
+  "attn": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.1051792842287182,
+   "weights": 469762048
+  },
+  "lm_head": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.0915877197201836,
+   "weights": 1017118720
+  }
+ },
+ "total_secs": 1445.2166576385498,
+ "gpu_peak_mem_GB": 22.603621376
+}

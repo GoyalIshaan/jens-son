@@ -1,0 +1,49 @@
+{
+ "lib": "asap7",
+ "results": [
+  {
+   "top": "w_reduce_p2",
+   "params": {},
+   "D": 100000,
+   "area_um2": 3505.84848,
+   "nand2_eq": 40076.0,
+   "seq_um2": 0.0,
+   "delay_ps": 8192.13,
+   "cells": 48312,
+   "log": "/tmp/scratch/syn_asap7/w_reduce_p2__D100000.log"
+  },
+  {
+   "top": "w_reduce_p2",
+   "params": {},
+   "D": 1,
+   "area_um2": 5909.01156,
+   "nand2_eq": 67547.0,
+   "seq_um2": 0.0,
+   "delay_ps": 3891.86,
+   "cells": 78841,
+   "log": "/tmp/scratch/syn_asap7/w_reduce_p2__D1_buf.log"
+  },
+  {
+   "top": "w_reduce_p2_seg",
+   "params": {},
+   "D": 100000,
+   "area_um2": 3762.9522,
+   "nand2_eq": 43015.0,
+   "seq_um2": 0.0,
+   "delay_ps": 6956.17,
+   "cells": 51433,
+   "log": "/tmp/scratch/syn_asap7/w_reduce_p2_seg__D100000.log"
+  },
+  {
+   "top": "w_reduce_p2_seg",
+   "params": {},
+   "D": 1,
+   "area_um2": 5924.04354,
+   "nand2_eq": 67718.83333333333,
+   "seq_um2": 0.0,
+   "delay_ps": 3916.99,
+   "cells": 78782,
+   "log": "/tmp/scratch/syn_asap7/w_reduce_p2_seg__D1_buf.log"
+  }
+ ]
+}

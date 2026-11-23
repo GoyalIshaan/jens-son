@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# OS, editor, tool state
+# ---------------------------------------------------------------------------
+.DS_Store
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# ---------------------------------------------------------------------------
+# Simulator outputs (Icarus iverilog/vvp, Verilator). All regenerable.
+# ---------------------------------------------------------------------------
+*.vvp
+*.vcd
+*.fst
+*.out
+obj_dir/
+# Compiled Icarus sims (vvp scripts without an extension)
+rtl/mxu/sim
+rtl/mxu/simr
+rtl/mxu/simseg
+# Verilator build directories
+rtl/**/results/vl_*/
+
+# rtl/chip/results: one folder per run, holding ~60 MB DRAM/SRAM .hex
+# dumps, plus multi-MB per-run trace logs. Regenerate with rtl/chip/run_chip.py.
+# The small summary logs and the pre-change .sv snapshots stay.
+rtl/chip/results/*/
+rtl/chip/results/*.log
+!rtl/chip/results/smoke.log
+!rtl/chip/results/tiny.log
+!rtl/chip/results/tiny3_ov.log
+!rtl/chip/results/tiny3_vl.log
+!rtl/chip/results/mmfuzz_[2-9].log
+!rtl/chip/results/mmfuzz_10.log
+
+# ---------------------------------------------------------------------------
+# Model weights and checkpoints (golden/results/*.pt is 1.4 GB)
+# ---------------------------------------------------------------------------
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.onnx
+
+# ---------------------------------------------------------------------------
+# Regenerable inputs
+# ---------------------------------------------------------------------------
+# Golden test vectors: python3 golden/make_vectors.py
+golden/vectors/
+# Standard-cell Liberty files used by the yosys synthesis scripts. Public
+# downloads from the ASAP7 and SkyWater sky130 PDKs; see README.md.
+rtl/third_party/**/*.lib
+
+# ---------------------------------------------------------------------------
+# Held back pending a decision (see README / publish report)
+# ---------------------------------------------------------------------------
+# Third-party vendor papers (copyright) and large research PDFs
+claude_research/*.pdf
+archive/learning-phase/learning/research/pdf-source/*.pdf
+# Nested git repository (would be staged as an empty gitlink)
+archive/learning-phase/learning/site/
+# Build archives
+*.tar.gz

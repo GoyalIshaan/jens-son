@@ -1,0 +1,158 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (455ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 7 changed file(s) (1.97 MB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 0:00:00
+✓ Files synced (2.0s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp6:sfu...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 127249.66 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 740251.94 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 652647.87 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+bf16
+ 
+exact (sanity: must be 0)
+ 
+{'wikitext': 0.0, 'python_code': 0.0}
+ 
+4s
+bf16
+ 
+all functions at 16 bits
+ 
+{'wikitext': 0.0, 'python_code': 0.0}
+ 
+6s
+bf16
+ 
+all functions at 12 bits
+ 
+{'wikitext': 0.0, 'python_code': 0.0}
+ 
+6s
+bf16
+ 
+all functions at 10 bits
+ 
+{'wikitext': 2.8e-05, 'python_code': 2e-06}
+ 
+7s
+bf16
+ 
+only exp at 6 bits
+ 
+{'wikitext': 0.00158, 'python_code': 0.000229}
+ 
+6s
+bf16
+ 
+only sig at 6 bits
+ 
+{'wikitext': 3.8e-05, 'python_code': 5.1e-05}
+ 
+5s
+bf16
+ 
+only softplus at 6 bits
+ 
+{'wikitext': 0.0, 'python_code': 1e-06}
+ 
+5s
+bf16
+ 
+only rsqrt at 6 bits
+ 
+{'wikitext': 0.00028, 'python_code': 0.000205}
+ 
+5s
+bf16
+ 
+only recip at 6 bits
+ 
+{'wikitext': 8e-06, 'python_code': 5e-06}
+ 
+5s
+  layer  0 (linear_attention) gptq done in 8.9s
+  layer  1 (linear_attention) gptq done in 8.8s
+  layer  2 (linear_attention) gptq done in 8.8s
+  layer  3 (full_attention) gptq done in 7.7s
+  layer  4 (linear_attention) gptq done in 8.8s
+  layer  5 (linear_attention) gptq done in 8.8s
+  layer  6 (linear_attention) gptq done in 8.8s
+  layer  7 (full_attention) gptq done in 7.8s
+  layer  8 (linear_attention) gptq done in 8.7s
+  layer  9 (linear_attention) gptq done in 8.7s
+  layer 10 (linear_attention) gptq done in 8.8s
+  layer 11 (full_attention) gptq done in 7.7s
+  layer 12 (linear_attention) gptq done in 8.8s
+  layer 13 (linear_attention) gptq done in 8.9s
+  layer 14 (linear_attention) gptq done in 8.8s
+  layer 15 (full_attention) gptq done in 7.7s
+  layer 16 (linear_attention) gptq done in 8.8s
+  layer 17 (linear_attention) gptq done in 8.8s
+  layer 18 (linear_attention) gptq done in 8.8s
+  layer 19 (full_attention) gptq done in 7.7s
+  layer 20 (linear_attention) gptq done in 8.8s
+  layer 21 (linear_attention) gptq done in 8.8s
+  layer 22 (linear_attention) gptq done in 8.7s
+  layer 23 (full_attention) gptq done in 7.7s
+  layer 24 (linear_attention) gptq done in 8.8s
+  layer 25 (linear_attention) gptq done in 9.0s
+  layer 26 (linear_attention) gptq done in 8.8s
+  layer 27 (full_attention) gptq done in 7.7s
+  layer 28 (linear_attention) gptq done in 8.8s
+  layer 29 (linear_attention) gptq done in 8.8s
+  layer 30 (linear_attention) gptq done in 8.8s
+  layer 31 (full_attention) gptq done in 7.7s
+  gptq total 277s
+chip
+ 
+exact functions
+ 
+{'wikitext': 0.052141, 'python_code': 0.083481}
+ 
+5s
+chip
+ 
+all functions at 10 bits
+ 
+{'wikitext': 0.049964, 'python_code': 0.082984}
+ 
+7s
+chip
+ 
+all functions at 8 bits
+ 
+{'wikitext': 0.051136, 'python_code': 0.080816}
+ 
+7s
+chip
+ 
+all functions at 6 bits
+ 
+{'wikitext': 0.056307, 'python_code': 0.080048}
+ 
+7s
+✓ Function complete (6m31s)
+bf16 exact (sanity: must be 0) {'wikitext': 0.0, 'python_code': 0.0}
+bf16 all functions at 16 bits {'wikitext': 0.0, 'python_code': 0.0}
+bf16 all functions at 12 bits {'wikitext': 0.0, 'python_code': 0.0}
+bf16 all functions at 10 bits {'wikitext': 2.8e-05, 'python_code': 2e-06}
+bf16 only exp at 6 bits {'wikitext': 0.00158, 'python_code': 0.000229}
+bf16 only sig at 6 bits {'wikitext': 3.8e-05, 'python_code': 5.1e-05}
+bf16 only softplus at 6 bits {'wikitext': 0.0, 'python_code': 1e-06}
+bf16 only rsqrt at 6 bits {'wikitext': 0.00028, 'python_code': 0.000205}
+bf16 only recip at 6 bits {'wikitext': 8e-06, 'python_code': 5e-06}
+chip exact functions {'wikitext': 0.052141, 'python_code': 0.083481}
+chip all functions at 10 bits {'wikitext': 0.049964, 'python_code': 0.082984}
+chip all functions at 8 bits {'wikitext': 0.051136, 'python_code': 0.080816}
+chip all functions at 6 bits {'wikitext': 0.056307, 'python_code': 0.080048}

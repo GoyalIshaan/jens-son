@@ -1,0 +1,82 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (140ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 2 changed file(s) (16.08 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.3/16.3 kB 0:00:00
+✓ Files synced (3.8s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp2:long32k...
+W✗ Running beam_exp2:long32k (290m45s)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ ./golden/beam_exp2.py:311 in      │
+│ <module>                                                                     │
+│                                                                              │
+│   308                                                                        │
+│   309 def compare_positions(ref, cand, ids, pos):                            │
+│   310 │   import torch                                                       │
+│ ❱ 311 │   r, q = torch.cat(ref), torch.cat(cand)                             │
+│   312 │   tgt = ids[pos + 1]                                                 │
+│   313 │   kl = (r.exp() * (r - q)).sum(-1)                                   │
+│   314 │   nll_r = -r.gather(1, tgt[:, None])[:, 0]                           │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:338 in remote                         │
+│                                                                              │
+│   335 │   │   return self.func(*args, **kwargs)                              │
+│   336 │                                                                      │
+│   337 │   def remote(self, *args, **kwargs) -> Any:                          │
+│ ❱ 338 │   │   return self(*args, **kwargs)                                   │
+│   339 │                                                                      │
+│   340 │   async def async_remote(self, *args, **kwargs) -> Any:              │
+│   341 │   │   loop = asyncio.get_event_loop()                                │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/channel.py:328 in wrapper                                      │
+│                                                                              │
+│   325 def with_grpc_error_handling(func: Callable) -> Callable:              │
+│   326 │   def wrapper(*args, **kwargs):                                      │
+│   327 │   │   try:                                                           │
+│ ❱ 328 │   │   │   return func(*args, **kwargs)                               │
+│   329 │   │   except grpc.RpcError as e:                                     │
+│   330 │   │   │   handle_grpc_error(e)                                       │
+│   331                                                                        │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:252 in __call__                       │
+│                                                                              │
+│   249 │   │   │   with terminal.StepTracker().step(                          │
+│   250 │   │   │   │   f"Running {self.parent.name or self.parent.handler}",  │
+│   251 │   │   │   ):                                                         │
+│ ❱ 252 │   │   │   │   return self._call_remote(*args, **kwargs)              │
+│   253 │   │   except KeyboardInterrupt:                                      │
+│   254 │   │   │   if self.parent.headless:                                   │
+│   255 │   │   │   │   terminal.error("Exiting shell. Your function will cont │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:286 in _call_remote                   │
+│                                                                              │
+│   283 │   │   with self._invocations_lock:                                   │
+│   284 │   │   │   self._invocations.add(invocation)                          │
+│   285 │   │   try:                                                           │
+│ ❱ 286 │   │   │   return self._consume_invocation(responses, output, output_ │
+│   287 │   │   except KeyboardInterrupt:                                      │
+│   288 │   │   │   if invocation.task_id and not self.parent.headless:        │
+│   289 │   │   │   │   with rpc_timeout(RECOVERY_TIMEOUT):                    │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:327 in _consume_invocation            │
+│                                                                              │
+│   324 │   │   │   │   │   status = tasks.tasks[0].status                     │
+│   325 │   │   │   except grpc.RpcError:                                      │
+│   326 │   │   │   │   pass  # Preserve the execution failure if status looku │
+│ ❱ 327 │   │   │   raise RemoteExecutionError(                                │
+│   328 │   │   │   │   task_id, status, last_response.exit_code, "".join(outp │
+│   329 │   │   │   )                                                          │
+│   330                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteExecutionError: Remote task 2104b98b-0ed7-474e-9491-e395afdc9135 ERROR 
+(exit code 1)

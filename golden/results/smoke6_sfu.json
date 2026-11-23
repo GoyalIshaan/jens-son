@@ -1,0 +1,433 @@
+{
+ "kind": "exp6_sfu",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-21T02:13:27Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": true,
+ "n_tokens": {
+  "wikitext": 512,
+  "python_code": 512
+ },
+ "emulation": "each special-function result rounded to b explicit mantissa bits (RNE)",
+ "rows": [
+  {
+   "cond": "bf16",
+   "label": "exact (sanity: must be 0)",
+   "bits": {},
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0,
+     "kl_stderr": 0.0,
+     "kl_p99": 0.0,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.0,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.0,
+     "kl_stderr": 0.0,
+     "kl_p99": 0.0,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.0,
+     "n": 512
+    }
+   },
+   "secs": 4.415515422821045
+  },
+  {
+   "cond": "bf16",
+   "label": "all functions at 16 bits",
+   "bits": {
+    "exp": 16,
+    "sig": 16,
+    "softplus": 16,
+    "rsqrt": 16,
+    "recip": 16
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 4.871512970794356e-09,
+     "kl_stderr": 4.902179995269762e-09,
+     "kl_p99": 2.627240860419988e-07,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -2.384185791015625e-05,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 4.1189993638113265e-09,
+     "kl_stderr": 3.1961100432909006e-09,
+     "kl_p99": 2.13653720493312e-07,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -9.5367431640625e-05,
+     "n": 512
+    }
+   },
+   "secs": 6.239741086959839
+  },
+  {
+   "cond": "bf16",
+   "label": "all functions at 12 bits",
+   "bits": {
+    "exp": 12,
+    "sig": 12,
+    "softplus": 12,
+    "rsqrt": 12,
+    "recip": 12
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 2.0697252978152392e-07,
+     "kl_stderr": 4.943752429653614e-08,
+     "kl_p99": 1.6226589423240512e-06,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.00209808349609375,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 1.0239721603966245e-07,
+     "kl_stderr": 1.3717518676514828e-08,
+     "kl_p99": 1.4870549875922734e-06,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.0017642974853515625,
+     "n": 512
+    }
+   },
+   "secs": 6.209742069244385
+  },
+  {
+   "cond": "bf16",
+   "label": "all functions at 10 bits",
+   "bits": {
+    "exp": 10,
+    "sig": 10,
+    "softplus": 10,
+    "rsqrt": 10,
+    "recip": 10
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 2.8313788789091632e-05,
+     "kl_stderr": 2.2274638467933983e-05,
+     "kl_p99": 3.835521056316793e-05,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.07293224334716797,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 2.4534347176086158e-06,
+     "kl_stderr": 3.6475151432568964e-07,
+     "kl_p99": 3.392903090571053e-05,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.0010251998901367188,
+     "n": 512
+    }
+   },
+   "secs": 6.591463088989258
+  },
+  {
+   "cond": "bf16",
+   "label": "only exp at 6 bits",
+   "bits": {
+    "exp": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0015803119167685509,
+     "kl_stderr": 0.0007283781305886805,
+     "kl_p99": 0.0130559541285038,
+     "top1_agree": 0.994140625,
+     "ppl_change_pct": 0.2505302429199219,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.00022880507458467036,
+     "kl_stderr": 3.132229176117107e-05,
+     "kl_p99": 0.003306124359369278,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.07000565528869629,
+     "n": 512
+    }
+   },
+   "secs": 6.210143804550171
+  },
+  {
+   "cond": "bf16",
+   "label": "only sig at 6 bits",
+   "bits": {
+    "sig": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 3.795678640017286e-05,
+     "kl_stderr": 7.485556579922559e-06,
+     "kl_p99": 0.0002563464513514191,
+     "top1_agree": 0.994140625,
+     "ppl_change_pct": 0.05434751510620117,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 5.052269989391789e-05,
+     "kl_stderr": 7.38359540264355e-06,
+     "kl_p99": 0.0006946536595933139,
+     "top1_agree": 0.998046875,
+     "ppl_change_pct": 0.01964569091796875,
+     "n": 512
+    }
+   },
+   "secs": 4.616093397140503
+  },
+  {
+   "cond": "bf16",
+   "label": "only softplus at 6 bits",
+   "bits": {
+    "softplus": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 1.0495553226519405e-07,
+     "kl_stderr": 3.182013941227524e-08,
+     "kl_p99": 8.818593073556258e-07,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.003260374069213867,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 5.870329005119856e-07,
+     "kl_stderr": 1.1399795596389595e-07,
+     "kl_p99": 1.0218079296464566e-05,
+     "top1_agree": 1.0,
+     "ppl_change_pct": 0.008177757263183594,
+     "n": 512
+    }
+   },
+   "secs": 4.594229221343994
+  },
+  {
+   "cond": "bf16",
+   "label": "only rsqrt at 6 bits",
+   "bits": {
+    "rsqrt": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.00028015481075271964,
+     "kl_stderr": 4.587779039866291e-05,
+     "kl_p99": 0.001478539197705686,
+     "top1_agree": 0.9921875,
+     "ppl_change_pct": 0.11992454528808594,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.0002049270406132564,
+     "kl_stderr": 2.3397400582325645e-05,
+     "kl_p99": 0.0022858947049826384,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.052291154861450195,
+     "n": 512
+    }
+   },
+   "secs": 4.623851299285889
+  },
+  {
+   "cond": "bf16",
+   "label": "only recip at 6 bits",
+   "bits": {
+    "recip": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 8.293185601360165e-06,
+     "kl_stderr": 2.7170058274350595e-06,
+     "kl_p99": 4.712900772574358e-05,
+     "top1_agree": 0.99609375,
+     "ppl_change_pct": 0.005316734313964844,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 5.383243660617154e-06,
+     "kl_stderr": 6.309203399723629e-07,
+     "kl_p99": 5.6939323258120567e-05,
+     "top1_agree": 1.0,
+     "ppl_change_pct": -0.04318952560424805,
+     "n": 512
+    }
+   },
+   "secs": 4.598254919052124
+  },
+  {
+   "cond": "chip",
+   "label": "exact functions",
+   "bits": {},
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.05214107409119606,
+     "kl_stderr": 0.006717992946505547,
+     "kl_p99": 0.7316334843635559,
+     "top1_agree": 0.919921875,
+     "ppl_change_pct": 8.423352241516113,
+     "n": 512
+    },
+    "python_code": {
+     "kl_mean": 0.08348061144351959,
+     "kl_stderr": 0.011916481889784336,
+     "kl_p99": 1.0164638757705688,
+     "top1_agree": 0.935546875,
+     "ppl_change_pct": 6.629419326782227,
+     "n": 512
+    }
+   },
+   "secs": 5.056918144226074
+  },
+  {
+   "cond": "chip",
+   "label": "all functions at 10 bits",
+   "bits": {
+    "exp": 10,
+    "sig": 10,
+    "softplus": 10,
+    "rsqrt": 10,
+    "recip": 10
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.049963802099227905,
+     "kl_stderr": 0.006214968394488096,
+     "kl_p99": 0.6143601536750793,
+     "top1_agree": 0.921875,
+     "ppl_change_pct": 7.447934150695801,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.002177271991968155,
+      "stderr": 0.0008543571457266808
+     },
+     "nll_vs_base": {
+      "mean": -0.009037087671458721,
+      "stderr": 0.003030376508831978
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.08298350870609283,
+     "kl_stderr": 0.011870666407048702,
+     "kl_p99": 1.0755720138549805,
+     "top1_agree": 0.935546875,
+     "ppl_change_pct": 6.572401523590088,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.0004971028538420796,
+      "stderr": 0.0013901242054998875
+     },
+     "nll_vs_base": {
+      "mean": -0.0005348494159989059,
+      "stderr": 0.0024782889522612095
+     }
+    }
+   },
+   "secs": 6.590595960617065
+  },
+  {
+   "cond": "chip",
+   "label": "all functions at 8 bits",
+   "bits": {
+    "exp": 8,
+    "sig": 8,
+    "softplus": 8,
+    "rsqrt": 8,
+    "recip": 8
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.051136162132024765,
+     "kl_stderr": 0.006396146025508642,
+     "kl_p99": 0.735674262046814,
+     "top1_agree": 0.916015625,
+     "ppl_change_pct": 8.142125606536865,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.0010049105621874332,
+      "stderr": 0.0008317787433043122
+     },
+     "nll_vs_base": {
+      "mean": -0.0025970982387661934,
+      "stderr": 0.0025065878871828318
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.08081639558076859,
+     "kl_stderr": 0.011445965617895126,
+     "kl_p99": 1.011779546737671,
+     "top1_agree": 0.94140625,
+     "ppl_change_pct": 6.348669528961182,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.002664226107299328,
+      "stderr": 0.0015662614023312926
+     },
+     "nll_vs_base": {
+      "mean": -0.0026365253143012524,
+      "stderr": 0.002910932991653681
+     }
+    }
+   },
+   "secs": 6.551876783370972
+  },
+  {
+   "cond": "chip",
+   "label": "all functions at 6 bits",
+   "bits": {
+    "exp": 6,
+    "sig": 6,
+    "softplus": 6,
+    "rsqrt": 6,
+    "recip": 6
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.05630723759531975,
+     "kl_stderr": 0.007290231995284557,
+     "kl_p99": 0.7615628838539124,
+     "top1_agree": 0.916015625,
+     "ppl_change_pct": 7.703161239624023,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": 0.004166160244494677,
+      "stderr": 0.0028203821275383234
+     },
+     "nll_vs_base": {
+      "mean": -0.006664695683866739,
+      "stderr": 0.003265464911237359
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.08004848659038544,
+     "kl_stderr": 0.010924397967755795,
+     "kl_p99": 1.0736042261123657,
+     "top1_agree": 0.93359375,
+     "ppl_change_pct": 6.504058837890625,
+     "n": 512,
+     "kl_vs_base": {
+      "mean": -0.003432127181440592,
+      "stderr": 0.0017251928802579641
+     },
+     "nll_vs_base": {
+      "mean": -0.0011762941721826792,
+      "stderr": 0.002977750962600112
+     }
+    }
+   },
+   "secs": 6.615794658660889
+  }
+ ],
+ "gptq_secs": 276.9704716205597,
+ "total_secs": 380.17694091796875,
+ "gpu_peak_mem_GB": 22.596953088
+}

@@ -1,0 +1,84 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (156ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 2 changed file(s) (586.00 B), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 880/880 bytes 0:00:00
+✓ Files synced (1.4s)
+! GPU capacity for A10G is currently low.
+Running beam_exp4:mtp_job...
+failed to setup container mounts: operation error S3: GetObject, context canceled✗ Running beam_exp4:mtp_job (512m10s)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ ./golden/beam_exp4.py:294 in      │
+│ <module>                                                                     │
+│                                                                              │
+│   291 │   gold = Golden(MODEL_DIR)                                           │
+│   292 │   t0 = time.time()                                                   │
+│   293 │   ref = run_positions(gold, ids, pos)                                │
+│ ❱ 294 │   out = dict(kind="exp4_onepass32k", env=environment(), n_tokens=len │
+│   295 │   │   │      ref_secs=time.time() - t0, configs=[])                  │
+│   296 │   for name, kw in (("state fp32, one-pass order (chip)", dict(state= │
+│   297 │   │   gold.set_numerics(Numerics(**kw))                              │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:338 in remote                         │
+│                                                                              │
+│   335 │   │   return self.func(*args, **kwargs)                              │
+│   336 │                                                                      │
+│   337 │   def remote(self, *args, **kwargs) -> Any:                          │
+│ ❱ 338 │   │   return self(*args, **kwargs)                                   │
+│   339 │                                                                      │
+│   340 │   async def async_remote(self, *args, **kwargs) -> Any:              │
+│   341 │   │   loop = asyncio.get_event_loop()                                │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/channel.py:328 in wrapper                                      │
+│                                                                              │
+│   325 def with_grpc_error_handling(func: Callable) -> Callable:              │
+│   326 │   def wrapper(*args, **kwargs):                                      │
+│   327 │   │   try:                                                           │
+│ ❱ 328 │   │   │   return func(*args, **kwargs)                               │
+│   329 │   │   except grpc.RpcError as e:                                     │
+│   330 │   │   │   handle_grpc_error(e)                                       │
+│   331                                                                        │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:252 in __call__                       │
+│                                                                              │
+│   249 │   │   │   with terminal.StepTracker().step(                          │
+│   250 │   │   │   │   f"Running {self.parent.name or self.parent.handler}",  │
+│   251 │   │   │   ):                                                         │
+│ ❱ 252 │   │   │   │   return self._call_remote(*args, **kwargs)              │
+│   253 │   │   except KeyboardInterrupt:                                      │
+│   254 │   │   │   if self.parent.headless:                                   │
+│   255 │   │   │   │   terminal.error("Exiting shell. Your function will cont │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:286 in _call_remote                   │
+│                                                                              │
+│   283 │   │   with self._invocations_lock:                                   │
+│   284 │   │   │   self._invocations.add(invocation)                          │
+│   285 │   │   try:                                                           │
+│ ❱ 286 │   │   │   return self._consume_invocation(responses, output, output_ │
+│   287 │   │   except KeyboardInterrupt:                                      │
+│   288 │   │   │   if invocation.task_id and not self.parent.headless:        │
+│   289 │   │   │   │   with rpc_timeout(RECOVERY_TIMEOUT):                    │
+│                                                                              │
+│ ~/.local/share/uv/tools/beam-client/lib/python3.12/site-p │
+│ ackages/beta9/abstractions/function.py:327 in _consume_invocation            │
+│                                                                              │
+│   324 │   │   │   │   │   status = tasks.tasks[0].status                     │
+│   325 │   │   │   except grpc.RpcError:                                      │
+│   326 │   │   │   │   pass  # Preserve the execution failure if status looku │
+│ ❱ 327 │   │   │   raise RemoteExecutionError(                                │
+│   328 │   │   │   │   task_id, status, last_response.exit_code, "".join(outp │
+│   329 │   │   │   )                                                          │
+│   330                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteExecutionError: Remote task c4ac1a08-4668-4b1d-9ae5-665cbd54a8fc EXPIRED 
+(exit code 1)
+failed to setup container mounts: operation error S3: GetObject, context 
+canceled

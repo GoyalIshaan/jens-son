@@ -1,0 +1,7721 @@
+{
+ "kind": "exp10_dn_layers",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-21T18:12:08Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": false,
+ "n_tokens": {
+  "wikitext": 8192,
+  "python_code": 8192
+ },
+ "long": {
+  "n_tokens": 32768,
+  "every": 8,
+  "ref_secs": 123.70419645309448
+ },
+ "rows": [
+  {
+   "cond": "chip",
+   "label": "chip numerics, sequential DeltaNet",
+   "numerics": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "act": "int8_g32_p2",
+    "kv": "int8_head",
+    "state": "fp32",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": true,
+    "rope": true,
+    "softmax": true,
+    "dnq": true
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.055982112884521484,
+     "kl_stderr": 0.006604076828807592,
+     "kl_p99": 0.3575502038002014,
+     "top1_agree": 0.9239501953125,
+     "ppl_change_pct": 1.0274648666381836,
+     "n": 8192
+    },
+    "python_code": {
+     "kl_mean": 0.05637432634830475,
+     "kl_stderr": 0.002324835630133748,
+     "kl_p99": 0.9978932738304138,
+     "top1_agree": 0.9560546875,
+     "ppl_change_pct": 5.8771491050720215,
+     "n": 8192
+    }
+   },
+   "long": {
+    "kl_mean": 0.04478757455945015,
+    "kl_stderr": 0.0068625337444245815,
+    "top1_agree": 0.933349609375,
+    "nll_diff_mean": 0.005838971585035324,
+    "nll_diff_stderr": 0.008078249171376228,
+    "ppl_change_pct": 0.5856156349182129,
+    "by_position": {
+     "0-4096": {
+      "kl": 0.04698466882109642,
+      "kl_stderr": 0.01601611077785492,
+      "nll_diff": -0.03332546353340149,
+      "n": 512
+     },
+     "4096-8192": {
+      "kl": 0.028744515031576157,
+      "kl_stderr": 0.0034920235630124807,
+      "nll_diff": -0.00479021854698658,
+      "n": 512
+     },
+     "8192-16384": {
+      "kl": 0.07713720202445984,
+      "kl_stderr": 0.02184993401169777,
+      "nll_diff": 0.015713194385170937,
+      "n": 1024
+     },
+     "16384-32768": {
+      "kl": 0.032074254006147385,
+      "kl_stderr": 0.007210446055978537,
+      "nll_diff": 0.01335026416927576,
+      "n": 2048
+     }
+    }
+   },
+   "secs": 585.8829486370087
+  },
+  {
+   "cond": "chip",
+   "label": "chip numerics, chunked_lite",
+   "numerics": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "act": "int8_g32_p2",
+    "kv": "int8_head",
+    "state": "chunked_lite",
+    "attn_q": "int8_g32_p2",
+    "attn_p": "int8_g32_p2"
+   },
+   "chip": {
+    "sfu": true,
+    "rope": true,
+    "softmax": true,
+    "dnq": true
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.057944733649492264,
+     "kl_stderr": 0.00694660097360611,
+     "kl_p99": 0.34812045097351074,
+     "top1_agree": 0.9232177734375,
+     "ppl_change_pct": 1.339554786682129,
+     "n": 8192,
+     "kl_vs_base": {
+      "mean": 0.0019626233261078596,
+      "stderr": 0.001864509773440659
+     },
+     "nll_vs_base": {
+      "mean": 0.0030845520086586475,
+      "stderr": 0.0019846903160214424
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.0564638115465641,
+     "kl_stderr": 0.002360180951654911,
+     "kl_p99": 1.017783522605896,
+     "top1_agree": 0.95556640625,
+     "ppl_change_pct": 5.852234363555908,
+     "n": 8192,
+     "kl_vs_base": {
+      "mean": 8.948462345870212e-05,
+      "stderr": 0.0005133214872330427
+     },
+     "nll_vs_base": {
+      "mean": -0.00023536683875136077,
+      "stderr": 0.0008571942453272641
+     }
+    }
+   },
+   "long": {
+    "kl_mean": 0.0461379699409008,
+    "kl_stderr": 0.008142691105604172,
+    "top1_agree": 0.9326171875,
+    "nll_diff_mean": 0.004376481752842665,
+    "nll_diff_stderr": 0.007852330803871155,
+    "ppl_change_pct": 0.43861865997314453,
+    "by_position": {
+     "0-4096": {
+      "kl": 0.06360571086406708,
+      "kl_stderr": 0.03874387964606285,
+      "nll_diff": -0.030109519138932228,
+      "n": 512
+     },
+     "4096-8192": {
+      "kl": 0.027902130037546158,
+      "kl_stderr": 0.002969050547108054,
+      "nll_diff": -0.008308244869112968,
+      "n": 512
+     },
+     "8192-16384": {
+      "kl": 0.06863764673471451,
+      "kl_stderr": 0.019312923774123192,
+      "nll_diff": 0.008560575544834137,
+      "n": 1024
+     },
+     "16384-32768": {
+      "kl": 0.03508015722036362,
+      "kl_stderr": 0.008808225393295288,
+      "nll_diff": 0.014077115803956985,
+      "n": 2048
+     }
+    }
+   },
+   "secs": 245.17813277244568
+  }
+ ],
+ "gptq_secs": 543.4585628509521,
+ "probe": {
+  "wikitext": {
+   "fp32_onepass": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0006108525558374822,
+      "code_change": 0.000970005989074707,
+      "code_change_gt1": 1.2040138244628906e-05
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.006634716410189867,
+      "code_change": 0.1350083351135254,
+      "code_change_gt1": 0.002405881881713867
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.00883714109659195,
+      "code_change": 0.2906813621520996,
+      "code_change_gt1": 0.017719745635986328
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.01459721103310585,
+      "code_change": 0.43302273750305176,
+      "code_change_gt1": 0.061512112617492676
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.015284153632819653,
+      "code_change": 0.4869225025177002,
+      "code_change_gt1": 0.09019505977630615
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.016018418595194817,
+      "code_change": 0.5357695817947388,
+      "code_change_gt1": 0.12509369850158691
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.015703989192843437,
+      "code_change": 0.536636233329773,
+      "code_change_gt1": 0.1305370330810547
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02152567356824875,
+      "code_change": 0.6108559370040894,
+      "code_change_gt1": 0.19982266426086426
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.022319525480270386,
+      "code_change": 0.6165008544921875,
+      "code_change_gt1": 0.20847856998443604
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.023328090086579323,
+      "code_change": 0.6261101961135864,
+      "code_change_gt1": 0.2216547727584839
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.035690054297447205,
+      "code_change": 0.6186209917068481,
+      "code_change_gt1": 0.21652138233184814
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.030605321750044823,
+      "code_change": 0.653414249420166,
+      "code_change_gt1": 0.26406002044677734
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.031250569969415665,
+      "code_change": 0.6649117469787598,
+      "code_change_gt1": 0.27473509311676025
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.032536331564188004,
+      "code_change": 0.6573057174682617,
+      "code_change_gt1": 0.2693350315093994
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.04314296692609787,
+      "code_change": 0.641546368598938,
+      "code_change_gt1": 0.2548391819000244
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03848450630903244,
+      "code_change": 0.673287034034729,
+      "code_change_gt1": 0.29205572605133057
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03870599716901779,
+      "code_change": 0.6673370599746704,
+      "code_change_gt1": 0.2848796844482422
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.03979218006134033,
+      "code_change": 0.6468480825424194,
+      "code_change_gt1": 0.25874507427215576
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.0465480275452137,
+      "code_change": 0.5913619995117188,
+      "code_change_gt1": 0.2004181146621704
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.047686588019132614,
+      "code_change": 0.6102118492126465,
+      "code_change_gt1": 0.21781885623931885
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04931922256946564,
+      "code_change": 0.5997182130813599,
+      "code_change_gt1": 0.20395231246948242
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04969242587685585,
+      "code_change": 0.5930294990539551,
+      "code_change_gt1": 0.1975846290588379
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.051363054662942886,
+      "code_change": 0.5358449220657349,
+      "code_change_gt1": 0.15259969234466553
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.05323837697505951,
+      "code_change": 0.5836659669876099,
+      "code_change_gt1": 0.18766379356384277
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05275999382138252,
+      "code_change": 0.5804229974746704,
+      "code_change_gt1": 0.18159782886505127
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05402152240276337,
+      "code_change": 0.5881685018539429,
+      "code_change_gt1": 0.18622815608978271
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05166531726717949,
+      "code_change": 0.5294944047927856,
+      "code_change_gt1": 0.14604401588439941
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05401016026735306,
+      "code_change": 0.6100873947143555,
+      "code_change_gt1": 0.20832288265228271
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.052917275577783585,
+      "code_change": 0.6203845739364624,
+      "code_change_gt1": 0.218286395072937
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04852946475148201,
+      "code_change": 0.6119667291641235,
+      "code_change_gt1": 0.21168720722198486
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05201311409473419,
+      "code_change": 0.5982872247695923,
+      "code_change_gt1": 0.19506049156188965
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0015716151101514697
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0020813802257180214
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.012047416530549526
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.009374843910336494
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.0248652845621109
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.025019776076078415
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03047908842563629
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.036622270941734314
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04388632997870445
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.04874467849731445
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05540379136800766
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06100897490978241
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06600198149681091
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06175228953361511
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06637310236692429
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.07967584580183029
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.07063480466604233
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.07040054351091385
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.061541926115751266
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.09685630351305008
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06970533728599548
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06135100871324539
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.07256396859884262
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.09154460579156876
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.056806981563568115
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05330215021967888
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.07951449602842331
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.0903846025466919
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05325911194086075
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05667680501937866
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04939594119787216
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.0452142208814621
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.000326021749060601,
+      "code_change": 0.0001087188720703125,
+      "code_change_gt1": 3.5762786865234375e-06
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.004154079593718052,
+      "code_change": 0.02231156826019287,
+      "code_change_gt1": 0.00032579898834228516
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.013799279928207397,
+      "code_change": 0.24091458320617676,
+      "code_change_gt1": 0.008092880249023438
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.01936059072613716,
+      "code_change": 0.4000368118286133,
+      "code_change_gt1": 0.04455375671386719
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.01880873739719391,
+      "code_change": 0.48088717460632324,
+      "code_change_gt1": 0.0748746395111084
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.021013671532273293,
+      "code_change": 0.5433478355407715,
+      "code_change_gt1": 0.11923420429229736
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.019877329468727112,
+      "code_change": 0.5673117637634277,
+      "code_change_gt1": 0.14471590518951416
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.026387358084321022,
+      "code_change": 0.6416279077529907,
+      "code_change_gt1": 0.2281026840209961
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02712808921933174,
+      "code_change": 0.6541728973388672,
+      "code_change_gt1": 0.2447824478149414
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.02899066172540188,
+      "code_change": 0.6630619764328003,
+      "code_change_gt1": 0.25840139389038086
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.030315760523080826,
+      "code_change": 0.6574808359146118,
+      "code_change_gt1": 0.25344085693359375
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.0370357483625412,
+      "code_change": 0.6873693466186523,
+      "code_change_gt1": 0.29952239990234375
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.03902200236916542,
+      "code_change": 0.6863539218902588,
+      "code_change_gt1": 0.29937613010406494
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.0402531623840332,
+      "code_change": 0.6870286464691162,
+      "code_change_gt1": 0.3008638620376587
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.04106336832046509,
+      "code_change": 0.6761183738708496,
+      "code_change_gt1": 0.28872179985046387
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.04573529586195946,
+      "code_change": 0.6903314590454102,
+      "code_change_gt1": 0.3076122999191284
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.04861247166991234,
+      "code_change": 0.6872667074203491,
+      "code_change_gt1": 0.3039301633834839
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.04908066615462303,
+      "code_change": 0.6720807552337646,
+      "code_change_gt1": 0.28237056732177734
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.046851471066474915,
+      "code_change": 0.6349384784698486,
+      "code_change_gt1": 0.23887526988983154
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.05485357716679573,
+      "code_change": 0.6390637159347534,
+      "code_change_gt1": 0.24184107780456543
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05528632178902626,
+      "code_change": 0.6303691864013672,
+      "code_change_gt1": 0.23006796836853027
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.05603129789233208,
+      "code_change": 0.618756890296936,
+      "code_change_gt1": 0.2161792516708374
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.055238086730241776,
+      "code_change": 0.6064488887786865,
+      "code_change_gt1": 0.2051093578338623
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.05942031368613243,
+      "code_change": 0.6110461950302124,
+      "code_change_gt1": 0.20885860919952393
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.058400433510541916,
+      "code_change": 0.607878565788269,
+      "code_change_gt1": 0.20345079898834229
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05799238756299019,
+      "code_change": 0.6109628677368164,
+      "code_change_gt1": 0.20442652702331543
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05818578600883484,
+      "code_change": 0.6133434772491455,
+      "code_change_gt1": 0.20483970642089844
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05814380571246147,
+      "code_change": 0.6345005035400391,
+      "code_change_gt1": 0.22777771949768066
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.056573785841464996,
+      "code_change": 0.6335242986679077,
+      "code_change_gt1": 0.22747266292572021
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05435226485133171,
+      "code_change": 0.6341947317123413,
+      "code_change_gt1": 0.2275676727294922
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05178725719451904,
+      "code_change": 0.632300615310669,
+      "code_change_gt1": 0.22411131858825684
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.052210599184036255,
+      "code_change": 0.6384646892547607,
+      "code_change_gt1": 0.23709642887115479
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001784370862878859
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.00823860615491867
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01356623787432909
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.025407318025827408
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03077184222638607
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.03446418419480324
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03572016581892967
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.045193787664175034
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04892101511359215
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.05301760509610176
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.0739714726805687
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06632672250270844
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06960012763738632
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.07049527764320374
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.07400664687156677
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.08420637995004654
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.08424479514360428
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.08197379857301712
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.08933605998754501
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.08189525455236435
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.07933825999498367
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.07519929856061935
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.09118485450744629
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.07012561708688736
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06712275743484497
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06482157856225967
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.10869913548231125
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.0970844030380249
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06523764878511429
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06262250244617462
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05753771960735321
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04087241366505623
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001598639297299087
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0022736131213605404
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.005393711384385824
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.006542296148836613
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.008905935101211071
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.010668334551155567
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.012711411342024803
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.014590883627533913
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01606382429599762
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.01706196926534176
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.02308085188269615
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.024686722084879875
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.026458948850631714
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.026893451809883118
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.031483057886362076
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.033234283328056335
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03615259379148483
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.036904700100421906
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.0444067046046257
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04377645254135132
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.042844876646995544
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04323464259505272
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.050903983414173126
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04689377173781395
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.045581359416246414
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04469738528132439
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06089497357606888
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04513993486762047
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.04226546362042427
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04264961555600166
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04542793706059456
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04468383640050888
+     }
+    ]
+   },
+   "chunked_int8": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.019257565960288048,
+      "code_change": 0.5791959762573242,
+      "code_change_gt1": 0.18713366985321045
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.020203160122036934,
+      "code_change": 0.6087652444839478,
+      "code_change_gt1": 0.1979055404663086
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.017817175015807152,
+      "code_change": 0.6058517694473267,
+      "code_change_gt1": 0.19672048091888428
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.024476753547787666,
+      "code_change": 0.6408257484436035,
+      "code_change_gt1": 0.23067963123321533
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023765506222844124,
+      "code_change": 0.6505763530731201,
+      "code_change_gt1": 0.24509596824645996
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.023737231269478798,
+      "code_change": 0.670770525932312,
+      "code_change_gt1": 0.2721928358078003
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.022112196311354637,
+      "code_change": 0.6527700424194336,
+      "code_change_gt1": 0.2537611722946167
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02952122688293457,
+      "code_change": 0.6979365348815918,
+      "code_change_gt1": 0.31333374977111816
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.03176154941320419,
+      "code_change": 0.7072124481201172,
+      "code_change_gt1": 0.33080077171325684
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.03390815109014511,
+      "code_change": 0.7155461311340332,
+      "code_change_gt1": 0.34475743770599365
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.04038321226835251,
+      "code_change": 0.7078326940536499,
+      "code_change_gt1": 0.3358149528503418
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.044478125870227814,
+      "code_change": 0.7289454936981201,
+      "code_change_gt1": 0.3737332820892334
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.04659198597073555,
+      "code_change": 0.7392969131469727,
+      "code_change_gt1": 0.3869054317474365
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.04821544513106346,
+      "code_change": 0.7320373058319092,
+      "code_change_gt1": 0.3799281120300293
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.05669663846492767,
+      "code_change": 0.717846155166626,
+      "code_change_gt1": 0.3629807233810425
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.056944333016872406,
+      "code_change": 0.7408854961395264,
+      "code_change_gt1": 0.395125150680542
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.05749673396348953,
+      "code_change": 0.7347472906112671,
+      "code_change_gt1": 0.38604235649108887
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.0594136044383049,
+      "code_change": 0.7174594402313232,
+      "code_change_gt1": 0.3588531017303467
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06829836219549179,
+      "code_change": 0.6646102666854858,
+      "code_change_gt1": 0.2891281843185425
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.0709991604089737,
+      "code_change": 0.6746630668640137,
+      "code_change_gt1": 0.29959356784820557
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.07467038184404373,
+      "code_change": 0.669487714767456,
+      "code_change_gt1": 0.2913687229156494
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.07632330805063248,
+      "code_change": 0.6624453067779541,
+      "code_change_gt1": 0.2821779251098633
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.07831460982561111,
+      "code_change": 0.6077003479003906,
+      "code_change_gt1": 0.22617363929748535
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.08199457824230194,
+      "code_change": 0.6499407291412354,
+      "code_change_gt1": 0.2661248445510864
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.08189990371465683,
+      "code_change": 0.6486237049102783,
+      "code_change_gt1": 0.2614942789077759
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.08455793559551239,
+      "code_change": 0.6606765985488892,
+      "code_change_gt1": 0.27296578884124756
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.07807224243879318,
+      "code_change": 0.6076575517654419,
+      "code_change_gt1": 0.2222050428390503
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.08383557945489883,
+      "code_change": 0.6776691675186157,
+      "code_change_gt1": 0.29428303241729736
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.08338258415460587,
+      "code_change": 0.6969379186630249,
+      "code_change_gt1": 0.3197273015975952
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.07592103630304337,
+      "code_change": 0.6885954141616821,
+      "code_change_gt1": 0.3099491596221924
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07985865324735641,
+      "code_change": 0.6792820692062378,
+      "code_change_gt1": 0.2939518690109253
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.005734723526984453
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.023867636919021606
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.03813937306404114
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.016706088557839394
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.047032929956912994
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.04392546787858009
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.05101046711206436
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.05139315873384476
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.07405895739793777
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.08121784776449203
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.08119849860668182
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.10062970221042633
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.10447081178426743
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.10396752506494522
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.1014043390750885
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.12674382328987122
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.10698705166578293
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.10989882797002792
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.08653634786605835
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.13923348486423492
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.10682974010705948
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.09549736231565475
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.10050874948501587
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.15433314442634583
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.09193658083677292
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.09162869304418564
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.11474481970071793
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.12867377698421478
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.09688106924295425
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.09907429665327072
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.08272391557693481
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07137024402618408
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.03540550917387009,
+      "code_change": 0.6142287254333496,
+      "code_change_gt1": 0.21262872219085693
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.03616487607359886,
+      "code_change": 0.6408578157424927,
+      "code_change_gt1": 0.22891831398010254
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.03695220127701759,
+      "code_change": 0.6671384572982788,
+      "code_change_gt1": 0.2509080171585083
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.037452638149261475,
+      "code_change": 0.6639388799667358,
+      "code_change_gt1": 0.24239134788513184
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03248555585741997,
+      "code_change": 0.6818856000900269,
+      "code_change_gt1": 0.26823723316192627
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.033834706991910934,
+      "code_change": 0.7023669481277466,
+      "code_change_gt1": 0.30469512939453125
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.029669800773262978,
+      "code_change": 0.7029999494552612,
+      "code_change_gt1": 0.3098348379135132
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.037221938371658325,
+      "code_change": 0.7338345050811768,
+      "code_change_gt1": 0.36080455780029297
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.039599575102329254,
+      "code_change": 0.747299075126648,
+      "code_change_gt1": 0.3854382038116455
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.0433439239859581,
+      "code_change": 0.7545448541641235,
+      "code_change_gt1": 0.3987501859664917
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.04359434172511101,
+      "code_change": 0.7479344606399536,
+      "code_change_gt1": 0.3902134895324707
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.05514926090836525,
+      "code_change": 0.7632337808609009,
+      "code_change_gt1": 0.4214308261871338
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.05849330872297287,
+      "code_change": 0.7610596418380737,
+      "code_change_gt1": 0.418473482131958
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06175747513771057,
+      "code_change": 0.7617678642272949,
+      "code_change_gt1": 0.42036616802215576
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06110929697751999,
+      "code_change": 0.7526682615280151,
+      "code_change_gt1": 0.40793323516845703
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.06983096897602081,
+      "code_change": 0.7596378326416016,
+      "code_change_gt1": 0.4185621738433838
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.07368872314691544,
+      "code_change": 0.7555981874465942,
+      "code_change_gt1": 0.4124107360839844
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.07390598207712173,
+      "code_change": 0.7441509962081909,
+      "code_change_gt1": 0.39248812198638916
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06894157826900482,
+      "code_change": 0.7106391191482544,
+      "code_change_gt1": 0.3431752920150757
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.08067663013935089,
+      "code_change": 0.7066675424575806,
+      "code_change_gt1": 0.33535993099212646
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.08404145389795303,
+      "code_change": 0.7017967700958252,
+      "code_change_gt1": 0.3280996084213257
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.08600489050149918,
+      "code_change": 0.6896893978118896,
+      "code_change_gt1": 0.3100011348724365
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.08446341007947922,
+      "code_change": 0.6781073808670044,
+      "code_change_gt1": 0.2961379289627075
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.09212515503168106,
+      "code_change": 0.6783040761947632,
+      "code_change_gt1": 0.2944103479385376
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.09128831326961517,
+      "code_change": 0.6766417026519775,
+      "code_change_gt1": 0.29081010818481445
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.09124182909727097,
+      "code_change": 0.684058427810669,
+      "code_change_gt1": 0.29833269119262695
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.09107310324907303,
+      "code_change": 0.6886098384857178,
+      "code_change_gt1": 0.3019416332244873
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.09130681306123734,
+      "code_change": 0.7015924453735352,
+      "code_change_gt1": 0.319771409034729
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.08976123481988907,
+      "code_change": 0.711783766746521,
+      "code_change_gt1": 0.3349142074584961
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.0856173038482666,
+      "code_change": 0.7113434076309204,
+      "code_change_gt1": 0.3337075710296631
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.08114228397607803,
+      "code_change": 0.7122036218643188,
+      "code_change_gt1": 0.3333777189254761
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.0794220045208931,
+      "code_change": 0.7113221883773804,
+      "code_change_gt1": 0.3395683765411377
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.03693057596683502
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.03966763988137245
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.03236580640077591
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.04434958100318909
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.05070873722434044
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.05547171086072922
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.05337681248784065
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.06404882669448853
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.07269212603569031
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.07918782532215118
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.10853362083435059
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.10546114295721054
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.1107574850320816
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.11158093810081482
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.11653773486614227
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.12903769314289093
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.12700729072093964
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.1188495010137558
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.12154319137334824
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.11846087127923965
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.11807770282030106
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.11651859432458878
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.1527559459209442
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.1127583310008049
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.10892732441425323
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.10604158043861389
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.18023766577243805
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.1602896749973297
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.10262923687696457
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.09513542056083679
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.0965617373585701
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.06181682273745537
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.00801933091133833
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.01018417440354824
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01561832521110773
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.013552762567996979
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.016418438404798508
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.018272383138537407
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.020350219681859016
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.021962938830256462
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02499294839799404
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.026919366791844368
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.03445618972182274
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03835997357964516
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.041838664561510086
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.042600058019161224
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.04659396782517433
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.05112424120306969
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.05510761961340904
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.055446088314056396
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06239067018032074
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06578138470649719
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.0659991204738617
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06731750816106796
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.07926976680755615
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.07222212851047516
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.07052532583475113
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06958690285682678
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.08962596952915192
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.07072040438652039
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.0670989528298378
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06734180450439453
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.07249992340803146
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07010556757450104
+     }
+    ]
+   },
+   "chunked_split": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.006969355512410402,
+      "code_change": 0.1778554916381836,
+      "code_change_gt1": 0.004457831382751465
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01135582011193037,
+      "code_change": 0.36110472679138184,
+      "code_change_gt1": 0.02849125862121582
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.011440026573836803,
+      "code_change": 0.4200420379638672,
+      "code_change_gt1": 0.05344712734222412
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.017135724425315857,
+      "code_change": 0.5164612531661987,
+      "code_change_gt1": 0.10604894161224365
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.017276179045438766,
+      "code_change": 0.5418798923492432,
+      "code_change_gt1": 0.1271604299545288
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.01748974621295929,
+      "code_change": 0.5741816759109497,
+      "code_change_gt1": 0.15669071674346924
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.01687876507639885,
+      "code_change": 0.5640789270401001,
+      "code_change_gt1": 0.1529604196548462
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.022852594032883644,
+      "code_change": 0.6329480409622192,
+      "code_change_gt1": 0.22179436683654785
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.02350395917892456,
+      "code_change": 0.6369038820266724,
+      "code_change_gt1": 0.22921621799468994
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.024072537198662758,
+      "code_change": 0.6446638107299805,
+      "code_change_gt1": 0.24065792560577393
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.02228604070842266,
+      "code_change": 0.6363519430160522,
+      "code_change_gt1": 0.23405277729034424
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0264747254550457,
+      "code_change": 0.6694616079330444,
+      "code_change_gt1": 0.28073394298553467
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.027263419702649117,
+      "code_change": 0.6801717281341553,
+      "code_change_gt1": 0.2912024259567261
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.027528369799256325,
+      "code_change": 0.6721166372299194,
+      "code_change_gt1": 0.284856915473938
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.028274741023778915,
+      "code_change": 0.6555372476577759,
+      "code_change_gt1": 0.26932764053344727
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03234163299202919,
+      "code_change": 0.6871404647827148,
+      "code_change_gt1": 0.30755555629730225
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03289618343114853,
+      "code_change": 0.6808558702468872,
+      "code_change_gt1": 0.29918718338012695
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.033343877643346786,
+      "code_change": 0.6599041223526001,
+      "code_change_gt1": 0.27157461643218994
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.03720661625266075,
+      "code_change": 0.6040359735488892,
+      "code_change_gt1": 0.2116450071334839
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.040103714913129807,
+      "code_change": 0.622462272644043,
+      "code_change_gt1": 0.23047268390655518
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04119424894452095,
+      "code_change": 0.6107069253921509,
+      "code_change_gt1": 0.21615028381347656
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.041464462876319885,
+      "code_change": 0.6033134460449219,
+      "code_change_gt1": 0.20796334743499756
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04143834486603737,
+      "code_change": 0.5454871654510498,
+      "code_change_gt1": 0.16136574745178223
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04408647492527962,
+      "code_change": 0.5924493074417114,
+      "code_change_gt1": 0.19664239883422852
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04312153905630112,
+      "code_change": 0.5885597467422485,
+      "code_change_gt1": 0.19054508209228516
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.043981630355119705,
+      "code_change": 0.5962103605270386,
+      "code_change_gt1": 0.19486236572265625
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04227633774280548,
+      "code_change": 0.5376331806182861,
+      "code_change_gt1": 0.15346276760101318
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.04552614316344261,
+      "code_change": 0.6183959245681763,
+      "code_change_gt1": 0.21707749366760254
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.044945742934942245,
+      "code_change": 0.6283888816833496,
+      "code_change_gt1": 0.2266833782196045
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04219164326786995,
+      "code_change": 0.6192624568939209,
+      "code_change_gt1": 0.21895527839660645
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04503974691033363,
+      "code_change": 0.6048027276992798,
+      "code_change_gt1": 0.20147252082824707
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001628173398785293
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.009608558379113674
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.018695836886763573
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.011827003210783005
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.029405804350972176
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.027731316164135933
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.0331001840531826
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.039377834647893906
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04713242128491402
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.0501442514359951
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.04654088616371155
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.05636833980679512
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.05957065895199776
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.057516686618328094
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.054282963275909424
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.06898048520088196
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.06469499319791794
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06577999889850616
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.050144508481025696
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06862645596265793
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.055343933403491974
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.05202295258641243
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05301790311932564
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.07510840892791748
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04424429312348366
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04460969939827919
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04558990150690079
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06330811977386475
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.04500458016991615
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04639924690127373
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04271826893091202
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04170340299606323
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.007002087309956551,
+      "code_change": 0.06359434127807617,
+      "code_change_gt1": 0.0016101598739624023
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.01575295627117157,
+      "code_change": 0.2964513301849365,
+      "code_change_gt1": 0.012911677360534668
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.02044694684445858,
+      "code_change": 0.43521738052368164,
+      "code_change_gt1": 0.05101644992828369
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.02415892854332924,
+      "code_change": 0.513583779335022,
+      "code_change_gt1": 0.0924980640411377
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.02205768972635269,
+      "code_change": 0.5544174909591675,
+      "code_change_gt1": 0.12135577201843262
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023633873090147972,
+      "code_change": 0.5923163890838623,
+      "code_change_gt1": 0.16076934337615967
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.021530941128730774,
+      "code_change": 0.6016278266906738,
+      "code_change_gt1": 0.17583930492401123
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.028271695598959923,
+      "code_change": 0.6654608249664307,
+      "code_change_gt1": 0.2545257806777954
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.028889253735542297,
+      "code_change": 0.6750060319900513,
+      "code_change_gt1": 0.2683448791503906
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.030294764786958694,
+      "code_change": 0.6822866201400757,
+      "code_change_gt1": 0.28005194664001465
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.029455052688717842,
+      "code_change": 0.6754752397537231,
+      "code_change_gt1": 0.27379119396209717
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03377539664506912,
+      "code_change": 0.7035943269729614,
+      "code_change_gt1": 0.3186821937561035
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.034993745386600494,
+      "code_change": 0.7020013332366943,
+      "code_change_gt1": 0.31717419624328613
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.035852037370204926,
+      "code_change": 0.7020406723022461,
+      "code_change_gt1": 0.3173787593841553
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.03490323945879936,
+      "code_change": 0.690333366394043,
+      "code_change_gt1": 0.30436766147613525
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.03978828340768814,
+      "code_change": 0.7047930955886841,
+      "code_change_gt1": 0.3242621421813965
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.0417347215116024,
+      "code_change": 0.7010853290557861,
+      "code_change_gt1": 0.3196370601654053
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.04159035161137581,
+      "code_change": 0.6853444576263428,
+      "code_change_gt1": 0.2963639497756958
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.038412559777498245,
+      "code_change": 0.6483480930328369,
+      "code_change_gt1": 0.2519352436065674
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04420904442667961,
+      "code_change": 0.6526052951812744,
+      "code_change_gt1": 0.25664329528808594
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04611874744296074,
+      "code_change": 0.6420533657073975,
+      "code_change_gt1": 0.24354469776153564
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04626426100730896,
+      "code_change": 0.6295002698898315,
+      "code_change_gt1": 0.2283649444580078
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04490342736244202,
+      "code_change": 0.6165096759796143,
+      "code_change_gt1": 0.2159641981124878
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.048859816044569016,
+      "code_change": 0.6203030347824097,
+      "code_change_gt1": 0.21847212314605713
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04777148738503456,
+      "code_change": 0.6163274049758911,
+      "code_change_gt1": 0.2124854326248169
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04727964848279953,
+      "code_change": 0.619423508644104,
+      "code_change_gt1": 0.2138885259628296
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04691377654671669,
+      "code_change": 0.6215980052947998,
+      "code_change_gt1": 0.2139493227005005
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.048606086522340775,
+      "code_change": 0.6428741216659546,
+      "code_change_gt1": 0.23756039142608643
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.04762548580765724,
+      "code_change": 0.6417654752731323,
+      "code_change_gt1": 0.2366238832473755
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.046005185693502426,
+      "code_change": 0.6415324211120605,
+      "code_change_gt1": 0.23572802543640137
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.045141853392124176,
+      "code_change": 0.6392786502838135,
+      "code_change_gt1": 0.23196256160736084
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04552114009857178,
+      "code_change": 0.6454308032989502,
+      "code_change_gt1": 0.244651198387146
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.009532580152153969
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.01955603063106537
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.018409915268421173
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.03076065145432949
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03551497682929039
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.03866388648748398
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03858844190835953
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.04831249266862869
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.051482316106557846
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.05359764024615288
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05743123218417168
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06350233405828476
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06582704931497574
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06619079411029816
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06806571036577225
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.07709557563066483
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.07581006735563278
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.07064714282751083
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.057672321796417236
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06586338579654694
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06682201474905014
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06362935155630112
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.057672321796417236
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06090443208813667
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.05852946266531944
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.056678734719753265
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05607707425951958
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06323341280221939
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05662420019507408
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.057402998208999634
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05009211599826813
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.03424900770187378
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0021819777321070433
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.004387020133435726
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.007907632738351822
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.008315526880323887
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.010602792724967003
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.012147868983447552
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.013992422260344028
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.015814756974577904
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01717142015695572
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.017970845103263855
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.01902960240840912
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.02098277397453785
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.022618865594267845
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.02313927374780178
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.02400696650147438
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.02768963947892189
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03019382245838642
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03036612644791603
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.031575120985507965
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.035783156752586365
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.035360921174287796
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.03543613851070404
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.03529755398631096
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.036460913717746735
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.03554776310920715
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.03481726348400116
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.03684801235795021
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.03804444149136543
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.03598017990589142
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.03700922802090645
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.03977016732096672
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.039236947894096375
+     }
+    ]
+   },
+   "chunked_lite": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.006991520989686251,
+      "code_change": 0.17765474319458008,
+      "code_change_gt1": 0.004434347152709961
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.011288112960755825,
+      "code_change": 0.3611859083175659,
+      "code_change_gt1": 0.028138279914855957
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.011345328763127327,
+      "code_change": 0.41920626163482666,
+      "code_change_gt1": 0.05298328399658203
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.017100172117352486,
+      "code_change": 0.5139273405075073,
+      "code_change_gt1": 0.1040109395980835
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.017198951914906502,
+      "code_change": 0.539840579032898,
+      "code_change_gt1": 0.12596869468688965
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.01739126443862915,
+      "code_change": 0.5721650123596191,
+      "code_change_gt1": 0.15445733070373535
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.016710776835680008,
+      "code_change": 0.5617696046829224,
+      "code_change_gt1": 0.15058183670043945
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.022672457620501518,
+      "code_change": 0.6316598653793335,
+      "code_change_gt1": 0.22012805938720703
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.023282242938876152,
+      "code_change": 0.6350858211517334,
+      "code_change_gt1": 0.22691917419433594
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.023885292932391167,
+      "code_change": 0.6430069208145142,
+      "code_change_gt1": 0.23793303966522217
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03589855879545212,
+      "code_change": 0.6352707147598267,
+      "code_change_gt1": 0.23222994804382324
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.031195787712931633,
+      "code_change": 0.6692290306091309,
+      "code_change_gt1": 0.2799290418624878
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.03189190477132797,
+      "code_change": 0.679760217666626,
+      "code_change_gt1": 0.29036617279052734
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.03330402448773384,
+      "code_change": 0.6715245246887207,
+      "code_change_gt1": 0.28356266021728516
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.043937623500823975,
+      "code_change": 0.6553564071655273,
+      "code_change_gt1": 0.26816093921661377
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03949146345257759,
+      "code_change": 0.6874438524246216,
+      "code_change_gt1": 0.30703020095825195
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03984079137444496,
+      "code_change": 0.6813603639602661,
+      "code_change_gt1": 0.29904675483703613
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.04102642461657524,
+      "code_change": 0.6602563858032227,
+      "code_change_gt1": 0.2715519666671753
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04848572984337807,
+      "code_change": 0.6045451164245605,
+      "code_change_gt1": 0.21142423152923584
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05099399387836456,
+      "code_change": 0.622286319732666,
+      "code_change_gt1": 0.2295699119567871
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.053567878901958466,
+      "code_change": 0.6104583740234375,
+      "code_change_gt1": 0.21449637413024902
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05484708398580551,
+      "code_change": 0.6032161712646484,
+      "code_change_gt1": 0.20701932907104492
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.058062002062797546,
+      "code_change": 0.5455305576324463,
+      "code_change_gt1": 0.16058897972106934
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06001891940832138,
+      "code_change": 0.5931473970413208,
+      "code_change_gt1": 0.19639205932617188
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05900794267654419,
+      "code_change": 0.5899324417114258,
+      "code_change_gt1": 0.1903977394104004
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05973915755748749,
+      "code_change": 0.5974005460739136,
+      "code_change_gt1": 0.1953599452972412
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05752432718873024,
+      "code_change": 0.5388636589050293,
+      "code_change_gt1": 0.15377449989318848
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.059465423226356506,
+      "code_change": 0.6193680763244629,
+      "code_change_gt1": 0.21759045124053955
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.057693492621183395,
+      "code_change": 0.6295269727706909,
+      "code_change_gt1": 0.227960467338562
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.052903369069099426,
+      "code_change": 0.6210955381393433,
+      "code_change_gt1": 0.22071123123168945
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.057134706526994705,
+      "code_change": 0.6076022386550903,
+      "code_change_gt1": 0.20394158363342285
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001629476435482502
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.009624321945011616
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.018542980775237083
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.011548396199941635
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.029229506850242615
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.027710141614079475
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03295544907450676
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.03890582546591759
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04657081142067909
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.05069933086633682
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05424964800477028
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06279893219470978
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06676555424928665
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06330637633800507
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06827881187200546
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.08147673308849335
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.07421036064624786
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.0726437047123909
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06370095908641815
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.1012527272105217
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.07918097823858261
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.07075174897909164
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.08657306432723999
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.1090085431933403
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06148098036646843
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05783900246024132
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.08233513683080673
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.09792041778564453
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05993833392858505
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.060211680829524994
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05619478598237038
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.048350218683481216
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.00699891522526741,
+      "code_change": 0.06357598304748535,
+      "code_change_gt1": 0.0016480684280395508
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.015750283375382423,
+      "code_change": 0.2963123321533203,
+      "code_change_gt1": 0.013144612312316895
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.020407358184456825,
+      "code_change": 0.43404412269592285,
+      "code_change_gt1": 0.05054748058319092
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.024053532630205154,
+      "code_change": 0.511313796043396,
+      "code_change_gt1": 0.09110820293426514
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.021949997171759605,
+      "code_change": 0.5526325702667236,
+      "code_change_gt1": 0.11973631381988525
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023551903665065765,
+      "code_change": 0.5899631977081299,
+      "code_change_gt1": 0.15835058689117432
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.02139812335371971,
+      "code_change": 0.5995495319366455,
+      "code_change_gt1": 0.17314720153808594
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.028051577508449554,
+      "code_change": 0.6639165878295898,
+      "code_change_gt1": 0.25208115577697754
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02861492894589901,
+      "code_change": 0.6737254858016968,
+      "code_change_gt1": 0.2657824754714966
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.030093533918261528,
+      "code_change": 0.6810301542282104,
+      "code_change_gt1": 0.2774186134338379
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.030950328335165977,
+      "code_change": 0.6744595766067505,
+      "code_change_gt1": 0.2717564105987549
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.0379006527364254,
+      "code_change": 0.703471302986145,
+      "code_change_gt1": 0.3181140422821045
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.03992024436593056,
+      "code_change": 0.7016056776046753,
+      "code_change_gt1": 0.31650662422180176
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.04127274453639984,
+      "code_change": 0.701830267906189,
+      "code_change_gt1": 0.3166835308074951
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.042135074734687805,
+      "code_change": 0.6901708841323853,
+      "code_change_gt1": 0.3037463426589966
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.047112658619880676,
+      "code_change": 0.7049705982208252,
+      "code_change_gt1": 0.32347822189331055
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.0499923899769783,
+      "code_change": 0.7015223503112793,
+      "code_change_gt1": 0.3196268081665039
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.0506010577082634,
+      "code_change": 0.6863914728164673,
+      "code_change_gt1": 0.2968407869338989
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.04849797859787941,
+      "code_change": 0.6492222547531128,
+      "code_change_gt1": 0.25219690799713135
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.057842668145895004,
+      "code_change": 0.6527252197265625,
+      "code_change_gt1": 0.2557244300842285
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05994468554854393,
+      "code_change": 0.6420836448669434,
+      "code_change_gt1": 0.24202501773834229
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.061457559466362,
+      "code_change": 0.6296191215515137,
+      "code_change_gt1": 0.22734880447387695
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.061814386397600174,
+      "code_change": 0.6164437532424927,
+      "code_change_gt1": 0.21537184715270996
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06773839890956879,
+      "code_change": 0.6210781335830688,
+      "code_change_gt1": 0.2187565565109253
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06589068472385406,
+      "code_change": 0.6176226139068604,
+      "code_change_gt1": 0.2133643627166748
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06460767984390259,
+      "code_change": 0.6203621625900269,
+      "code_change_gt1": 0.21438992023468018
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.0643317773938179,
+      "code_change": 0.6224435567855835,
+      "code_change_gt1": 0.21436941623687744
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06436887383460999,
+      "code_change": 0.6441918611526489,
+      "code_change_gt1": 0.23791420459747314
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06206265464425087,
+      "code_change": 0.6432218551635742,
+      "code_change_gt1": 0.23768973350524902
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05909475311636925,
+      "code_change": 0.6433292627334595,
+      "code_change_gt1": 0.2376645803451538
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.056258004158735275,
+      "code_change": 0.6415871381759644,
+      "code_change_gt1": 0.23424851894378662
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05673077329993248,
+      "code_change": 0.6472415924072266,
+      "code_change_gt1": 0.24641358852386475
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.009532512165606022
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.01955398917198181
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.018418502062559128
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.030495764687657356
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.035424742847681046
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.038532618433237076
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03838605061173439
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.047982241958379745
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.05087780952453613
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.05280563235282898
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.07470190525054932
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06793475896120071
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.07110327482223511
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.0722736194729805
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.07661759108304977
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.08638770133256912
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.08674852550029755
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.08513741195201874
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.0919903814792633
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.08710137009620667
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.0837421864271164
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.08134428411722183
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.09697931259870529
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.07928105443716049
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.0698358491063118
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06870684027671814
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.11142159253358841
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.10027340799570084
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06835667788982391
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06605909764766693
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.0623001903295517
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04362637922167778
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0021834871731698513
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.004388679284602404
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.007906042039394379
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.00824712309986353
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.010564843192696571
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.012099782936275005
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.01389556098729372
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.01568734273314476
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01699538715183735
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.017784472554922104
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.023545704782009125
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.025247180834412575
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.027098095044493675
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.027570383623242378
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.032196417450904846
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.034046947956085205
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03707883507013321
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.038063906133174896
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.0456065759062767
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04649926349520683
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.0463717021048069
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04759508743882179
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05552968755364418
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.05253058671951294
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.050456784665584564
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.049000322818756104
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06429822742938995
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05022120848298073
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.046422865241765976
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04695487022399902
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04978211224079132
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.048286229372024536
+     }
+    ]
+   }
+  },
+  "python_code": {
+   "fp32_onepass": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.00038512953324243426,
+      "code_change": 0.0006644725799560547,
+      "code_change_gt1": 7.62939453125e-06
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.005102083552628756,
+      "code_change": 0.09648442268371582,
+      "code_change_gt1": 0.0016952753067016602
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.00756407342851162,
+      "code_change": 0.2574516534805298,
+      "code_change_gt1": 0.013286471366882324
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.013745461590588093,
+      "code_change": 0.43733906745910645,
+      "code_change_gt1": 0.06045496463775635
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.014517152681946754,
+      "code_change": 0.484615683555603,
+      "code_change_gt1": 0.08811807632446289
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.01540757529437542,
+      "code_change": 0.5376849174499512,
+      "code_change_gt1": 0.1276397705078125
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.015826305374503136,
+      "code_change": 0.5487616062164307,
+      "code_change_gt1": 0.14148879051208496
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.021962987259030342,
+      "code_change": 0.6242674589157104,
+      "code_change_gt1": 0.21756792068481445
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.02291897125542164,
+      "code_change": 0.6344717741012573,
+      "code_change_gt1": 0.2319718599319458
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.023419728502631187,
+      "code_change": 0.6490304470062256,
+      "code_change_gt1": 0.2521934509277344
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.022001929581165314,
+      "code_change": 0.6492102146148682,
+      "code_change_gt1": 0.25111234188079834
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.02619355544447899,
+      "code_change": 0.6831544637680054,
+      "code_change_gt1": 0.29860150814056396
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.027171527966856956,
+      "code_change": 0.6965255737304688,
+      "code_change_gt1": 0.314184308052063
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.028024625033140182,
+      "code_change": 0.6982403993606567,
+      "code_change_gt1": 0.31973814964294434
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.030296651646494865,
+      "code_change": 0.6902729272842407,
+      "code_change_gt1": 0.3117924928665161
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.033212658017873764,
+      "code_change": 0.7244009971618652,
+      "code_change_gt1": 0.36233270168304443
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.034960340708494186,
+      "code_change": 0.729456901550293,
+      "code_change_gt1": 0.37219369411468506
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.03680853918194771,
+      "code_change": 0.7229828834533691,
+      "code_change_gt1": 0.3622649908065796
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04198196530342102,
+      "code_change": 0.690427303314209,
+      "code_change_gt1": 0.3117702007293701
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.044534679502248764,
+      "code_change": 0.7032978534698486,
+      "code_change_gt1": 0.3256690502166748
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04446534067392349,
+      "code_change": 0.6984829902648926,
+      "code_change_gt1": 0.315423846244812
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.044906049966812134,
+      "code_change": 0.6988340616226196,
+      "code_change_gt1": 0.3142049312591553
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04461669921875,
+      "code_change": 0.6704288721084595,
+      "code_change_gt1": 0.27856242656707764
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04444795101881027,
+      "code_change": 0.7013391256332397,
+      "code_change_gt1": 0.31197071075439453
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04511580243706703,
+      "code_change": 0.711578369140625,
+      "code_change_gt1": 0.32405412197113037
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04739270359277725,
+      "code_change": 0.7281129360198975,
+      "code_change_gt1": 0.3476773500442505
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04882924258708954,
+      "code_change": 0.7057610750198364,
+      "code_change_gt1": 0.3217705488204956
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05048911273479462,
+      "code_change": 0.7473850250244141,
+      "code_change_gt1": 0.3832584619522095
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.050442885607481,
+      "code_change": 0.7522516250610352,
+      "code_change_gt1": 0.3930363655090332
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.048945214599370956,
+      "code_change": 0.7492331266403198,
+      "code_change_gt1": 0.38865363597869873
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.050443150103092194,
+      "code_change": 0.7441197633743286,
+      "code_change_gt1": 0.37672173976898193
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001468850881792605
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0018992418190464377
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.009226543828845024
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.009556629694998264
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.0251150019466877
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023481406271457672
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.029900526627898216
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.03361516818404198
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04376818984746933
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.04229078069329262
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.04411373659968376
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.04973137378692627
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.053019046783447266
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.057716671377420425
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.05470705404877663
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.060822032392024994
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.06349591910839081
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06850552558898926
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.05802422761917114
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.0632723793387413
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05356721580028534
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.0502009317278862
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05824984237551689
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.0580095574259758
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.05092674866318703
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.053137339651584625
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06293316930532455
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05661195144057274
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06694959104061127
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06369385123252869
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.06310992687940598
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04530954360961914
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0002317470352863893,
+      "code_change": 5.602836608886719e-05,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0035359279718250036,
+      "code_change": 0.017903685569763184,
+      "code_change_gt1": 0.00026106834411621094
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01169647928327322,
+      "code_change": 0.18952012062072754,
+      "code_change_gt1": 0.005742907524108887
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.01887105032801628,
+      "code_change": 0.40355992317199707,
+      "code_change_gt1": 0.045186400413513184
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.018224524334073067,
+      "code_change": 0.48536503314971924,
+      "code_change_gt1": 0.07817673683166504
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.020099114626646042,
+      "code_change": 0.5411669015884399,
+      "code_change_gt1": 0.12010383605957031
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.019233986735343933,
+      "code_change": 0.5727264881134033,
+      "code_change_gt1": 0.15262794494628906
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.026063064113259315,
+      "code_change": 0.644477128982544,
+      "code_change_gt1": 0.23868250846862793
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02712882123887539,
+      "code_change": 0.6590399742126465,
+      "code_change_gt1": 0.2596052885055542
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.02867434173822403,
+      "code_change": 0.671363115310669,
+      "code_change_gt1": 0.27754414081573486
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.028437867760658264,
+      "code_change": 0.673619270324707,
+      "code_change_gt1": 0.2812005281448364
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03240885213017464,
+      "code_change": 0.705527663230896,
+      "code_change_gt1": 0.3273332118988037
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.033881962299346924,
+      "code_change": 0.7065438032150269,
+      "code_change_gt1": 0.3270554542541504
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.03535221889615059,
+      "code_change": 0.7136616706848145,
+      "code_change_gt1": 0.3366020917892456
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.035266947001218796,
+      "code_change": 0.7118910551071167,
+      "code_change_gt1": 0.33616602420806885
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.03922218829393387,
+      "code_change": 0.7306090593338013,
+      "code_change_gt1": 0.3655625581741333
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.041572455316782,
+      "code_change": 0.7354402542114258,
+      "code_change_gt1": 0.37244462966918945
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.042016949504613876,
+      "code_change": 0.7368178367614746,
+      "code_change_gt1": 0.37471020221710205
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.04074399545788765,
+      "code_change": 0.7189358472824097,
+      "code_change_gt1": 0.3478301763534546
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.046499405056238174,
+      "code_change": 0.7240592241287231,
+      "code_change_gt1": 0.35718023777008057
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04670759662985802,
+      "code_change": 0.7180978059768677,
+      "code_change_gt1": 0.3450385332107544
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04668581858277321,
+      "code_change": 0.7134166955947876,
+      "code_change_gt1": 0.33505916595458984
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04560123756527901,
+      "code_change": 0.7084323167800903,
+      "code_change_gt1": 0.3251861333847046
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.046290323138237,
+      "code_change": 0.7098987102508545,
+      "code_change_gt1": 0.3248734474182129
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.046259768307209015,
+      "code_change": 0.7152144908905029,
+      "code_change_gt1": 0.3274838924407959
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04726821184158325,
+      "code_change": 0.7277897596359253,
+      "code_change_gt1": 0.34478068351745605
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04938703402876854,
+      "code_change": 0.7434930801391602,
+      "code_change_gt1": 0.37028682231903076
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05080406367778778,
+      "code_change": 0.7531063556671143,
+      "code_change_gt1": 0.389176607131958
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.050930120050907135,
+      "code_change": 0.7562423944473267,
+      "code_change_gt1": 0.39716005325317383
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05088530108332634,
+      "code_change": 0.7585021257400513,
+      "code_change_gt1": 0.4027036428451538
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05092537775635719,
+      "code_change": 0.7588469982147217,
+      "code_change_gt1": 0.4038277864456177
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04958879202604294,
+      "code_change": 0.7565646171569824,
+      "code_change_gt1": 0.39757370948791504
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0017101546982303262
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.007000254467129707
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01130736619234085
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.025045519694685936
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.02991791069507599
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.03438708558678627
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.035081926733255386
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.04413679242134094
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.0459158718585968
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.04986013472080231
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05064018815755844
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.058023158460855484
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.05982678383588791
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06266100704669952
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.0632760301232338
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.06742652505636215
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.06785348057746887
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06552120298147202
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.05604981258511543
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06223943457007408
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06112496927380562
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.05910023674368858
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05546288564801216
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.056554701179265976
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.05747675150632858
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.062102578580379486
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06471725553274155
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06579899787902832
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06535626947879791
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06128586456179619
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.0566495805978775
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.044529885053634644
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0015085939085111022
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0020946944132447243
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.004387744702398777
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.006146359723061323
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.00839301198720932
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.01036764681339264
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.013054216280579567
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.015226737596094608
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01694885455071926
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.017655018717050552
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.018514053896069527
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.02063356339931488
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.022582795470952988
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.024020958691835403
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.025982804596424103
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.02891448698937893
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.032105036079883575
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03412593528628349
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.037654973566532135
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04147303104400635
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04122181981801987
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04128472879528999
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04103587195277214
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04124941676855087
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04179873317480087
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04308052361011505
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04583561047911644
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04597128927707672
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.0455097071826458
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04581199958920479
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.04891554266214371
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.0482136607170105
+     }
+    ]
+   },
+   "chunked_int8": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.020564718171954155,
+      "code_change": 0.5910239219665527,
+      "code_change_gt1": 0.20424294471740723
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.022645650431513786,
+      "code_change": 0.6276999711990356,
+      "code_change_gt1": 0.22752606868743896
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.020388619974255562,
+      "code_change": 0.649872899055481,
+      "code_change_gt1": 0.2521789073944092
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.02736211195588112,
+      "code_change": 0.6848940849304199,
+      "code_change_gt1": 0.28929996490478516
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.0270710326731205,
+      "code_change": 0.6975152492523193,
+      "code_change_gt1": 0.31051433086395264
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.02762063592672348,
+      "code_change": 0.7201472520828247,
+      "code_change_gt1": 0.34520411491394043
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.02747473679482937,
+      "code_change": 0.7137618064880371,
+      "code_change_gt1": 0.3385566473007202
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.03460774943232536,
+      "code_change": 0.7540160417556763,
+      "code_change_gt1": 0.4012202024459839
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.0356178805232048,
+      "code_change": 0.7606151103973389,
+      "code_change_gt1": 0.41495656967163086
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.03573409095406532,
+      "code_change": 0.7691091299057007,
+      "code_change_gt1": 0.43145751953125
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03292597830295563,
+      "code_change": 0.7636945247650146,
+      "code_change_gt1": 0.42211270332336426
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.03794870153069496,
+      "code_change": 0.7790795564651489,
+      "code_change_gt1": 0.45391130447387695
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.041829776018857956,
+      "code_change": 0.7979212999343872,
+      "code_change_gt1": 0.4894651174545288
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.04285317286849022,
+      "code_change": 0.7977761030197144,
+      "code_change_gt1": 0.49140822887420654
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.046256694942712784,
+      "code_change": 0.7910197973251343,
+      "code_change_gt1": 0.48191940784454346
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.04974474757909775,
+      "code_change": 0.8122979402542114,
+      "code_change_gt1": 0.522973895072937
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.05252102017402649,
+      "code_change": 0.8153644800186157,
+      "code_change_gt1": 0.5308908224105835
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.05707987770438194,
+      "code_change": 0.8127342462539673,
+      "code_change_gt1": 0.5262032747268677
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06597256660461426,
+      "code_change": 0.7878644466400146,
+      "code_change_gt1": 0.47582316398620605
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06543023139238358,
+      "code_change": 0.7924563884735107,
+      "code_change_gt1": 0.481037974357605
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06570655107498169,
+      "code_change": 0.7912763357162476,
+      "code_change_gt1": 0.47720038890838623
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.06605052947998047,
+      "code_change": 0.7907181978225708,
+      "code_change_gt1": 0.4740726947784424
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06553264707326889,
+      "code_change": 0.766886830329895,
+      "code_change_gt1": 0.4331134557723999
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06571213155984879,
+      "code_change": 0.7892599105834961,
+      "code_change_gt1": 0.4668755531311035
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.0666876882314682,
+      "code_change": 0.7968318462371826,
+      "code_change_gt1": 0.4791918992996216
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.07023892551660538,
+      "code_change": 0.8103924989700317,
+      "code_change_gt1": 0.5047866106033325
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.0712561085820198,
+      "code_change": 0.7926336526870728,
+      "code_change_gt1": 0.47475123405456543
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.07423502206802368,
+      "code_change": 0.8228102922439575,
+      "code_change_gt1": 0.5327721834182739
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.07531653344631195,
+      "code_change": 0.8288854360580444,
+      "code_change_gt1": 0.5471831560134888
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.07332336902618408,
+      "code_change": 0.8268612623214722,
+      "code_change_gt1": 0.5435786247253418
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07878366857767105,
+      "code_change": 0.8261698484420776,
+      "code_change_gt1": 0.5389012098312378
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.005799528211355209
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.023152917623519897
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.03967520222067833
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.018948884680867195
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.058697137981653214
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.04631635919213295
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.058160509914159775
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.05061900615692139
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.07411965727806091
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.07004346698522568
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.07050658762454987
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.07088497281074524
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.11031285673379898
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.08898448199033737
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.08626984804868698
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.08822254091501236
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.09828600287437439
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.1059970110654831
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.08832855522632599
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.08435387909412384
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.08970025181770325
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.07619800418615341
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.08545716851949692
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.08578203618526459
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.07765835523605347
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.08618487417697906
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.09810410439968109
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.0825217217206955
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.11021536588668823
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.09680362790822983
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.10770145058631897
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07427004724740982
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.03730892390012741,
+      "code_change": 0.619368314743042,
+      "code_change_gt1": 0.22196757793426514
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.03928918018937111,
+      "code_change": 0.651311993598938,
+      "code_change_gt1": 0.2431715726852417
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.04208127781748772,
+      "code_change": 0.6927785873413086,
+      "code_change_gt1": 0.28923964500427246
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.043948378413915634,
+      "code_change": 0.7058899402618408,
+      "code_change_gt1": 0.3053627014160156
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03753378987312317,
+      "code_change": 0.7284760475158691,
+      "code_change_gt1": 0.344465970993042
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.037493832409381866,
+      "code_change": 0.742840051651001,
+      "code_change_gt1": 0.371557354927063
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03376847133040428,
+      "code_change": 0.7519444227218628,
+      "code_change_gt1": 0.39101624488830566
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.0426272414624691,
+      "code_change": 0.7792694568634033,
+      "code_change_gt1": 0.4419604539871216
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04344882443547249,
+      "code_change": 0.7878724336624146,
+      "code_change_gt1": 0.4592123031616211
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.0451255738735199,
+      "code_change": 0.79390549659729,
+      "code_change_gt1": 0.4722599983215332
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.043638017028570175,
+      "code_change": 0.79023277759552,
+      "code_change_gt1": 0.4668731689453125
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.04780332371592522,
+      "code_change": 0.8018625974655151,
+      "code_change_gt1": 0.49230754375457764
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.052913349121809006,
+      "code_change": 0.8095316886901855,
+      "code_change_gt1": 0.5086711645126343
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.05458297207951546,
+      "code_change": 0.8129476308822632,
+      "code_change_gt1": 0.5157357454299927
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.053916819393634796,
+      "code_change": 0.8107196092605591,
+      "code_change_gt1": 0.5140393972396851
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.05911620333790779,
+      "code_change": 0.8203155994415283,
+      "code_change_gt1": 0.5327490568161011
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.06296314299106598,
+      "code_change": 0.8228920698165894,
+      "code_change_gt1": 0.538866400718689
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06402600556612015,
+      "code_change": 0.8237152099609375,
+      "code_change_gt1": 0.5414031744003296
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06320458650588989,
+      "code_change": 0.8111833333969116,
+      "code_change_gt1": 0.5177898406982422
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06887546181678772,
+      "code_change": 0.810997724533081,
+      "code_change_gt1": 0.5168824195861816
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06914451718330383,
+      "code_change": 0.8084890842437744,
+      "code_change_gt1": 0.5098040103912354
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06872501224279404,
+      "code_change": 0.8039313554763794,
+      "code_change_gt1": 0.4982178211212158
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.06746049970388412,
+      "code_change": 0.7991821765899658,
+      "code_change_gt1": 0.4880092144012451
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06822072714567184,
+      "code_change": 0.7974309921264648,
+      "code_change_gt1": 0.4816046953201294
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06828811764717102,
+      "code_change": 0.8019552230834961,
+      "code_change_gt1": 0.48613500595092773
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.07011213153600693,
+      "code_change": 0.8115259408950806,
+      "code_change_gt1": 0.5044819116592407
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.0734487995505333,
+      "code_change": 0.8231123685836792,
+      "code_change_gt1": 0.5292065143585205
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.07502900063991547,
+      "code_change": 0.8274277448654175,
+      "code_change_gt1": 0.5404419898986816
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.07626781612634659,
+      "code_change": 0.8326981067657471,
+      "code_change_gt1": 0.5530980825424194
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.0761803686618805,
+      "code_change": 0.8341541290283203,
+      "code_change_gt1": 0.557540774345398
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.07865669578313828,
+      "code_change": 0.837293267250061,
+      "code_change_gt1": 0.565922737121582
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07641258090734482,
+      "code_change": 0.8339999914169312,
+      "code_change_gt1": 0.5559147596359253
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.03801814466714859
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.04711921513080597
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.037774574011564255
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.04950398579239845
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.05516201630234718
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.0628075897693634
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.0604916587471962
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.06752917915582657
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.07016413658857346
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.07498939335346222
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.07505181431770325
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.08309709280729294
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0874699130654335
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.09216202795505524
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.09343709796667099
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.09895091503858566
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.10152006149291992
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.10280635952949524
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.08683691918849945
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.08946830034255981
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.08762365579605103
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.08576492220163345
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.08115383982658386
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.08273950964212418
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.08377233147621155
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.09080139547586441
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.09384874254465103
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.09513914585113525
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.09586387872695923
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.09161859005689621
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.09369082003831863
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07547477632761002
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.008657800033688545
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.011760376393795013
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.018790623173117638
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.01564333401620388
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.019130297005176544
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.02215712144970894
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.026744870468974113
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.027567537501454353
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.03007538802921772
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.030332006514072418
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.030963342636823654
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03264850005507469
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0387299619615078
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.04025939106941223
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.043074220418930054
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.04620366916060448
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.05116528272628784
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.05624692514538765
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06284298002719879
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06412424892187119
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06436639279127121
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06391561776399612
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.06360732018947601
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.0637720599770546
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06464932858943939
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06667319685220718
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06981596350669861
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06965804100036621
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.07000329345464706
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.0704226866364479
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.07780074328184128
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.07724382728338242
+     }
+    ]
+   },
+   "chunked_split": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.006604039575904608,
+      "code_change": 0.17348968982696533,
+      "code_change_gt1": 0.004068970680236816
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.010639510117471218,
+      "code_change": 0.3573753833770752,
+      "code_change_gt1": 0.027020931243896484
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.010754134505987167,
+      "code_change": 0.43257296085357666,
+      "code_change_gt1": 0.055631399154663086
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.0167534239590168,
+      "code_change": 0.5359400510787964,
+      "code_change_gt1": 0.11511588096618652
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.016849437728524208,
+      "code_change": 0.5559977293014526,
+      "code_change_gt1": 0.13425517082214355
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.01744578406214714,
+      "code_change": 0.593215823173523,
+      "code_change_gt1": 0.16952061653137207
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.017425501719117165,
+      "code_change": 0.5934090614318848,
+      "code_change_gt1": 0.17380547523498535
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.023757178336381912,
+      "code_change": 0.6626491546630859,
+      "code_change_gt1": 0.2511054277420044
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.024508364498615265,
+      "code_change": 0.6692202091217041,
+      "code_change_gt1": 0.2614845037460327
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.02496667020022869,
+      "code_change": 0.6809900999069214,
+      "code_change_gt1": 0.27943718433380127
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.023286549374461174,
+      "code_change": 0.6772927045822144,
+      "code_change_gt1": 0.27690911293029785
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.02774323709309101,
+      "code_change": 0.7062805891036987,
+      "code_change_gt1": 0.3233991861343384
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.028584757819771767,
+      "code_change": 0.7186675071716309,
+      "code_change_gt1": 0.3389791250228882
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.02947215922176838,
+      "code_change": 0.7189559936523438,
+      "code_change_gt1": 0.3429805040359497
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.031755272299051285,
+      "code_change": 0.7109140157699585,
+      "code_change_gt1": 0.33396434783935547
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.035014837980270386,
+      "code_change": 0.7428057193756104,
+      "code_change_gt1": 0.38533222675323486
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03684394434094429,
+      "code_change": 0.7468962669372559,
+      "code_change_gt1": 0.39485859870910645
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.03873654082417488,
+      "code_change": 0.7401514053344727,
+      "code_change_gt1": 0.38404905796051025
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04380346089601517,
+      "code_change": 0.7075217962265015,
+      "code_change_gt1": 0.33160126209259033
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04597200080752373,
+      "code_change": 0.7191052436828613,
+      "code_change_gt1": 0.3448985815048218
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.045854393392801285,
+      "code_change": 0.7139416933059692,
+      "code_change_gt1": 0.33436548709869385
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04626184329390526,
+      "code_change": 0.7139228582382202,
+      "code_change_gt1": 0.33221936225891113
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.045851510018110275,
+      "code_change": 0.6856218576431274,
+      "code_change_gt1": 0.29513072967529297
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04619348421692848,
+      "code_change": 0.7155227661132812,
+      "code_change_gt1": 0.32924914360046387
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04690762981772423,
+      "code_change": 0.7257862091064453,
+      "code_change_gt1": 0.34162473678588867
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04914184287190437,
+      "code_change": 0.7412300109863281,
+      "code_change_gt1": 0.3651500940322876
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.050035133957862854,
+      "code_change": 0.7188191413879395,
+      "code_change_gt1": 0.3377723693847656
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05268395319581032,
+      "code_change": 0.7596027851104736,
+      "code_change_gt1": 0.400673508644104
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05271683633327484,
+      "code_change": 0.7645049095153809,
+      "code_change_gt1": 0.4104342460632324
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05124266445636749,
+      "code_change": 0.7609227895736694,
+      "code_change_gt1": 0.40548276901245117
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05314169451594353,
+      "code_change": 0.7557470798492432,
+      "code_change_gt1": 0.39290082454681396
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.001517241238616407
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.009224480018019676
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.017412876710295677
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.012271876446902752
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03035544976592064
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.02710077166557312
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.03354650363326073
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.03670670837163925
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04702198877930641
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.045140936970710754
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.04706605523824692
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.05295109748840332
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.056252624839544296
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.05989840626716614
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.056472040712833405
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.06475246697664261
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.0662798061966896
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.07133755087852478
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.059976834803819656
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.063786581158638
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05591275542974472
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.052237339317798615
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.06024859473109245
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06291074305772781
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.05307795852422714
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.055020347237586975
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06444112956523895
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06126181408762932
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06831809133291245
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06536426395177841
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.06506499648094177
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.047895658761262894
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.007062293589115143,
+      "code_change": 0.06430923938751221,
+      "code_change_gt1": 0.0013229846954345703
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.015712881460785866,
+      "code_change": 0.29940927028656006,
+      "code_change_gt1": 0.013055920600891113
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.02017245627939701,
+      "code_change": 0.4354867935180664,
+      "code_change_gt1": 0.04833698272705078
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.0245837289839983,
+      "code_change": 0.5342768430709839,
+      "code_change_gt1": 0.10394704341888428
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.022063180804252625,
+      "code_change": 0.5746058225631714,
+      "code_change_gt1": 0.13650250434875488
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023260224610567093,
+      "code_change": 0.607073187828064,
+      "code_change_gt1": 0.17245054244995117
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.02144232578575611,
+      "code_change": 0.6244378089904785,
+      "code_change_gt1": 0.19548296928405762
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.028543859720230103,
+      "code_change": 0.685816764831543,
+      "code_change_gt1": 0.2781111001968384
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.02931906282901764,
+      "code_change": 0.6958454847335815,
+      "code_change_gt1": 0.29347479343414307
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.030742283910512924,
+      "code_change": 0.7056769132614136,
+      "code_change_gt1": 0.3089923858642578
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.030352363362908363,
+      "code_change": 0.7046836614608765,
+      "code_change_gt1": 0.31012725830078125
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.034358322620391846,
+      "code_change": 0.7303289175033569,
+      "code_change_gt1": 0.3550475835800171
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0358799509704113,
+      "code_change": 0.7300852537155151,
+      "code_change_gt1": 0.35349035263061523
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.03721155598759651,
+      "code_change": 0.7351489067077637,
+      "code_change_gt1": 0.3614615201950073
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.036938853561878204,
+      "code_change": 0.7324029207229614,
+      "code_change_gt1": 0.35993218421936035
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.04121556133031845,
+      "code_change": 0.7505477666854858,
+      "code_change_gt1": 0.3899416923522949
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.043756455183029175,
+      "code_change": 0.7540435791015625,
+      "code_change_gt1": 0.39683961868286133
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.04432002454996109,
+      "code_change": 0.7545299530029297,
+      "code_change_gt1": 0.39780211448669434
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.042814914137125015,
+      "code_change": 0.7361969947814941,
+      "code_change_gt1": 0.37026751041412354
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04806370288133621,
+      "code_change": 0.7402089834213257,
+      "code_change_gt1": 0.37832725048065186
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.048239149153232574,
+      "code_change": 0.7339107990264893,
+      "code_change_gt1": 0.3651115894317627
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04809454455971718,
+      "code_change": 0.7286549806594849,
+      "code_change_gt1": 0.3543682098388672
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.047276098281145096,
+      "code_change": 0.7234759330749512,
+      "code_change_gt1": 0.34394896030426025
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.048129502683877945,
+      "code_change": 0.7246447801589966,
+      "code_change_gt1": 0.3432661294937134
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04806956276297569,
+      "code_change": 0.7293931245803833,
+      "code_change_gt1": 0.3459240198135376
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.049113474786281586,
+      "code_change": 0.7413890361785889,
+      "code_change_gt1": 0.3624141216278076
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05122242122888565,
+      "code_change": 0.7564163208007812,
+      "code_change_gt1": 0.3881087303161621
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05294518172740936,
+      "code_change": 0.7651799917221069,
+      "code_change_gt1": 0.4068763256072998
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05324244871735573,
+      "code_change": 0.7683956623077393,
+      "code_change_gt1": 0.41439592838287354
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05319400504231453,
+      "code_change": 0.7706104516983032,
+      "code_change_gt1": 0.4198344945907593
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05340337008237839,
+      "code_change": 0.7708311080932617,
+      "code_change_gt1": 0.42088067531585693
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05215654894709587,
+      "code_change": 0.767653226852417,
+      "code_change_gt1": 0.4134277105331421
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.008971256203949451
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.020061559975147247
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.01788919046521187
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.03165972977876663
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.035825904458761215
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.039643462747335434
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.039133716374635696
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.04827373847365379
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.04949924349784851
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.053389664739370346
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05417928472161293
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06154710054397583
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06312117725610733
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06569069623947144
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06638537347316742
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.07138225436210632
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.07169077545404434
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06872062385082245
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.05872516334056854
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.0643848404288292
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06316226720809937
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.061618585139513016
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05772027373313904
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.058933280408382416
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.059910111129283905
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06432293355464935
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06683313846588135
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06855910271406174
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.06809873878955841
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.064396932721138
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05977405607700348
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.047747284173965454
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.002084219828248024
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.0042322599329054356
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.007648622151464224
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.008288894779980183
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.010531877167522907
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.012364204041659832
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.014961471781134605
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.01697573997080326
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01866697147488594
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.019258948042988777
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.02009565383195877
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.022228596732020378
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.024206694215536118
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.0255706999450922
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.02755272015929222
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.030730273574590683
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.03414633125066757
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.036153584718704224
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.039737023413181305
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04304572939872742
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04282928258180618
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.04292449727654457
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04276839271187782
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04321068525314331
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.043800778687000275
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04504314437508583
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04766857251524925
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04807421192526817
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.0475827232003212
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04798397421836853
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.05132182687520981
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.050728242844343185
+     }
+    ]
+   },
+   "chunked_lite": {
+    "mixer_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0,
+      "code_change": 0.0,
+      "code_change_gt1": 0.0
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.006565467920154333,
+      "code_change": 0.17285525798797607,
+      "code_change_gt1": 0.0041283369064331055
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.010678577236831188,
+      "code_change": 0.35692691802978516,
+      "code_change_gt1": 0.026928067207336426
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.010737321339547634,
+      "code_change": 0.43260669708251953,
+      "code_change_gt1": 0.05589950084686279
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.01688358001410961,
+      "code_change": 0.5368555784225464,
+      "code_change_gt1": 0.11610877513885498
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.01683119684457779,
+      "code_change": 0.5573602914810181,
+      "code_change_gt1": 0.1355382204055786
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.017401741817593575,
+      "code_change": 0.5939462184906006,
+      "code_change_gt1": 0.17048335075378418
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.017423823475837708,
+      "code_change": 0.5945760011672974,
+      "code_change_gt1": 0.1755770444869995
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.023842334747314453,
+      "code_change": 0.663408637046814,
+      "code_change_gt1": 0.2521148920059204
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.024637283757328987,
+      "code_change": 0.6699988842010498,
+      "code_change_gt1": 0.2624013423919678
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.024997351691126823,
+      "code_change": 0.6813603639602661,
+      "code_change_gt1": 0.2805711030960083
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.023446297273039818,
+      "code_change": 0.6777291297912598,
+      "code_change_gt1": 0.27737748622894287
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.027914591133594513,
+      "code_change": 0.7065166234970093,
+      "code_change_gt1": 0.32370293140411377
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.028912747278809547,
+      "code_change": 0.7187162637710571,
+      "code_change_gt1": 0.3391362428665161
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.029875250533223152,
+      "code_change": 0.7188646793365479,
+      "code_change_gt1": 0.3429008722305298
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.032382141798734665,
+      "code_change": 0.710378885269165,
+      "code_change_gt1": 0.333681583404541
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.035677917301654816,
+      "code_change": 0.7426612377166748,
+      "code_change_gt1": 0.3854762315750122
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03738870099186897,
+      "code_change": 0.746741533279419,
+      "code_change_gt1": 0.3948371410369873
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.039118360728025436,
+      "code_change": 0.7402758598327637,
+      "code_change_gt1": 0.38436877727508545
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04413086175918579,
+      "code_change": 0.7074496746063232,
+      "code_change_gt1": 0.3317553997039795
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04615829139947891,
+      "code_change": 0.7196437120437622,
+      "code_change_gt1": 0.34618139266967773
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.045891571789979935,
+      "code_change": 0.7144558429718018,
+      "code_change_gt1": 0.3349348306655884
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.046377576887607574,
+      "code_change": 0.7142136096954346,
+      "code_change_gt1": 0.3328580856323242
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04588652402162552,
+      "code_change": 0.6857682466506958,
+      "code_change_gt1": 0.2956730127334595
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04705279693007469,
+      "code_change": 0.7160940170288086,
+      "code_change_gt1": 0.3300900459289551
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04770604893565178,
+      "code_change": 0.7258408069610596,
+      "code_change_gt1": 0.3421785831451416
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04993490129709244,
+      "code_change": 0.741511344909668,
+      "code_change_gt1": 0.36592888832092285
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.05018813535571098,
+      "code_change": 0.7193115949630737,
+      "code_change_gt1": 0.3385145664215088
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.05409087985754013,
+      "code_change": 0.75998854637146,
+      "code_change_gt1": 0.40104424953460693
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.05381956323981285,
+      "code_change": 0.7648499011993408,
+      "code_change_gt1": 0.4113037586212158
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.052404459565877914,
+      "code_change": 0.7616111040115356,
+      "code_change_gt1": 0.40657615661621094
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.054157231003046036,
+      "code_change": 0.7572435140609741,
+      "code_change_gt1": 0.39523470401763916
+     }
+    ],
+    "mixer_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0015171477571129799
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.009164879098534584
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.017411010339856148
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.012243974953889847
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.030546894297003746
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.026882853358983994
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.033772971481084824
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.03688383847475052
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.047458529472351074
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.04520260915160179
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.0471198670566082
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.053792983293533325
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.056738365441560745
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06091553345322609
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.05780785530805588
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.0666828453540802
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.06782424449920654
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.07234455645084381
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.06034091114997864
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06314821541309357
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.05566081777215004
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.0525040365755558
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.06012217327952385
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.06677970290184021
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.053544946014881134
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.05586013197898865
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.06534901261329651
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06602757424116135
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.07010183483362198
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06616789102554321
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.06579308956861496
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.04814808443188667
+     }
+    ],
+    "ffn_in": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.007042182609438896,
+      "code_change": 0.0640791654586792,
+      "code_change_gt1": 0.0013248920440673828
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.015694675967097282,
+      "code_change": 0.2989605665206909,
+      "code_change_gt1": 0.013258576393127441
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.020169246941804886,
+      "code_change": 0.4353363513946533,
+      "code_change_gt1": 0.048480868339538574
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.024690983816981316,
+      "code_change": 0.5359334945678711,
+      "code_change_gt1": 0.10517573356628418
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.02215687930583954,
+      "code_change": 0.5759155750274658,
+      "code_change_gt1": 0.1379563808441162
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.023291734978556633,
+      "code_change": 0.6075679063796997,
+      "code_change_gt1": 0.1732323169708252
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.021542374044656754,
+      "code_change": 0.6254316568374634,
+      "code_change_gt1": 0.19685399532318115
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.02867182157933712,
+      "code_change": 0.686653733253479,
+      "code_change_gt1": 0.27913153171539307
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.029453782364726067,
+      "code_change": 0.6967179775238037,
+      "code_change_gt1": 0.29438602924346924
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.030837520956993103,
+      "code_change": 0.7064453363418579,
+      "code_change_gt1": 0.3100929260253906
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.030436182394623756,
+      "code_change": 0.7052578926086426,
+      "code_change_gt1": 0.3104100227355957
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.03464357927441597,
+      "code_change": 0.7310409545898438,
+      "code_change_gt1": 0.35591793060302734
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0361986868083477,
+      "code_change": 0.7301254272460938,
+      "code_change_gt1": 0.3537099361419678
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.037666309624910355,
+      "code_change": 0.7351707220077515,
+      "code_change_gt1": 0.3613842725753784
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.037580858916044235,
+      "code_change": 0.7323181629180908,
+      "code_change_gt1": 0.3599311113357544
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.04221604764461517,
+      "code_change": 0.750848650932312,
+      "code_change_gt1": 0.39042460918426514
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.04463782534003258,
+      "code_change": 0.7541544437408447,
+      "code_change_gt1": 0.397174596786499
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.04492881894111633,
+      "code_change": 0.754457950592041,
+      "code_change_gt1": 0.39823412895202637
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.04311121627688408,
+      "code_change": 0.7363772392272949,
+      "code_change_gt1": 0.37087273597717285
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.048298053443431854,
+      "code_change": 0.7403922080993652,
+      "code_change_gt1": 0.3792266845703125
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.048238929361104965,
+      "code_change": 0.734164834022522,
+      "code_change_gt1": 0.3657931089401245
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.048127077519893646,
+      "code_change": 0.7290170192718506,
+      "code_change_gt1": 0.3546844720840454
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.0474412776529789,
+      "code_change": 0.7238930463790894,
+      "code_change_gt1": 0.3449472188949585
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04886842146515846,
+      "code_change": 0.7249300479888916,
+      "code_change_gt1": 0.3442305326461792
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.04887508973479271,
+      "code_change": 0.7300611734390259,
+      "code_change_gt1": 0.346529483795166
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04988880828022957,
+      "code_change": 0.7420228719711304,
+      "code_change_gt1": 0.3633389472961426
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.05207395181059837,
+      "code_change": 0.7567194700241089,
+      "code_change_gt1": 0.3891412019729614
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.054042235016822815,
+      "code_change": 0.7656793594360352,
+      "code_change_gt1": 0.4076550006866455
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.054470259696245193,
+      "code_change": 0.7689803838729858,
+      "code_change_gt1": 0.4156308174133301
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.0544012114405632,
+      "code_change": 0.7709763050079346,
+      "code_change_gt1": 0.42122721672058105
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.054390519857406616,
+      "code_change": 0.7717517614364624,
+      "code_change_gt1": 0.42304325103759766
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05308081582188606,
+      "code_change": 0.7688814401626587,
+      "code_change_gt1": 0.4154927730560303
+     }
+    ],
+    "ffn_out": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.008922245353460312
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.020044347271323204
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.017901893705129623
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.031742919236421585
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.03591127321124077
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.03966588154435158
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.039299190044403076
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.0486614890396595
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.049808260053396225
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.05358400568366051
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.05434676632285118
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.06206829845905304
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.06383464485406876
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.06666119396686554
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.06752967089414597
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.07269101589918137
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.0728924348950386
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.06919863075017929
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.05844362452626228
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.06462138891220093
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.06293728947639465
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.06188780441880226
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.05910281464457512
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.059651535004377365
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.06105054169893265
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.06508414447307587
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.07180853933095932
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.06981349736452103
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.0690663754940033
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.06582064926624298
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.06156759336590767
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.048774655908346176
+     }
+    ],
+    "residual": [
+     {
+      "layer": 0,
+      "kind": "linear_attention",
+      "rel": 0.0020797208417207003
+     },
+     {
+      "layer": 1,
+      "kind": "linear_attention",
+      "rel": 0.004223179072141647
+     },
+     {
+      "layer": 2,
+      "kind": "linear_attention",
+      "rel": 0.007642439566552639
+     },
+     {
+      "layer": 3,
+      "kind": "full_attention",
+      "rel": 0.008302105590701103
+     },
+     {
+      "layer": 4,
+      "kind": "linear_attention",
+      "rel": 0.010560563765466213
+     },
+     {
+      "layer": 5,
+      "kind": "linear_attention",
+      "rel": 0.012365804985165596
+     },
+     {
+      "layer": 6,
+      "kind": "linear_attention",
+      "rel": 0.015036124736070633
+     },
+     {
+      "layer": 7,
+      "kind": "full_attention",
+      "rel": 0.01709047146141529
+     },
+     {
+      "layer": 8,
+      "kind": "linear_attention",
+      "rel": 0.01877187006175518
+     },
+     {
+      "layer": 9,
+      "kind": "linear_attention",
+      "rel": 0.019343342632055283
+     },
+     {
+      "layer": 10,
+      "kind": "linear_attention",
+      "rel": 0.020189747214317322
+     },
+     {
+      "layer": 11,
+      "kind": "full_attention",
+      "rel": 0.02242632396519184
+     },
+     {
+      "layer": 12,
+      "kind": "linear_attention",
+      "rel": 0.0244767963886261
+     },
+     {
+      "layer": 13,
+      "kind": "linear_attention",
+      "rel": 0.02596093900501728
+     },
+     {
+      "layer": 14,
+      "kind": "linear_attention",
+      "rel": 0.028085963800549507
+     },
+     {
+      "layer": 15,
+      "kind": "full_attention",
+      "rel": 0.03138519823551178
+     },
+     {
+      "layer": 16,
+      "kind": "linear_attention",
+      "rel": 0.034713637083768845
+     },
+     {
+      "layer": 17,
+      "kind": "linear_attention",
+      "rel": 0.03653449937701225
+     },
+     {
+      "layer": 18,
+      "kind": "linear_attention",
+      "rel": 0.03989443928003311
+     },
+     {
+      "layer": 19,
+      "kind": "full_attention",
+      "rel": 0.04308461397886276
+     },
+     {
+      "layer": 20,
+      "kind": "linear_attention",
+      "rel": 0.04273650795221329
+     },
+     {
+      "layer": 21,
+      "kind": "linear_attention",
+      "rel": 0.042949654161930084
+     },
+     {
+      "layer": 22,
+      "kind": "linear_attention",
+      "rel": 0.04301980137825012
+     },
+     {
+      "layer": 23,
+      "kind": "full_attention",
+      "rel": 0.04375920444726944
+     },
+     {
+      "layer": 24,
+      "kind": "linear_attention",
+      "rel": 0.044425901025533676
+     },
+     {
+      "layer": 25,
+      "kind": "linear_attention",
+      "rel": 0.04570895433425903
+     },
+     {
+      "layer": 26,
+      "kind": "linear_attention",
+      "rel": 0.04911397024989128
+     },
+     {
+      "layer": 27,
+      "kind": "full_attention",
+      "rel": 0.04929009824991226
+     },
+     {
+      "layer": 28,
+      "kind": "linear_attention",
+      "rel": 0.04857300594449043
+     },
+     {
+      "layer": 29,
+      "kind": "linear_attention",
+      "rel": 0.04904470220208168
+     },
+     {
+      "layer": 30,
+      "kind": "linear_attention",
+      "rel": 0.0523952953517437
+     },
+     {
+      "layer": 31,
+      "kind": "full_attention",
+      "rel": 0.05160612612962723
+     }
+    ]
+   }
+  }
+ },
+ "total_secs": 1745.0149583816528,
+ "gpu_peak_mem_GB": 23.443132416
+}

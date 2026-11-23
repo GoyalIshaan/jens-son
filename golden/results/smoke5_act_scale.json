@@ -1,0 +1,461 @@
+{
+ "kind": "exp5_act_scale",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_mem_GB": 25.250627584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-20T21:33:22Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": true,
+ "n_tokens": {
+  "wikitext": 512,
+  "python_code": 512
+ },
+ "formats": [
+  [
+   "fp32 scale (today)",
+   "int8_g32"
+  ],
+  [
+   "bf16 scale, nearest",
+   "int8_g32_bf16s"
+  ],
+  [
+   "bf16 scale, rounded up",
+   "int8_g32_bf16up"
+  ],
+  [
+   "power-of-two scale, rounded up",
+   "int8_g32_p2"
+  ],
+  [
+   "power-of-two scale, OCP MX",
+   "int8_g32_mx"
+  ]
+ ],
+ "conditions": {
+  "bf16 weights": {
+   "numerics_extra": {},
+   "rows": {
+    "int8_g32": {
+     "name": "fp32 scale (today)",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.0007437355816364288,
+       "kl_stderr": 0.00015476721455343068,
+       "kl_p99": 0.006320062093436718,
+       "top1_agree": 0.9921875,
+       "ppl_change_pct": 0.09565353393554688,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.000639284320641309,
+       "kl_stderr": 7.58159949327819e-05,
+       "kl_p99": 0.007878596894443035,
+       "top1_agree": 0.998046875,
+       "ppl_change_pct": 0.21134614944458008,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      }
+     }
+    },
+    "int8_g32_bf16s": {
+     "name": "bf16 scale, nearest",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.0006768836756236851,
+       "kl_stderr": 9.531573596177623e-05,
+       "kl_p99": 0.00551560427993536,
+       "top1_agree": 0.98828125,
+       "ppl_change_pct": 0.24422407150268555,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -6.685199332423508e-05,
+        "stderr": 0.00014834065223112702
+       },
+       "nll_vs_today": {
+        "mean": 0.0014831935986876488,
+        "stderr": 0.0017262519104406238
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0007414187421090901,
+       "kl_stderr": 8.757528848946095e-05,
+       "kl_p99": 0.011195714585483074,
+       "top1_agree": 0.994140625,
+       "ppl_change_pct": 0.4743218421936035,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.00010213439236395061,
+        "stderr": 6.972411938477308e-05
+       },
+       "nll_vs_today": {
+        "mean": 0.0026208660565316677,
+        "stderr": 0.0022878716699779034
+       }
+      }
+     }
+    },
+    "int8_g32_bf16up": {
+     "name": "bf16 scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.00095194554887712,
+       "kl_stderr": 0.00022315606474876404,
+       "kl_p99": 0.005547849927097559,
+       "top1_agree": 0.986328125,
+       "ppl_change_pct": 0.45821666717529297,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.00020820987992919981,
+        "stderr": 0.00023879365471657366
+       },
+       "nll_vs_today": {
+        "mean": 0.0036154158879071474,
+        "stderr": 0.0019107854459434748
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0008011452737264335,
+       "kl_stderr": 0.00015007898036856204,
+       "kl_p99": 0.009188023395836353,
+       "top1_agree": 0.99609375,
+       "ppl_change_pct": 0.3131270408630371,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.00016186093853320926,
+        "stderr": 0.00012034290557494387
+       },
+       "nll_vs_today": {
+        "mean": 0.0010152817703783512,
+        "stderr": 0.00263419677503407
+       }
+      }
+     }
+    },
+    "int8_g32_p2": {
+     "name": "power-of-two scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.0014200082514435053,
+       "kl_stderr": 0.00017538339307066053,
+       "kl_p99": 0.013254999183118343,
+       "top1_agree": 0.986328125,
+       "ppl_change_pct": 0.0912785530090332,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0006762724951840937,
+        "stderr": 0.00015291724412236363
+       },
+       "nll_vs_today": {
+        "mean": -4.3886135244974867e-05,
+        "stderr": 0.0027203988283872604
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0024830964393913746,
+       "kl_stderr": 0.0005168502102605999,
+       "kl_p99": 0.04147092252969742,
+       "top1_agree": 0.9921875,
+       "ppl_change_pct": 0.24284124374389648,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0018438120605424047,
+        "stderr": 0.0004803508927579969
+       },
+       "nll_vs_today": {
+        "mean": 0.0003143458452541381,
+        "stderr": 0.00329476036131382
+       }
+      }
+     }
+    },
+    "int8_g32_mx": {
+     "name": "power-of-two scale, OCP MX",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.0014846972189843655,
+       "kl_stderr": 0.00024818710517138243,
+       "kl_p99": 0.012955516576766968,
+       "top1_agree": 0.98828125,
+       "ppl_change_pct": -0.009322166442871094,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0007409615209326148,
+        "stderr": 0.00021616264712065458
+       },
+       "nll_vs_today": {
+        "mean": -0.001049406942911446,
+        "stderr": 0.0029521859250962734
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.0025441115722060204,
+       "kl_stderr": 0.0006605336675420403,
+       "kl_p99": 0.042397238314151764,
+       "top1_agree": 0.994140625,
+       "ppl_change_pct": -0.002562999725341797,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0019048270769417286,
+        "stderr": 0.0006242953240871429
+       },
+       "nll_vs_today": {
+        "mean": -0.002136769238859415,
+        "stderr": 0.003833307884633541
+       }
+      }
+     }
+    }
+   }
+  },
+  "chip weights + int8 KV": {
+   "numerics_extra": {
+    "weights": {
+     "default": "lut4_g16_fp8_t8",
+     "embed": "int8_g32"
+    },
+    "kv": "int8_head"
+   },
+   "rows": {
+    "int8_g32": {
+     "name": "fp32 scale (today)",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05073050409555435,
+       "kl_stderr": 0.006142450962215662,
+       "kl_p99": 0.7810539603233337,
+       "top1_agree": 0.9140625,
+       "ppl_change_pct": 7.916688919067383,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.08698005229234695,
+       "kl_stderr": 0.013219352811574936,
+       "kl_p99": 1.029232382774353,
+       "top1_agree": 0.94140625,
+       "ppl_change_pct": 7.563614845275879,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       },
+       "nll_vs_today": {
+        "mean": 0.0,
+        "stderr": 0.0
+       }
+      }
+     }
+    },
+    "int8_g32_bf16s": {
+     "name": "bf16 scale, nearest",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.04990806430578232,
+       "kl_stderr": 0.006004528608173132,
+       "kl_p99": 0.6304696798324585,
+       "top1_agree": 0.9140625,
+       "ppl_change_pct": 7.757782936096191,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -0.0008224394987337291,
+        "stderr": 0.000995983020402491
+       },
+       "nll_vs_today": {
+        "mean": -0.0014733672142028809,
+        "stderr": 0.0016794727416709065
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.08820009976625443,
+       "kl_stderr": 0.013260755687952042,
+       "kl_p99": 1.0911742448806763,
+       "top1_agree": 0.9375,
+       "ppl_change_pct": 7.434189319610596,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.0012200503842905164,
+        "stderr": 0.0010568969883024693
+       },
+       "nll_vs_today": {
+        "mean": -0.0012039148714393377,
+        "stderr": 0.0019361539743840694
+       }
+      }
+     }
+    },
+    "int8_g32_bf16up": {
+     "name": "bf16 scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.050118014216423035,
+       "kl_stderr": 0.00599253922700882,
+       "kl_p99": 0.6395056247711182,
+       "top1_agree": 0.919921875,
+       "ppl_change_pct": 7.510173320770264,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -0.0006124896463006735,
+        "stderr": 0.000969027285464108
+       },
+       "nll_vs_today": {
+        "mean": -0.0037740578409284353,
+        "stderr": 0.002348592272028327
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.08554436266422272,
+       "kl_stderr": 0.01235137414187193,
+       "kl_p99": 1.1408438682556152,
+       "top1_agree": 0.935546875,
+       "ppl_change_pct": 7.171845436096191,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -0.0014356952160596848,
+        "stderr": 0.002053681528195739
+       },
+       "nll_vs_today": {
+        "mean": -0.0036487728357315063,
+        "stderr": 0.0026922256220132113
+       }
+      }
+     }
+    },
+    "int8_g32_p2": {
+     "name": "power-of-two scale, rounded up",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05214107409119606,
+       "kl_stderr": 0.006717992946505547,
+       "kl_p99": 0.7316334843635559,
+       "top1_agree": 0.919921875,
+       "ppl_change_pct": 8.423352241516113,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.001410576282069087,
+        "stderr": 0.0013640359975397587
+       },
+       "nll_vs_today": {
+        "mean": 0.004684004466980696,
+        "stderr": 0.003232998074963689
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.08348061144351959,
+       "kl_stderr": 0.011916481889784336,
+       "kl_p99": 1.0164638757705688,
+       "top1_agree": 0.935546875,
+       "ppl_change_pct": 6.629419326782227,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -0.00349943689070642,
+        "stderr": 0.0036427758168429136
+       },
+       "nll_vs_today": {
+        "mean": -0.008722974918782711,
+        "stderr": 0.004093135707080364
+       }
+      }
+     }
+    },
+    "int8_g32_mx": {
+     "name": "power-of-two scale, OCP MX",
+     "sets": {
+      "wikitext": {
+       "kl_mean": 0.05103852599859238,
+       "kl_stderr": 0.006512119434773922,
+       "kl_p99": 0.6889263987541199,
+       "top1_agree": 0.92578125,
+       "ppl_change_pct": 8.152437210083008,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": 0.00030802469700574875,
+        "stderr": 0.0014835954643785954
+       },
+       "nll_vs_today": {
+        "mean": 0.002182475756853819,
+        "stderr": 0.0029204192105680704
+       }
+      },
+      "python_code": {
+       "kl_mean": 0.08196128159761429,
+       "kl_stderr": 0.011488277465105057,
+       "kl_p99": 0.9661239385604858,
+       "top1_agree": 0.943359375,
+       "ppl_change_pct": 6.271195411682129,
+       "n": 512,
+       "kl_vs_today": {
+        "mean": -0.005018769763410091,
+        "stderr": 0.004163385834544897
+       },
+       "nll_vs_today": {
+        "mean": -0.012088160030543804,
+        "stderr": 0.00470634363591671
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "gptq_secs": 283.6911768913269,
+ "main_weight_rel_rmse": {
+  "embed": {
+   "format": "int8_g32",
+   "rel_rmse": 0.005372135360738954,
+   "weights": 1017118720
+  },
+  "ffn": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.10419389991930283,
+   "weights": 4831838208
+  },
+  "deltanet": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.11513322938110454,
+   "weights": 1616904192
+  },
+  "attn": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.11617170312034933,
+   "weights": 469762048
+  },
+  "lm_head": {
+   "format": "lut4_g16_fp8_t8",
+   "rel_rmse": 0.10300945705529642,
+   "weights": 1017118720
+  }
+ },
+ "total_secs": 361.2609302997589,
+ "gpu_peak_mem_GB": 22.596953088
+}

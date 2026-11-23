@@ -1,0 +1,22 @@
+#!/bin/sh
+# Build the whole-chip testbench with Verilator (much faster than Icarus).
+# This Mac needs two workarounds: the 26.5 SDK (ld can't read SDK 27's arm64e.x1 stubs) and Apple's ar
+# (Homebrew binutils' ar writes archives ld64 rejects).
+#   sh rtl/chip/build_verilator.sh SRAM_BYTES DRAM_BYTES [RP] [OUTDIR] [MAXR] [ACCW] [ER] [BANKS] [ARB] [SKEW]
+set -e
+HERE=$(cd "$(dirname "$0")" && pwd)
+SRAM=${1:-1048576}; DRAM=${2:-1048576}; RP=${3:-1}; MAXR=${5:-128}; ACCW=${6:-8192}; ER=${7:-16}; BANKS=${8:-64}; ARB=${9:-1}; SKEW=${10:-0}
+OUT=${4:-$HOME/.cache/chip_vl/s${SRAM}_d${DRAM}_r${RP}_m${MAXR}_a${ACCW}_e${ER}_b${BANKS}_arb${ARB}_k${SKEW}}   # make cannot build in a path with spaces
+VEC=$HERE/../vec; MXU=$HERE/../mxu
+export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk
+mkdir -p "$OUT"
+cd "$OUT"
+verilator --binary --timing -j 10 -Wno-fatal -Wno-lint -Wno-style -Wno-MULTIDRIVEN -Wno-TIMESCALEMOD \
+  --top-module tb_chip -GSRAM_BYTES=$SRAM -GDRAM_BYTES=$DRAM -GRP=$RP -GMAXR=$MAXR -GACCW=$ACCW -GER=$ER -GBANKS=$BANKS -GARB=$ARB -GSKEW=$SKEW \
+  -I"$HERE" -I"$VEC" -MAKEFLAGS "AR=/usr/bin/ar RANLIB=/usr/bin/ranlib" -CFLAGS -O1 \
+  --Mdir obj -o chip_sim \
+  "$HERE"/tb_chip.sv "$HERE"/chip_top.sv "$HERE"/chip_core.sv "$HERE"/chip_dma.sv "$HERE"/chip_wfifo.sv \
+  "$HERE"/chip_mxu.sv "$HERE"/mxu_row_pipe.sv "$HERE"/chip_vunit.sv "$HERE"/chip_sram.sv \
+  "$VEC"/vec_*.sv "$VEC"/vector_exec.sv "$VEC"/sfu.v "$VEC"/act_quant32.v "$VEC"/act_quant32_pipe.v "$VEC"/fp32_fma*.v \
+  "$MXU"/mxu_group.v "$MXU"/beat_reducer.v
+echo "built $OUT/obj/chip_sim"

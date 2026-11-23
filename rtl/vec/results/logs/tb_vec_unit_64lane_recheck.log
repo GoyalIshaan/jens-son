@@ -1,0 +1,15 @@
+PASS descriptor 0, V opcode 1, 16 clocks
+PASS descriptor 1, V opcode 2, 16 clocks
+PASS descriptor 2, V opcode 3, 17 clocks
+PASS descriptor 3, V opcode 4, 12 clocks
+PASS descriptor 4, V opcode 5, 16 clocks
+PASS descriptor 5, V opcode 6, 12 clocks
+PASS descriptor 6, V opcode 7, 77 clocks
+FATAL: /var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_decode_debug_2l4mv8ip/debug.sv:74: case 7 op 8 addr 4224 got 80 expected 00
+       Time: 1140  Scope: tb_vec_unit
+Traceback (most recent call last):
+  File "<stdin>", line 20, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['vvp', '/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T/vec_decode_debug_2l4mv8ip/sim', '+bytes=454208', '+cases=30']' returned non-zero exit status 1.

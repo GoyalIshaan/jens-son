@@ -1,0 +1,201 @@
+{
+ "kind": "exp2_gptq",
+ "env": {
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "gpu_mem_GB": 33.6707584,
+  "cpu_count": 4,
+  "host_ram_GB": 68.719476736,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "transformers": "5.22.2",
+  "python": "3.11.11",
+  "utc": "2026-11-12T05:14:59Z",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "4.57.0.dev0"
+ },
+ "smoke": false,
+ "n_tokens": {
+  "wikitext": 2048,
+  "python_code": 2048
+ },
+ "total_secs": 557.6596732139587,
+ "gpu_peak_mem_GB": 22.603523072,
+ "config": {
+  "name": "gptq lut4_g16_fp8, embed int8, control rerun",
+  "numerics": {
+   "weights": {
+    "default": "lut4_g16_fp8",
+    "embed": "int8_g32"
+   },
+   "act": "fp32",
+   "kv": "fp32",
+   "state": "fp32"
+  },
+  "n_calib_seq": 64,
+  "calib_seq_len": 512,
+  "gptq_secs": 520.4361279010773,
+  "weight_rel_rmse": {
+   "embed": {
+    "format": "int8_g32",
+    "rel_rmse": 0.005372135360738954,
+    "weights": 1017118720
+   },
+   "ffn": {
+    "format": "lut4_g16_fp8",
+    "rel_rmse": 0.09669209940919181,
+    "weights": 4831838208
+   },
+   "deltanet": {
+    "format": "lut4_g16_fp8",
+    "rel_rmse": 0.1002169809552097,
+    "weights": 1616904192
+   },
+   "attn": {
+    "format": "lut4_g16_fp8",
+    "rel_rmse": 0.1048325845400176,
+    "weights": 469762048
+   },
+   "lm_head": {
+    "format": "lut4_g16_fp8",
+    "rel_rmse": 0.09151017752352432,
+    "weights": 1017118720
+   }
+  },
+  "predicted": {
+   "weight_GB": 4.465378304,
+   "bytes_per_token_GB": 4.700259328,
+   "card_tok_s": 100.2157470746261
+  },
+  "table_stats": {
+   "n_tables": 249,
+   "gap_min": 0.07736164331436157,
+   "gap_median": 0.12127572298049927,
+   "gap_mean": 0.1303471475839615,
+   "smallest_gap_p01": 0.0792146697640419,
+   "min_distinct_levels": 16,
+   "tables_with_merged_levels": 0
+  },
+  "sets": {
+   "wikitext": {
+    "kl_mean": 0.051324512809515,
+    "kl_stderr": 0.01336746197193861,
+    "kl_median": 0.007915254682302475,
+    "kl_p99": 0.3521890640258789,
+    "kl_max": 20.733028411865234,
+    "top1_agree": 0.94677734375,
+    "top5_overlap": 0.9074219465255737,
+    "ppl": 7.0406813621521,
+    "ppl_ref": 6.918428421020508,
+    "ppl_change_pct": 1.7670631408691406,
+    "nll_diff_mean": 0.017516309395432472,
+    "nll_diff_stderr": 0.013419640250504017,
+    "kl_by_position": {
+     "0-1024": 0.0350504070520401,
+     "1024-2048": 0.0675986185669899
+    }
+   },
+   "python_code": {
+    "kl_mean": 0.05161415785551071,
+    "kl_stderr": 0.0035564235877245665,
+    "kl_median": 0.0019406061619520187,
+    "kl_p99": 0.8303008675575256,
+    "kl_max": 2.0728321075439453,
+    "top1_agree": 0.94287109375,
+    "top5_overlap": 0.8733398914337158,
+    "ppl": 1.5730340480804443,
+    "ppl_ref": 1.4730323553085327,
+    "ppl_change_pct": 6.788837909698486,
+    "nll_diff_mean": 0.0656832605600357,
+    "nll_diff_stderr": 0.008038765750825405,
+    "kl_by_position": {
+     "0-1024": 0.04700937867164612,
+     "1024-2048": 0.056218937039375305
+    }
+   }
+  },
+  "with_act_int8_kv_int8": {
+   "numerics": {
+    "weights": {
+     "default": "lut4_g16_fp8",
+     "embed": "int8_g32"
+    },
+    "act": "int8_g32",
+    "kv": "int8_g64",
+    "state": "fp32"
+   },
+   "sets": {
+    "wikitext": {
+     "kl_mean": 0.0489281490445137,
+     "kl_stderr": 0.012599854730069637,
+     "kl_median": 0.007905523292720318,
+     "kl_p99": 0.3678496778011322,
+     "kl_max": 20.299646377563477,
+     "top1_agree": 0.9453125,
+     "top5_overlap": 0.9040038585662842,
+     "ppl": 7.0167365074157715,
+     "ppl_ref": 6.918428421020508,
+     "ppl_change_pct": 1.4209628105163574,
+     "nll_diff_mean": 0.014109409414231777,
+     "nll_diff_stderr": 0.013003388419747353,
+     "kl_by_position": {
+      "0-1024": 0.03742222487926483,
+      "1024-2048": 0.060434065759181976
+     }
+    },
+    "python_code": {
+     "kl_mean": 0.053232934325933456,
+     "kl_stderr": 0.003619204042479396,
+     "kl_median": 0.001954104285687208,
+     "kl_p99": 0.9261133670806885,
+     "kl_max": 2.1870312690734863,
+     "top1_agree": 0.9443359375,
+     "top5_overlap": 0.8721680641174316,
+     "ppl": 1.5800559520721436,
+     "ppl_ref": 1.4730323553085327,
+     "ppl_change_pct": 7.26553201675415,
+     "nll_diff_mean": 0.07013718783855438,
+     "nll_diff_stderr": 0.008308673277497292,
+     "kl_by_position": {
+      "0-1024": 0.04844963923096657,
+      "1024-2048": 0.05801623314619064
+     }
+    }
+   }
+  }
+ },
+ "log": [
+  "  layer  0 (linear_attention) gptq done in 18.3s",
+  "  layer  1 (linear_attention) gptq done in 18.1s",
+  "  layer  2 (linear_attention) gptq done in 18.7s",
+  "  layer  3 (full_attention) gptq done in 9.3s",
+  "  layer  4 (linear_attention) gptq done in 18.1s",
+  "  layer  5 (linear_attention) gptq done in 18.2s",
+  "  layer  6 (linear_attention) gptq done in 18.6s",
+  "  layer  7 (full_attention) gptq done in 9.2s",
+  "  layer  8 (linear_attention) gptq done in 18.5s",
+  "  layer  9 (linear_attention) gptq done in 18.1s",
+  "  layer 10 (linear_attention) gptq done in 18.1s",
+  "  layer 11 (full_attention) gptq done in 9.5s",
+  "  layer 12 (linear_attention) gptq done in 18.4s",
+  "  layer 13 (linear_attention) gptq done in 18.1s",
+  "  layer 14 (linear_attention) gptq done in 18.0s",
+  "  layer 15 (full_attention) gptq done in 9.4s",
+  "  layer 16 (linear_attention) gptq done in 18.5s",
+  "  layer 17 (linear_attention) gptq done in 18.8s",
+  "  layer 18 (linear_attention) gptq done in 18.8s",
+  "  layer 19 (full_attention) gptq done in 9.3s",
+  "  layer 20 (linear_attention) gptq done in 18.4s",
+  "  layer 21 (linear_attention) gptq done in 18.5s",
+  "  layer 22 (linear_attention) gptq done in 18.7s",
+  "  layer 23 (full_attention) gptq done in 9.3s",
+  "  layer 24 (linear_attention) gptq done in 18.6s",
+  "  layer 25 (linear_attention) gptq done in 18.2s",
+  "  layer 26 (linear_attention) gptq done in 18.4s",
+  "  layer 27 (full_attention) gptq done in 9.2s",
+  "  layer 28 (linear_attention) gptq done in 18.4s",
+  "  layer 29 (linear_attention) gptq done in 18.4s",
+  "  layer 30 (linear_attention) gptq done in 18.9s",
+  "  layer 31 (full_attention) gptq done in 9.3s",
+  "  gptq total 519s"
+ ]
+}

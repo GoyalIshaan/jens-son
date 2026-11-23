@@ -1,0 +1,135 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (221ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 2 changed file(s) (1.43 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 kB 0:00:00
+✓ Files synced (3.1s)
+! GPU capacity for RTX5090, A10G is currently low.
+Running beam_exp3:tables_b...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 279269.95 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 651132.26 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 536250.23 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+  layer  0 (linear_attention) gptq done in 19.3s
+  layer  1 (linear_attention) gptq done in 18.8s
+  layer  2 (linear_attention) gptq done in 18.4s
+  layer  3 (full_attention) gptq done in 9.6s
+  layer  4 (linear_attention) gptq done in 18.4s
+  layer  5 (linear_attention) gptq done in 18.3s
+  layer  6 (linear_attention) gptq done in 18.5s
+  layer  7 (full_attention) gptq done in 9.6s
+  layer  8 (linear_attention) gptq done in 18.4s
+  layer  9 (linear_attention) gptq done in 18.4s
+  layer 10 (linear_attention) gptq done in 18.4s
+  layer 11 (full_attention) gptq done in 9.7s
+  layer 12 (linear_attention) gptq done in 18.4s
+  layer 13 (linear_attention) gptq done in 18.3s
+  layer 14 (linear_attention) gptq done in 18.3s
+  layer 15 (full_attention) gptq done in 9.7s
+  layer 16 (linear_attention) gptq done in 18.3s
+  layer 17 (linear_attention) gptq done in 18.4s
+  layer 18 (linear_attention) gptq done in 18.4s
+  layer 19 (full_attention) gptq done in 9.8s
+  layer 20 (linear_attention) gptq done in 18.4s
+  layer 21 (linear_attention) gptq done in 18.4s
+  layer 22 (linear_attention) gptq done in 18.4s
+  layer 23 (full_attention) gptq done in 9.7s
+  layer 24 (linear_attention) gptq done in 18.5s
+  layer 25 (linear_attention) gptq done in 18.4s
+  layer 26 (linear_attention) gptq done in 18.5s
+  layer 27 (full_attention) gptq done in 9.6s
+  layer 28 (linear_attention) gptq done in 18.4s
+  layer 29 (linear_attention) gptq done in 18.4s
+  layer 30 (linear_attention) gptq done in 18.4s
+  layer 31 (full_attention) gptq done in 9.6s
+  gptq total 524s
+SAVED
+ 
+gptq lut4_g16_fp8, embed int8, table e4m3
+ 
+{'wikitext': 0.0381, 'python_code': 0.0518}
+  layer  0 (linear_attention) gptq done in 18.7s
+  layer  1 (linear_attention) gptq done in 18.6s
+  layer  2 (linear_attention) gptq done in 18.4s
+  layer  3 (full_attention) gptq done in 9.6s
+  layer  4 (linear_attention) gptq done in 18.4s
+  layer  5 (linear_attention) gptq done in 18.3s
+  layer  6 (linear_attention) gptq done in 18.4s
+  layer  7 (full_attention) gptq done in 9.7s
+  layer  8 (linear_attention) gptq done in 18.5s
+  layer  9 (linear_attention) gptq done in 18.6s
+  layer 10 (linear_attention) gptq done in 18.4s
+  layer 11 (full_attention) gptq done in 9.8s
+  layer 12 (linear_attention) gptq done in 18.3s
+  layer 13 (linear_attention) gptq done in 18.5s
+  layer 14 (linear_attention) gptq done in 18.8s
+  layer 15 (full_attention) gptq done in 9.7s
+  layer 16 (linear_attention) gptq done in 18.6s
+  layer 17 (linear_attention) gptq done in 18.4s
+  layer 18 (linear_attention) gptq done in 18.5s
+  layer 19 (full_attention) gptq done in 9.8s
+  layer 20 (linear_attention) gptq done in 18.4s
+  layer 21 (linear_attention) gptq done in 18.2s
+  layer 22 (linear_attention) gptq done in 18.8s
+  layer 23 (full_attention) gptq done in 9.6s
+  layer 24 (linear_attention) gptq done in 18.3s
+  layer 25 (linear_attention) gptq done in 18.4s
+  layer 26 (linear_attention) gptq done in 18.4s
+  layer 27 (full_attention) gptq done in 9.8s
+  layer 28 (linear_attention) gptq done in 18.3s
+  layer 29 (linear_attention) gptq done in 18.3s
+  layer 30 (linear_attention) gptq done in 18.4s
+  layer 31 (full_attention) gptq done in 9.9s
+  gptq total 525s
+SAVED
+ 
+gptq lut4_g16_fp8, embed int8, table int6
+ 
+{'wikitext': 0.0504, 'python_code': 0.0504}
+  layer  0 (linear_attention) gptq done in 18.6s
+  layer  1 (linear_attention) gptq done in 18.5s
+  layer  2 (linear_attention) gptq done in 18.4s
+  layer  3 (full_attention) gptq done in 9.7s
+  layer  4 (linear_attention) gptq done in 18.6s
+  layer  5 (linear_attention) gptq done in 18.4s
+  layer  6 (linear_attention) gptq done in 18.3s
+  layer  7 (full_attention) gptq done in 9.5s
+  layer  8 (linear_attention) gptq done in 18.5s
+  layer  9 (linear_attention) gptq done in 18.8s
+  layer 10 (linear_attention) gptq done in 18.6s
+  layer 11 (full_attention) gptq done in 9.7s
+  layer 12 (linear_attention) gptq done in 18.4s
+  layer 13 (linear_attention) gptq done in 18.7s
+  layer 14 (linear_attention) gptq done in 18.7s
+  layer 15 (full_attention) gptq done in 9.7s
+  layer 16 (linear_attention) gptq done in 18.3s
+  layer 17 (linear_attention) gptq done in 18.2s
+  layer 18 (linear_attention) gptq done in 18.4s
+  layer 19 (full_attention) gptq done in 9.7s
+  layer 20 (linear_attention) gptq done in 18.5s
+  layer 21 (linear_attention) gptq done in 18.4s
+  layer 22 (linear_attention) gptq done in 18.4s
+  layer 23 (full_attention) gptq done in 9.6s
+  layer 24 (linear_attention) gptq done in 18.3s
+  layer 25 (linear_attention) gptq done in 18.5s
+  layer 26 (linear_attention) gptq done in 18.5s
+  layer 27 (full_attention) gptq done in 9.7s
+  layer 28 (linear_attention) gptq done in 18.4s
+  layer 29 (linear_attention) gptq done in 18.4s
+  layer 30 (linear_attention) gptq done in 18.3s
+  layer 31 (full_attention) gptq done in 9.7s
+  gptq total 524s
+SAVED
+ 
+gptq lut4_g16_fp8, embed int8, table int5
+ 
+{'wikitext': 0.0461, 'python_code': 0.0638}
+✓ Function complete (29m07s)

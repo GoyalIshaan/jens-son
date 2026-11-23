@@ -1,0 +1,12 @@
+{
+ "act_quant32 D100000": {
+  "area_um2": 547.9164,
+  "nand2_eq": 6263,
+  "delay_ps": 2871.39
+ },
+ "act_quant32 D1": {
+  "area_um2": 1045.99836,
+  "nand2_eq": 11957,
+  "delay_ps": 3086.76
+ }
+}

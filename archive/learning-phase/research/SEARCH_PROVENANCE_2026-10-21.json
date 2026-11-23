@@ -1,0 +1,1370 @@
+{
+  "research_date": "2026-10-21",
+  "timezone": "America/Chicago",
+  "search_provider": "Exa",
+  "search_calls": 41,
+  "returned_search_entries": 205,
+  "method_note": "Search results are discovery records, not independently validated studies. They include secondary material and multiple URLs or versions for the same paper. The factbook cites primary evidence separately. Full-page reads include selected passages and abstracts; they are not independent reproductions of reported experiments.",
+  "thematic_workstreams": [
+    "LLM mathematics and memory/compute costs",
+    "Attention and cache architectures",
+    "Quantization, ternary arithmetic and sparsity",
+    "Recurrent and hybrid model families",
+    "MoE, serving, speculation and disaggregation",
+    "PIM, analog and photonic mechanisms",
+    "Current company architectures and availability",
+    "RTL/FPGA implementations and open research tools"
+  ],
+  "searches": [
+    {
+      "search_track": "math",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Efficiently Scaling Transformer Inference",
+          "url": "https://export.arxiv.org/pdf/2211.05102v1.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "N/A",
+          "url": "https://arxiv.org/pdf/2009.04598",
+          "published": "N/A"
+        },
+        {
+          "title": "Full Stack Optimization of Transformer Inference: a Survey",
+          "url": "https://doi.org/10.48550/arxiv.2302.14017",
+          "published": "2023-02-27T00:00:00.000Z"
+        },
+        {
+          "title": "[2407.09111] Inference Optimization of Foundation Models on AI Accelerators",
+          "url": "https://ar5iv.labs.arxiv.org/html/2407.09111",
+          "published": "N/A"
+        },
+        {
+          "title": "Anne Ouyang",
+          "url": "https://dspace.mit.edu/bitstream/handle/1721.1/151543/ouyang-aouyang-meng-eecs-2023-thesis.pdf?isAllowed=y&sequence=1",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "attention",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "url": "https://arxiv.org/abs/2205.14135",
+          "published": "2022-06-23T00:00:00.000Z"
+        },
+        {
+          "title": "FlashAttention-3:Fast and Accurate Attention with Asynchrony and Low-precision",
+          "url": "https://arxiv.org/html/2407.08608v2",
+          "published": "2024-07-12T00:00:00.000Z"
+        },
+        {
+          "title": "Dao-AILab/flash-attention",
+          "url": "https://github.com/dao-AILab/flash-attention/",
+          "published": "N/A"
+        },
+        {
+          "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning | Princeton NLP Group",
+          "url": "https://princeton-nlp.github.io/flash-atttention-2/",
+          "published": "2023-06-17T00:00:00.000Z"
+        },
+        {
+          "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision | Tri Dao",
+          "url": "https://tridao.me/blog/2024/flash3/",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "alternatives",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+          "url": "https://arxiv.org/abs/2405.21060",
+          "published": "2024-05-31T00:00:00.000Z"
+        },
+        {
+          "title": "NETWORKS: MAMBA2",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/4904fad153f6434a7bcf04465d4be2cc-Paper-Conference.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "RWKV: Reinventing RNNs for the Transformer Era",
+          "url": "https://arxiv.org/html/2305.13048v2",
+          "published": "N/A"
+        },
+        {
+          "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+          "url": "https://arxiv.org/abs/2312.06635v2",
+          "published": "2023-12-12T00:00:00.000Z"
+        },
+        {
+          "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+          "url": "https://arxiv.org/html/2412.06464",
+          "published": "2025-03-06T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "companies",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "AI Accelerator - AWS Trainium - AWS",
+          "url": "https://aws.amazon.com/ai/machine-learning/trainium/",
+          "published": "N/A"
+        },
+        {
+          "title": "Google Cloud and NVIDIA Announce General Availability of NVIDIA Vera Rubin Infrastructure | NVIDIA Blog",
+          "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+          "published": "2026-10-21T10:45:17.000Z"
+        },
+        {
+          "title": "NVIDIA Kicks Off the Next Generation of AI With Rubin",
+          "url": "https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer",
+          "published": "2026-01-05T00:00:00.000Z"
+        },
+        {
+          "title": "NVIDIA Blackwell Architecture Technical Overview",
+          "url": "https://resources.nvidia.com/en-us-blackwell-architecture/blackwell-architecture-technical-brief",
+          "published": "N/A"
+        },
+        {
+          "title": "N/A",
+          "url": "https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "recurrent",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+          "url": "https://proceedings.mlr.press/v235/dao24a.html",
+          "published": "2024-07-08T00:00:00.000Z"
+        },
+        {
+          "title": "[2503.14456] RWKV-7 \"Goose\" with Expressive Dynamic State Evolution",
+          "url": "https://arxiv.org/abs/2503.14456",
+          "published": "2025-03-18T06:11:00.000Z"
+        },
+        {
+          "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+          "url": "https://arxiv.org/abs/2405.21060",
+          "published": "2024-05-31T00:00:00.000Z"
+        },
+        {
+          "title": "Mamba-2: Algorithms and Systems | Princeton Language and Intelligence",
+          "url": "https://pli.princeton.edu/blog/2024/mamba-2-algorithms-and-systems",
+          "published": "2024-06-03T00:00:00.000Z"
+        },
+        {
+          "title": "Transformers are SSMs | Proceedings of the 41st International Conference on Machine Learning",
+          "url": "https://dl.acm.org/doi/10.5555/3692070.3692469",
+          "published": "2024-07-21T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "moe",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "DeepSeek-V3 Technical Report",
+          "url": "https://arxiv.org/html/2412.19437",
+          "published": "2025-02-18T00:00:00.000Z"
+        },
+        {
+          "title": "DeepSeek-V3 Technical Report",
+          "url": "https://arxiv.org/html/2412.19437v2",
+          "published": "2025-02-18T00:00:00.000Z"
+        },
+        {
+          "title": "GitHub - deepseek-ai/DeepSeek-V3 \u00b7 GitHub",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/tree/main?tab=readme-ov-file",
+          "published": "N/A"
+        },
+        {
+          "title": "inference/model.py",
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py",
+          "published": "N/A"
+        },
+        {
+          "title": "DeepSeek-V3 Technical Report",
+          "url": "https://doi.org/10.48550/arxiv.2412.19437",
+          "published": "2024-12-27T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "lowbit",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Bitnet.cpp: Efficient Edge Inference for Ternary LLMs - ACL Anthology",
+          "url": "https://aclanthology.org/2025.acl-long.457/",
+          "published": "N/A"
+        },
+        {
+          "title": "microsoft/T-MAC",
+          "url": "https://github.com/microsoft/T-MAC?tab=readme-ov-file",
+          "published": "N/A"
+        },
+        {
+          "title": "1-bit AI Infra: Part 1.1, Fast and Lossless BitNet b1.58 Inference on CPUs - Microsoft Research",
+          "url": "https://www.microsoft.com/en-us/research/publication/1-bit-ai-infra-part-1-1-fast-and-lossless-bitnet-b1-58-inference-on-cpus/",
+          "published": "2024-10-20T00:00:00.000Z"
+        },
+        {
+          "title": "T-MAC: CPU Renaissance via Table Lookup for Low-Bit LLM Deployment on Edge",
+          "url": "https://arxiv.org/html/2407.00088v2",
+          "published": "N/A"
+        },
+        {
+          "title": "microsoft/BitNet",
+          "url": "https://github.com/microsoft/bitnet",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "hardwarepapers",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Hardware Acceleration of LLMs: A comprehensive survey and comparison",
+          "url": "https://arxiv.org/html/2409.03384",
+          "published": "N/A"
+        },
+        {
+          "title": "A survey of FPGA and ASIC designs for transformer inference acceleration and optimization \u2606",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S138376212400184X",
+          "published": "N/A"
+        },
+        {
+          "title": "A Survey on Hardware Accelerators for Large Language ...",
+          "url": "https://www.mdpi.com/2076-3417/15/2/586",
+          "published": "N/A"
+        },
+        {
+          "title": "[2409.15654] Cambricon-LLM: A Chiplet-Based Hybrid Architecture for On-Device Inference of 70B LLM",
+          "url": "https://arxiv.org/abs/2409.15654",
+          "published": "2024-09-24T01:40:43.000Z"
+        },
+        {
+          "title": "DFX: A Low-latency Multi-FPGA Appliance for Accelerating Transformer-based Text Generation | SCIENCE@home",
+          "url": "https://sah.borca.ai/papers/252439113",
+          "published": "2022-08-21T09:21:10.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "computeinmemory",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Unleashing the Potential of PIM: Accelerating Large Batched Inference of Transformer-Based Generative Models",
+          "url": "https://doi.org/10.1109/hpca57654.2024.00052",
+          "published": "2024-03-02T00:00:00.000Z"
+        },
+        {
+          "title": "NeuPIMs: NPU-PIM Heterogeneous Acceleration for Batched LLM Inferencing",
+          "url": "https://doi.org/10.1145/3620666.3651380",
+          "published": "2024-03-01T00:00:00.000Z"
+        },
+        {
+          "title": "Unleashing the Potential of PIM: Accelerating Large Batched Inference of Transformer-Based Generative Models | IEEE Computer Architecture Letters",
+          "url": "https://dlnext.acm.org/doi/10.1109/LCA.2023.3305386",
+          "published": "2023-07-01T00:00:00.000Z"
+        },
+        {
+          "title": "AiMX: Accelerator-in Memory Based Accelerator for Cost-effective Large Language Model Inference (Invited)",
+          "url": "https://doi.org/10.1109/iedm50854.2024.10873583",
+          "published": "2024-12-07T00:00:00.000Z"
+        },
+        {
+          "title": "Close this dialog",
+          "url": "https://ieeexplore.ieee.org/document/11024168",
+          "published": "2025-06-04T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "openrtl",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "scalesim-project/SCALE-Sim",
+          "url": "https://github.com/scalesim-project/SCALE-Sim",
+          "published": "N/A"
+        },
+        {
+          "title": "ucb-bar/gemmini",
+          "url": "https://github.com/ucb-bar/gemmini",
+          "published": "N/A"
+        },
+        {
+          "title": "ucb-bar/chipyard",
+          "url": "https://github.com/ucb-bar/chipyard/",
+          "published": "N/A"
+        },
+        {
+          "title": "3.5. Gemmini \u2014 Chipyard documentation - Read the Docs",
+          "url": "https://chipyard.readthedocs.io/en/1.4.0/Generators/Gemmini.html",
+          "published": "N/A"
+        },
+        {
+          "title": "Gemmini: An Agile Systolic Array Generator Enabling Systematic Evaluations of Deep-Learning Architectures",
+          "url": "https://arxiv.org/html/1911.09925v2",
+          "published": "2019-12-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "sramvendors",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Determinism and the Tensor Streaming Processor.",
+          "url": "https://groq.sa/GroqDocs/TechDoc_Predictability.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Low Latency for Real-time AI and HPC.",
+          "url": "https://groq.humain.ai/GroqDocs/TechDoc_Latency.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "The Groq Software-defined Scale-out Tensor Streaming Multiprocessor",
+          "url": "https://hc34.hotchips.org/assets/program/conference/day2/Machine%20Learning/HotChips34%20-%20Groq%20-%20Abts%20-%20final.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "GroqChip\u2122 Processor - Product Brief v1.7",
+          "url": "https://groq.humain.ai/wp-content/uploads/2024/08/GroqChip%E2%84%A2-Processor-Product-Brief-v1.7.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "LPU | Groq is fast, low cost inference.",
+          "url": "https://groq.com/lpu-architecture",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "specialvendors",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "The path to ubiquitous AI | Taalas",
+          "url": "https://taalas.com/the-path-to-ubiquitous-ai/",
+          "published": "N/A"
+        },
+        {
+          "title": "Products | Taalas",
+          "url": "https://taalas.com/products/",
+          "published": "N/A"
+        },
+        {
+          "title": "AI chip startup Taalas raises $169m, unveils HC1 processor optimized for Llama 3.1 8B - DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/ai-chip-startup-taalas-raises-169m-unveils-hc1-processor-optimized-for-llama-31-8b/",
+          "published": "2026-02-20T00:00:00.000Z"
+        },
+        {
+          "title": "AI inference cast in silicon: Taalas announces HC1 chip | heise online",
+          "url": "https://www.heise.de/en/news/AI-inference-cast-in-silicon-Taalas-announces-HC1-chip-11185112.html",
+          "published": "2026-02-21T20:55:00.000Z"
+        },
+        {
+          "title": "d-Matrix Cuts AI Token Latency in Half With Hybrid GPU-XPU Inference at OCP",
+          "url": "https://www.techtimes.com/articles/329195/20261019/d-matrix-cuts-ai-token-latency-half-hybrid-gpu-xpu-inference-ocp.htm",
+          "published": "2026-10-19T17:38:45.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "othersvendors",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Blackhole\u00ae PCIe Cards \u2014 Home 1.0 documentation",
+          "url": "https://docs.tenstorrent.com/aibs/blackhole/",
+          "published": "N/A"
+        },
+        {
+          "title": "Specifications and Requirements \u2014 Home 1.0 documentation",
+          "url": "https://docs.tenstorrent.com/aibs/blackhole/specifications.html",
+          "published": "N/A"
+        },
+        {
+          "title": "METALIUM_GUIDE.md",
+          "url": "https://github.com/tenstorrent/tt-metal/blob/main/METALIUM_GUIDE.md",
+          "published": "N/A"
+        },
+        {
+          "title": "tt-isa-documentation \u2014 tt-awesome",
+          "url": "https://docs.tenstorrent.com/tt-awesome/entry/tt-isa-documentation/",
+          "published": "N/A"
+        },
+        {
+          "title": "tech_reports/Blackhole/BlackholeBringUpProgrammingGuide.md",
+          "url": "https://github.com/tenstorrent/tt-metal/blob/main/tech_reports/Blackhole/BlackholeBringUpProgrammingGuide.md",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "tpuaws",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "TPU7x (Ironwood) \u00a0|\u00a0 Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tpu/docs/tpu7x",
+          "published": "N/A"
+        },
+        {
+          "title": "Understand TPUs \u00a0|\u00a0 Compute \u00a0|\u00a0 Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/compute-area/tpus",
+          "published": "N/A"
+        },
+        {
+          "title": "Ironwood: The first Google TPU for the age of inference",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-tpu-age-of-inference/",
+          "published": "2025-04-09T12:00:00.000Z"
+        },
+        {
+          "title": "AI Accelerator - AWS Trainium - AWS",
+          "url": "https://aws.amazon.com/ai/machine-learning/trainium/",
+          "published": "N/A"
+        },
+        {
+          "title": "Trainium3 Architecture",
+          "url": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium3.html",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "fpga",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "FlightLLM/flightllm_test_demo",
+          "url": "https://github.com/FlightLLM/flightllm_test_demo",
+          "published": "N/A"
+        },
+        {
+          "title": "[2401.03868] FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+          "url": "https://arxiv.org/abs/2401.03868",
+          "published": "2024-01-08T03:07:05.000Z"
+        },
+        {
+          "title": "FlightLLM",
+          "url": "https://github.com/FlightLLM/",
+          "published": "N/A"
+        },
+        {
+          "title": "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs | Proceedings of the 2024 ACM/SIGDA International Symposium on Field Programmable Gate Arrays",
+          "url": "https://dl.acm.org/doi/10.1145/3626202.3637562",
+          "published": "2024-04-02T00:00:00.000Z"
+        },
+        {
+          "title": "FlightLLM: Efficient Large Language Model Inference with a Complete Mapping Flow on FPGAs",
+          "url": "https://arxiv.org/html/2401.03868",
+          "published": "2024-01-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "mambaasic",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "MARCA-v2: Mamba Accelerator with Complementary State Space Model Sparsity and Reconfigurable Architecture",
+          "url": "https://doi.org/10.1109/tcad.2025.3624278",
+          "published": "2025-10-22T00:00:00.000Z"
+        },
+        {
+          "title": "MARCA: Mamba Accelerator with Reconfigurable Architecture",
+          "url": "https://doi.org/10.1145/3676536.3676798",
+          "published": "2024-10-27T00:00:00.000Z"
+        },
+        {
+          "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+          "url": "https://arxiv.org/abs/2312.00752v2",
+          "published": "2024-05-31T00:00:00.000Z"
+        },
+        {
+          "title": "MARCA: Mamba Accelerator with Reconfigurable Architecture | Proceedings of the 43rd IEEE/ACM International Conference on Computer-Aided Design",
+          "url": "https://dl.acm.org/doi/10.1145/3676536.3676798",
+          "published": "2025-04-09T00:00:00.000Z"
+        },
+        {
+          "title": "[2508.02977] Mamba-X: An End-to-End Vision Mamba Accelerator for Edge Computing Devices",
+          "url": "https://arxiv.org/abs/2508.02977",
+          "published": "2025-08-05T12:50:18.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "ternaryhardware",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Computer Science > Hardware Architecture",
+          "url": "https://arxiv.org/abs/2502.16473",
+          "published": "N/A"
+        },
+        {
+          "title": "TerEffic: Highly Efficient Ternary LLM Inference on FPGA",
+          "url": "https://arxiv.org/html/2502.16473v2",
+          "published": "2025-05-01T00:00:00.000Z"
+        },
+        {
+          "title": "TerEffic: Highly Efficient Ternary LLM Inference on FPGA",
+          "url": "https://arxiv.org/html/2502.16473",
+          "published": "N/A"
+        },
+        {
+          "title": "N/A",
+          "url": "https://arxiv.org/pdf/2502.16473",
+          "published": "N/A"
+        },
+        {
+          "title": "TerEffic: Highly Efficient Ternary LLM Inference on FPGA",
+          "url": "https://doi.org/10.48550/arxiv.2502.16473",
+          "published": "2025-02-23T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "sparse",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "[2408.14690] Training-Free Activation Sparsity in Large Language Models",
+          "url": "https://arxiv.org/abs/2408.14690",
+          "published": "2024-08-26T08:10:17.000Z"
+        },
+        {
+          "title": "PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU",
+          "url": "https://arxiv.org/abs/2312.12456",
+          "published": "2024-12-12T00:00:00.000Z"
+        },
+        {
+          "title": "Deja Vu: Contextual Sparsity for Efficient LLMs at Inference Time",
+          "url": "https://proceedings.mlr.press/v202/liu23am",
+          "published": "N/A"
+        },
+        {
+          "title": "PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU | Proceedings of the ACM SIGOPS 30th Symposium on Operating Systems Principles",
+          "url": "https://dl.acm.org/doi/10.1145/3694715.3695964",
+          "published": "2024-11-15T00:00:00.000Z"
+        },
+        {
+          "title": "[2310.17157] Deja Vu: Contextual Sparsity for Efficient LLMs at Inference Time",
+          "url": "https://arxiv.org/abs/2310.17157",
+          "published": "2023-10-26T02:44:39.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "quant",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
+          "url": "https://dl.acm.org/doi/epdf/10.1145/3714983.3714987",
+          "published": "N/A"
+        },
+        {
+          "title": "Post Training Quantization of Large Language Models with Microscaling Formats",
+          "url": "https://arxiv.org/html/2405.07135v3",
+          "published": "2024-10-15T00:00:00.000Z"
+        },
+        {
+          "title": "A Comprehensive Evaluation on Quantization Techniques for Large Language Models",
+          "url": "https://arxiv.org/html/2507.17417v2",
+          "published": "N/A"
+        },
+        {
+          "title": "[2411.09909] AMXFP4: Taming Activation Outliers with Asymmetric Microscaling Floating-Point for 4-bit LLM Inference",
+          "url": "https://arxiv.org/abs/2411.09909",
+          "published": "2024-11-15T11:43:32.000Z"
+        },
+        {
+          "title": "Bridging the Gap Between Promise and Performance for Microscaling FP4 Quantization",
+          "url": "https://arxiv.org/abs/2509.23202",
+          "published": "2026-03-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "serving",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+          "url": "https://arxiv.org/html/2401.09670v3",
+          "published": "2024-06-06T00:00:00.000Z"
+        },
+        {
+          "title": "DistServe | Proceedings of the 18th USENIX Conference on Operating Systems Design and Implementation",
+          "url": "https://dl.acm.org/doi/10.5555/3691938.3691949",
+          "published": "2024-07-10T00:00:00.000Z"
+        },
+        {
+          "title": "Bandwidth-Efficient Exact Sampling for Distributed Speculative Decoding of LLMs via Two-Stage Rejection Sampling | IEEE Conference Publication | IEEE Xplore",
+          "url": "https://ieeexplore.ieee.org/abstract/document/11618065/",
+          "published": "N/A"
+        },
+        {
+          "title": "data/papers.yaml",
+          "url": "https://github.com/DngBack/awesome-speculative-decoding/blob/main/data/papers.yaml",
+          "published": "N/A"
+        },
+        {
+          "title": "References \u00b7 LLM Inference",
+          "url": "https://llminference.xinbetween.com/en/references/",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "diffusion",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding",
+          "url": "https://arxiv.org/html/2505.22618",
+          "published": "2025-07-03T00:00:00.000Z"
+        },
+        {
+          "title": "NPU Design for Diffusion Language Model Inference",
+          "url": "https://arxiv.org/html/2601.20706v2",
+          "published": "N/A"
+        },
+        {
+          "title": "FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion",
+          "url": "https://arxiv.org/html/2505.21467",
+          "published": "N/A"
+        },
+        {
+          "title": "Fast-dLLM v2: Efficient Block-Diffusion LLM",
+          "url": "http://arxiv.org/abs/2509.26328",
+          "published": "2025-09-30T00:00:00.000Z"
+        },
+        {
+          "title": "dInfer: An Efficient Inference Framework for Diffusion Language Models",
+          "url": "https://arxiv.org/html/2510.08666",
+          "published": "2025-10-22T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "hybrids2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+          "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Qwen3.5 \u00b7 Hugging Face",
+          "url": "https://huggingface.co/docs/transformers/model_doc/qwen3_5",
+          "published": "N/A"
+        },
+        {
+          "title": "New Open Source Qwen3-Next Models Preview Hybrid MoE Architecture Delivering Improved Accuracy and Accelerated Parallel Processing across NVIDIA Platform | NVIDIA Technical Blog",
+          "url": "https://developer.nvidia.com/blog/new-open-source-qwen3-next-models-preview-hybrid-moe-architecture-delivering-improved-accuracy-and-accelerated-parallel-processing-across-nvidia-platform",
+          "published": "2025-09-15T13:00:00.000Z"
+        },
+        {
+          "title": "Nemotron 3 Super: Open, Efficient Mixture-of-Experts ...",
+          "url": "https://arxiv.org/html/2604.12374v1",
+          "published": "2026-04-14T00:00:00.000Z"
+        },
+        {
+          "title": "Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI",
+          "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "attn2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+          "url": "https://arxiv.org/html/2606.19348",
+          "published": "N/A"
+        },
+        {
+          "title": "FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling",
+          "url": "https://arxiv.org/html/2603.05451",
+          "published": "2026-03-05T00:00:00.000Z"
+        },
+        {
+          "title": "Build with DeepSeek V4 Using NVIDIA Blackwell and GPU-Accelerated Endpoints | NVIDIA Technical Blog",
+          "url": "https://developer.nvidia.com/blog/build-with-deepseek-v4-using-nvidia-blackwell-and-gpu-accelerated-endpoints/",
+          "published": "2026-04-24T23:29:56.000Z"
+        },
+        {
+          "title": "Readme",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp/raw/main/README.md",
+          "published": "N/A"
+        },
+        {
+          "title": "DeepSeek V4 Preview Release",
+          "url": "https://api-docs.deepseek.com/news/news260424/",
+          "published": "2026-04-24T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "hardwarebasics",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit | ACM SIGARCH Computer Architecture News",
+          "url": "https://dl.acm.org/doi/10.1145/3140659.3080246",
+          "published": "2017-06-24T20:17:47.000Z"
+        },
+        {
+          "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+          "url": "https://arxiv.org/pdf/1704.04760",
+          "published": "N/A"
+        },
+        {
+          "title": "Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Networks",
+          "url": "https://eems.mit.edu/wp-content/uploads/2016/04/eyeriss_isca_2016.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Eyeriss: a spatial architecture for energy-efficient dataflow for convolutional neural networks: ACM SIGARCH Computer Architecture News: Vol 44, No 3",
+          "url": "https://dl.acm.org/doi/10.1145/3007787.3001177",
+          "published": "2016-06-18T21:18:51.000Z"
+        },
+        {
+          "title": "Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks",
+          "url": "https://doi.org/10.1109/jssc.2016.2616357",
+          "published": "2016-11-08T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "corsair",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Accelerating attention-FFN disaggregation with Corsair and Nvidia H100: inside the industry\u2019s first ultra-low latency heterogeneous pipeline\u00a0 - d-Matrix",
+          "url": "https://www.d-matrix.ai/accelerating-ai-inference-with-attention-ffn-disaggregation/",
+          "published": "2026-10-12T18:58:10.000Z"
+        },
+        {
+          "title": "d-Matrix Announces Squadron Compute Clusters for AI Inference at Data Center Scale - d-Matrix",
+          "url": "https://www.d-matrix.ai/announcements/squadron-compute-clusters/",
+          "published": "2026-10-12T18:57:50.000Z"
+        },
+        {
+          "title": "d-Matrix Cuts AI Token Latency in Half With Hybrid GPU-XPU Inference at OCP",
+          "url": "https://www.techtimes.com/articles/329195/20261019/d-matrix-cuts-ai-token-latency-half-hybrid-gpu-xpu-inference-ocp.htm",
+          "published": "2026-10-19T17:38:45.000Z"
+        },
+        {
+          "title": "Announcing some key milestones for d-Matrix at the OCP Global Summit",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7516028461438627840",
+          "published": "2026-10-14T00:00:00.000Z"
+        },
+        {
+          "title": "d-Matrix Corsair AI Platform | In-Memory Computing for AI",
+          "url": "https://www.d-matrix.ai/product/",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "etched",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Frontier Inference Clusters | Etched",
+          "url": "https://www.etched.com/progress/frontier-inference-clusters",
+          "published": "2026-06-30T22:47:28.000Z"
+        },
+        {
+          "title": "Etched",
+          "url": "https://www.etched.com/",
+          "published": "N/A"
+        },
+        {
+          "title": "A Bumblebee Moment for AI Silicon | Synopsys",
+          "url": "https://www.synopsys.com/blogs/chip-design/bumblebee-moment-ai-silicon.html",
+          "published": "2026-08-28T19:28:07.000Z"
+        },
+        {
+          "title": "a whole new Etched - by Peak FLOPS - Emilio",
+          "url": "https://wafer.substack.com/p/a-whole-new-etched",
+          "published": "2026-07-25T01:33:05.000Z"
+        },
+        {
+          "title": "Etched\u2019s Post",
+          "url": "https://www.linkedin.com/posts/etched-ai_meet-sohu-the-fastest-ai-chip-of-all-time-activity-7211390125031796739-Qu-Z",
+          "published": "2024-06-25T15:29:46.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "cerebras",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Introducing Cerebras Inference: AI at Instant Speed - Cerebras",
+          "url": "https://www.cerebras.ai/blog/introducing-cerebras-inference-ai-at-instant-speed",
+          "published": "2024-08-27T00:00:00.000Z"
+        },
+        {
+          "title": "Cerebras Systems Unveils World\u2019s Fastest AI Chip with Whopping 4 Trillion Transistors - Cerebras",
+          "url": "https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine",
+          "published": "2024-03-11T00:00:00.000Z"
+        },
+        {
+          "title": "Wafer-Scale Engine 3: The Largest Chip Ever Built",
+          "url": "https://8968533.fs1.hubspotusercontent-na2.net/hubfs/8968533/Datasheets/WSE-3%20Datasheet.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Cerebras Wafer-Scale AI",
+          "url": "https://hc2024.hotchips.org/assets/program/conference/day2/72_HC2024.Cerebras.Sean.v03.final.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Cerebras CS-3 | Wafer-Scale AI Supercomputer",
+          "url": "https://www.cerebras.ai/cs3",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "morevendors",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Introducing the SN50 RDU: Purpose-Built for Agentic Inference",
+          "url": "https://sambanova.ai/blog/introducing-the-sn50-rdu-purpose-built-for-agentic-inference",
+          "published": "2026-02-24T10:33:30.000Z"
+        },
+        {
+          "title": "SambaNova Unveils Fastest Chip for Agentic AI, Collaborates with Intel, and Raises $350M+",
+          "url": "https://sambanova.ai/press/sambanova-unveils-fastest-chip-for-agentic-ai-collaborates-with-intel-and-raises-350m",
+          "published": "2026-02-24T10:58:00.000Z"
+        },
+        {
+          "title": "SambaNova SN50",
+          "url": "https://sambanova.ai/hubfs/SambaNova%20SN50%20RDU.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Dataflow Architecture | AI Architecture for Fast Inference",
+          "url": "https://sambanova.ai/products/dataflow-architecture",
+          "published": "N/A"
+        },
+        {
+          "title": "MatX One and our Series B | MatX",
+          "url": "https://matx.com/research/series_b",
+          "published": "2026-02-24T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "marcadetails",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "MARCA: Mamba Accelerator with ReConfigurable Architecture",
+          "url": "https://arxiv.org/html/2409.11440",
+          "published": "N/A"
+        },
+        {
+          "title": "[2409.11440] MARCA: Mamba Accelerator with ReConfigurable Architecture",
+          "url": "https://arxiv.org/abs/2409.11440",
+          "published": "2024-09-16T03:00:05.000Z"
+        },
+        {
+          "title": "MARCA: Mamba Accelerator with Reconfigurable Architecture",
+          "url": "https://doi.org/10.1145/3676536.3676798",
+          "published": "2024-10-27T00:00:00.000Z"
+        },
+        {
+          "title": "MARCA: Mamba Accelerator with Reconfigurable Architecture | Proceedings of the 43rd IEEE/ACM International Conference on Computer-Aided Design",
+          "url": "https://dl.acm.org/doi/10.1145/3676536.3676798",
+          "published": "2025-04-09T00:00:00.000Z"
+        },
+        {
+          "title": "MARCA: Mamba Accelerator with ReConfigurable Architecture | IEEE Conference Publication | IEEE Xplore",
+          "url": "https://ieeexplore.ieee.org/document/11126246/",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "pimdetails",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "scale-snu/attacc_simulator",
+          "url": "https://github.com/scale-snu/attacc_simulator/",
+          "published": "2024-05-05T00:00:00.000Z"
+        },
+        {
+          "title": "AttAcc! Unleashing the Power of PIM for Batched Transformer-based Generative Model Inference",
+          "url": "https://doi.org/10.1145/3620665.3640422",
+          "published": "2024-04-22T00:00:00.000Z"
+        },
+        {
+          "title": "casys-kaist/NeuPIMs",
+          "url": "https://github.com/casys-kaist/NeuPIMs",
+          "published": "N/A"
+        },
+        {
+          "title": "NeuPIMs: NPU-PIM Heterogeneous Acceleration for Batched LLM Inferencing | Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3",
+          "url": "https://dl.acm.org/doi/10.1145/3620666.3651380",
+          "published": "2024-04-27T00:00:00.000Z"
+        },
+        {
+          "title": "AttAcc! Unleashing the Power of PIM for Batched ...",
+          "url": "https://scale.snu.ac.kr/papers/2024-04-Conference-ASPLOS-AttAcc.pdf",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "speculative",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "url": "https://proceedings.mlr.press/v202/leviathan23a.html",
+          "published": "2023-07-03T00:00:00.000Z"
+        },
+        {
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "url": "https://proceedings.mlr.press/v202/leviathan23a",
+          "published": "2023-07-03T00:00:00.000Z"
+        },
+        {
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "url": "http://proceedings.mlr.press/v202/leviathan23a/leviathan23a.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "N/A",
+          "url": "https://arxiv.org/pdf/2211.17192",
+          "published": "N/A"
+        },
+        {
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "url": "https://arxiv.org/html/2211.17192v1",
+          "published": "2022-11-30T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "rotations",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "[2404.00456] QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+          "url": "https://arxiv.org/abs/2404.00456",
+          "published": "2024-03-30T19:01:52.000Z"
+        },
+        {
+          "title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
+          "url": "https://dl.acm.org/doi/epdf/10.1145/3714983.3714987",
+          "published": "N/A"
+        },
+        {
+          "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/b5b939436789f76f08b9d0da5e81af7c-Paper-Conference.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+          "url": "https://doi.org/10.48550/arxiv.2404.00456",
+          "published": "2024-03-30T00:00:00.000Z"
+        },
+        {
+          "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+          "url": "https://arxiv.org/html/2404.00456",
+          "published": "2024-10-29T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "gptoss",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+          "url": "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "gpt-oss-120b & gpt-oss-20b Model Card | OpenAI",
+          "url": "https://openai.com/index/gpt-oss-model-card/",
+          "published": "2025-08-05T00:00:00.000Z"
+        },
+        {
+          "title": "gpt-oss-120b & gpt-oss-20b Model Card - OpenAI Deployment Safety Hub",
+          "url": "https://deploymentsafety.openai.com/gpt-oss/architecture",
+          "published": "2025-08-05T00:00:00.000Z"
+        },
+        {
+          "title": "gpt-oss-120b & gpt-oss-20b Model Card",
+          "url": "https://arxiv.org/html/2508.10925v1",
+          "published": "2025-08-05T00:00:00.000Z"
+        },
+        {
+          "title": "openai/gpt-oss-20b \u00b7 Hugging Face",
+          "url": "https://huggingface.co/openai/gpt-oss-20b",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "groq2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "AI Inference Accelerator | NVIDIA Groq 3 LPX",
+          "url": "https://www.nvidia.com/en-us/data-center/lpx/",
+          "published": "N/A"
+        },
+        {
+          "title": "Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform | NVIDIA Technical Blog",
+          "url": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/",
+          "published": "2026-03-16T16:09:00.000Z"
+        },
+        {
+          "title": "How NVIDIA Groq 3 LPX Unlocks Ultrafast Interactivity at Long Context on NVIDIA Vera Rubin | NVIDIA Technical Blog",
+          "url": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-unlocks-ultrafast-interactivity-at-long-context-on-nvidia-vera-rubin/",
+          "published": "2026-08-24T15:00:00.000Z"
+        },
+        {
+          "title": "NVIDIA Corporation - NVIDIA Groq 3 LPX Now in Full Production With World-Class Speed for Agentic AI",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Groq-3-LPX-Now-in-Full-Production-With-World-Class-Speed-for-Agentic-AI/default.aspx",
+          "published": "2026-08-24T00:00:00.000Z"
+        },
+        {
+          "title": "Groq and Nvidia Enter Non-Exclusive Inference Technology Licensing Agreement to Accelerate AI Inference at Global Scale  | Groq is the premier neocloud for fast inference",
+          "url": "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale",
+          "published": "2025-12-24T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "analog",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "A 64-core mixed-signal in-memory compute chip based on phase-change memory for deep neural network inference | Nature Electronics",
+          "url": "https://www.nature.com/articles/s41928-023-01010-1",
+          "published": "2023-08-10T13:23:34.000Z"
+        },
+        {
+          "title": "A 64-core mixed-signal in-memory compute chip based on phase-change memory for deep neural network inference",
+          "url": "https://doi.org/10.1038/s41928-023-01010-1",
+          "published": "2023-08-10T00:00:00.000Z"
+        },
+        {
+          "title": "A 64-core mixed-signal in-memory compute chip based on phase-change memory for deep neural network inference for Nature Electronics - IBM Research",
+          "url": "https://research.ibm.com/publications/a-64-core-mixed-signal-in-memory-compute-chip-based-on-phase-change-memory-for-deep-neural-network-inference",
+          "published": "2023-08-10T19:02:07.000Z"
+        },
+        {
+          "title": "A 64-core mixed-signal in-memory compute chip based on phase-change memory for deep neural network inference",
+          "url": "https://arxiv.org/html/2212.02872v1",
+          "published": "N/A"
+        },
+        {
+          "title": "Design of Analog-AI Hardware Accelerators for Transformer-based Language Models (Invited)",
+          "url": "https://johnny-liou.github.io/publications/iedm2023/iedm2023-analog-ai-accelerators-transformer-llm.pdf",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "edgeflash",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "LLM in a flash: Efficient Large Language Model Inference with Limited Memory - ACL Anthology",
+          "url": "https://aclanthology.org/2024.acl-long.678/",
+          "published": "N/A"
+        },
+        {
+          "title": "LLM in a flash:Efficient Large Language Model Inference with Limited Memory",
+          "url": "https://arxiv.org/abs/2312.11514",
+          "published": "2024-07-30T00:00:00.000Z"
+        },
+        {
+          "title": "LLM in a flash: Efficient Large Language Model Inference with Limited Memory",
+          "url": "https://aclanthology.org/2024.acl-long.678.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "LLM in a flash: Efficient Large Language Model Inference with Limited Memory",
+          "url": "https://arxiv.org/html/2312.11514",
+          "published": "2024-07-30T00:00:00.000Z"
+        },
+        {
+          "title": "LLM in a flash: Efficient Large Language Model Inference with Limited Memory",
+          "url": "https://arxiv.org/html/2312.11514v3",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "optical",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Hot Interconnects 2026 Nick",
+          "url": "https://lightmatter.co/wp-content/uploads/2026/08/Nick-Harris_Lightmatter_The-Interconnect-Foundation-for-High-Performance-AI-Training-and-Inference_HotI2026.pdf",
+          "published": "N/A"
+        },
+        {
+          "title": "Hot Interconnects 2026 Presentation, Nick Harris, Ph.D., Founder and CEO - Lightmatter\u00ae",
+          "url": "https://lightmatter.co/resource/hot-interconnects-2026-presentation-nick-harris-ph-d-founder-and-ceo/",
+          "published": "2026-08-19T21:30:37.000Z"
+        },
+        {
+          "title": "3D Photonics for AI Applications | Passage\u2122",
+          "url": "https://lightmatter.com/products/passage/",
+          "published": "N/A"
+        },
+        {
+          "title": "Lightmatter Achieves Record 1.6 Tbps Per Fiber to Accelerate AI Optical Interconnect - Lightmatter\u00ae",
+          "url": "https://lightmatter.com/press-release/lightmatter-achieves-record-1-6-tbps-per-fiber-to-accelerate-ai-optical-interconnect/",
+          "published": "2026-03-11T13:01:52.000Z"
+        },
+        {
+          "title": "Lightmatter Expands Photonic Interconnect Roadmap with Passage\u2122 L20 Unified Optical Engine for NPO and OBO Applications - Lightmatter\u00ae",
+          "url": "https://lightmatter.com/press-release/lightmatter-expands-photonic-interconnect-roadmap-with-passage-l20-unified-optical-engine-for-npo-and-obo-applications/",
+          "published": "2026-03-11T13:03:41.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "google2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Two chips for the agentic era",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/",
+          "published": "2026-04-22T12:00:00.000Z"
+        },
+        {
+          "title": "TPU 8t and TPU 8i technical deep dive | Google Cloud Blog",
+          "url": "https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive",
+          "published": "2026-04-22T00:00:00.000Z"
+        },
+        {
+          "title": "Sundar Pichai shares news from Google Cloud Next 2026",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
+          "published": "2026-04-22T12:00:00.000Z"
+        },
+        {
+          "title": "Tensor Processing Units (TPUs) | Google Cloud",
+          "url": "https://cloud.google.com/tpu",
+          "published": "N/A"
+        },
+        {
+          "title": "AI Hardware and TPUs | Google AI and Infrastructure",
+          "url": "https://aiinfra.google/hardware/",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "amd2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "AMD Instinct\u2122 MI455X GPUs",
+          "url": "https://www.amd.com/en/products/accelerators/instinct/mi400/mi455x.html",
+          "published": "N/A"
+        },
+        {
+          "title": "AMD Helios\u2122",
+          "url": "https://www.amd.com/en/products/rackscale-solutions/helios.html",
+          "published": "N/A"
+        },
+        {
+          "title": "AMD Instinct\u2122 MI400 Series GPUs",
+          "url": "https://www.amd.com/en/products/accelerators/instinct/mi400.html",
+          "published": "N/A"
+        },
+        {
+          "title": "Oracle and AMD Expand Partnership to Help Customers Achieve Next-Generation AI Scale",
+          "url": "https://www.amd.com/en/newsroom/press-releases/oracle-and-amd-expand-partnership-to-help-customers-ach.html",
+          "published": "2025-10-14T18:30:00.000Z"
+        },
+        {
+          "title": "AMD CDNA\u2122 Architecture",
+          "url": "https://www.amd.com/en/technologies/cdna.html",
+          "published": "N/A"
+        }
+      ]
+    },
+    {
+      "search_track": "others2026",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Positron | Asimov",
+          "url": "https://www.positron.ai/asimov",
+          "published": "N/A"
+        },
+        {
+          "title": "Positron AI Raises $875 Million at a $5 Billion Valuation to Bring Its Next-Generation Inference Silicon to Market",
+          "url": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+          "published": "2026-09-10T13:00:00.000Z"
+        },
+        {
+          "title": "Positron | Vision",
+          "url": "https://www.positron.ai/vision",
+          "published": "N/A"
+        },
+        {
+          "title": "Why Positron AI is Choosing LPDDR over HBM for Next-Gen LLM | Researcher Conversations at GTC",
+          "url": "https://www.youtube.com/watch?v=B8O3pLcX2w4",
+          "published": "2026-04-22T00:00:00.000Z"
+        },
+        {
+          "title": "Positron\u2019s $230M Funding Led By Financial Trading Firms",
+          "url": "https://www.eetimes.com/positron-230-million-funding-led-by-financial-trading-firms/",
+          "published": "2026-02-04T13:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "search_track": "maia",
+      "requested_results": 5,
+      "entries": [
+        {
+          "title": "Deep dive into the Maia 200 architecture",
+          "url": "https://techcommunity.microsoft.com/blog/azureinfrastructureblog/deep-dive-into-the-maia-200-architecture/4489312",
+          "published": "2026-01-26T00:00:00.000Z"
+        },
+        {
+          "title": "Maia 200: The AI accelerator built for inference - The Official Microsoft Blog",
+          "url": "https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/",
+          "published": "2026-01-26T16:00:30.000Z"
+        },
+        {
+          "title": "Maia 200: A Software Defined Dataflow System for Large-scale AI Acceleration",
+          "url": "https://arxiv.org/html/2608.24664",
+          "published": "N/A"
+        },
+        {
+          "title": "Microsoft introduces Maia 200: New inference accelerator enhances AI performance in Azure - Source EMEA",
+          "url": "https://news.microsoft.com/source/emea/2026/01/microsoft-introduces-maia-200-new-inference-accelerator-enhances-ai-performance-in-azure/",
+          "published": "2026-01-26T16:05:17.000Z"
+        },
+        {
+          "title": "Maia 200 Signals Microsoft\u2019s Push Toward Custom Silicon for AI Inference",
+          "url": "https://www.storagereview.com/news/maia-200-signals-microsofts-push-toward-custom-silicon-for-ai-inference?amp=",
+          "published": "N/A"
+        }
+      ]
+    }
+  ],
+  "selected_read_urls": [
+    "https://arxiv.org/abs/2211.05102",
+    "https://arxiv.org/abs/2205.14135",
+    "https://arxiv.org/html/2603.05451",
+    "https://arxiv.org/html/2412.19437",
+    "https://arxiv.org/abs/2405.21060",
+    "https://arxiv.org/html/2412.06464",
+    "https://arxiv.org/abs/2503.14456",
+    "https://arxiv.org/html/2606.19348",
+    "https://arxiv.org/abs/1706.03762",
+    "https://arxiv.org/abs/2305.13245",
+    "https://arxiv.org/abs/2305.14314",
+    "https://arxiv.org/abs/2402.17764",
+    "https://arxiv.org/abs/2504.12285",
+    "https://arxiv.org/abs/2211.10438",
+    "https://arxiv.org/html/2502.16473v2",
+    "https://arxiv.org/html/2401.03868",
+    "https://arxiv.org/html/2601.20706v2",
+    "https://taalas.com/the-path-to-ubiquitous-ai/",
+    "https://taalas.com/products/",
+    "https://www.etched.com/progress/frontier-inference-clusters",
+    "https://matx.com/research/series_b",
+    "https://www.d-matrix.ai/accelerating-ai-inference-with-attention-ffn-disaggregation/",
+    "https://www.d-matrix.ai/announcements/squadron-compute-clusters/",
+    "https://sambanova.ai/blog/introducing-the-sn50-rdu-purpose-built-for-agentic-inference",
+    "https://docs.cloud.google.com/tpu/docs/tpu7x",
+    "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium3.html",
+    "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+    "https://arxiv.org/html/2409.11440",
+    "https://github.com/FlightLLM/flightllm_test_demo",
+    "https://github.com/scale-snu/attacc_simulator/",
+    "https://github.com/casys-kaist/NeuPIMs",
+    "https://arxiv.org/html/2309.06180",
+    "https://arxiv.org/html/2401.09670v3",
+    "https://proceedings.mlr.press/v202/leviathan23a.html",
+    "https://arxiv.org/abs/2406.02528",
+    "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "https://arxiv.org/html/2604.12374v1",
+    "https://arxiv.org/abs/2502.09992",
+    "https://arxiv.org/html/2505.22618",
+    "https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive",
+    "https://cloud.google.com/tpu",
+    "https://www.amd.com/en/products/accelerators/instinct/mi400/mi455x.html",
+    "https://www.positron.ai/asimov",
+    "https://arxiv.org/abs/2306.00978",
+    "https://arxiv.org/abs/2210.17323",
+    "https://arxiv.org/abs/2404.00456",
+    "https://arxiv.org/abs/2402.02750",
+    "https://research.ibm.com/publications/a-64-core-mixed-signal-in-memory-compute-chip-based-on-phase-change-memory-for-deep-neural-network-inference",
+    "https://aclanthology.org/2024.acl-long.678/",
+    "https://lightmatter.com/products/passage/",
+    "https://arxiv.org/abs/2601.20706",
+    "https://arxiv.org/html/2601.20706v1",
+    "https://arxiv.org/html/2412.19437v2",
+    "https://github.com/ucb-bar/gemmini",
+    "https://github.com/scalesim-project/SCALE-Sim",
+    "https://github.com/microsoft/T-MAC",
+    "https://github.com/tenstorrent/tt-metal/blob/main/METALIUM_GUIDE.md",
+    "https://arxiv.org/abs/1910.07467",
+    "https://arxiv.org/abs/2104.09864",
+    "https://arxiv.org/abs/2002.05202",
+    "https://arxiv.org/abs/2106.09685",
+    "https://arxiv.org/abs/2203.15556",
+    "https://arxiv.org/html/2205.14135",
+    "https://arxiv.org/html/2407.08608v2",
+    "https://techcommunity.microsoft.com/blog/azureinfrastructureblog/deep-dive-into-the-maia-200-architecture/4489312",
+    "https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/",
+    "https://hc2024.hotchips.org/assets/program/conference/day2/72_HC2024.Cerebras.Sean.v03.final.pdf",
+    "https://hc34.hotchips.org/assets/program/conference/day2/Machine%20Learning/HotChips34%20-%20Groq%20-%20Abts%20-%20final.pdf",
+    "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-unlocks-ultrafast-interactivity-at-long-context-on-nvidia-vera-rubin/",
+    "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Groq-3-LPX-Now-in-Full-Production-With-World-Class-Speed-for-Agentic-AI/default.aspx",
+    "https://deploymentsafety.openai.com/gpt-oss/architecture",
+    "https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py",
+    "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale"
+  ],
+  "excluded_mistargeted_read": {
+    "url": "https://arxiv.org/abs/2403.18518",
+    "reason": "Unrelated chemistry paper returned from an incorrect remembered identifier; excluded from the factbook."
+  }
+}

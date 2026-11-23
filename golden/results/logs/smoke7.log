@@ -1,0 +1,162 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (399ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 4 changed file(s) (28.92 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.4/29.4 kB 0:00:00
+✓ Files synced (2.1s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp7:attn_int8...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 437594.91 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 711398.78 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 633102.49 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+bf16
+ 
+exact attention (sanity: 0)
+ 
+{'wikitext': 0.0, 'python_code': 0.0}
+ 
+long
+ 
+-
+ 
+4s
+bf16
+ 
+q int8
+ 
+{'wikitext': 1.2e-05, 'python_code': 1.3e-05}
+ 
+long
+ 
+-
+ 
+4s
+bf16
+ 
+P int8, power-of-two scale per 32 positions
+ 
+{'wikitext': 0.000192, 'python_code': 3.9e-05}
+ 
+long
+ 
+-
+ 
+5s
+bf16
+ 
+P int8, fixed 1/127 grid
+ 
+{'wikitext': 0.009913, 'python_code': 0.004421}
+ 
+long
+ 
+-
+ 
+5s
+bf16
+ 
+q int8 + P int8 power-of-two
+ 
+{'wikitext': 0.000173, 'python_code': 4.2e-05}
+ 
+long
+ 
+6.5e-05
+ 
+12s
+bf16
+ 
+q int8 + P int8 fixed
+ 
+{'wikitext': 0.010375, 'python_code': 0.004553}
+ 
+long
+ 
+0.20133
+ 
+12s
+  layer  0 (linear_attention) gptq done in 8.7s
+  layer  1 (linear_attention) gptq done in 8.8s
+  layer  2 (linear_attention) gptq done in 8.9s
+  layer  3 (full_attention) gptq done in 7.9s
+  layer  4 (linear_attention) gptq done in 8.9s
+  layer  5 (linear_attention) gptq done in 8.8s
+  layer  6 (linear_attention) gptq done in 8.8s
+  layer  7 (full_attention) gptq done in 7.8s
+  layer  8 (linear_attention) gptq done in 9.0s
+  layer  9 (linear_attention) gptq done in 8.8s
+  layer 10 (linear_attention) gptq done in 8.8s
+  layer 11 (full_attention) gptq done in 7.7s
+  layer 12 (linear_attention) gptq done in 8.8s
+  layer 13 (linear_attention) gptq done in 8.8s
+  layer 14 (linear_attention) gptq done in 8.8s
+  layer 15 (full_attention) gptq done in 7.8s
+  layer 16 (linear_attention) gptq done in 8.8s
+  layer 17 (linear_attention) gptq done in 8.8s
+  layer 18 (linear_attention) gptq done in 8.8s
+  layer 19 (full_attention) gptq done in 7.7s
+  layer 20 (linear_attention) gptq done in 8.8s
+  layer 21 (linear_attention) gptq done in 8.8s
+  layer 22 (linear_attention) gptq done in 8.8s
+  layer 23 (full_attention) gptq done in 7.7s
+  layer 24 (linear_attention) gptq done in 8.9s
+  layer 25 (linear_attention) gptq done in 8.7s
+  layer 26 (linear_attention) gptq done in 8.8s
+  layer 27 (full_attention) gptq done in 7.7s
+  layer 28 (linear_attention) gptq done in 8.9s
+  layer 29 (linear_attention) gptq done in 8.9s
+  layer 30 (linear_attention) gptq done in 8.9s
+  layer 31 (full_attention) gptq done in 7.9s
+  gptq total 278s
+chip
+ 
+chip numerics, exact attention
+ 
+{'wikitext': 0.052141, 'python_code': 0.083481}
+ 
+long
+ 
+-
+ 
+4s
+chip
+ 
+chip numerics, q int8 + P int8 power-of-two
+ 
+{'wikitext': 0.050641, 'python_code': 0.083439}
+ 
+long
+ 
+-
+ 
+4s
+chip
+ 
+chip numerics, q int8 + P int8 fixed
+ 
+{'wikitext': 0.062844, 'python_code': 0.083781}
+ 
+long
+ 
+-
+ 
+4s
+✓ Function complete (6m13s)
+bf16 exact attention (sanity: 0) {'wikitext': 0.0, 'python_code': 0.0} long -
+bf16 q int8 {'wikitext': 1.2e-05, 'python_code': 1.3e-05} long -
+bf16 P int8, power-of-two scale per 32 positions {'wikitext': 0.000192, 'python_code': 3.9e-05} long -
+bf16 P int8, fixed 1/127 grid {'wikitext': 0.009913, 'python_code': 0.004421} long -
+bf16 q int8 + P int8 power-of-two {'wikitext': 0.000173, 'python_code': 4.2e-05} long 6.5e-05
+bf16 q int8 + P int8 fixed {'wikitext': 0.010375, 'python_code': 0.004553} long 0.20133
+chip chip numerics, exact attention {'wikitext': 0.052141, 'python_code': 0.083481} long -
+chip chip numerics, q int8 + P int8 power-of-two {'wikitext': 0.050641, 'python_code': 0.083439} long -
+chip chip numerics, q int8 + P int8 fixed {'wikitext': 0.062844, 'python_code': 0.083781} long -

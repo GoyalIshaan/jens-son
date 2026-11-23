@@ -1,0 +1,124 @@
+Preparing image...
+Checking image cache...
+◆ Using cached image  80c5f11e61dbe0d5
+✓ Image ready (507ms)
+Syncing files...
+◆ Syncing files
+◆ Uploading
+Uploading 3 changed file(s) (16.65 KB), 0 removed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.0/17.0 kB 0:00:00
+✓ Files synced (1.6s)
+! GPU capacity for RTX5090 is currently low.
+Running beam_exp5:act_scale...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]
+Generating test split: 100%|##########| 4358/4358 [00:00<00:00, 158245.48 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]
+Generating train split: 100%|##########| 36718/36718 [00:00<00:00, 447639.83 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]
+Generating validation split: 100%|##########| 3760/3760 [00:00<00:00, 531067.59 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (297193 > 262144). Running this sequence through the model will result in indexing errors
+bf16 weights
+ 
+fp32 scale (today)
+ 
+{'wikitext': 0.00917, 'python_code': 0.00102}
+ 
+80s
+bf16 weights
+ 
+bf16 scale, nearest
+ 
+{'wikitext': 0.00713, 'python_code': 0.00105}
+ 
+79s
+bf16 weights
+ 
+bf16 scale, rounded up
+ 
+{'wikitext': 0.00696, 'python_code': 0.00108}
+ 
+79s
+bf16 weights
+ 
+power-of-two scale, rounded up
+ 
+{'wikitext': 0.01088, 'python_code': 0.00216}
+ 
+79s
+bf16 weights
+ 
+power-of-two scale, OCP MX
+ 
+{'wikitext': 0.00691, 'python_code': 0.00217}
+ 
+80s
+  layer  0 (linear_attention) gptq done in 19.1s
+  layer  1 (linear_attention) gptq done in 19.0s
+  layer  2 (linear_attention) gptq done in 18.4s
+  layer  3 (full_attention) gptq done in 9.7s
+  layer  4 (linear_attention) gptq done in 18.6s
+  layer  5 (linear_attention) gptq done in 18.4s
+  layer  6 (linear_attention) gptq done in 18.5s
+  layer  7 (full_attention) gptq done in 9.8s
+  layer  8 (linear_attention) gptq done in 18.5s
+  layer  9 (linear_attention) gptq done in 18.7s
+  layer 10 (linear_attention) gptq done in 18.6s
+  layer 11 (full_attention) gptq done in 9.7s
+  layer 12 (linear_attention) gptq done in 18.8s
+  layer 13 (linear_attention) gptq done in 18.6s
+  layer 14 (linear_attention) gptq done in 18.6s
+  layer 15 (full_attention) gptq done in 9.8s
+  layer 16 (linear_attention) gptq done in 18.5s
+  layer 17 (linear_attention) gptq done in 18.6s
+  layer 18 (linear_attention) gptq done in 18.7s
+  layer 19 (full_attention) gptq done in 9.8s
+  layer 20 (linear_attention) gptq done in 18.7s
+  layer 21 (linear_attention) gptq done in 18.6s
+  layer 22 (linear_attention) gptq done in 18.8s
+  layer 23 (full_attention) gptq done in 9.8s
+  layer 24 (linear_attention) gptq done in 18.6s
+  layer 25 (linear_attention) gptq done in 18.5s
+  layer 26 (linear_attention) gptq done in 18.6s
+  layer 27 (full_attention) gptq done in 9.7s
+  layer 28 (linear_attention) gptq done in 18.7s
+  layer 29 (linear_attention) gptq done in 18.5s
+  layer 30 (linear_attention) gptq done in 18.6s
+  layer 31 (full_attention) gptq done in 9.8s
+  gptq total 530s
+chip weights + int8 KV
+ 
+fp32 scale (today)
+ 
+{'wikitext': 0.05667, 'python_code': 0.05572}
+ 
+81s
+chip weights + int8 KV
+ 
+bf16 scale, nearest
+ 
+{'wikitext': 0.05354, 'python_code': 0.0549}
+ 
+82s
+chip weights + int8 KV
+ 
+bf16 scale, rounded up
+ 
+{'wikitext': 0.05241, 'python_code': 0.0552}
+ 
+81s
+chip weights + int8 KV
+ 
+power-of-two scale, rounded up
+ 
+{'wikitext': 0.05228, 'python_code': 0.05592}
+ 
+80s
+chip weights + int8 KV
+ 
+power-of-two scale, OCP MX
+ 
+{'wikitext': 0.05392, 'python_code': 0.05631}
+ 
+81s
+✓ Function complete (24m17s)

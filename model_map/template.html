@@ -1,0 +1,534 @@
+<title>Qwen3.5-9B Layer Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; a sticky control bar; the 34-cell layer strip is the page's spine. */
+:root {
+  --bg: #f5f6f7; --surface: #ffffff; --fg: #14171b; --muted: #59626d; --line: #dde1e6; --soft: #eceff2;
+  --dn: #0d8587; --dn-soft: #cfeceb; --at: #b9730a; --at-soft: #f6e4c4;
+  --ff: #3557c4; --ff-soft: #d9e1fa; --hd: #b83a63; --hd-soft: #f5d6e1;
+  --kv: #8a6a2c; --st: #4f8f8a; --vec: #7b8490;
+  --focus: #3557c4; --ok: #1d7a4b;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1215; --surface: #161a1f; --fg: #e7eaee; --muted: #9ba4ae; --line: #2a3038; --soft: #1d2228;
+  --dn: #3fc2c3; --dn-soft: #123536; --at: #f0a83c; --at-soft: #3a2a10;
+  --ff: #85a2ff; --ff-soft: #1c2645; --hd: #f0719b; --hd-soft: #3d1726;
+  --kv: #d4ad62; --st: #7fc4be; --vec: #8a939e; --focus: #85a2ff; --ok: #5fcf96; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f1215; --surface: #161a1f; --fg: #e7eaee; --muted: #9ba4ae; --line: #2a3038; --soft: #1d2228;
+  --dn: #3fc2c3; --dn-soft: #123536; --at: #f0a83c; --at-soft: #3a2a10;
+  --ff: #85a2ff; --ff-soft: #1c2645; --hd: #f0719b; --hd-soft: #3d1726;
+  --kv: #d4ad62; --st: #7fc4be; --vec: #8a939e; --focus: #85a2ff; --ok: #5fcf96; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 15px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(28px, 4.4vw, 40px); font-weight: 700; }
+h2 { font-size: 22px; font-weight: 600; }
+h3 { font-size: 17px; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+.mono { font-family: var(--f-mono); font-size: 13px; }
+.muted { color: var(--muted); }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+section { padding-block: 28px; display: grid; gap: 16px; border-top: 1px solid var(--line); }
+header { padding-block: 36px 24px; display: grid; gap: 14px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.stat { background: var(--surface); padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.stat b { font-family: var(--f-display); font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+.controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.controls .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding-block: 12px; }
+.ctl { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ctl label { font-size: 13px; color: var(--muted); }
+.ctl output { font-family: var(--f-mono); font-size: 13px; min-width: 9ch; font-variant-numeric: tabular-nums; }
+input[type=range] { width: 180px; accent-color: var(--ff); }
+select, button { font: inherit; font-size: 13px; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
+button { cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.strip { display: grid; grid-template-columns: repeat(17, minmax(0, 1fr)); gap: 4px; }
+.cell { aspect-ratio: 1; max-width: 100%; border-radius: 5px; border: 1px solid transparent; display: grid; place-items: center; font-family: var(--f-mono); font-size: 12px; cursor: pointer; padding: 0; }
+.cell.deltanet { background: var(--dn-soft); color: var(--dn); }
+.cell.attention { background: var(--at-soft); color: var(--at); }
+.cell.embed, .cell.head { background: var(--hd-soft); color: var(--hd); }
+.cell[aria-pressed="true"] { border-color: currentColor; box-shadow: inset 0 0 0 1px currentColor; font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+.detail { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.detail-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; }
+.tag { font-family: var(--f-mono); font-size: 12px; padding: 2px 8px; border-radius: 99px; }
+.tag.deltanet { background: var(--dn-soft); color: var(--dn); }
+.tag.attention { background: var(--at-soft); color: var(--at); }
+.tag.ffn { background: var(--ff-soft); color: var(--ff); }
+.tag.edge { background: var(--hd-soft); color: var(--hd); }
+.totals { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; }
+.totals b { font-family: var(--f-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+.scroll { overflow-x: auto; min-width: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: 12px; padding: 6px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--soft); vertical-align: top; }
+td.num, th.num { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .what { color: var(--muted); font-size: 12.5px; margin-top: 2px; max-width: 46ch; }
+td .shape { font-family: var(--f-mono); font-size: 12px; white-space: nowrap; }
+tr.block td { background: var(--soft); font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); padding-block: 5px; }
+.kind { font-family: var(--f-mono); font-size: 11px; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.kind.matmul { color: var(--ff); border-color: var(--ff); }
+.kind.attention, .kind.kv { color: var(--at); border-color: var(--at); }
+.kind.recurrence, .kind.conv { color: var(--dn); border-color: var(--dn); }
+
+.bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--soft); }
+.bar span { height: 100%; min-width: 0; }
+.bar-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px 18px; font-size: 13px; }
+.bar-legend div { display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+.bar-legend i { flex: none; width: 10px; height: 10px; border-radius: 3px; transform: translateY(1px); }
+.bar-legend .v { margin-left: auto; font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.chart { display: grid; gap: 10px; min-width: 0; align-content: start; }
+
+.types { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.type { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.type h3 { display: flex; gap: 10px; align-items: center; }
+.type h3 i { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.type ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.flow { font-family: var(--f-mono); font-size: 12.5px; background: var(--soft); border-radius: 6px; padding: 10px 12px; overflow-x: auto; white-space: pre; }
+
+.share { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.share i { display: block; height: 8px; border-radius: 2px; background: var(--ff); }
+footer { padding-block: 24px 40px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: grid; gap: 6px; }
+a { color: var(--ff); }
+
+/* ---------- the chip section */
+.topnav { display: flex; flex-wrap: wrap; gap: 8px; }
+.topnav a { font-family: var(--f-mono); font-size: 13px; text-decoration: none; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; background: var(--surface); }
+.topnav a:hover { border-color: var(--muted); }
+.part { font-family: var(--f-display); font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; }
+.diagram { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.diagram svg { display: block; width: 100%; min-width: 720px; height: auto; }
+.diagram .blk rect { fill: var(--surface); stroke-width: 1.5; }
+.diagram .blk:hover rect, .diagram .blk:focus rect { fill: var(--soft); }
+.diagram .blk:focus { outline: none; }
+.diagram .blk:focus-visible rect { stroke-width: 3; }
+.diagram .blk text { fill: var(--fg); font-family: var(--f-mono); font-size: 12.5px; }
+.diagram .blk text.sub { fill: var(--muted); font-size: 10.5px; }
+.diagram .m rect { stroke: var(--kv); } .diagram .c rect { stroke: var(--ff); }
+.diagram .d rect { stroke: var(--dn); } .diagram .a rect { stroke: var(--at); } .diagram .x rect { stroke: var(--vec); }
+.diagram .wire { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+.diagram .wire.dash { stroke-dasharray: 4 4; }
+.diagram .lbl { fill: var(--muted); font-family: var(--f-mono); font-size: 10.5px; }
+.diagram .arrowhead { fill: var(--muted); }
+.chip-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: start; }
+.chip-index { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 72px); display: grid; gap: 14px; font-size: 13.5px; max-height: calc(100vh - 96px); overflow-y: auto; padding-right: 4px; }
+.chip-index div { display: grid; gap: 3px; }
+.chip-index a { color: var(--fg); text-decoration: none; display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+.chip-index a:hover { color: var(--ff); }
+.chip-index .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; transform: translateY(6px); }
+.articles { display: grid; gap: 22px; min-width: 0; }
+.comp { scroll-margin-top: 84px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 16px; min-width: 0; }
+.comp-head { display: grid; gap: 6px; }
+.comp-head .row { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.pill { font-family: var(--f-mono); font-size: 11.5px; padding: 2px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.st-decided { color: var(--ok); } .st-proposed { color: var(--ff); } .st-sketch { color: var(--at); } .st-open { color: var(--muted); }
+.refs { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.decision { background: var(--soft); border-radius: 8px; padding: 12px 14px; display: grid; gap: 6px; }
+.decision p, .comp p { max-width: 74ch; }
+.lab { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.comp ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; max-width: 78ch; }
+.comp .two { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 20px; }
+.comp .block { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.nums { list-style: none; padding: 0 !important; font-size: 13.5px; }
+.nums li { border-bottom: 1px solid var(--soft); padding-bottom: 5px; }
+.nums b { font-family: var(--f-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+.talks { display: flex; flex-wrap: wrap; gap: 6px; }
+.talks a { font-size: 12.5px; text-decoration: none; color: var(--fg); background: var(--soft); border-radius: 6px; padding: 3px 8px; }
+.talks a:hover { color: var(--ff); }
+.talks .how { color: var(--muted); }
+.alts li b { font-weight: 600; }
+.legend-st { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; color: var(--muted); align-items: center; }
+
+@media (max-width: 900px) {
+  .chip-layout { grid-template-columns: minmax(0, 1fr); }
+  .chip-index { position: static; max-height: none; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .comp .two { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .charts, .types { grid-template-columns: minmax(0, 1fr); }
+  .strip { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+  input[type=range] { width: 140px; }
+}
+@media (prefers-reduced-motion: no-preference) { .bar span { transition: flex-basis .25s ease; } }
+</style>
+
+<header class="wrap">
+  <div class="eyebrow">Design notes · target model</div>
+  <h1>Qwen3.5-9B, layer by layer</h1>
+  <p class="muted">Every layer of the model our chip runs, with the shape of each operation, its weights, its FLOPs, and the bytes it reads per generated token. Change the context length and number formats to see what moves. Numbers are for decoding one token at batch 1.</p>
+  <div class="stats" id="stats"></div>
+  <nav class="topnav" aria-label="Page parts"><a href="#stack-h">The model, layer by layer</a><a href="#chip">The chip, block by block</a></nav>
+</header>
+
+<div class="controls" role="group" aria-label="Settings">
+  <div class="wrap">
+    <div class="ctl">
+      <label for="ctx">Context</label>
+      <input type="range" id="ctx" min="0" max="1000" step="1">
+      <output id="ctxOut" for="ctx"></output>
+      <span class="ctl" id="ctxPresets"></span>
+    </div>
+    <div class="ctl"><label for="wfmt">Weights</label><select id="wfmt"></select></div>
+    <div class="ctl"><label for="kvfmt">KV cache</label><select id="kvfmt"></select></div>
+  </div>
+</div>
+
+<main>
+  <section class="wrap" aria-labelledby="stack-h">
+    <div style="display:grid;gap:6px">
+      <h2 id="stack-h">The stack</h2>
+      <p class="muted">A token enters at the embedding, passes through 32 layers in order, and leaves through the LM head. Every fourth layer is full attention; the rest are Gated DeltaNet. Every layer also has an FFN. Select a layer to see what happens inside it.</p>
+    </div>
+    <div class="strip" id="strip"></div>
+    <div class="legend">
+      <span><i style="background:var(--dn)"></i>Gated DeltaNet + FFN (24)</span>
+      <span><i style="background:var(--at)"></i>Gated full attention + FFN (8)</span>
+      <span><i style="background:var(--hd)"></i>Embedding and LM head</span>
+    </div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="where-h">
+    <h2 id="where-h">Where one token's work goes</h2>
+    <div class="charts">
+      <div class="chart"><h3>Bytes read from memory</h3><div class="bar" id="bytesBar"></div><div class="bar-legend" id="bytesLegend"></div>
+        <p class="muted" id="bytesNote" style="font-size:13px"></p></div>
+      <div class="chart"><h3>Arithmetic (FLOPs)</h3><div class="bar" id="flopsBar"></div><div class="bar-legend" id="flopsLegend"></div>
+        <p class="muted" id="flopsNote" style="font-size:13px"></p></div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="types-h">
+    <h2 id="types-h">The four kinds of block</h2>
+    <div class="types">
+      <article class="type">
+        <h3><i style="background:var(--dn)"></i>Gated DeltaNet (24 layers)</h3>
+        <p>Attention with a fixed-size memory instead of a growing list of past tokens. Each of 32 heads keeps a 128 × 128 matrix <span class="mono">S</span>, 16,384 numbers. For every token it:</p>
+        <ul>
+          <li>forgets a little: multiplies <span class="mono">S</span> by a decay between 0 and 1</li>
+          <li>asks what <span class="mono">S</span> currently stores for this key: <span class="mono">S·k</span></li>
+          <li>writes the correction <span class="mono">β · (v − S·k)</span> along <span class="mono">k</span></li>
+          <li>reads out its answer with the query: <span class="mono">S·q</span></li>
+        </ul>
+        <p>The memory never grows. All 24 layers hold 12.6 million numbers (50 MB in fp32) at 4K context or at 1M. The cost per token is fixed: about 2 million multiply-adds per layer, plus the projections.</p>
+        <div class="flow">x → RMSNorm → in_proj → conv(4) → delta rule → gated norm → out_proj → + x</div>
+      </article>
+      <article class="type">
+        <h3><i style="background:var(--at)"></i>Gated full attention (8 layers)</h3>
+        <p>Classic softmax attention, at layers 4, 8, 12 … 32. It keeps every past token's keys and values: 4 heads × 256 numbers × 2 = 2,048 numbers per token per layer.</p>
+        <ul>
+          <li>16 query heads share 4 KV heads, 4 queries per KV head (grouped-query attention)</li>
+          <li>each query dots with every past key, softmax, then a weighted sum of the values</li>
+          <li>an output gate (the extra half of q_proj) scales the result by a sigmoid</li>
+          <li>RoPE rotates only 64 of the 256 dimensions of each head</li>
+        </ul>
+        <p>Its cost grows with context. At 1M tokens these 8 layers read about 17 GB of int8 KV for every new token, roughly four times the weights.</p>
+        <div class="flow">x → RMSNorm → q,k,v proj → norm, RoPE → q·Kᵀ, softmax, ·V → gate → o_proj → + x</div>
+      </article>
+      <article class="type">
+        <h3><i style="background:var(--ff)"></i>FFN, SwiGLU (in all 32 layers)</h3>
+        <p>After the mixer, every layer runs the same feed-forward block. It looks at one token at a time and has no memory.</p>
+        <ul>
+          <li><span class="mono">gate</span> and <span class="mono">up</span>: two 4,096 → 12,288 projections of the same input</li>
+          <li><span class="mono">SiLU(gate) × up</span>, element by element</li>
+          <li><span class="mono">down</span>: 12,288 → 4,096</li>
+        </ul>
+        <p>151 million weights per layer, 4.83 billion in all: 61% of the bytes read per token. This is the block the chip must stream perfectly.</p>
+        <div class="flow">x → RMSNorm → gate, up → SiLU(gate)·up → down → + x</div>
+      </article>
+      <article class="type">
+        <h3><i style="background:var(--hd)"></i>Embedding and LM head (once per token)</h3>
+        <p>The <b>embedding</b> turns the input token into a 4,096-wide vector by fetching one row of a 248,320-row table. It's a lookup, not a multiply.</p>
+        <p>The <b>LM head</b> is the opposite: a 4,096 → 248,320 matrix that scores every word in the vocabulary. At 1.02 billion weights it's the largest single matrix (12.8% of bytes). It is not shared with the embedding (<span class="mono">tie_word_embeddings: false</span>).</p>
+        <p class="muted">Qwen3.5 also ships one extra MTP layer for drafting tokens in speculative decoding. It's not part of the normal pass, so it's not counted here.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="mat-h">
+    <h2 id="mat-h">Every weight matrix</h2>
+    <p class="muted">At batch 1 every one of these is a matrix times a vector: each weight is read once and used once per token.</p>
+    <div class="scroll"><table id="matTable"></table></div>
+  </section>
+
+  <section class="wrap" id="chip" aria-labelledby="chip-h" style="border-top:2px solid var(--fg)">
+    <div class="eyebrow">Part two</div>
+    <h2 id="chip-h" class="part">Our chip, block by block</h2>
+    <p class="muted">The chip we're designing to run the model above, as it stands on 2026-11-10. Every block gets the same treatment: what we've decided and its status, why it has to be decided now, how it works, what model maths it does, what it talks to, where it fits, and the alternatives we turned down and why. Numbers come from <span class="mono">design/calc/qwen35_budget.py</span>; decision IDs refer to <span class="mono">design/DECISIONS.md</span>.</p>
+    <div class="legend-st">
+      <span class="pill st-decided">decided</span><span>agreed with the user</span>
+      <span class="pill st-proposed">proposed</span><span>recommended, waiting for a yes</span>
+      <span class="pill st-sketch">sketch</span><span>a first idea with numbers, not yet a proposal</span>
+      <span class="pill st-open">open</span><span>not designed yet</span>
+    </div>
+    <div class="diagram" role="img" aria-label="Block diagram of the chip. Select a block to read about it.">
+      <svg viewBox="0 0 820 560" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+        <!-- wires -->
+        <path class="wire" d="M410 58 V78" marker-end="url(#ah)" marker-start="url(#ah)"/>
+        <path class="wire" d="M410 122 V142" marker-end="url(#ah)"/>
+        <path class="wire" d="M330 186 V214 H200 V236" marker-end="url(#ah)"/>
+        <text class="lbl" x="208" y="208">weights + scales, 512 B/cycle</text>
+        <path class="wire" d="M490 186 V214 H620 V236" marker-end="url(#ah)" marker-start="url(#ah)"/>
+        <text class="lbl" x="500" y="208">KV, state, results</text>
+        <path class="wire" d="M200 280 V318" marker-end="url(#ah)"/>
+        <text class="lbl" x="208" y="304">4-bit codes</text>
+        <path class="wire" d="M620 280 V318" marker-end="url(#ah)"/>
+        <text class="lbl" x="628" y="304">int8 activations, broadcast</text>
+        <path class="wire" d="M145 382 V408" marker-end="url(#ah)"/>
+        <text class="lbl" x="153" y="400">20-bit group sums</text>
+        <path class="wire" d="M231 431 H242" marker-end="url(#ah)"/>
+        <path class="wire dash" d="M760 431 H800 V259 H762" marker-end="url(#ah)"/>
+        <path class="wire dash" d="M60 472 H780"/>
+        <path class="wire dash" d="M270 494 V472"/>
+        <text class="lbl" x="490" y="488">control drives every block above</text>
+        <!-- blocks -->
+        <a class="blk m" href="#chip-memory" tabindex="0"><rect x="250" y="12" width="320" height="46" rx="7"/><text x="410" y="32" text-anchor="middle">GDDR7 ×4 · 8 GB · 512 GB/s</text><text class="sub" x="410" y="48" text-anchor="middle">on the card, off the die</text></a>
+        <a class="blk m" href="#chip-memctrl" tabindex="0"><rect x="250" y="80" width="320" height="42" rx="7"/><text x="410" y="99" text-anchor="middle">Memory controller + GDDR7 PHY</text><text class="sub" x="410" y="114" text-anchor="middle">licensed PHY · ~800 reads in flight</text></a>
+        <a class="blk m" href="#chip-dma" tabindex="0"><rect x="250" y="144" width="320" height="42" rx="7"/><text x="410" y="163" text-anchor="middle">DMA engines</text><text class="sub" x="410" y="178" text-anchor="middle">descriptors in, flags out</text></a>
+        <a class="blk m" href="#chip-fifo" tabindex="0"><rect x="60" y="238" width="290" height="42" rx="7"/><text x="205" y="257" text-anchor="middle">Weight stream FIFO + splitter</text><text class="sub" x="205" y="272" text-anchor="middle">~100 KB · 18-byte blocks</text></a>
+        <a class="blk x" href="#chip-sram" tabindex="0"><rect x="470" y="238" width="290" height="42" rx="7"/><text x="615" y="257" text-anchor="middle">SRAM scratchpad</text><text class="sub" x="615" y="272" text-anchor="middle">~4 MB · banked · no weights</text></a>
+        <a class="blk c" href="#chip-matrix" tabindex="0"><rect x="60" y="320" width="700" height="62" rx="7"/><text x="410" y="344" text-anchor="middle">Matrix unit: 1,024 lanes × 4 token rows</text><text class="sub" x="410" y="362" text-anchor="middle">code table → int8 · int8 × int8 · adder tree per group of 32 · 4,096 multipliers</text></a>
+        <a class="blk c" href="#chip-scale" tabindex="0"><rect x="60" y="410" width="170" height="42" rx="7"/><text x="145" y="429" text-anchor="middle">Scale unit (fp32)</text><text class="sub" x="145" y="444" text-anchor="middle">× w-scale × a-scale, Σ</text></a>
+        <a class="blk c" href="#chip-vector" tabindex="0"><rect x="244" y="410" width="196" height="42" rx="7"/><text x="342" y="429" text-anchor="middle">Vector unit (fp32)</text><text class="sub" x="342" y="444" text-anchor="middle">norms, gates, softmax, top-k</text></a>
+        <a class="blk d" href="#chip-deltanet" tabindex="0"><rect x="454" y="410" width="146" height="42" rx="7"/><text x="527" y="429" text-anchor="middle">DeltaNet unit</text><text class="sub" x="527" y="444" text-anchor="middle">fp32 state per head</text></a>
+        <a class="blk a" href="#chip-attention" tabindex="0"><rect x="614" y="410" width="146" height="42" rx="7"/><text x="687" y="429" text-anchor="middle">Attention path</text><text class="sub" x="687" y="444" text-anchor="middle">KV tiles, softmax</text></a>
+        <a class="blk x" href="#chip-control" tabindex="0"><rect x="60" y="494" width="420" height="44" rx="7"/><text x="270" y="514" text-anchor="middle">Control core: public VLIW ISA</text><text class="sub" x="270" y="529" text-anchor="middle">256 KB instruction memory · sync flags · counters</text></a>
+        <a class="blk x" href="#chip-host" tabindex="0"><rect x="500" y="494" width="260" height="44" rx="7"/><text x="630" y="514" text-anchor="middle">Host interface: PCIe Gen4 x4</text><text class="sub" x="630" y="529" text-anchor="middle">tokens, firmware, weights</text></a>
+      </svg>
+    </div>
+    <p class="muted" style="font-size:13px">Select a block to jump to its section. The dashed line on the right is results returning to SRAM. Clocks, data paths, power, debug, the process node and the build plan have no box of their own, so they're listed in the index.</p>
+    <div class="chip-layout">
+      <nav class="chip-index" id="chipIndex" aria-label="Chip topics"></nav>
+      <div class="articles" id="chipArticles"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div>Shapes from Qwen/Qwen3.5-9B <span class="mono">config.json</span>. Every number is computed by <span class="mono">model_map/build.py</span> from <span class="mono">design/calc/qwen35_budget.py</span>, and the build checks that the weights and FLOPs here match the budget script.</div>
+  <div>Elementwise FLOPs are rough counts (marked ≈). Speed assumes our card: 512 GB/s at 92% utilization, DeltaNet state in fp32.</div>
+</footer>
+
+<script>const DATA = /*__DATA__*/null;</script>
+<script>
+(() => {
+  const M = DATA.model, OPS = DATA.ops;
+  const CTX_MIN = 1024, CTX_MAX = M.max_ctx;
+  const PRESETS = [["4K", 4096], ["32K", 32768], ["262K", 262144], ["1M", M.max_ctx]];
+  const st = { ctx: 4096, w: 0, kv: 1, sel: 0 };
+
+  // ---------- formatting
+  const fmtN = (n) => n >= 1e9 ? (n / 1e9).toFixed(2) + " B" : n >= 1e6 ? (n / 1e6).toFixed(1) + " M" : n >= 1e3 ? (n / 1e3).toFixed(1) + " K" : String(Math.round(n));
+  const fmtB = (b) => b >= 1e9 ? (b / 1e9).toFixed(2) + " GB" : b >= 1e6 ? (b / 1e6).toFixed(1) + " MB" : b >= 1e3 ? (b / 1e3).toFixed(1) + " KB" : Math.round(b) + " B";
+  const fmtF = (f) => f >= 1e9 ? (f / 1e9).toFixed(2) + " GFLOP" : f >= 1e6 ? (f / 1e6).toFixed(2) + " MFLOP" : f >= 1e3 ? (f / 1e3).toFixed(1) + " KFLOP" : Math.round(f) + " FLOP";
+  const fmtCtx = (c) => c >= 1e6 ? (c / 1e6).toFixed(2) + "M" : c >= 1e3 ? Math.round(c / 1e3) + "K" : String(c);
+  const el = (tag, attrs = {}, html = "") => { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); e.innerHTML = html; return e; };
+
+  // ---------- per-op numbers for the current settings
+  const wB = () => DATA.formats[st.w].bits / 8;      // bytes per weight
+  const kvB = () => DATA.kv_formats[st.kv].bytes;    // bytes per KV value
+  const STATE_B = 4;                                  // fp32 recurrent state
+
+  function opStats(op) {
+    const L = st.ctx;
+    const macs = (op.macs || 0) + (op.macs_per_ctx || 0) * L;
+    const ew = (op.ew_flops || 0) + (op.ew_per_ctx || 0) * L;
+    const bW = (op.weights || 0) * wB() + (op.row_read || 0) * wB();
+    const bKV = ((op.kv_read_per_ctx || 0) * L + (op.kv_write || 0)) * kvB();
+    const bS = (op.state_values || 0) * 2 * STATE_B;  // read + write
+    const actOut = (op.act_out || 0) + (op.act_out_per_ctx || 0) * L;
+    return { macs, flops: 2 * macs + ew, ewOnly: macs === 0 && ew > 0, bW, bKV, bS, bytes: bW + bKV + bS, actOut, weights: op.weights || 0 };
+  }
+  const sum = (ops) => ops.map(opStats).reduce((a, s) => ({ flops: a.flops + s.flops, bytes: a.bytes + s.bytes, weights: a.weights + s.weights, bW: a.bW + s.bW, bKV: a.bKV + s.bKV, bS: a.bS + s.bS }), { flops: 0, bytes: 0, weights: 0, bW: 0, bKV: 0, bS: 0 });
+
+  // ---------- whole-token breakdowns
+  function breakdown() {
+    const ffn = sum(OPS.ffn), dn = sum(OPS.deltanet), at = sum(OPS.attention), hd = sum(OPS.head), em = sum(OPS.embed);
+    const atMix = OPS.attention.filter(o => o.kind === "attention").map(opStats).reduce((a, s) => a + s.flops, 0);
+    const atProjF = OPS.attention.filter(o => o.kind === "matmul").map(opStats).reduce((a, s) => a + s.flops, 0);
+    const dnRule = OPS.deltanet.filter(o => o.kind === "recurrence" || o.kind === "conv").map(opStats).reduce((a, s) => a + s.flops, 0);
+    const dnProjF = OPS.deltanet.filter(o => o.kind === "matmul").map(opStats).reduce((a, s) => a + s.flops, 0);
+    const mmF = (ops) => ops.filter(o => o.kind === "matmul").map(opStats).reduce((a, s) => a + s.flops, 0);
+    const allEw = [].concat(OPS.ffn.map(o => [o, 32]), OPS.deltanet.map(o => [o, 24]), OPS.attention.map(o => [o, 8]), OPS.head.map(o => [o, 1]))
+      .filter(([o]) => o.kind === "vector").reduce((a, [o, n]) => a + opStats(o).flops * n, 0);
+    const bytes = [
+      ["FFN weights", 32 * ffn.bW, "var(--ff)"],
+      ["DeltaNet weights", M.n_lin * dn.bW, "var(--dn)"],
+      ["Attention weights", M.n_full * at.bW, "var(--at)"],
+      ["LM head weights", hd.bW + em.bW, "var(--hd)"],
+      ["KV cache", M.n_full * at.bKV, "var(--kv)"],
+      ["DeltaNet state (fp32, r+w)", M.n_lin * dn.bS, "var(--st)"],
+    ];
+    const flops = [
+      ["FFN matmuls", 32 * mmF(OPS.ffn), "var(--ff)"],
+      ["DeltaNet projections", M.n_lin * dnProjF, "var(--dn)"],
+      ["Attention projections", M.n_full * atProjF, "var(--at)"],
+      ["LM head", mmF(OPS.head), "var(--hd)"],
+      ["Attention over context", M.n_full * atMix, "var(--kv)"],
+      ["Delta rule + conv", M.n_lin * dnRule, "var(--st)"],
+      ["Vector ops ≈", allEw, "var(--vec)"],
+    ];
+    const totB = bytes.reduce((a, r) => a + r[1], 0), totF = flops.reduce((a, r) => a + r[1], 0);
+    return { bytes, flops, totB, totF };
+  }
+
+  // ---------- render
+  function renderStats(bd) {
+    const tok = DATA.card.util * DATA.card.bw / bd.totB;
+    const s = document.getElementById("stats");
+    s.innerHTML = "";
+    [["32", "layers: 24 DeltaNet, 8 full attention"],
+     [fmtN(M.read_per_token).replace(" B", " B"), "weights read per token (of " + fmtN(M.total) + " stored)"],
+     [fmtB(bd.totB), "read per token at " + fmtCtx(st.ctx) + " context"],
+     [tok.toFixed(0) + " tok/s", "on our card, if memory is the only limit"]]
+      .forEach(([b, t]) => s.appendChild(el("div", { class: "stat" }, `<b>${b}</b><span>${t}</span>`)));
+  }
+
+  function renderBar(barId, legId, rows, tot, fmt) {
+    const bar = document.getElementById(barId), leg = document.getElementById(legId);
+    bar.innerHTML = ""; leg.innerHTML = "";
+    rows.forEach(([name, v, c]) => {
+      const pct = 100 * v / tot;
+      const s = el("span"); s.style.flexBasis = pct + "%"; s.style.background = c; s.title = `${name}: ${fmt(v)} (${pct.toFixed(1)}%)`;
+      bar.appendChild(s);
+      leg.appendChild(el("div", {}, `<i style="background:${c}"></i><span>${name}</span><span class="v">${fmt(v)} · ${pct < 0.1 ? "<0.1" : pct.toFixed(1)}%</span>`));
+    });
+  }
+
+  function renderStrip() {
+    const strip = document.getElementById("strip");
+    strip.innerHTML = "";
+    const cells = [["embed", "E", "Embedding"]].concat(DATA.layers.map((t, i) => [t, String(i + 1), `Layer ${i + 1}: ${t === "attention" ? "full attention" : "Gated DeltaNet"}`]), [["head", "H", "LM head"]]);
+    cells.forEach(([t, label, aria], idx) => {
+      const b = el("button", { class: "cell " + t, "aria-pressed": String(idx === st.sel), "aria-label": aria, title: aria }, label);
+      b.addEventListener("click", () => { st.sel = idx; try { history.replaceState(null, "", "#" + (idx === 0 ? "embed" : idx === 33 ? "head" : "layer-" + idx)); } catch (e) {} renderStrip(); renderDetail(); });
+      strip.appendChild(b);
+    });
+  }
+
+  const KIND = { matmul: "matmul", vector: "vector", conv: "conv", recurrence: "recurrence", attention: "attention", kv: "kv write", lookup: "lookup" };
+  function opRows(ops, label, cls) {
+    let html = `<tr class="block"><td colspan="7">${label}</td></tr>`;
+    ops.forEach(op => {
+      const s = opStats(op);
+      const fl = s.flops ? (s.ewOnly ? "≈ " : "") + fmtF(s.flops) : "–";
+      const rd = [];
+      if (s.bW) rd.push(fmtB(s.bW) + " w");
+      if (s.bKV) rd.push(fmtB(s.bKV) + " KV");
+      if (s.bS) rd.push(fmtB(s.bS) + " state");
+      html += `<tr><td><div>${op.name} ${op.fused ? `<span class="muted mono" style="font-size:11px">fused: ${op.fused}</span>` : ""}</div><div class="what">${op.what}</div></td>
+        <td><span class="kind ${op.kind}">${KIND[op.kind]}</span></td>
+        <td><span class="shape">${op.shape.replace(/L/g, fmtCtx(st.ctx))}</span></td>
+        <td class="num">${s.weights ? fmtN(s.weights) : (op.stored ? fmtN(op.stored) + " stored" : "–")}</td>
+        <td class="num">${fl}</td>
+        <td class="num">${rd.join("<br>") || "–"}</td>
+        <td class="num">${s.actOut ? fmtN(s.actOut) : "–"}</td></tr>`;
+    });
+    return html;
+  }
+
+  function renderDetail() {
+    const d = document.getElementById("detail");
+    const i = st.sel;
+    let title, tag, tagCls, ops, blurb, groups;
+    if (i === 0) { title = "Embedding"; tag = "once per token"; tagCls = "edge"; groups = [["Lookup", OPS.embed]]; blurb = "Turns the token ID into the 4,096-wide vector that the first layer reads."; }
+    else if (i === 33) { title = "LM head"; tag = "once per token"; tagCls = "edge"; groups = [["Output", OPS.head]]; blurb = "Turns the final 4,096-wide vector into a score for each of the 248,320 tokens and picks the next one."; }
+    else {
+      const t = DATA.layers[i - 1];
+      title = `Layer ${i}`;
+      tag = t === "attention" ? "Gated full attention" : "Gated DeltaNet";
+      tagCls = t;
+      const pos = ((i - 1) % 4) + 1;
+      blurb = t === "attention"
+        ? `The ${["", "1st", "2nd", "3rd", "4th"][pos]} layer of its group of four, so it's a full-attention layer. Its work grows with context: at ${fmtCtx(st.ctx)} tokens it reads ${fmtB(opStats(OPS.attention.find(o => o.id === "at_score")).bKV * 2)} of KV cache for this one token.`
+        : `Position ${pos} of 4 in its group, so it's a Gated DeltaNet layer. Its memory is a fixed ${fmtB(M.state_values / M.n_lin * 4)} fp32 state, the same at any context length.`;
+      groups = [[t === "attention" ? "Mixer: gated full attention" : "Mixer: Gated DeltaNet", OPS[t]], ["FFN: SwiGLU", OPS.ffn]];
+    }
+    const all = groups.flatMap(g => g[1]);
+    const tot = sum(all);
+    d.innerHTML = `<div class="detail-head"><h3>${title} <span class="tag ${tagCls}">${tag}</span></h3>
+      <div class="totals"><span>weights <b>${fmtN(tot.weights)}</b></span><span>FLOPs <b>${fmtF(tot.flops)}</b></span><span>bytes read <b>${fmtB(tot.bytes)}</b></span></div></div>
+      <p class="muted">${blurb}</p>
+      <div class="scroll"><table><thead><tr><th>Operation</th><th>Kind</th><th>Shape (one token)</th><th class="num">Weights</th><th class="num">FLOPs</th><th class="num">Bytes read</th><th class="num">Output values</th></tr></thead>
+      <tbody>${groups.map(([lbl, o]) => opRows(o, lbl)).join("")}</tbody></table></div>`;
+  }
+
+  function renderMatrices() {
+    const rows = [];
+    const add = (ops, n, group) => ops.filter(o => o.kind === "matmul").forEach(o => rows.push({ group, name: o.name, k: o.act_in, n: o.act_out, count: n, w: o.weights * n }));
+    add(OPS.attention, M.n_full, "Full attention");
+    add(OPS.deltanet, M.n_lin, "Gated DeltaNet");
+    add(OPS.ffn, M.layers, "FFN");
+    add(OPS.head, 1, "Output");
+    const tot = rows.reduce((a, r) => a + r.w, 0), max = Math.max(...rows.map(r => r.w));
+    const t = document.getElementById("matTable");
+    t.innerHTML = `<thead><tr><th>Block</th><th>Matrix</th><th class="num">In → out</th><th class="num">Layers</th><th class="num">Weights</th><th class="num">Bytes / token</th><th class="num">Share</th></tr></thead><tbody>` +
+      rows.map(r => `<tr><td class="muted">${r.group}</td><td>${r.name}</td><td class="num">${r.k.toLocaleString()} → ${r.n.toLocaleString()}</td><td class="num">×${r.count}</td><td class="num">${fmtN(r.w)}</td><td class="num">${fmtB(r.w * wB())}</td>
+        <td class="num"><div class="share">${(100 * r.w / tot).toFixed(1)}%<i style="width:${Math.max(2, 80 * r.w / max)}px"></i></div></td></tr>`).join("") + "</tbody>";
+  }
+
+  function render() {
+    document.getElementById("ctxOut").textContent = st.ctx.toLocaleString() + " tokens";
+    document.querySelectorAll("#ctxPresets button").forEach(b => b.setAttribute("aria-pressed", String(Number(b.dataset.c) === st.ctx)));
+    const bd = breakdown();
+    renderStats(bd);
+    renderBar("bytesBar", "bytesLegend", bd.bytes, bd.totB, fmtB);
+    renderBar("flopsBar", "flopsLegend", bd.flops, bd.totF, fmtF);
+    const kv = bd.bytes[4][1];
+    document.getElementById("bytesNote").textContent = `Total ${fmtB(bd.totB)} per token. The KV cache is ${(100 * kv / bd.totB).toFixed(1)}% of it at ${fmtCtx(st.ctx)} context.`;
+    document.getElementById("flopsNote").textContent = `Total ${fmtF(bd.totF)} per token, about ${(bd.totF / (M.read_per_token * wB())).toFixed(1)} FLOPs per byte read. A chip doing this at batch 1 waits on memory, not arithmetic.`;
+    renderDetail();
+    renderMatrices();
+  }
+
+  // ---------- controls
+  const ctx = document.getElementById("ctx");
+  const toSlider = (c) => Math.round(1000 * Math.log(c / CTX_MIN) / Math.log(CTX_MAX / CTX_MIN));
+  const fromSlider = (v) => Math.round(CTX_MIN * Math.pow(CTX_MAX / CTX_MIN, v / 1000));
+  ctx.value = toSlider(st.ctx);
+  ctx.addEventListener("input", () => { st.ctx = fromSlider(Number(ctx.value)); render(); });
+  const pre = document.getElementById("ctxPresets");
+  PRESETS.forEach(([l, c]) => { const b = el("button", { type: "button", "data-c": c, "aria-pressed": "false" }, l); b.addEventListener("click", () => { st.ctx = c; ctx.value = toSlider(c); render(); }); pre.appendChild(b); });
+  const wf = document.getElementById("wfmt");
+  DATA.formats.forEach((f, i) => wf.appendChild(el("option", { value: i }, `${f.name} · ${f.bits.toFixed(2)} bits`)));
+  wf.addEventListener("change", () => { st.w = Number(wf.value); render(); });
+  const kf = document.getElementById("kvfmt");
+  DATA.kv_formats.forEach((f, i) => kf.appendChild(el("option", { value: i }, f.name)));
+  kf.value = String(st.kv);
+  kf.addEventListener("change", () => { st.kv = Number(kf.value); render(); });
+
+  function fromHash() {
+    const h = location.hash.slice(1);
+    if (h === "embed") st.sel = 0; else if (h === "head") st.sel = 33;
+    else { const m = /^layer-(\d+)$/.exec(h); if (m && +m[1] >= 1 && +m[1] <= 32) st.sel = +m[1]; }
+  }
+  fromHash();
+  window.addEventListener("hashchange", () => { fromHash(); renderStrip(); renderDetail(); });
+  if (!/^#(layer-\d+|embed|head)$/.test(location.hash)) st.sel = 4;   // open on the first full-attention layer
+  renderStrip();
+  render();
+})();
+</script>
+<script>/*__CHIP__*/</script>

@@ -1,0 +1,8 @@
+PASS descriptor 0, V opcode 14, 315 clocks
+PASS descriptor 1, V opcode 13, 196 clocks
+PASS descriptor 2, V opcode 14, 110 clocks
+PASS descriptor 3, V opcode 14, 158 clocks
+PASS descriptor 4, V opcode 14, 620 clocks
+PASS descriptor 5, V opcode 13, 275 clocks
+tb_vec_unit.sv:101: $finish called at 6706 (1s)
+python3 test_vec_unit.py --red-only  950.37s user 24.37s system 98% cpu 16:34.14 total

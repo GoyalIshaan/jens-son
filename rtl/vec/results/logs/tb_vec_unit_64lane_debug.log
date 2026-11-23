@@ -1,0 +1,6 @@
+PASS descriptor 0, V opcode 1, 16 clocks
+PASS descriptor 1, V opcode 2, 16 clocks
+PASS descriptor 2, V opcode 3, 17 clocks
+PASS descriptor 3, V opcode 4, 12 clocks
+PASS descriptor 4, V opcode 5, 16 clocks
+PASS descriptor 5, V opcode 6, 12 clocks

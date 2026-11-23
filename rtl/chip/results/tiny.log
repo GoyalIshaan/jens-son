@@ -1,0 +1,15 @@
+  quantized layer 0
+  quantized layer 1
+  quantized layer 2
+  quantized layer 3
+tiny: 396 bundles, 95 descriptors, SRAM 589,824 B, DRAM 20,915,904 B
+FSim: 48.0 us simulated, 0 s; commands {'W': 49, 'R': 19, 'X': 14, 'L': 3, 'M': 53, 'V': 150}
+./rtl/chip/../../rtl/mxu/beat_reducer.v:207: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:207:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:208: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:208:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:209: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:209:        : Pruning (signed) 21 high bits of the expression.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:210: warning: Port 2 (base) of module wide_to_fp32 expects 11 bit(s), given 32.
+./rtl/chip/../../rtl/mxu/beat_reducer.v:210:        : Pruning (signed) 21 high bits of the expression.
+python3 rtl/chip/run_chip.py tiny 1  371.37s user 8.05s system 32% cpu 19:35.55 total

@@ -1,0 +1,52 @@
+{
+ "fma_s1 D100000": {
+  "area_um2": 274.00194,
+  "nand2_eq": 3132,
+  "delay_ps": 1589.38
+ },
+ "fma_s1 D1": {
+  "area_um2": 455.17302,
+  "nand2_eq": 5203,
+  "delay_ps": 2371.86
+ },
+ "fma_s2 D100000": {
+  "area_um2": 205.70922,
+  "nand2_eq": 2352,
+  "delay_ps": 2743.41
+ },
+ "fma_s2 D1": {
+  "area_um2": 400.5126,
+  "nand2_eq": 4578,
+  "delay_ps": 3233.4
+ },
+ "fma_s3 D100000": {
+  "area_um2": 110.5893,
+  "nand2_eq": 1264,
+  "delay_ps": 2055.24
+ },
+ "fma_s3 D1": {
+  "area_um2": 129.1788,
+  "nand2_eq": 1477,
+  "delay_ps": 2005.76
+ },
+ "fma_s4 D100000": {
+  "area_um2": 16.3296,
+  "nand2_eq": 187,
+  "delay_ps": 587.82
+ },
+ "fma_s4 D1": {
+  "area_um2": 24.4944,
+  "nand2_eq": 280,
+  "delay_ps": 525.33
+ },
+ "fp32_fma_pipe D100000": {
+  "area_um2": 710.046,
+  "nand2_eq": 8117,
+  "delay_ps": 2396.32
+ },
+ "fp32_fma_pipe D1": {
+  "area_um2": 863.32554,
+  "nand2_eq": 9869,
+  "delay_ps": 2169.06
+ }
+}

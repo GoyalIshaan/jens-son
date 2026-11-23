@@ -1,0 +1,1984 @@
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_unit.sv:163: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_unit.sv:163:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+./rtl/vec/vec_box_command.sv:124: warning: Port 5 (n) of module vec_box_addr expects 16 bit(s), given 32.
+./rtl/vec/vec_box_command.sv:124:        : Pruning 16 high bits of the expression.
+sh: line 1:  4902 Done                    /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivlpp -L -F"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlg24e799e0" -f"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlg4e799e0" -p"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrli4e799e0"
+      4903 Terminated: 15          | /opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/ivl -C"/var/folders/rj/2bhdycjs4nq_0qhrfsgzks4r0000gn/T//ivrlh4e799e0" -C"/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vvp.conf" -- -

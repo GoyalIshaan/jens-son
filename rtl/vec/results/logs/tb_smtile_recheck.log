@@ -1,0 +1,5 @@
+PASS R7 softmax tile, 182 clocks for 64 positions without stalls
+PASS R7 softmax tile, 184 clocks for 256 positions without stalls
+PASS R7 softmax tile, 196 clocks for 1024 positions without stalls
+PASS 64 R7 softmax tiles, 199 clocks per 1,024-position row with stalls
+tb_smtile.sv:108: $finish called at 39939 (1s)
